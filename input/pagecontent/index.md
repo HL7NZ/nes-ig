@@ -1,19 +1,12 @@
-<<<<<<< HEAD
-This is the Implementation Guide for  [HL7&reg; FHIR&copy;](http://hl7.org/fhir/)  APIs to the New Zealand National Enrolment Services  (NES) APIs
-
-​
-
-### Source
-=======
 This is the Implementation Guide for an [HL7&reg; FHIR&copy;](http://hl7.org/fhir/) interface for the National Enrolment Service (NES). It brings together all the artifacts that are necessary to understand and use the NES FHIR API.
 
-The NHI is made up of two resources:
+The NES is made up of two resources:
 * [Patient Entitlements](StructureDefinition-LINK), derived from the [HL7 FHIR coverage resource](https://www.hl7.org/fhir/coverage.html).
 * [Patients enrolled General Practice](StructureDefinition-LINK), derived from the [HL7 FHIR CareTeam resource]([http://hl7.org/fhir/R4/datatypes.html#Address](https://www.hl7.org/fhir/coverage.html).
 
 This guide uses artifacts from [New Zealand Base Implementation Guide.](https://fhir.org.nz/ig/base/index.html)
 
-
+The guide also defines the messages required to send an enrolment nomination request to PMS systems to providers
 
 ### Organization of the Guide
 
@@ -37,12 +30,8 @@ This guide uses artifacts from [New Zealand Base Implementation Guide.](https://
 * **Support** Links to the FHIR spec and downloads.
 
   ​
-
   ​
 
   ### Source
 
   ​	This IG was built from [github](https://github.com/HL7NZ/nhi)  branch: _BRANCH_  commit id: _GIT_COMMIT_ID_
->>>>>>> 67c46e05a6319439681c00ed31f41b8e87fb9846
-
-​	This IG was built from [github](https://github.com/HL7NZ/nhi)  branch: _BRANCH_  commit id: _GIT_COMMIT_ID_

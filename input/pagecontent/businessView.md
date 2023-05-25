@@ -1,6 +1,6 @@
 
 
-<<<<<<< HEAD
+
 ### About
 
 The National Enrolment Service (NES) is designed to provide a single source of truth for patient enrolments with Primary Health Organisations (PHOs).  It does this my maintaining a relationship between the patient identifier (NHI number) and the enrolling organisation (HPI Organisation ID).  Each enrolling organisation is associated with a PHO.
@@ -52,4 +52,3 @@ The Community Services Card is administered by Work and Income on behalf of Heal
 
 ### Expectations and Requirements
 
->>>>>>> 67c46e05a6319439681c00ed31f41b8e87fb9846
