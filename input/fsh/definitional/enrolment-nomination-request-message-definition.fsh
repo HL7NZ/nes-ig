@@ -14,9 +14,9 @@ Description: "Defines the message used to request an enrolment"
 * focus[1].min = 1
 * focus[1].max = "1"
 
-* focus[1].code = #RelatedPerson
-* focus[1].min = 0
-* focus[1].max = "1"
+* focus[2].code = #RelatedPerson
+* focus[2].min = 0
+* focus[2].max = "1"
 
 
 * eventCoding.system = "https://standards.digital.health.nz/ns/nes-event-type"
