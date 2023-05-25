@@ -1,22 +1,37 @@
 
+Instance: EnrolmentNominationRequestMessageDefinition
+InstanceOf: MessageDefinition
+Description: "Defines the message used to request an enrolment"
 
-//defined in NZ Base
-Alias: $suburb = http://hl7.org.nz/fhir/StructureDefinition/suburb
-Alias: $NZGeocode = http://hl7.org.nz/fhir/StructureDefinition/nz-geocode
-Alias: $buildingName = http://hl7.org.nz/fhir/StructureDefinition/building-name
-Alias: $domicileCode = http://hl7.org.nz/fhir/StructureDefinition/domicile-code
+* url = "http://hl7.org.nz/fhir/MessageDefinition/EnrolmentNominationRequestMessageDefinition"
+* status = #draft
+* date = "2020-04-21"
+* focus[0].code = #Patient
+* focus[0].min = 1
+* focus[0].max = "1"
+
+* focus[1].code = #Patient
+* focus[1].min = 1
+* focus[1].max = "1"
+
+* eventCoding.system = "https://standards.digital.health.nz/ns/nes-event-type"
+* eventCoding.code = #ENROLMENT_NOMINATION
 
 
-Profile:        EnrolmentNominationRequestMessageDefinition
-
-Parent:         MessageDefinition         
-
-Id:             EnrolmentNominationRequest
-Title:          "Enrolment Nomination Request Message Definition"
-Description:    "Defines the message used to request an enrolment"
-
-* ^url = "http://hl7.org.nz/fhir/StructureDefinition/EnrolmentNominationRequestMessageDefinition"
-
-* focus[1].code=Patient
-* focus[1].min=1
-* focus[1].max=1
+CodeSystem: NES_event_type_1_0
+Id: nes-event-type-1.0
+Title: "NES Event Type"
+Description: "Identifies NES events."
+* ^meta.profile = "http://hl7.org/fhir/StructureDefinition/shareablecodesystem"
+* ^url = "https://standards.digital.health.nz/ns/nes-event-type"
+* ^version = "1.0"
+* ^status = #draft
+* ^experimental = false
+* ^date = "2023-05-24T00:00:00+13:00"
+* ^publisher = "New Zealand Ministry of Health"
+* ^purpose = "NES event type"
+* ^caseSensitive = false
+* ^versionNeeded = false
+* ^content = #complete
+* ^count = 1
+* #ENROLMENT_NOMINATION "NES Enrolment Nomination"

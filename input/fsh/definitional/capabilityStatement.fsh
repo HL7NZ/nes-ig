@@ -25,4 +25,4 @@ Usage: #definition
 * rest.operation[1].definition = "http://hl7.org/fhir/OperationDefinition/MessageHeader-process-message"
 
 * messaging.supportedMessage[1].mode = $EventCapabilityMode#sender
-* messaging.supportedMessage[1].definition = "http://hl7.org.nz/fhir/StructureDefinition/EnrolmentNominationRequestMessageDefinition"
+* messaging.supportedMessage[1].definition = "http://hl7.org.nz/fhir/MessageDefinition/EnrolmentNominationRequestMessageDefinition"
