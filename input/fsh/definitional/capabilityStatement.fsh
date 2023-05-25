@@ -21,8 +21,8 @@ Usage: #definition
 * rest.mode = #server
 
 
-* rest.operation[1].name = "process-message"
-* rest.operation[1].definition = "http://hl7.org/fhir/OperationDefinition/MessageHeader-process-message"
+* rest.operation[0].name = "process-message"
+* rest.operation[0].definition = "http://hl7.org/fhir/OperationDefinition/MessageHeader-process-message"
 
-* messaging.supportedMessage[1].mode = $EventCapabilityMode#sender
-* messaging.supportedMessage[1].definition = "http://hl7.org.nz/fhir/MessageDefinition/EnrolmentNominationRequestMessageDefinition"
+* messaging.supportedMessage[0].mode = $EventCapabilityMode#sender
+* messaging.supportedMessage[0].definition = "http://hl7.org.nz/fhir/MessageDefinition/EnrolmentNominationRequestMessageDefinition"
