@@ -6,7 +6,7 @@ The NES is made up of two resources:
 
 This guide uses artifacts from [New Zealand Base Implementation Guide.](https://fhir.org.nz/ig/base/index.html)
 
-The guide also defines the messages required to send an enrolment nomination request to PMS systems to providers
+The guide also defines the messages required to send an enrolment nomination request to health providers
 
 ### Organization of the Guide
 

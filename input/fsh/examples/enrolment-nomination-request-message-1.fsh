@@ -10,54 +10,54 @@ Usage: #example
 * entry[0].resource.resourceType = "MessageHeader"
 * entry[0].resource.eventCoding.system = "https://standards.digital.health.nz/ns/nes-event-type"
 * entry[0].resource.eventCoding.code = #ENROLMENT_NOMINATION
-* entry[0].resource.focus[0] = Reference(baby1)
-* entry[0].resource.focus[1] = Reference(facility1)
-* entry[0].resource.focus[1] = Reference(mother1)
 
-Instance: Inline-Instance-for-enrolment-nomination-patient
-InstanceOf: Patient
-Usage: #inline
-* id = "baby1"
-* identifier.use = #official
-* identifier.system = "https://standards.digital.health.nz/ns/nhi-id"
-* identifier.value = "ZKC4633"
-* name[0].id = "10"
-* name[=].family = "Aufderhar"
-* name[=].given = "Baby of Jane"
-* gender = #female
-* birthDate = "2023-05-25"
-* extension[0].url = "http://hl7.org.nz/fhir/StructureDefinition/nz-ethnicity"
-* extension[=].valueCodeableConcept.coding.version = "2.0"
-* extension[=].valueCodeableConcept.coding = $ethnic-group-level-4-code#21111 "Māori"
+* entry[0].resource.source.endpointUrl = "http://example.com"
+* entry[0].resource.focus[0] = Reference(Patient/ZKC4633)
+* entry[0].resource.focus[1] = Reference(Location/FZZ958-K)
+* entry[0].resource.focus[2] = Reference(RelatedPerson/ZJM9397)
+* entry[0].fullUrl = "12345"
 
 
-Instance: FZZ958-K
-InstanceOf: Location
-Usage: #inline
-* id = "facility1"
-* identifier[0].use = #official
-* identifier[=].system = "https://standards.digital.health.nz/ns/hpi-facility-id"
-* identifier[=].value = "FZZ958-K"
-
-* extension[+].url = "http://hl7.org.nz/fhir/StructureDefinition/messaging-address"
-* extension[=].extension[0].url = "provider"
-* extension[=].extension[=].valueString = "healthlink"
-* extension[=].extension[+].url = "value"
-* extension[=].extension[=].valueString = "livefacedi"
-
-* name = "AAAA Medical Facilty"
-
-Instance: Inline-Instance-next-of-kin
-InstanceOf: RelatedPerson 
-Usage: #inline
-* id = "mother1"
-* identifier.use = #official
-* identifier.system = "https://standards.digital.health.nz/ns/nhi-id"
-* identifier.value = "ZJM9397"
-* name.given = "Mary"
-* name.family = "Jones"
-* patient = Reference(baby1)
-* relationship.coding.system = "http://terminology.hl7.org/CodeSystem/v3-RoleCode"
-* relationship.coding.code = #MTH
+* entry[1].resource.resourceType = "Patient"
+* entry[1].resource.id = "ZKC4633"
+* entry[1].resource.identifier.use = #official
+* entry[1].resource.identifier.system = "https://standards.digital.health.nz/ns/nhi-id"
+* entry[1].resource.identifier.value = "ZKC4633"
+* entry[1].resource.name[0].id = "10"
+* entry[1].resource.name[=].family = "Aufderhar"
+* entry[1].resource.name[=].given = "Baby of Jane"
+* entry[1].resource.gender = #female
+* entry[1].resource.birthDate = "2023-05-25"
+* entry[1].resource.extension[0].url = "http://hl7.org.nz/fhir/StructureDefinition/nz-ethnicity"
+* entry[1].resource.extension[=].valueCodeableConcept.coding.version = "2.0"
+* entry[1].resource.extension[=].valueCodeableConcept.coding = $ethnic-group-level-4-code#21111 "Māori"
+* entry[1].fullUrl = "Patient/ZKC4633"
 
 
+* entry[2].resource.resourceType = "Location" 
+* entry[2].resource.id = "FZZ958-K"
+* entry[2].resource.identifier[0].use = #official
+* entry[2].resource.identifier[=].system = "https://standards.digital.health.nz/ns/hpi-facility-id"
+* entry[2].resource.identifier[=].value = "FZZ958-K"
+
+* entry[2].resource.extension[+].url = "http://hl7.org.nz/fhir/StructureDefinition/messaging-address"
+* entry[2].resource.extension[=].extension[0].url = "provider"
+* entry[2].resource.extension[=].extension[=].valueString = "healthlink"
+* entry[2].resource.extension[=].extension[+].url = "value"
+* entry[2].resource.extension[=].extension[=].valueString = "livefacedi"
+
+* entry[2].resource.name = "AAAA Medical Facilty"
+* entry[2].fullUrl = "Facilty/FZZ958-K"
+
+* entry[3].resource.resourceType = "RelatedPerson"
+* entry[3].resource.id = "ZJM9397"
+* entry[3].resource.identifier.use = #official
+* entry[3].resource.identifier.system = "https://standards.digital.health.nz/ns/nhi-id"
+* entry[3].resource.identifier.value = "ZJM9397"
+* entry[3].resource.name.given = "Mary"
+* entry[3].resource.name.family = "Jones"
+* entry[3].resource.patient = Reference(Patient/ZKC4633)
+* entry[3].resource.relationship.coding.system = "http://terminology.hl7.org/CodeSystem/v3-RoleCode"
+* entry[3].resource.relationship.coding.code = #MTH
+
+* entry[3].fullUrl = "RelatedPerson/ZJM9397"

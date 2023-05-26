@@ -13,19 +13,19 @@ NES and NHI information is extracted on a monthly basis to calculate Capitation 
 
 The NES system was initially implemented in 2015, but it took over three years for GP PMS vendors to implement and release the required functionality to maintain NES enrolments to their customers.  In December 2018 NES started to be used as the data source for CSC funding to GPs and in April 2019 the cut-over to NES based CBF funding was completed.
 
-NES has been designed as an extensible solution capable of supporting multiple types of enrolments and entitlements.  Potential future candidates for leveraging the investment in NES include Dental Enrolments, Prescription Subsidy Cards, and Veteran Status entitlements.* synchronise data held locally with the NHI, and 
+NES has been designed as an extensible solution capable of supporting multiple types of enrolments and entitlements.  Potential future candidates for leveraging the investment in NES include Dental Enrolments, Prescription Subsidy Cards, and Veteran Status entitlements.
+
+
+#### Context
+
+To maximise the benefits of the NES all healthcare providers should;
+
+* locate and confirm the patient identity, 
+* synchronise data held locally with the NES, and 
 * update any new information provided
 
 each time a patient presents for healthcare. 
 
-
-
-=======
-### About the National enrolment Service (NES)
-
-The National Enrolment service holds key information relating to two services, Patient Enrolments and Patient Entitlements.
-
-The Enrolments service holds inormation enrolled General Practitioner 
 
 ### Patient Entitlements
 
@@ -39,6 +39,9 @@ The Community Services Card is administered by Work and Income on behalf of Heal
 
 
 ### Patient Enrolment
+
+#### Enrolment Nominations
+An enrolment nomination is an invitation to a health provider to enrol a patient for a health service.  This IG provides the specifcation for sending a FHIR message to request that a patient be enrolled with a GP for publicly funded health services
 
 
 ### Context
