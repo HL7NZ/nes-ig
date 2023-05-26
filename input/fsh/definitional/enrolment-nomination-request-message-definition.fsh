@@ -20,5 +20,6 @@ Description: "Defines the message used to request an enrolment"
 
 
 * eventCoding.system = "https://standards.digital.health.nz/ns/nes-event-type"
-* eventCoding.code = #ENROLMENT_NOMINATION
+* eventCoding.code = #FLS_ENROLMENT_NOMINATION
 
+* allowedResponse.message = "http://hl7.org.nz/fhir/MessageDefinition/EnrolmentNominationResponseMessageDefinition"

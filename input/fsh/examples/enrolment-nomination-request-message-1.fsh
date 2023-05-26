@@ -9,7 +9,7 @@ Usage: #example
 * type = #message
 * entry[0].resource.resourceType = "MessageHeader"
 * entry[0].resource.eventCoding.system = "https://standards.digital.health.nz/ns/nes-event-type"
-* entry[0].resource.eventCoding.code = #ENROLMENT_NOMINATION
+* entry[0].resource.eventCoding.code = #FLS_ENROLMENT_NOMINATION
 * entry[0].resource.focus[0] = Reference(Patient/ZKC4633)
 * entry[0].resource.focus[1] = Reference(Location/FZZ958-K)
 * entry[0].resource.focus[2] = Reference(RelatedPerson/ZJM9397)
