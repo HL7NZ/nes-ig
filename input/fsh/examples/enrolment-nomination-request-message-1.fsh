@@ -10,11 +10,10 @@ Usage: #example
 * entry[0].resource.resourceType = "MessageHeader"
 * entry[0].resource.eventCoding.system = "https://standards.digital.health.nz/ns/nes-event-type"
 * entry[0].resource.eventCoding.code = #ENROLMENT_NOMINATION
-
-* entry[0].resource.source.endpointUrl = "http://example.com"
 * entry[0].resource.focus[0] = Reference(Patient/ZKC4633)
 * entry[0].resource.focus[1] = Reference(Location/FZZ958-K)
 * entry[0].resource.focus[2] = Reference(RelatedPerson/ZJM9397)
+* entry[0].resource.source.endpoint =  "https://api.hip.digital.health.nz/fhir/nes/v1"
 * entry[0].fullUrl = "12345"
 
 
