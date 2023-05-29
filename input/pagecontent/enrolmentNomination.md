@@ -19,9 +19,6 @@ At a later time , after the health provider has processed the request, they send
 
 ### Enrolment Nomination Response
 
-<div>
-{% include enrolment-nomination-response.svg %}
-</div>
 
 
 
