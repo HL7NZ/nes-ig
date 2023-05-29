@@ -6,8 +6,9 @@ The request includes details of the patient, the provider,  and in some cases th
 At a later time , after the health provider has processed the request, they send a response back to the nominated endpoint indicating if the enrolment request has been accepted or declined.
 
 ### Enrolment Nomination Request
+
 <div>
-{% enrolment-nomination-request.svg %}
+{% include enrolment-nomination-request.svg %}
 </div>
 
 
@@ -20,8 +21,9 @@ At a later time , after the health provider has processed the request, they send
 
 
 ### Enrolment Nomination Response
+
 <div>
-{% enrolment-nomination-response.svg %}
+{% include enrolment-nomination-response.svg %}
 </div>
 
 
