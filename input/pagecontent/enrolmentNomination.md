@@ -7,13 +7,10 @@ At a later time , after the health provider has processed the request, they send
 
 ### Enrolment Nomination Request
 
-**Expectations**
-* Prior to adding a new identity record to the NHI an authorised user must complete a thorough [search of the NHI](/matchPatient.html) to ensure the patient does not already exist.
-* Duplicate NHI records will not be checked upfront, but will create a task for a potential duplicate to be resolved.
-* If the Patient is found in the NHI, then an _update operation_ is required. If not found then a new identitiy record may be added, see below.
+
 
 <div>
-{% include add-patient.svg %}
+{% include enrolment-nomination-request.svg %}
 </div>
 
 
@@ -28,6 +25,9 @@ At a later time , after the health provider has processed the request, they send
 ### Enrolment Nomination Response
 
 
+<div>
+{% include enrolment-nomination-response.svg %}
+</div>
 
 
 ####  Enrolment Nomination Request processing steps:
