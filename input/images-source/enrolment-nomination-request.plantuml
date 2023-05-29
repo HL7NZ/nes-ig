@@ -14,8 +14,8 @@ activate B
 |||
 B -> B: Transform to HL7 v2[]
 |||
-B -[dashed]-> A: 200 Response 
 B -> C: ADT^28 request
+B -[dashed]-> A: 200 Response 
 activate C
 |||
 deactivate C
