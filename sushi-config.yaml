@@ -55,8 +55,8 @@ menu:
     Glossary: glossary.html
   API: capabilityStatement.html
   Profiles: profiles.html
-  Extensions: extensions.html
-  Identifiers: namingSystems.html
+  #Extensions: extensions.html
+  #Identifiers: namingSystems.html
   Terminology: terminology.html
   Table of Contents: toc.html
   Artifact Index: artifacts.html
