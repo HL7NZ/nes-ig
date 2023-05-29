@@ -9,14 +9,13 @@ participant "<FHIR API> Messaging Hub" as B #CornflowerBlue
 participant "PMS" as C #CornflowerBlue
 |||
 
-A -> B: POST [base]/$process-message
+C-> B: ADT^28 ACK response
 activate B
 |||
-B -> B: Transform to HL7 v2[]
+B -> B: Transform HL7 v2 to FHIR
 |||
-B -[dashed]-> A: 200 Response 
-B -> C: ADT^28 request
-activate C
+B -> A:  POST [base]/$process-message
+activate A
 |||
 
 
