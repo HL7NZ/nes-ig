@@ -1,0 +1,32 @@
+@startuml
+skinparam sequenceArrowThickness 2
+skinparam roundcorner 5
+skinparam maxmessagesize 180
+skinparam sequenceParticipant bold
+title $add-name
+actor "NES " as Client #CornflowerBlue
+participant "Integrating application" as A #CornflowerBlue
+participant "<FHIR API> Messaging Hub" as B #CornflowerBlue
+participant "PMS" as C #CornflowerBlue
+|||
+Client -> A: Sends Enrolment Nomination Request Message 
+activate A
+|||
+A -> B: POST [base]/$process-message
+activate B
+|||
+B -> B: Trabnsform to HL7 v2[]
+|||
+B -> C: ADT^28 request
+activate C
+|||
+C -[dashed]-> B
+deactivate C
+|||
+B -[dashed]-> A: Return updated Patient record
+deactivate B
+|||
+A -> User: Display updated patient details to user
+deactivate A
+|||
+@enduml
