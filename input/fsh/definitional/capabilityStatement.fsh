@@ -20,6 +20,10 @@ Usage: #definition
 * description = "Enrolment nomination request and response messages"
 * rest.mode = #server
 
+* rest.resource.type = #Coverage
+* rest.resource.profile = "http://hl7.org.nz/fhir/StructureDefinition/NzCoverage"
+* rest.resource.interaction.code = #read
+* rest.resource.interaction.documentation = "Used to retrieve a Patient's entitlements"
 
 * rest.operation[0].name = "process-message"
 * rest.operation[0].definition = "http://hl7.org/fhir/OperationDefinition/MessageHeader-process-message"
