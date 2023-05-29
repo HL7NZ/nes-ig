@@ -2,6 +2,7 @@
 CodeSystem: Enrolment_nomination_result_1_0
 Id: enrolment-nomination-result-1.0
 Title: "Enrolment Nomination Result Code"
+Description: "Enrolment Nomination Result Code."
 * ^meta.profile = "http://hl7.org/fhir/StructureDefinition/shareablecodesystem"
 * ^url = "https://standards.digital.health.nz/ns/enrolment-nomination-result"
 * ^version = "1.0"
@@ -21,7 +22,7 @@ Title: "Enrolment Nomination Result Code"
 ValueSet : Enrolment_nomination_result
 Id: enrolment-nomination-result-1.0
 Title: "Enrolment Nomination Result Code"
-
+Description: "Enrolment Nomination Result Code."
 * ^url = "https://nzhts.digital.health.nz/fhir/ValueSet/enrolment-nomination-result"
 * ^version = "1.0"
 * codes from system https://standards.digital.health.nz/ns/enrolment-nomination-result
