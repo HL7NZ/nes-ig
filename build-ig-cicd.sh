@@ -44,7 +44,7 @@ common_version=$(yq '.dependencies."hl7.org.nz.fhir.ig.hip-core".version' ./sush
 
 sudo mkdir ~/.fhir/packages/hl7.org.nz.fhir.ig.hip-core#$common_version
 ls -l ./hfc_package/hip-fhir-common*/package/package.tgz
-tar zxvf  ./hfc_package/hip-fhir-common-$common_version/package/package.tgz -C  ~/.fhir/packages/hl7.org.nz.fhir.ig.hip-core#$common_version
+tar zxvf  ./hfc_package/hip-fhir-common-1.2.0/package/package.tgz -C  ~/.fhir/packages/hl7.org.nz.fhir.ig.hip-core#$common_version
 ##fix the package url:
 jq --arg url $common_url '.url |= $url' ~/.fhir/packages/hl7.org.nz.fhir.ig.hip-core#$common_version/package/package.json > temp2.json
 mv temp2.json  ~/.fhir/packages/hl7.org.nz.fhir.ig.hip-core#$common_version/package/package.json
