@@ -17,5 +17,6 @@ B -> B: Transform HL7 v2 to FHIR
 B -> A:  POST [base]/$process-message
 activate A
 |||
-
+A -[dashed]-> B: 200 Response 
+|||
 

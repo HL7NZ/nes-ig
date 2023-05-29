@@ -1,11 +1,11 @@
 
+## Enrolment Nomination  Overview
 
-### Enrolment Nomination  Overview
+An ‘Enrolment Nomination ’ interaction is initiated by a user who wishes to request that a health provider enrol a patient for a health service.
+The request includes details of the patient, the provider,  and in some cases the Patient's next-of-kin.
+At a later time , after the health provider has processed the request, they send a response back to the nominated endpoint indicating if the enrolment request has been accepted or declined.
 
-An ‘Enrolment Nomination ’ interaction is initiated by a user wished to request that a health provider enrol a patient for a health servcie<br />
-The request includes detaisl of the patient, the provider and in some cases the Patein'ts next of kin 
-At a later time , after the health provider has processed the request, they send a response back tot the nominate dendpoint indicating the enrolment request has been accepted or declined
-
+### Enrolment Nomination Request
 <div>
 {% enrolment-nomination-request.svg %}
 </div>
@@ -14,10 +14,19 @@ At a later time , after the health provider has processed the request, they send
 
 ####  Enrolment Nomination Request processing steps:
 
-1. The user initiates creating a new Patient in the integrating application
-2. The integrating application sends an HTTP POST request (a FHIR create) containing the Patient details E.g. Post\<Endpoint>/Patient
-3. The request is validated - ALT: Validation failure. OperationOutcome resource returned
-4. A Patient record is created and a Patient ID (nhi-id) is issued
-5. The NHPI FHIR API confirms a successful update – HTTP 201 Created status code
-6. The integrating application indicates to the user the create has been successful
-7. The integrating application retains the nhi-id and version number for future requests relating to this record
+1. NES  creates a bundle containing Patient, RelatedPerson, and Location resources and posts it to the  Messaging Hub's $process-message endpoint. (EventType=FLS_ENROLMENT_NOMINATION)
+2. The Messaging Hub transforms the message to an HL7v2.0  ADT^28 request and sends it to the PMS
+3. The Messaging Hub returns a synchronous 200 response to NES
+
+
+### Enrolment Nomination Response
+<div>
+{% enrolment-nomination-response.svg %}
+</div>
+
+
+
+####  Enrolment Nomination Request processing steps:
+1. The PMS sends an HL7v2.0  ADT^28 ACK message to the Messaging Hub indicating if the enrolment nomination request has been accepted or not
+2. The Messaging Hub creates a bundle containing an OperationOutcome with an appropriate Enrolment_nomination_result code and sends it to the NES $process-message endpoint.
+3. NES returns a synchronous 200 response to the Messaging Hub.

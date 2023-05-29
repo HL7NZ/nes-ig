@@ -35,6 +35,7 @@ arFiles.forEach(function(fileName) {
 			encoding : 'utf8'
 		}));
 		let key = CS.url+':'+CS.version
+		console.log("codesystem:")
 		console.log(key)
 		hashCSDetails[key] = {
 			id : CS.id,
@@ -52,6 +53,8 @@ arFiles.forEach(function(fileName) {
 			encoding : 'utf8'
 		}));
 		let key = VS.url+":"+VS.version
+		console.log("valueset:")
+		console.log(key)
 		hashVSDetails[key] = {
 			id : VS.id,
 			description : VS.description,
@@ -87,10 +90,12 @@ arVSHtml.push("This page provides a list of the FHIR terminology artifacts defin
 arVSHtml.push("<h3>Code Systems</h3>");
 arVSHtml.push("<table class='table table-bordered table-condensed'>");
 arVSHtml.push("<tr><th>Title</th><th>Description</th><th>Canonical url</th></tr>")
-
+console.log('sorting');
 let hashCSDetailsSorted = sortObjectByKeys(hashCSDetails)
+console.log('sorted');
 Object.keys(hashCSDetailsSorted).forEach(function(key) {
-
+console.log('each');
+console.log(key);
 	let details = hashCSDetails[key]
 
 	if (details) {
