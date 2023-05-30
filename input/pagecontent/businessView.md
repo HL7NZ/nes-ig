@@ -6,8 +6,9 @@
 The National Enrolment Service (NES) is designed to provide a single source of truth for patient enrolments with Primary Health Organisations (PHOs).  It does this my maintaining a relationship between the patient identifier (NHI number) and the enrolling organisation (HPI Organisation ID).  Each enrolling organisation is associated with a PHO.
 
 #### Enrolments
-Web service APIs integrated into GP Patient Management Systems (PMS) enable practice staff to maintain patient identity and enrolment information in the National Health Index (NHI) and National Enrolment databases in real-time.  The workflow within each PMS varies according to each vendor’s implementation of the APIs.  Other services are provided to notify PMS systems of significant changes (e.g. enrolment expiries, enrolment transfers, NHI links and unlinks) and to allow GPs to update details relating to the primary care experience survey (opt out flag, patient mobile number, patient email address).
-In addition, Enrolment Nomination request messages may be sent to a PMS asking them to create an enrolment for a patient.
+Web service APIs integrated into GP Patient Management Systems (PMS) enable practice staff to maintain patient identity and enrolment information in the National Health Index (NHI) and National Enrolment databases in real-time.  The workflow within each PMS varies according to each vendor’s implementation of the APIs.  Other services are provided to notify PMS systems of significant changes (e.g. enrolment expiries, enrolment transfers, NHI links and unlinks) and to allow GPs to update details relating to the primary care experience survey (opt out flag, patient mobile number, patient email address). Currently only SOAP APIs exist for the purpose of maintaining enrolments, in the future we expect equivalent FHIR API s to be available; they will be described in this IG
+
+The GP a patient  is enrolled with  is described in [Patients enrolled General Practice](https://nhi-ig.hip-uat.digital.health.nz/StructureDefinition-NhiPatient.html)
 
 #### Entitlements
 The NES system also has the capability to store and disseminate details relating to a patient’s health entitlements.  At the current time two such entitlements are recorded in NES – the High User Health Card (HUHC) and the Community Services Card (CSC).
