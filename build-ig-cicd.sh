@@ -65,6 +65,18 @@ mv temp2.json  ~/.fhir/packages/hl7.org.nz.fhir.ig.nhi#$nhi_version/package/pack
 
 cat ~/.fhir/packages/hl7.org.nz.fhir.ig.nhi#$nhi_version/package/package.json
 
+echo getting HPI dependencies...
+hpi_url=$(yq '.dependencies."hl7.org.nz.fhir.ig.hpi".uri' ./sushi-config.yaml)
+hpi_version=$(yq '.dependencies."hl7.org.nz.fhir.ig.hpi".version' ./sushi-config.yaml)
+
+sudo mkdir ~/.fhir/packages/hl7.org.nz.fhir.ig.hpi#$hpi_version
+ls -l ./hfc_package/hpi-*/package/package.tgz
+tar zxvf  ./hfc_package/hpi-*/package/package.tgz -C  ~/.fhir/packages/hl7.org.nz.fhir.ig.hpi#$hpi_version
+##fix the package url:
+jq --arg url $hpi_url '.url |= $url' ~/.fhir/packages/hl7.org.nz.fhir.ig.hpi#$hpi_version/package/package.json > temp2.json
+mv temp2.json  ~/.fhir/packages/hl7.org.nz.fhir.ig.hpi#$hpi_version/package/package.json
+
+cat ~/.fhir/packages/hl7.org.nz.fhir.ig.hpi#$hpi_version/package/package.json
 
 pwd
 ls ~/.fhir/packages/hl7.org.nz.fhir.ig.hip-core#dev
