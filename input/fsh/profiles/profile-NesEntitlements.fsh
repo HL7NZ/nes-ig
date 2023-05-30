@@ -7,13 +7,13 @@ Alias: $buildingName = http://hl7.org.nz/fhir/StructureDefinition/building-name
 Alias: $domicileCode = http://hl7.org.nz/fhir/StructureDefinition/domicile-code
 
 
-Profile:        NesEntilements
+Profile:        NesEntitlements
 
 Parent:         NzCoverage         
 
 Id:             NesEntilements
-Title:          "NES Entilements"
+Title:          "NES NesEntitlements"
 Description:    "Adds additional, NES specific extensions"
 
-* ^url = "http://hl7.org.nz/fhir/StructureDefinition/NesEntilements"
+* ^url = "http://hl7.org.nz/fhir/StructureDefinition/NesEntitlements"
 
