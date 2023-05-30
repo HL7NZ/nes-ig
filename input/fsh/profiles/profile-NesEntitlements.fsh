@@ -11,7 +11,7 @@ Profile:        NesEntitlements
 
 Parent:         NzCoverage         
 
-Id:             NesEntilements
+Id:             NesEntitlements
 Title:          "NES NesEntitlements"
 Description:    "Adds additional, NES specific extensions"
 

@@ -9,8 +9,8 @@
 <td><p>Defines response codes for the Enrolment Nomination Response message</p></td>
 </tr>
 <tr>
-<td><a href='StructureDefinition-NesEntilements.html'>NesEntilements</a></td>
-<td>"http://hl7.org.nz/fhir/StructureDefinition/NesEntilements"</td>
+<td><a href='StructureDefinition-NesEntilements.html'>NesEntitlements</a></td>
+<td>http://hl7.org.nz/fhir/StructureDefinition/NesEntitlements</td>
 <td><p>The Coverage  resource exposed by the NES to describe entitlements.</p></td>
 </tr>
 </table>
