@@ -4,12 +4,12 @@
 <table class='table table-bordered table-hover table-sm'>
 <tr><th>Id</th><th>Url</th><th>Description</th></tr>
 <tr>
-<td><a href='StructureDefinition-NhiAddress.html'>Enrolment Nomination Response</a></td>
+<td><a href='StructureDefinition-EnrolmentNominationResponse.html'>Enrolment Nomination Response</a></td>
 <td>http://hl7.org.nz/fhir/StructureDefinition/EnrolmentNominationResponse"</td>
 <td><p>Defines response codes for the Enrolment Nomination Response message</p></td>
 </tr>
 <tr>
-<td><a href='StructureDefinition-NhiPatient.html'>NesEntilements</a></td>
+<td><a href='StructureDefinition-NesEntilements.html'>NesEntilements</a></td>
 <td>"http://hl7.org.nz/fhir/StructureDefinition/NesEntilements"</td>
 <td><p>The Coverage  resource exposed by the NES to describe entitlements.</p></td>
 </tr>
