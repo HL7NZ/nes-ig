@@ -12,6 +12,7 @@ Description: "Defines the message used to request an enrolment"
 * focus[0].max = "1"
 
 * focus[1].code = #Location
+* focus[1].profile = "http://hl7.org.nz/fhir/StructureDefinition/HPILocation"
 * focus[1].min = 1
 * focus[1].max = "1"
 
@@ -20,6 +21,7 @@ Description: "Defines the message used to request an enrolment"
 * focus[2].max = "1"
 
 * focus[3].code = #Practitioner
+* focus[3].profile = "http://hl7.org.nz/fhir/StructureDefinition/HPIPractitioner"
 * focus[3].min = 0
 * focus[3].max = "1"
 
