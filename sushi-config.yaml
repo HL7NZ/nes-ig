@@ -51,7 +51,6 @@ menu:
   IG Home: index.html
   Business View: businessView.html
   Use cases:
-    Guidance: guidance.html
     Enrolment Nomination: enrolmentNomination.html
   Important information:
     Onboarding and Compliance testing: OnboardingAndComplianceTesting.html
@@ -60,6 +59,9 @@ menu:
     Glossary: glossary.html
   API: capabilityStatement.html
   Profiles: profiles.html
+  Message Definitions:
+    Enrolment Nomination Request: MessageDefinition-EnrolmentNominationRequestMessageDefinition.html
+    Enrolment Nomination Response: MessageDefinition-EnrolmentNominationResponseMessageDefinition.html
   #Extensions: extensions.html
   #Identifiers: namingSystems.html
   Terminology: terminology.html
@@ -70,4 +72,6 @@ menu:
     Download IG: full-ig.zip
     Artifacts (Json): definitions.json.zip
     Artifacts (Xml): definitions.xml.zip
+    
+
     
