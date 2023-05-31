@@ -21,7 +21,7 @@ At a later time , after the health provider has processed the request, they send
 2. The Messaging Hub transforms the message to an HL7v2.0  ADT^28 request and sends it to the PMS
 3. The Messaging Hub returns a synchronous 200 response to NES
 
-####  Enrolment Nomination Example
+####  Enrolment Nomination Request Example
 [enrolment-nomination-request-message-1](Bundle-12345.json.html)
 
 ### Enrolment Nomination Response
@@ -36,3 +36,6 @@ At a later time , after the health provider has processed the request, they send
 1. The PMS sends an HL7v2.0  ADT^28 ACK message to the Messaging Hub indicating if the enrolment nomination request has been accepted or not
 2. The Messaging Hub creates a bundle containing an OperationOutcome with an appropriate Enrolment Nomination Result Code and sends it to the NES $process-message endpoint.
 3. NES returns a synchronous 200 response to the Messaging Hub.
+
+####  Enrolment Nomination Response Example
+[enrolment-nomination-response-message-1](Bundle-34567.json.html)
