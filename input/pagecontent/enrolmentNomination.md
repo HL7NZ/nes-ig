@@ -1,8 +1,8 @@
 
-### Enrolment Nomination  Overview
+## Enrolment Nomination  Overview
 
 An ‘Enrolment Nomination ’ interaction is initiated by a user who wishes to request that a health provider enrol a patient for a health service.
-The request includes details of the patient, the provider, the facility, and in some cases the Patient's next-of-kin.
+The request includes details of the patient, the provider,  and in some cases the Patient's next-of-kin.
 At a later time , after the health provider has processed the request, they send a response back to the nominated endpoint indicating if the enrolment request has been accepted or declined.
 
 ### Enrolment Nomination Request
@@ -17,21 +17,18 @@ At a later time , after the health provider has processed the request, they send
 
 ####  Enrolment Nomination Request processing steps:
 
-1. NES  creates a bundle containing Patient, RelatedPerson, Location and Practitioner resources and posts it to the  Messaging Hub's $process-message endpoint. (EventType=FLS_ENROLMENT_NOMINATION)
+1. NES  creates a bundle containing Patient, RelatedPerson, and Location resources and posts it to the  Messaging Hub's $process-message endpoint. (EventType=FLS_ENROLMENT_NOMINATION)
 2. The Messaging Hub transforms the message to an HL7v2.0  ADT^28 request and sends it to the PMS
 3. The Messaging Hub returns a synchronous 200 response to NES
 
-#### Enrolment Nomination Request Example
-
-<div>
-{% include enrolment-nomination-request.svg %}
-</div>
+####  Enrolment Nomination Example
+[enrolment-nomination-request-message-1](Bundle-12345.json.html)
 
 ### Enrolment Nomination Response
 
 
 <div>
-{% include Bundle-12345.json.html %}
+{% include enrolment-nomination-response.svg %}
 </div>
 
 

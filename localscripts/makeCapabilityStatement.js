@@ -19,7 +19,7 @@ var md = new Remarkable();
 
 let rootPath = "./fsh-generated/resources/";
 
-let outFile1 = "./input/pagecontent/capabilityStatement.xml";  // for IG publisher
+let outFile1 = "./input/pagecontent/api.xml";  // for IG publisher
 
 console.log('Building summary of the CapabilityStatement resource ')
 
