@@ -30,6 +30,10 @@ Usage: #example
 * entry[1].resource.extension[0].url = "http://hl7.org.nz/fhir/StructureDefinition/nz-ethnicity"
 * entry[1].resource.extension[=].valueCodeableConcept.coding.version = "2.0"
 * entry[1].resource.extension[=].valueCodeableConcept.coding = $ethnic-group-level-4-code#21111 "Māori"
+* entry[1].resource.address.line = "23 Thule St"
+* entry[1].resource.address.city = "Waipu"
+* entry[1].resource.address.extension[0].url = "http://hl7.org.nz/fhir/StructureDefinition/suburb"
+* entry[1].resource.address.extension[0].valueString = "Waipu river"
 * entry[1].fullUrl = "Patient/ZKC4633"
 
 

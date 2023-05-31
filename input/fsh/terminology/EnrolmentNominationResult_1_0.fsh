@@ -17,6 +17,7 @@ Description: "Enrolment Nomination Result Code."
 * ^count = 2
 * #ACCEPTED "accepted"
 * #DECLINED "declined"
+* #ERROR "error"
 
 
 ValueSet : Enrolment_nomination_result
