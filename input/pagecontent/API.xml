@@ -8,16 +8,18 @@
 <h3>Coverage</h3>
 <strong>Interactions</strong>
 <table class='table table-bordered table-condensed'>
-<tr><th width='30%'>Code</th><th width='70%'>Documentation</th></tr>
+<tr><th width='30%'>Code</th><th width='70%'>Verb</th><th width='70%'>URL</th><th width='70%'>Documentation</th></tr>
 <tr>
 <td>read</td>
-<td><p>GET [base]/[Coverage]/[id] - Used to retrieve a Patient's entitlements.</p>
-</td>
+<td>GET;[base]/[Coverage]/[id]</td>
+<td>Used to retrieve a Patient's entitlements.</td>
+<td> </td>
 </tr>
 </table>
-<br/><div><h4>Server Level Interactions</h4></div><br/>
+<br/><div><h4>Server Level Interactions</h4></div>
 <table class='table table-bordered table-condensed'>
-<tr><th width='15%'>Name</th><th>Definitions</th></tr>
+<tr><th width='30%'>Name</th><th width='70%'>Definitions</th></tr>
+<strong>Operations</strong>
 <tr>
 <td><p>process-message</p>
 </td>
@@ -27,11 +29,20 @@
 <br></br>
 </tr>
 </table>
-<br/><div><h3>Messages</h3></div><br/>
+<br/><div><h3>Messages</h3></div>
 <table class='table table-bordered table-condensed'>
-<tr><th width='15%'>Name</th><th>Definitions</th></tr>
+<tr><th width='30%'>Name</th><th width='70%'>Definitions</th>
+<strong>Definitions</strong>
 <tr>
 <td><p>sender</p>
+</td>
+<br></br>
+<td><p>http://hl7.org.nz/fhir/MessageDefinition/EnrolmentNominationRequestMessageDefinition</p>
+</td>
+<br></br>
+</tr>
+<tr>
+<td><p>receiver</p>
 </td>
 <br></br>
 <td><p>http://hl7.org.nz/fhir/MessageDefinition/EnrolmentNominationRequestMessageDefinition</p>

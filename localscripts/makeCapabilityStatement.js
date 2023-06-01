@@ -70,14 +70,18 @@ if (fs.existsSync(rootPath)) {
                     if (res.interaction) {
                         ar.push("<strong>Interactions</strong>")
                         ar.push("<table class='table table-bordered table-condensed'>")
-                        ar.push("<tr><th width='30%'>Code</th><th width='70%'>Documentation</th></tr>")
+                        ar.push("<tr><th width='30%'>Code</th><th width='70%'>Verb</th><th width='70%'>URL</th><th width='70%'>Documentation</th></tr>")
                         res.interaction.forEach(function(int){
                             ar.push("<tr>")
                             ar.push(`<td>${int.code}</td>`)
-                            let documentation = cleanText(int.documentation) || hashInteraction[int.code]
-
-
-                            ar.push(`<td>${documentation}</td>`)
+                            //let documentation = cleanText(int.documentation) || hashInteraction[int.code]
+                            let documentation = int.documentation.split(',')
+                            let verb  = documentation[0] ?? " "
+                            let url = documentation[1] ?? " "
+                            let doc = documentation[2] ?? " "
+							ar.push(`<td>${verb}</td>`)
+							ar.push(`<td>${url}</td>`)
+                            ar.push(`<td>${doc}</td>`)
                             ar.push("</tr>")
     
                         })
@@ -184,7 +188,7 @@ if (fs.existsSync(rootPath)) {
             
 			ar.push('<br/><div><h3>' + "Messages" + "</h3></div>")
 			ar.push("<table class='table table-bordered table-condensed'>")
-			ar.push("<tr><th width='30%'>Name</th><th width='70%'>Definitions</th>")
+			ar.push("<tr><th width='30%'>Name</th><th width='70%'>Definitions</th></tr>")
 			capStmt.messaging.forEach(function(messaging){
 				ar.push("<strong>Definitions</strong>")
 				messaging.supportedMessage.forEach(function(mes){
