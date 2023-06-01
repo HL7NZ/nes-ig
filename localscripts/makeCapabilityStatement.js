@@ -52,8 +52,8 @@ if (fs.existsSync(rootPath)) {
             if (capStmt.description) {
                 ar.push('<br/><div>' + cleanText(capStmt.description) + "</div><br/>") 
             }
-            ar.push('<br/><div><h2>' + "REST APIs" + "</div><br/></h2>")
-			ar.push('<br/><div><h3>' + "Instance Level Interactions" + "</div><br/></h3>") 
+            ar.push('<br/><div><h2>' + "REST APIs" + "</h2></div><br/>")
+			ar.push('<br/><div><h3>' + "Instance Level Interactions" + "</h3></div><br/>") 
             capStmt.rest.forEach(function(rest){
                 rest.resource.forEach(function(res){
 
@@ -159,7 +159,7 @@ if (fs.existsSync(rootPath)) {
 
             })
 
-			ar.push('<br/><div><h3>' + "Server Level Interactions" + "</div><br/></h3>") 
+			ar.push('<br/><div><h3>' + "Server Level Interactions" + "</h3></div><br/>") 
 			 ar.push("<tr><th width='15%'>Name</th><th>Definitions</th></tr>")
                       
 			capStmt.rest.forEach(function(rest){

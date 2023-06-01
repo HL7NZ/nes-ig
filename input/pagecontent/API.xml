@@ -3,8 +3,8 @@
 <br/><div>API summary (generated from the capabilityStatement resource)</div><br/><br/>
 <br/><div><p>NES FHIR Capabilities</p>
 </div><br/>
-<br/><div><h2>REST APIs</div><br/></h2>
-<br/><div><h3>Instance Level Interactions</div><br/></h3>
+<br/><div><h2>REST APIs</h2></div><br/>
+<br/><div><h3>Instance Level Interactions</h3></div><br/>
 <a name="Coverage"> </a>
 <h3>Coverage</h3>
 <strong>Interactions</strong>
@@ -16,7 +16,7 @@
 </td>
 </tr>
 </table>
-<br/><div><h3>Server Level Interactions</div><br/></h3>
+<br/><div><h3>Server Level Interactions</h3></div><br/>
 <tr><th width='15%'>Name</th><th>Definitions</th></tr>
 <tr>
 <div><p>process-message</p>
