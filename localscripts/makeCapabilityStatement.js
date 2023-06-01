@@ -53,7 +53,7 @@ if (fs.existsSync(rootPath)) {
             }
             
             ar.push('<br/><div><h3>' + "REST APIs" + "</h3></div><br/>")
-			ar.push('<br/><div><h4>' + "Instance Level Interactions" + "</h4></div><br/>") 
+			ar.push('<br/><div><h4>' + "Resource Level Interactions" + "</h4></div><br/>") 
             capStmt.rest.forEach(function(rest){
                 rest.resource.forEach(function(res){
 
@@ -70,7 +70,7 @@ if (fs.existsSync(rootPath)) {
                     if (res.interaction) {
                         ar.push("<strong>Interactions</strong>")
                         ar.push("<table class='table table-bordered table-condensed'>")
-                        ar.push("<tr><th width='30%'>Code</th><th width='70%'>Verb</th><th width='70%'>URL</th><th width='70%'>Documentation</th></tr>")
+                        ar.push("<tr><th width='20%'>Code</th><th width='10%'>Verb</th><th width='20%'>URL</th><th width='50%'>Documentation</th></tr>")
                         res.interaction.forEach(function(int){
                             ar.push("<tr>")
                             ar.push(`<td>${int.code}</td>`)
@@ -185,21 +185,21 @@ if (fs.existsSync(rootPath)) {
 			})
 			ar.push("</table>")
 
-            
+            ar.push("<strong>Definitions</strong>")
 			ar.push('<br/><div><h3>' + "Messages" + "</h3></div>")
 			ar.push("<table class='table table-bordered table-condensed'>")
 			ar.push("<tr><th width='30%'>Name</th><th width='70%'>Definitions</th></tr>")
 			capStmt.messaging.forEach(function(messaging){
-				ar.push("<strong>Definitions</strong>")
+				
 				messaging.supportedMessage.forEach(function(mes){
 				 		
                         let mode = cleanText(mes.mode) || "" 
                         ar.push("<tr>")                       
                         ar.push(`<td>${mode}</td>`)
-                        ar.push("<br></br>")
+                        //ar.push("<br></br>")
                         let def = cleanText(mes.definition) || ""                        
-                        ar.push(`<td>${def}</td>`)
-                        ar.push("<br></br>")
+                        ar.push(`<td>${def}</td>`)//
+                        //ar.push("<br></br>")
                         ar.push("</tr>")
                     
 				})

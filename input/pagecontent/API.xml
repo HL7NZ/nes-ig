@@ -3,12 +3,12 @@
 <br/><div><p>NES FHIR Capabilities</p>
 </div><br/>
 <br/><div><h3>REST APIs</h3></div><br/>
-<br/><div><h4>Instance Level Interactions</h4></div><br/>
+<br/><div><h4>Resource Level Interactions</h4></div><br/>
 <a name="Coverage"> </a>
 <h3>Coverage</h3>
 <strong>Interactions</strong>
 <table class='table table-bordered table-condensed'>
-<tr><th width='30%'>Code</th><th width='70%'>Verb</th><th width='70%'>URL</th><th width='70%'>Documentation</th></tr>
+<tr><th width='20%'>Code</th><th width='10%'>Verb</th><th width='20%'>URL</th><th width='50%'>Documentation</th></tr>
 <tr>
 <td>read</td>
 <td>GET;[base]/[Coverage]/[id]</td>
@@ -29,25 +29,21 @@
 <br></br>
 </tr>
 </table>
+<strong>Definitions</strong>
 <br/><div><h3>Messages</h3></div>
 <table class='table table-bordered table-condensed'>
-<tr><th width='30%'>Name</th><th width='70%'>Definitions</th>
-<strong>Definitions</strong>
+<tr><th width='30%'>Name</th><th width='70%'>Definitions</th></tr>
 <tr>
 <td><p>sender</p>
 </td>
-<br></br>
 <td><p>http://hl7.org.nz/fhir/MessageDefinition/EnrolmentNominationRequestMessageDefinition</p>
 </td>
-<br></br>
 </tr>
 <tr>
 <td><p>receiver</p>
 </td>
-<br></br>
 <td><p>http://hl7.org.nz/fhir/MessageDefinition/EnrolmentNominationRequestMessageDefinition</p>
 </td>
-<br></br>
 </tr>
 </table>
 </div>
