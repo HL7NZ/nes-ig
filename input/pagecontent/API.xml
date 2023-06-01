@@ -3,9 +3,9 @@
 <br/><div><p>NES FHIR Capabilities</p>
 </div><br/>
 <br/><div><h3>REST APIs</h3></div><br/>
-<br/><div><h4>Resource Level Interactions</h4></div><br/>
+<br/><h4>Resource Level Interactions</h4>
 <a name="Coverage"> </a>
-<h3>Coverage</h3>
+<h5>Coverage</h5>
 <strong>Interactions</strong>
 <table class='table table-bordered table-condensed'>
 <tr><th width='20%'>Code</th><th width='10%'>Verb</th><th width='20%'>URL</th><th width='50%'>Documentation</th></tr>
@@ -16,21 +16,20 @@
 <td> </td>
 </tr>
 </table>
-<br/><div><h4>Server Level Interactions</h4></div>
+<br/><h4>Server Level Interactions</h4>
+<strong>Operations</strong>
 <table class='table table-bordered table-condensed'>
 <tr><th width='30%'>Name</th><th width='70%'>Definitions</th></tr>
-<strong>Operations</strong>
 <tr>
 <td><p>process-message</p>
 </td>
-<br></br>
 <td><p>http://hl7.org/fhir/OperationDefinition/MessageHeader-process-message</p>
 </td>
 <br></br>
 </tr>
 </table>
+<br/><h3>Messages</h3>
 <strong>Definitions</strong>
-<br/><div><h3>Messages</h3></div>
 <table class='table table-bordered table-condensed'>
 <tr><th width='30%'>Name</th><th width='70%'>Definitions</th></tr>
 <tr>

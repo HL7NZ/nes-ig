@@ -53,13 +53,13 @@ if (fs.existsSync(rootPath)) {
             }
             
             ar.push('<br/><div><h3>' + "REST APIs" + "</h3></div><br/>")
-			ar.push('<br/><div><h4>' + "Resource Level Interactions" + "</h4></div>") 
+			ar.push('<br/><h4>' + "Resource Level Interactions" + "</h4>") 
             capStmt.rest.forEach(function(rest){
                 rest.resource.forEach(function(res){
 
                     ar.push(`<a name="${res.type}"> </a>`)   
                     
-                    ar.push(`<h3>${res.type}</h3>`)   
+                    ar.push(`<h5>${res.type}</h5>`)   
 					
                     if (res.documentation) {
                         let documentation = cleanText(res.documentation) || ""                        
@@ -164,7 +164,7 @@ if (fs.existsSync(rootPath)) {
 
             })
 
-			ar.push('<br/><div><h4>' + "Server Level Interactions" + "</h4></div>") 
+			ar.push("<br/><h4>Server Level Interactions</h4>") 
 			ar.push("<strong>Operations</strong>")
 			ar.push("<table class='table table-bordered table-condensed'>")
 			ar.push("<tr><th width='30%'>Name</th><th width='70%'>Definitions</th></tr>")
@@ -187,7 +187,7 @@ if (fs.existsSync(rootPath)) {
 			ar.push("</table>")
 
             
-			ar.push('<br/><div><h3>' + "Messages" + "</h3></div>")
+			ar.push("<br/><h3>Messages</h3>")
 			ar.push("<strong>Definitions</strong>")
 			ar.push("<table class='table table-bordered table-condensed'>")
 			ar.push("<tr><th width='30%'>Name</th><th width='70%'>Definitions</th></tr>")
