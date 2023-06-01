@@ -168,10 +168,10 @@ if (fs.existsSync(rootPath)) {
 				 
                         let name = cleanText(ser.name) || "" 
                         ar.push("<tr>")                       
-                        ar.push(`<div>${name}</div>`)
+                        ar.push(`<td>${name}</td>`)
                         ar.push("<br></br>")
                         let def = cleanText(ser.definition) || ""                        
-                        ar.push(`<div>${def}</div>`)
+                        ar.push(`<td>${def}</td>`)
                         ar.push("<br></br>")
                         ar.push("</tr>")
                     
@@ -189,10 +189,10 @@ if (fs.existsSync(rootPath)) {
 				 
                         let mode = cleanText(mes.mode) || "" 
                         ar.push("<tr>")                       
-                        ar.push(`<div>${mode}</div>`)
+                        ar.push(`<td>${mode}</td>`)
                         ar.push("<br></br>")
                         let def = cleanText(mes.definition) || ""                        
-                        ar.push(`<div>${def}</div>`)
+                        ar.push(`<td>${def}</td>`)
                         ar.push("<br></br>")
                         ar.push("</tr>")
                     
