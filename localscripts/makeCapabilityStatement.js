@@ -107,7 +107,7 @@ if (fs.existsSync(rootPath)) {
                         ar.push("<table class='table table-bordered table-condensed'>")
 
                         //ar.push("<tr><th width='15%'>Name</th><th>Type</th> <th>Definition</th><th width='40%'>Documentation</th></tr>")
-                        ar.push("<tr><th width='15%'>Name</th><th>Type</th><th width='70%'>Documentation</th></tr>")
+                        ar.push("<tr><th width='30%'>Name</th><th>Type</th><th width='70%'>Documentation</th></tr>")
                        
                         res.searchParam.forEach(function(int){
                             ar.push("<tr>")
@@ -141,7 +141,7 @@ if (fs.existsSync(rootPath)) {
                     if (res.searchInclude) {
                         ar.push("<strong>Search includes</strong>")
                         ar.push("<table class='table table-bordered table-condensed'>")
-                        ar.push("<tr><th width='15%'>Name</th></tr>")
+                        ar.push("<tr><th width='30%'>Name</th></tr>")
                         res.searchInclude.forEach(function(inc){
                             ar.push("<tr>")
                             ar.push(`<td>${inc}</td>`)
@@ -159,11 +159,12 @@ if (fs.existsSync(rootPath)) {
 
             })
 
-			ar.push('<br/><div><h4>' + "Server Level Interactions" + "</h4></div><br/>") 
+			ar.push('<br/><div><h4>' + "Server Level Interactions" + "</h4></div>") 
 			ar.push("<table class='table table-bordered table-condensed'>")
-			ar.push("<tr><th width='15%'>Name</th><th>Definitions</th></tr>")
+			ar.push("<tr><th width='30%'>Name</th><th width='70%'>Definitions</th></tr>")
                       
 			capStmt.rest.forEach(function(rest){
+				ar.push("<strong>Operations</strong>")
 				rest.operation.forEach(function(ser){
 				 
                         let name = cleanText(ser.name) || "" 
@@ -181,12 +182,13 @@ if (fs.existsSync(rootPath)) {
 			ar.push("</table>")
 
             
-			ar.push('<br/><div><h3>' + "Messages" + "</h3></div><br/>")
+			ar.push('<br/><div><h3>' + "Messages" + "</h3></div>")
 			ar.push("<table class='table table-bordered table-condensed'>")
-			ar.push("<tr><th width='15%'>Name</th><th>Definitions</th></tr>")
+			ar.push("<tr><th width='30%'>Name</th><th width='70%'>Definitions</th>")
 			capStmt.messaging.forEach(function(messaging){
+				ar.push("<strong>Definitions</strong>")
 				messaging.supportedMessage.forEach(function(mes){
-				 
+				 		
                         let mode = cleanText(mes.mode) || "" 
                         ar.push("<tr>")                       
                         ar.push(`<td>${mode}</td>`)
