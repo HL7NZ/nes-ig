@@ -89,8 +89,9 @@ if (fs.existsSync(rootPath)) {
                     }
                     
                     if (res.operation) {
-                        ar.push("<strong>Operations</strong>")
+                        
                         ar.push("<table class='table table-bordered table-condensed'>")
+                        ar.push("<strong>Operations</strong>")
                         ar.push("<tr><th width='30%'>Name</th><th width='30%'>Definition</th><th width='40%'>Documentation</th></tr>")
                         res.operation.forEach(function(int){
                             ar.push("<tr>")
@@ -164,20 +165,20 @@ if (fs.existsSync(rootPath)) {
             })
 
 			ar.push('<br/><div><h4>' + "Server Level Interactions" + "</h4></div>") 
+			ar.push("<strong>Operations</strong>")
 			ar.push("<table class='table table-bordered table-condensed'>")
 			ar.push("<tr><th width='30%'>Name</th><th width='70%'>Definitions</th></tr>")
                       
-			capStmt.rest.forEach(function(rest){
-				ar.push("<strong>Operations</strong>")
+			capStmt.rest.forEach(function(rest){				
 				rest.operation.forEach(function(ser){
 				 
                         let name = cleanText(ser.name) || "" 
                         ar.push("<tr>")                       
                         ar.push(`<td>${name}</td>`)
-                        ar.push("<br></br>")
+                        //ar.push("<br></br>")
                         let def = cleanText(ser.definition) || ""                        
                         ar.push(`<td>${def}</td>`)
-                        ar.push("<br></br>")
+                        /ar.push("<br></br>")
                         ar.push("</tr>")
                     
 				})
@@ -185,8 +186,9 @@ if (fs.existsSync(rootPath)) {
 			})
 			ar.push("</table>")
 
-            ar.push("<strong>Definitions</strong>")
+            
 			ar.push('<br/><div><h3>' + "Messages" + "</h3></div>")
+			ar.push("<strong>Definitions</strong>")
 			ar.push("<table class='table table-bordered table-condensed'>")
 			ar.push("<tr><th width='30%'>Name</th><th width='70%'>Definitions</th></tr>")
 			capStmt.messaging.forEach(function(messaging){
