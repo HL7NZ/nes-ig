@@ -53,7 +53,7 @@ if (fs.existsSync(rootPath)) {
             }
             
             ar.push('<br/><div><h3>' + "REST APIs" + "</h3></div><br/>")
-			ar.push('<br/><div><h4>' + "Resource Level Interactions" + "</h4></div><br/>") 
+			ar.push('<br/><div><h4>' + "Resource Level Interactions" + "</h4></div>") 
             capStmt.rest.forEach(function(rest){
                 rest.resource.forEach(function(res){
 
