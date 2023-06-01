@@ -17,13 +17,13 @@ Usage: #definition
 * contact.name = "Pat Ryan"
 * contact.telecom.system = #email
 * contact.telecom.value = "pat.ryan@health.govt.nz"
-* description = "Enrolment nomination request and response messages"
+* description = "NES FHIR Capabilities"
 * rest.mode = #server
 
 * rest.resource.type = #Coverage
 * rest.resource.profile = "http://hl7.org.nz/fhir/StructureDefinition/NzCoverage"
 * rest.resource.interaction.code = #read
-* rest.resource.interaction.documentation = "Used to retrieve a Patient's entitlements"
+* rest.resource.interaction.documentation = "GET [base]/[Coverage]/[id] - Used to retrieve a Patient's entitlements."
 
 * rest.operation[0].name = "process-message"
 * rest.operation[0].definition = "http://hl7.org/fhir/OperationDefinition/MessageHeader-process-message"

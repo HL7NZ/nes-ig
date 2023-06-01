@@ -52,7 +52,8 @@ if (fs.existsSync(rootPath)) {
             if (capStmt.description) {
                 ar.push('<br/><div>' + cleanText(capStmt.description) + "</div><br/>") 
             }
-
+            ar.push('<br/><div><h2>' + "REST APIs" + "</div><br/></h2>")
+			ar.push('<br/><div><h3>' + "Instance Level Interactions" + "</div><br/></h3>") 
             capStmt.rest.forEach(function(rest){
                 rest.resource.forEach(function(res){
 
@@ -158,9 +159,24 @@ if (fs.existsSync(rootPath)) {
 
             })
 
-
+			ar.push('<br/><div><h3>' + "Server Level Interactions" + "</div><br/></h3>") 
+			 ar.push("<tr><th width='15%'>Name</th><th>Definitions</th></tr>")
+                      
+			capStmt.rest.forEach(function(rest){
+				rest.operation.forEach(function(ser){
+				 
+                        let name = cleanText(ser.name) || "" 
+                        ar.push("<tr>")                       
+                        ar.push(`<div>${name}</div>`)
+                        ar.push("<br></br>")
+                        let def = cleanText(ser.definition) || ""                        
+                        ar.push(`<div>${def}</div>`)
+                        ar.push("<br></br>")
+                        ar.push("</tr>")
+                    
+				})
            
-
+			})
 
             
 
