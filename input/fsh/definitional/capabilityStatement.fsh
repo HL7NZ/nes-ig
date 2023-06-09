@@ -23,7 +23,7 @@ Usage: #definition
 * rest.resource.type = #Coverage
 * rest.resource.profile = "http://hl7.org.nz/fhir/StructureDefinition/NzCoverage"
 * rest.resource.interaction.code = #read
-//comma delimited fields in dcoumentation string extracted by makeCaapbilityStatement.js:   <verb,url,doc>
+//comma delimited fields in documentation string extracted by makeCaapbilityStatement.js:   <verb,url,doc>
 * rest.resource.interaction.documentation = "GET,[base]/[Coverage]/[id],Used to retrieve a Patient's entitlements."
 
 * rest.operation[0].name = "process-message"

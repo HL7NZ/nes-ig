@@ -18,7 +18,7 @@ Description: "Defines the message used to request an enrolment"
 
 * focus[2].code = #RelatedPerson
 * focus[2].min = 0
-* focus[2].max = "1"
+* focus[2].max = "2"
 
 * focus[3].code = #Practitioner
 * focus[3].profile = "http://hl7.org.nz/fhir/StructureDefinition/HPIPractitioner"
