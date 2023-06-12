@@ -2,6 +2,7 @@
 Instance: EnrolmentNominationResponseMessageDefinition
 InstanceOf: MessageDefinition
 Description: "Defines the message used to respond to a request for an enrolment"
+Usage: #definition
 
 * url = "http://hl7.org.nz/fhir/MessageDefinition/EnrolmentNominationResponseMessageDefinition"
 * status = #draft
