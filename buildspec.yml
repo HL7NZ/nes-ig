@@ -45,7 +45,7 @@ phases:
       - ls
       - echo getting dependencies
       #- mvn package -ntp
-      # unpackage denfancy conformance artifact zips
+      # unpackage dependancy conformance artifact zips
       - mvn validate
       - echo building IG
       - ls -l
