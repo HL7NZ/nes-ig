@@ -1,2 +1,13 @@
 /fsh-generated/
 /node_modules/
+/input-cache/
+/target/
+/temp/
+/template
+/node_modules/
+/site/
+/package/
+/validation_NhiPatient.html
+/package.tgz
+/output
+!/output/full-ig.zip
