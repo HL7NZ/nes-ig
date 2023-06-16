@@ -1,6 +1,4 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>nz.health.digital.nes.fhir</groupId>
 	<artifactId>hip-nes-conformance-module</artifactId>
@@ -10,11 +8,10 @@
 	<properties>
 		<revision>1.0.0-SNAPSHOT</revision>
 		<fhir-common.version>1.2.0</fhir-common.version>
-
+		<nhi-ig-version>1.4.0</nhi-ig-version>
 	</properties>
+
 	<dependencies>
-
-
 		<dependency>
 			<groupId>health.identity.fhir</groupId>
 			<artifactId>hip-fhir-common</artifactId>
@@ -22,7 +19,16 @@
 			<classifier>fhir-resources</classifier>
 			<type>zip</type>
 		</dependency>
+		
+		<dependency>
+			<groupId>nz.health.digital.nhi.fhir</groupId>
+			<artifactId>hip-nhi-conformance-module</artifactId>
+			<version>1.4.0</version>
+			<type>zip</type>
+		</dependency>
+		
 	</dependencies>
+	
 	<distributionManagement>
 		<repository>
 			<id>releases</id>
