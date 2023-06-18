@@ -19,16 +19,16 @@
 			<classifier>fhir-resources</classifier>
 			<type>zip</type>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>nz.health.digital.nhi.fhir</groupId>
 			<artifactId>hip-nhi-conformance-module</artifactId>
 			<version>1.4.0</version>
 			<type>zip</type>
 		</dependency>
-		
+
 	</dependencies>
-	
+
 	<distributionManagement>
 		<repository>
 			<id>releases</id>
@@ -50,7 +50,7 @@
 				<artifactId>maven-dependency-plugin</artifactId>
 				<executions>
 					<execution>
-						<id>unpack-hpicm</id>
+						<id>unpack-hfc</id>
 						<phase>
 							validate
 						</phase>
@@ -60,6 +60,25 @@
 						<configuration>
 							<includeGroupIds>health.identity.fhir</includeGroupIds>
 							<includeArtifactIds>hip-fhir-common</includeArtifactIds>
+							<outputDirectory>
+								${project.basedir}/hfc_package
+							</outputDirectory>
+							<includes>**/package/package.tgz</includes>
+
+						</configuration>
+
+					</execution>
+					<execution>
+						<id>unpack-nhicm</id>
+						<phase>
+							validate
+						</phase>
+						<goals>
+							<goal>unpack-dependencies</goal>
+						</goals>
+						<configuration>
+							<includeGroupIds>nz.health.digital.nhi.fhir</includeGroupIds>
+							<includeArtifactIds>hip-nhi-conformance-module</includeArtifactIds>
 							<outputDirectory>
 								${project.basedir}/hfc_package
 							</outputDirectory>
