@@ -7,7 +7,7 @@
 
 	<properties>
 		<revision>1.0.0-SNAPSHOT</revision>
-		<fhir-common.version>1.2.0</fhir-common.version>
+		<fhir-common.version>1.2.1</fhir-common.version>
 		<nhi-ig-version>1.4.0</nhi-ig-version>
 	</properties>
 
@@ -23,7 +23,7 @@
 		<dependency>
 			<groupId>nz.health.digital.nhi.fhir</groupId>
 			<artifactId>hip-nhi-conformance-module</artifactId>
-			<version>1.4.0</version>
+			<version>1.4.1</version>
 			<type>zip</type>
 		</dependency>
 
