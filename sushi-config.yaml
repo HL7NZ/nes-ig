@@ -31,7 +31,7 @@ dependencies:
     
   hl7.org.nz.fhir.ig.nhi:
    uri: 'https://nhi-ig.hip.digital.health.nz/site'   
-   version: 1.3.0
+   version: 1.4.2
    
   hl7.org.nz.fhir.ig.hpi:
    uri: 'https://hpi-ig.hip-uat.digital.health.nz'   

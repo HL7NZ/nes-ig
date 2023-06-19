@@ -1,3 +1,14 @@
+
+addPackage() {
+echo packagename $1 
+echo package version $2
+echo source $3
+ls  $3
+mkdir ~/.fhir/packages/$1#$2
+
+tar zxvf  $3 -C  ~/.fhir/packages/$1#$2
+}
+
 #!/bin/bash
 set -x #echo on
 # this script is intended to be run from code build, it should build the IG using the Hl7 IG Publisher
@@ -53,17 +64,14 @@ cat ~/.fhir/packages/hl7.org.nz.fhir.ig.hip-core#$common_version/package/package
 
 
 echo getting NHI dependencies...
-nhi_url=$(yq '.dependencies."hl7.org.nz.fhir.ig.nhi".uri' ./sushi-config.yaml)
-nhi_version=$(yq '.dependencies."hl7.org.nz.fhir.ig.nhi".version' ./sushi-config.yaml)
 
-sudo mkdir ~/.fhir/packages/hl7.org.nz.fhir.ig.nhi#$nhi_version
-ls -l ./hfc_package/nhi-patient*/package/package.tgz
-tar zxvf  ./hfc_package/nhi-patient*/package/package.tgz -C  ~/.fhir/packages/hl7.org.nz.fhir.ig.nhi#$nhi_version
-##fix the package url:
-jq --arg url $nhi_url '.url |= $url' ~/.fhir/packages/hl7.org.nz.fhir.ig.nhi#$nhi_version/package/package.json > temp2.json
-mv temp2.json  ~/.fhir/packages/hl7.org.nz.fhir.ig.nhi#$nhi_version/package/package.json
+nhi_package_name="hl7.org.nz.fhir.ig.nhi"
+nhi_version=1.4.2
+source=./hfc_package/hip-nhi-conformance-module-$nhi_version/output/package.tgz
+echo $nhi_version
+echo "calling add package with $nhi_package_name $nhi_version from $source"
+addPackage "$nhi_package_name" "$nhi_version" "$source"
 
-cat ~/.fhir/packages/hl7.org.nz.fhir.ig.nhi#$nhi_version/package/package.json
 
 echo getting HPI dependencies...
 hpi_url=$(yq '.dependencies."hl7.org.nz.fhir.ig.hpi".uri' ./sushi-config.yaml)
