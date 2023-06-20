@@ -11,3 +11,4 @@
 /package.tgz
 /output
 !/output/full-ig.zip
+/temp.sh
