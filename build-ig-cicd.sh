@@ -50,6 +50,10 @@ unzip  ./hl7-uv-package.zip -d ~/.fhir/packages/fhir/hl7.fhir.uv.tools#current/ 
 
 
 echo getting common dependencies...
+pwd
+ls -l ./hfc_package/
+ls  ./hfc_package/hip-fhir-common-1.2.0/
+ls  ./hfc_package/hip-fhir-common-1.2.0/package/
 common_name="hl7.org.nz.fhir.ig.hip-core"
 common_version=$(yq '.dependencies."hl7.org.nz.fhir.ig.hip-core".version' ./sushi-config.yaml)
 common_source="./hfc_package/hip-fhir-common-$common_version/package/package.tgz"
