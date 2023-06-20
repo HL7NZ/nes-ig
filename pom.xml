@@ -65,7 +65,7 @@
 							<outputDirectory>
 								${project.basedir}/hfc_package
 							</outputDirectory>
-							<includes>**/*.xml</includes>
+							<includes>**/*.xml, **/*.tgz</includes>
 
 						</configuration>
 
