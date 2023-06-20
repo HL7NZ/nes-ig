@@ -50,21 +50,13 @@ unzip  ./hl7-uv-package.zip -d ~/.fhir/packages/fhir/hl7.fhir.uv.tools#current/ 
 
 
 echo getting common dependencies...
-common_url=$(yq '.dependencies."hl7.org.nz.fhir.ig.hip-core".uri' ./sushi-config.yaml)
+common_name="hl7.org.nz.fhir.ig.hip-core"
 common_version=$(yq '.dependencies."hl7.org.nz.fhir.ig.hip-core".version' ./sushi-config.yaml)
-
-sudo mkdir ~/.fhir/packages/hl7.org.nz.fhir.ig.hip-core#$common_version
-ls -l ./hfc_package/hip-fhir-common*/package/package.tgz
-tar zxvf  ./hfc_package/hip-fhir-common-1.2.0/package/package.tgz -C  ~/.fhir/packages/hl7.org.nz.fhir.ig.hip-core#$common_version
-##fix the package url:
-jq --arg url $common_url '.url |= $url' ~/.fhir/packages/hl7.org.nz.fhir.ig.hip-core#$common_version/package/package.json > temp2.json
-mv temp2.json  ~/.fhir/packages/hl7.org.nz.fhir.ig.hip-core#$common_version/package/package.json
-
-cat ~/.fhir/packages/hl7.org.nz.fhir.ig.hip-core#$common_version/package/package.json
+common_source="./hfc_package/hip-fhir-common-$common_version/package/package.tgz"
+addPackage "$common_name" "$common_version" "$common_source"
 
 
 echo getting NHI dependencies...
-
 nhi_package_name="hl7.org.nz.fhir.ig.nhi"
 nhi_version=1.4.2
 source=./hfc_package/hip-nhi-conformance-module-$nhi_version/output/package.tgz
