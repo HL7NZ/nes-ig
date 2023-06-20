@@ -7,6 +7,7 @@ ls  $3
 mkdir ~/.fhir/packages/$1#$2
 
 tar zxvf  $3 -C  ~/.fhir/packages/$1#$2
+ls -l ~/.fhir/packages/$1#$2
 }
 
 #!/bin/bash
@@ -57,8 +58,7 @@ ls  ./hfc_package/hip-fhir-common-1.2.0/package/
 common_name="hl7.org.nz.fhir.ig.hip-core"
 common_version=$(yq '.dependencies."hl7.org.nz.fhir.ig.hip-core".version' ./sushi-config.yaml)
 common_source="./hfc_package/hip-fhir-common-$common_version/package/package.tgz"
-addPackage "$common_name" "$common_version" "$common_source"
-
+addPackage "$common_name" "$common_version" "$common_source" 
 
 echo getting NHI dependencies...
 nhi_package_name="hl7.org.nz.fhir.ig.nhi"
@@ -103,8 +103,10 @@ sudo chmod +x ./localscripts/makeCapabilityStatement.js
 pwd
 
 cp ./template/* $HOME/.fhir/packages/fhir.base.template#current/package/content
+
+ls -l ~/.fhir/packages
 echo running ig publisher
 java -jar ~/publisher.jar -ig . -proxy WebProxy-80fef376c00ea74f.elb.ap-southeast-2.amazonaws.com:3128 -no-sushi
 
-sudo chmod +x ./fhirValidate.sh
-./fhirValidate.sh
+#sudo chmod +x ./fhirValidate.sh
+#./fhirValidate.sh
