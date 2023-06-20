@@ -1,15 +1,13 @@
-
 addPackage() {
 echo packagename $1 
 echo package version $2
 echo source $3
 ls  $3
 mkdir ~/.fhir/packages/$1#$2
+mkdir ~/.fhir/packages/$1#dev
 
 tar zxvf  $3 -C  ~/.fhir/packages/$1#$2
-
-echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-ls -l ~/.fhir/packages/$1#$2
+tar zxvf  $3 -C  ~/.fhir/packages/$1#dev
 }
 
 #!/bin/bash
