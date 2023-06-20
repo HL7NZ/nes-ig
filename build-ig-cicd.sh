@@ -7,6 +7,8 @@ ls  $3
 mkdir ~/.fhir/packages/$1#$2
 
 tar zxvf  $3 -C  ~/.fhir/packages/$1#$2
+
+echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
 ls -l ~/.fhir/packages/$1#$2
 }
 
