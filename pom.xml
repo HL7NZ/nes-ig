@@ -71,7 +71,7 @@
 							<includeGroupIds>health.identity.fhir</includeGroupIds>
 							<includeArtifactIds>hip-fhir-common</includeArtifactIds>
 							<outputDirectory>
-								${project.basedir}/hfc_package
+								${project.basedir}/fhir_packages
 							</outputDirectory>
 							<includes>**/*.xml, **/*.tgz</includes>
 
@@ -90,7 +90,7 @@
 							<includeGroupIds>nz.health.digital.nhi.fhir</includeGroupIds>
 							<includeArtifactIds>hip-nhi-conformance-module</includeArtifactIds>
 							<outputDirectory>
-								${project.basedir}/hfc_package
+								${project.basedir}/fhir_packages
 							</outputDirectory>
 							<includes>**/output/package.tgz</includes>
 
@@ -108,7 +108,7 @@
 							<includeGroupIds>nz.health.digital.hpi.fhir</includeGroupIds>
 							<includeArtifactIds>hip-hpi-conformance-module</includeArtifactIds>
 							<outputDirectory>
-								${project.basedir}/hfc_package
+								${project.basedir}/fhir_packages
 							</outputDirectory>
 							<includes>**/output/package.tgz</includes>
 
@@ -167,31 +167,7 @@
 				<version>2.5</version>
 			</plugin>
 
-			<plugin>
-				<artifactId>maven-resources-plugin</artifactId>
-				<version>3.0.2</version>
-				<executions>
-					<execution>
-						<id>nhi-cm</id>
-						<phase>generate-sources</phase>
-						<goals>
-							<goal>copy-resources</goal>
-						</goals>
-						<configuration>
-							<outputDirectory>${user.home}/.fhir/packages/hl7.org.nz.fhir.ig.nhi#${nhi-ig-version}/package</outputDirectory>
-							<resources>
-								<resource>
-									<directory>hfc_package/hip-nhi-conformance-module-${nhi-ig-version}</directory>
-									<includes>
-										<include>output/package.tgz</include>
-									</includes>
-
-								</resource>
-							</resources>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
+			
 
 		</plugins>
 	</build>
