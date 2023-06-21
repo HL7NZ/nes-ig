@@ -1,13 +1,19 @@
 addPackage() {
-echo packagename $1 
-echo package version $2
-echo source $3
+echo " adding apckage named $1 version $2 from source $3 using url $4"
 ls  $3
+
 mkdir ~/.fhir/packages/$1#$2
 mkdir ~/.fhir/packages/$1#dev
 
 tar zxvf  $3 -C  ~/.fhir/packages/$1#$2
-tar zxvf  $3 -C  ~/.fhir/packages/$1#dev
+##fix the package url:
+jq --arg url $4 '.url |= $url' ~/.fhir/packages/$1#$2/package/package.json > temp2.json
+mv temp2.json  ~/.fhir/packages/$1#$2/package/package.json
+cat ~/.fhir/packages/hl7.org.nz.fhir.ig.hip-core#$common_version/package/package.json
+
+#publisher seems to need the current verison as well
+cp -r ~/.fhir/packages/$1#$2  ~/.fhir/packages/$1#dev
+
 }
 
 #!/bin/bash
@@ -58,15 +64,15 @@ ls  ./hfc_package/hip-fhir-common-1.2.0/package/
 common_name="hl7.org.nz.fhir.ig.hip-core"
 common_version=$(yq '.dependencies."hl7.org.nz.fhir.ig.hip-core".version' ./sushi-config.yaml)
 common_source="./hfc_package/hip-fhir-common-$common_version/package/package.tgz"
-addPackage "$common_name" "$common_version" "$common_source" 
+common_url=$(yq '.dependencies."hl7.org.nz.fhir.ig.hip-core".uri' ./sushi-config.yaml)
+addPackage "$common_name" "$common_version" "$common_source, "$common_url" 
 
 echo getting NHI dependencies...
 nhi_package_name="hl7.org.nz.fhir.ig.nhi"
 nhi_version=$(yq '.dependencies."hl7.org.nz.fhir.ig.nhi".version' ./sushi-config.yaml)
 nhi_source=./hfc_package/hip-nhi-conformance-module-$nhi_version/output/package.tgz
-echo $nhi_version
-echo "calling add package with $nhi_package_name $nhi_version from $nhi_source"
-addPackage "$nhi_package_name" "$nhi_version" "$nhi_source"
+nhi_url=$(yq '.dependencies."hl7.org.nz.fhir.ig.nhi".uri' ./sushi-config.yaml)
+addPackage "$nhi_package_name" "$nhi_version" "$nhi_source" "$nhi_url"
 
 
 echo getting HPI dependencies...
@@ -74,9 +80,8 @@ hpi_package_name="hl7.org.nz.fhir.ig.hpi"
 hpi_url=$(yq '.dependencies."hl7.org.nz.fhir.ig.hpi".uri' ./sushi-config.yaml)
 hpi_version=$(yq '.dependencies."hl7.org.nz.fhir.ig.hpi".version' ./sushi-config.yaml)
 hpi_source=./hfc_package/hip-hpi-conformance-module-$hpi_version/output/package.tgz
-echo $hpi_version
-echo "calling add package with $hpi_package_name $hpi_version from $hpi_source"
-addPackage "$hpi_package_name" "$hpi_version" "$hpi_source"
+hpi_url=$(yq '.dependencies."hl7.org.nz.fhir.ig.hpi".uri' ./sushi-config.yaml)
+addPackage "$hpi_package_name" "$hpi_version" "$hpi_source" "$hpi_url"
 
 pwd
 ls ~/.fhir/packages/hl7.org.nz.fhir.ig.hip-core#dev
