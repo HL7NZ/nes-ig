@@ -13,7 +13,8 @@ cat ~/.fhir/packages/hl7.org.nz.fhir.ig.hip-core#$common_version/package/package
 
 #publisher seems to need the current verison as well
 cp -r ~/.fhir/packages/$1#$2  ~/.fhir/packages/$1#dev
-
+ls  ~/.fhir/packages/$1#dev/package/*
+ls /root/.fhir/packages/hl7.org.nz.fhir.ig.hip-core#dev/package/package.json
 }
 
 #!/bin/bash
