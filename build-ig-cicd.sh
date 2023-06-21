@@ -1,5 +1,5 @@
 addPackage() {
-echo " adding apckage named $1 version $2 from source $3 using url $4"
+echo " adding package named $1 version $2 from source $3 using url $4"
 ls  $3
 
 mkdir ~/.fhir/packages/$1#$2
@@ -11,9 +11,9 @@ jq --arg url $4 '.url |= $url' ~/.fhir/packages/$1#$2/package/package.json > tem
 mv temp2.json  ~/.fhir/packages/$1#$2/package/package.json
 cat ~/.fhir/packages/hl7.org.nz.fhir.ig.hip-core#$common_version/package/package.json
 
-#publisher seems to need the current verison as well
-cp -r ~/.fhir/packages/$1#$2  ~/.fhir/packages/$1#dev
-ls  ~/.fhir/packages/$1#dev/package/*
+#publisher seems to need the current version as well
+cp -R ~/.fhir/packages/$1#$2  ~/.fhir/packages/$1#dev
+ls  ~/.fhir/packages/$1#dev/package/
 ls /root/.fhir/packages/hl7.org.nz.fhir.ig.hip-core#dev/package/package.json
 }
 
