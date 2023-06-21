@@ -9,6 +9,7 @@
 		<revision>1.0.0-SNAPSHOT</revision>
 		<fhir-common.version>1.2.0</fhir-common.version>
 		<nhi-ig-version>1.4.2</nhi-ig-version>
+		<hpi-ig-version>1.2.0</hpi-ig-version>
 	</properties>
 
 	<dependencies>
@@ -26,6 +27,13 @@
 			<artifactId>hip-nhi-conformance-module</artifactId>
 			<version>${nhi-ig-version}</version>
 			<classifier>zip</classifier>
+			<type>zip</type>
+		</dependency>
+
+		<dependency>
+			<groupId>nz.health.digital.hpi.fhir</groupId>
+			<artifactId>hip-hpi-conformance-module</artifactId>
+			<version>${hpi-ig-version}</version>
 			<type>zip</type>
 		</dependency>
 
@@ -81,6 +89,24 @@
 						<configuration>
 							<includeGroupIds>nz.health.digital.nhi.fhir</includeGroupIds>
 							<includeArtifactIds>hip-nhi-conformance-module</includeArtifactIds>
+							<outputDirectory>
+								${project.basedir}/hfc_package
+							</outputDirectory>
+							<includes>**/output/package.tgz</includes>
+
+						</configuration>
+					</execution>
+					<execution>
+						<id>unpack-hpicm</id>
+						<phase>
+							validate
+						</phase>
+						<goals>
+							<goal>unpack-dependencies</goal>
+						</goals>
+						<configuration>
+							<includeGroupIds>nz.health.digital.hpi.fhir</includeGroupIds>
+							<includeArtifactIds>hip-hpi-conformance-module</includeArtifactIds>
 							<outputDirectory>
 								${project.basedir}/hfc_package
 							</outputDirectory>

@@ -62,25 +62,21 @@ addPackage "$common_name" "$common_version" "$common_source"
 
 echo getting NHI dependencies...
 nhi_package_name="hl7.org.nz.fhir.ig.nhi"
-nhi_version=1.4.2
-source=./hfc_package/hip-nhi-conformance-module-$nhi_version/output/package.tgz
+nhi_version=$(yq '.dependencies."hl7.org.nz.fhir.ig.nhi".version' ./sushi-config.yaml)
+nhi_source=./hfc_package/hip-nhi-conformance-module-$nhi_version/output/package.tgz
 echo $nhi_version
-echo "calling add package with $nhi_package_name $nhi_version from $source"
-addPackage "$nhi_package_name" "$nhi_version" "$source"
+echo "calling add package with $nhi_package_name $nhi_version from $nhi_source"
+addPackage "$nhi_package_name" "$nhi_version" "$nhi_source"
 
 
 echo getting HPI dependencies...
+hpi_package_name="hl7.org.nz.fhir.ig.hpi"
 hpi_url=$(yq '.dependencies."hl7.org.nz.fhir.ig.hpi".uri' ./sushi-config.yaml)
 hpi_version=$(yq '.dependencies."hl7.org.nz.fhir.ig.hpi".version' ./sushi-config.yaml)
-
-sudo mkdir ~/.fhir/packages/hl7.org.nz.fhir.ig.hpi#$hpi_version
-ls -l ./hfc_package/hpi-*/package/package.tgz
-tar zxvf  ./hfc_package/hpi-*/package/package.tgz -C  ~/.fhir/packages/hl7.org.nz.fhir.ig.hpi#$hpi_version
-##fix the package url:
-jq --arg url $hpi_url '.url |= $url' ~/.fhir/packages/hl7.org.nz.fhir.ig.hpi#$hpi_version/package/package.json > temp2.json
-mv temp2.json  ~/.fhir/packages/hl7.org.nz.fhir.ig.hpi#$hpi_version/package/package.json
-
-cat ~/.fhir/packages/hl7.org.nz.fhir.ig.hpi#$hpi_version/package/package.json
+hpi_source=./hfc_package/hip-hpi-conformance-module-$hpi_version/output/package.tgz
+echo $hpi_version
+echo "calling add package with $hpi_package_name $hpi_version from $hpi_source"
+addPackage "$hpi_package_name" "$hpi_version" "$hpi_source"
 
 pwd
 ls ~/.fhir/packages/hl7.org.nz.fhir.ig.hip-core#dev
