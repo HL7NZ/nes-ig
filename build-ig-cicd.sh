@@ -3,11 +3,11 @@ echo " adding package named $1 version $2 from source $3 using url $4"
 ls  $3
 
 mkdir ~/.fhir/packages/$1#$2
-mkdir ~/.fhir/packages/$1#dev
+mkdir ~/.fhir/packages/$1#current
 
 tar zxvf  $3 -C  ~/.fhir/packages/$1#$2
 #publisher seems to need the current version as well
-tar zxvf  $3 -C  ~/.fhir/packages/$1#dev
+tar zxvf  $3 -C  ~/.fhir/packages/$1#current
 ##fix the package url:
 jq --arg url $4 '.url |= $url' ~/.fhir/packages/$1#$2/package/package.json > temp2.json
 mv temp2.json  ~/.fhir/packages/$1#$2/package/package.json
