@@ -12,8 +12,6 @@ tar zxvf  $3 -C  ~/.fhir/packages/$1#current
 jq --arg url $4 '.url |= $url' ~/.fhir/packages/$1#$2/package/package.json > temp2.json
 mv temp2.json  ~/.fhir/packages/$1#$2/package/package.json
 cat ~/.fhir/packages/hl7.org.nz.fhir.ig.hip-core#$common_version/package/package.json
-
-
 }
 
 #!/bin/bash
@@ -25,25 +23,12 @@ echo cleaning up temp directory ...
 rm -r  ./temp
 
 echo getting nzbase dependencies...
+nzbase_name="fhir.org.nz.ig.base"
 nzbase_url=$(yq '.dependencies."fhir.org.nz.ig.base".uri' ./sushi-config.yaml)
 nzbase_version=$(yq '.dependencies."fhir.org.nz.ig.base".version' ./sushi-config.yaml)
+nzbase_source="./fhir_packages/nzbase-conformance-module-$nzbase_version/package.tgz"
+addPackage "$nzbase_name" "$nzbase_version" "$nzbase_source" "$nzbase_url"
 
-echo nzbase url =$nzbase_url
-echo nzbase version =$nzbase_version
-
-#cp nzbase into user's .fhir cache 
-sudo mkdir temp
-cd temp
-wget -e use_proxy=yes -e https_proxy=WebProxy-80fef376c00ea74f.elb.ap-southeast-2.amazonaws.com:3128  $nzbase_url"package.tgz"
-tar zxvf package.tgz
-##fix the package url:
-jq --arg url $nzbase_url '.url |= $url' ./package/package.json > temp.json
-mv temp.json ./package/package.json 
-
-##cp nz packages  into user's .fhir cache 
-sudo mkdir -p  ~/.fhir/packages/fhir.org.nz.ig.base#$nzbase_version/package
-sudo  cp -r ./package ~/.fhir/packages/fhir.org.nz.ig.base#$nzbase_version
-cd ..
 
 #cp hl7 packages into user's .fhir cache 
 aws s3 cp s3://nz-govt-moh-hip-build/codebuild-common/fhir/hl7.fhir.r4.core#4.0.1/package.zip ./hl7-package.zip
