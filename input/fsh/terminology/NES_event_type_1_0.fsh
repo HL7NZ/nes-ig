@@ -16,3 +16,4 @@ Description: "Identifies NES events."
 * ^content = #complete
 * ^count = 1
 * #FLS_ENROLMENT_NOMINATION "GP Enrolment Nomination"
+* #FLS_ENROLMENT_NOMINATION_ACK "GP Enrolment Nomination Acknowledgement"

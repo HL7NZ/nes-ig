@@ -14,5 +14,5 @@ Usage: #definition
 
 
 * eventCoding.system = "https://standards.digital.health.nz/ns/nes-event-type"
-* eventCoding.code = #FLS_ENROLMENT_NOMINATION
+* eventCoding.code = #FLS_ENROLMENT_NOMINATION_ACK
 
