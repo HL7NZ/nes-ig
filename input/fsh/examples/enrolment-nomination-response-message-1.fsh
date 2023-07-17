@@ -8,6 +8,9 @@ Usage: #example
 * id = "34567"
 * type = #message
 * entry[0].resource.resourceType = "MessageHeader"
+* entry[0].resource.source.name =  "HealthLink AIR Broker"
+* entry[0].resource.destination.name =  "NES"
+// * entry[0].resource.sender.identifier =  "HealthLink AIR Broker"
 * entry[0].resource.eventCoding.system = "https://standards.digital.health.nz/ns/nes-event-type"
 * entry[0].resource.eventCoding.code = #FLS_ENROLMENT_NOMINATION_ACK
 * entry[0].resource.focus[0] = Reference(OperationOutcome/success)
@@ -15,7 +18,7 @@ Usage: #example
 //the Bundle.id of the request message
 * entry[0].resource.response.identifier = "12345"
 
-* entry[0].resource.source.endpoint =  "https://healhlink.co.nz/airBroker"
+// * entry[0].resource.source.endpoint =  "https://healhlink.co.nz/airBroker"
 * entry[0].fullUrl = "34567"
 
 
