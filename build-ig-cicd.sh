@@ -1,3 +1,5 @@
+
+
 addPackage() {
 echo " adding package named $1 version $2 from source $3 using url $4"
 ls  $3
@@ -44,8 +46,7 @@ unzip  ./hl7-uv-package.zip -d ~/.fhir/packages/fhir/hl7.fhir.uv.tools#current/ 
 echo getting common dependencies...
 pwd
 ls -l ./fhir_packages/
-ls  ./fhir_packages/hip-fhir-common-1.2.0/
-ls  ./fhir_packages/hip-fhir-common-1.2.0/package/
+
 common_name="hl7.org.nz.fhir.ig.hip-core"
 common_version=$(yq '.dependencies."hl7.org.nz.fhir.ig.hip-core".version' ./sushi-config.yaml)
 common_source="./fhir_packages/hip-fhir-common-$common_version/package/package.tgz"
