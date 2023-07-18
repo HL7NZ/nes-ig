@@ -14,10 +14,22 @@ Usage: #example
 * entry[0].resource.focus[0] = Reference(Patient/ZKC4633)
 * entry[0].resource.focus[1] = Reference(Location/FZZ958-K)
 * entry[0].resource.focus[2] = Reference(RelatedPerson/ZJM9397)
-* entry[0].resource.source.name =  "NES"
-* entry[0].resource.sender.identifier.value =  "hnz22nes"
-* entry[0].resource.destination.name =  "HSAP11111"
+
+//NES or AIR HPI appid 
+* entry[0].resource.source.software =  "HSAP11111"
+ //EDI account of sending facility
+* entry[0].resource.source.endpoint =  "Mohedi"
+//Moh facility id
+* entry[0].resource.source.name =  "Mohfacid"
+
+// appid of HealthLink AIR Broker
+//EDI account of receiving facility 
 * entry[0].resource.destination.endpoint = "edi123"
+//The receiving facility’s Health Facility Code 
+* entry[0].resource.destination.name = "pmsfacid"
+
+
+//generated guuid?
 * entry[0].fullUrl = "12345"
 
 
