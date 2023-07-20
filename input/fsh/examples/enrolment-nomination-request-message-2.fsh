@@ -22,7 +22,7 @@ Usage: #example
 //Moh facility id
 * entry[0].resource.source.name =  "Mohfacid"
 
-// appid of HealthLink AIR Broker
+
 //EDI account of receiving facility 
 * entry[0].resource.destination.endpoint = "edi123"
 //The receiving facility’s Health Facility Code 

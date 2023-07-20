@@ -7,6 +7,7 @@ Usage: #example
 
 * id = "34567"
 * type = #message
+* meta.tag[0].code = http://terminology.hl7.org/CodeSystem/v3-ProcessingID#P
 * entry[0].resource.resourceType = "MessageHeader"
 * entry[0].resource.source.name =  "HealthLink AIR Broker"
 * entry[0].resource.destination.name =  "NES"
@@ -28,5 +29,5 @@ Usage: #example
 * entry[1].resource.issue.code =  #informational
 * entry[1].resource.issue.details.text = "accepted"
 * entry[1].resource.issue.details.coding.code = #ACCEPTED
-* entry[1].resource.issue.details.coding.system = "https://standards.digital.health.nz/ns/enrolment-nomination-result"
+* entry[1].resource.issue.details.coding.system = "http://terminology.hl7.org/CodeSystem/v2-0008"
 

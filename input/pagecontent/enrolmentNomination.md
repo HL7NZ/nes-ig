@@ -1,21 +1,21 @@
 
-## Enrolment Nomination  Overview
+## Immunisation Update Message Overview
 
-An ‘Enrolment Nomination ’ interaction is initiated by a user who wishes to request that a health provider enrol a patient for a health service.
-The request includes details of the patient, the provider,  and in some cases the Patient's next-of-kin.
-At a later time , after the health provider has processed the request, they send a response back to the nominated endpoint indicating if the enrolment request has been accepted or declined.
+An ‘Immunisation Update Message ’ interaction is initiated by a user who wishes to notify uinterested parteis that an immunisation has occured
+The request includes details of the patient who recieved the immunisation, the immunisation itself,  and the PMS  systems to which the message should be sent
+At a later time , after the health provider has processed the request, they send a response back to the nominated endpoint indicating if the immunisation request has been accepted or declined.
 
-### Enrolment Nomination Request
+### Immunisation Update Message Request
 
 
 
 <div>
-{% include enrolment-nomination-request.svg %}
+{% include Immunisation-update-request.svg %}
 </div>
 
 
 
-####  Enrolment Nomination Request processing steps:
+####  Immunisation Update Nomination Request processing steps:
 
 1. NES  creates a bundle containing Patient, RelatedPerson, and Location resources and posts it to the  Messaging Hub's $process-message endpoint. (EventType=FLS_ENROLMENT_NOMINATION)
 2. The Messaging Hub transforms the message to an HL7v2.0  ADT^28 request and sends it to the PMS
