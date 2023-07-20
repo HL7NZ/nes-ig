@@ -12,11 +12,6 @@ Usage: #definition
 * focus[0].min = 1
 * focus[0].max = "1"
 
-* focus[1].code = #Location
-* focus[1].profile = "http://hl7.org.nz/fhir/StructureDefinition/HPILocation"
-* focus[1].min = 1
-* focus[1].max = "1"
-
 * focus[2].code = #RelatedPerson
 * focus[2].min = 0
 * focus[2].max = "2"
