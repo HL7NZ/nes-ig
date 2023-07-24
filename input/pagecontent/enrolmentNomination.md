@@ -24,11 +24,11 @@ At a later time , after the health provider has processed the request, they send
 
 ####  Enrolment Nomination Request Example - Whaihua to NES
 Example of a "skinny" enrolment nomination request message sent by Whaihua to NES 
-[enrolment-nomination-request-message-2](Bundle-54321.html)
+[enrolment-nomination-request-message-2](Bundle-54321.json.html)
 
 ####  Enrolment Nomination Request Example - NES to HealthLink AIR Broker
 Example of an enriched enrolment nomination request message sent by  NES to the  HealthLink AIR broker
-[enrolment-nomination-request-message-1](Bundle-11223344.html)
+[enrolment-nomination-request-message-1](Bundle-11223344.json.html)
 
 #### Responses Codes
 
@@ -69,7 +69,7 @@ One of the following a synchronous error response may be returned by the server
 | --------------------- | ---------------- | ---------------- | ---------------------------------------- |
 | Success               | 200              | empty            | NES should returns a 200 response to indicate that the message has been successfully processed |
 | Server Error          | 50x              | empty            | NES  should returns a 5xx response to indicate an unexpected error occurred on the part of the server. The client may resend the message at a later time once the server is issue is resolved |
-| Data Validation Error | 400              | OperationOutcome | f NES cannot process the message due to a data error, it should return a 400 error with an OperationOutcome in the body describing the error ( see example below) |
+| Data Validation Error | 400              | OperationOutcome | If NES cannot process the message due to a data error, it should return a 400 error with an OperationOutcome in the body describing the error ( see example below) |
 
 
 
@@ -88,7 +88,7 @@ This is an example of an asynchronous response message returned from the PMS ind
 
 This an example of an error response returned by NES if it  receives an invalid Enrolment Nomination Response message
 
-[enrolment-nomination-response-response-error-message-1.](OperationOutcome-enrolment-nomination-response-error-response-1.json.html)
+[enrolment-nomination-response-response-error-message-1.](enrolment-nomination-response-response-error-message-1.json.html)
 
 
 
