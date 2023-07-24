@@ -15,16 +15,20 @@ At a later time , after the health provider has processed the request, they send
 
 ####  Enrolment Nomination Request processing steps:
 
-1. NES  creates a bundle containing Patient, RelatedPerson, and Location resources and posts it to the  Messaging Hub's $process-message endpoint. (EventType=FLS_ENROLMENT_NOMINATION)
-2. The Messaging Hub transforms the message to an HL7v2.0  ADT^28 request and sends it to the PMS
-3. The Messaging Hub returns a synchronous 20x response to NES
+1. Whaihua creates a bundle containing Patient, RelatedPerson and MessageHeader resources and posts it to the NES  $process-message endpoint. 
+2. NES validates and enriches hte messgae with additional Patient details posts it to the  HealthLink AIR Broker's $process-message endpoint. (EventType=FLS_ENROLMENT_NOMINATION)
+3. The Messaging Hub transforms the message to an HL7v2.0  ADT^28 request and sends it to the PMS
+4. The Messaging Hub returns a synchronous 20x response to NES
 
 
 
-####  Enrolment Nomination Request Example
-[enrolment-nomination-request-message-1](Bundle-12345.json.html)
+####  Enrolment Nomination Request Example - Whaihua to NES
+Example of a "skinny" enrolment nomination request message sent by Whaihua to NES 
+[enrolment-nomination-request-message-2](enrolment-nomination-request-message-2.html)
 
-
+####  Enrolment Nomination Request Example - NES to HealthLink AIR Broker
+Example of an enriched enrolment nomination request message sent by  NES to the  HealthLink AIR broker
+[enrolment-nomination-request-message-1](Bundle-11223344.html)
 
 #### Responses Codes
 
@@ -32,7 +36,7 @@ One of the following a synchronous error response may be returned by the server
 
 
 
-| ****Scenarios****     | **http status code** | **body**         | ****description****                      |
+| **Scenarios**         | **http status code** | **body**         | ***description**                          |
 | --------------------- | -------------------- | ---------------- | ---------------------------------------- |
 | Success               | 202                  | empty            | The message has been accepted for  processing |
 | Server Error          | 50x                  | empty            | An unexpected error occurred on the part of the server. The client may resend the message at a later time oocne the server is issue is resolved |
@@ -41,7 +45,7 @@ One of the following a synchronous error response may be returned by the server
 
 #### Example Error Response
 
-[enrolment-nomination-response-message-1](enrolment-nomination-request-error-response-1.json.html)
+[enrolment-nomination-response-message-1](Bundle-54321.html)
 
 ### Enrolment Nomination Response
 This is an asynchronous response message indicating  how  the destination PMS has acted ion the nomination request message
@@ -61,7 +65,7 @@ This is an asynchronous response message indicating  how  the destination PMS ha
 One of the following a synchronous error response may be returned by the server 
 
 
-| ****Scenarios****     | **http status code** | **body**         | ****description****                      |
+| **Scenarios**         | **http status code** | **body**     | **description**                      |
 | --------------------- | ---------------- | ---------------- | ---------------------------------------- |
 | Success               | 200              | empty            | NES should returns a 200 response to indicate that the message has been successfully processed |
 | Server Error          | 50x              | empty            | NES  should returns a 5xx response to indicate an unexpected error occurred on the part of the server. The client may resend the message at a later time once the server is issue is resolved |
@@ -76,7 +80,7 @@ This is an example of an asynchronous response message returned from the PMS ind
 
 ####  Enrolment Nomination Response -  Error Example
 This is an example of an asynchronous response message returned from the PMS indicating there was an error processing the enrolment nomination request
-[enrolment-nomination-response-message-2](enrolment-nomination-response-message-2.json.html)
+[enrolment-nomination-response-message-2](Bundle-6789.json.html)
 
 
 
@@ -84,7 +88,7 @@ This is an example of an asynchronous response message returned from the PMS ind
 
 This an example of an error response returned by NES if it  receives an invalid Enrolment Nomination Response message
 
-[enrolment-nomination-response-response-error-message-1.](enrolment-nomination-response-response-error-message-1.json.html)
+[enrolment-nomination-response-response-error-message-1.](OperationOutcome-enrolment-nomination-response-error-response-1.html)
 
 
 
