@@ -9,7 +9,7 @@ Usage: #example
 * type = #example
 * meta.tag[0].code = http://terminology.hl7.org/CodeSystem/v3-ProcessingID#P
 * entry[0].resource.resourceType = "MessageHeader"
-* entry[0].resource.text = ""
+
 
 //Healthlink AIR Broker  HPI appid 
 * entry[0].resource.source.software =  "HSAP22222"
@@ -30,7 +30,7 @@ Usage: #example
 
 
 * entry[1].resource.resourceType = "OperationOutcome"
-* entry[1].resource.text = ""
+
 * entry[1].resource.id = "error"
 * entry[1].resource.issue.severity =  #error
 * entry[1].resource.issue.code =  #processing

@@ -16,7 +16,7 @@ Usage: #example
 * entry[0].resource.source.endpoint =  "pmsedi"
 //facility id of sending facility
 * entry[0].resource.source.name =  "facid123"
-* entry[0].resource.text = ""
+
 
 * entry[0].resource.eventCoding.system = "https://standards.digital.health.nz/ns/nes-event-type"
 * entry[0].resource.eventCoding.code = #FLS_ENROLMENT_NOMINATION_ACK
@@ -30,7 +30,7 @@ Usage: #example
 
 
 * entry[1].resource.resourceType = "OperationOutcome"
-* entry[1].resource.text = ""
+
 * entry[1].resource.id = "success"
 * entry[1].resource.issue.severity =  #success
 * entry[1].resource.issue.code =  #success
