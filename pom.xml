@@ -1,20 +1,19 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>nes-HL7NZ</groupId>
-	<artifactId>nes-HL7NZ</artifactId>
+	<groupId>nz.health.digital.nes.fhir</groupId>
+	<artifactId>hip-nes-conformance-module</artifactId>
 	<version>${revision}</version>
 
 
 	<properties>
-		<revision>1.0.0</revision>
-		<fhir-common.version>1.1.12-SNAPSHOT</fhir-common.version>
-
+		<revision>1.0.0-SNAPSHOT</revision>
+		<!--<fhir-common.version>1.2.0</fhir-common.version> -->
+		<fhir-common.version>1.2.0</fhir-common.version>
+		<nhi-ig-version>1.4.2</nhi-ig-version>
+		<hpi-ig-version>1.2.0</hpi-ig-version>
 	</properties>
+
 	<dependencies>
-
-
 		<dependency>
 			<groupId>health.identity.fhir</groupId>
 			<artifactId>hip-fhir-common</artifactId>
@@ -22,20 +21,56 @@
 			<classifier>fhir-resources</classifier>
 			<type>zip</type>
 		</dependency>
+
+
+		<dependency>
+			<groupId>nz.health.digital.nhi.fhir</groupId>
+			<artifactId>hip-nhi-conformance-module</artifactId>
+			<version>${nhi-ig-version}</version>
+			<classifier>zip</classifier>
+			<type>zip</type>
+		</dependency>
+
+		<dependency>
+			<groupId>nz.health.digital.hpi.fhir</groupId>
+			<artifactId>hip-hpi-conformance-module</artifactId>
+			<version>${hpi-ig-version}</version>
+			<type>zip</type>
+		</dependency>
+
+		<dependency>
+			<groupId>nz.health.digital.com.fhir</groupId>
+			<artifactId>nzbase-conformance-module</artifactId>
+			<version>2.0.0</version>
+			<classifier>zip</classifier>
+			<type>zip</type>
+		</dependency>
+
 	</dependencies>
+
+	<distributionManagement>
+		<repository>
+			<id>releases</id>
+			<name>MoH Nexus repository - releases</name>
+			<url>${releases.url}</url>
+		</repository>
+		<snapshotRepository>
+			<id>snapshots</id>
+			<name>MoH Nexus repository - snapshots</name>
+			<url>${snapshots.url}</url>
+		</snapshotRepository>
+	</distributionManagement>
 	<build>
 		<plugins>
-
-
 
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-dependency-plugin</artifactId>
 				<executions>
 					<execution>
-						<id>unpack-hpicm</id>
+						<id>unpack-hfc</id>
 						<phase>
-							generate-sources
+							validate
 						</phase>
 						<goals>
 							<goal>unpack-dependencies</goal>
@@ -44,15 +79,121 @@
 							<includeGroupIds>health.identity.fhir</includeGroupIds>
 							<includeArtifactIds>hip-fhir-common</includeArtifactIds>
 							<outputDirectory>
-								${project.basedir}/hfc_package
+								${project.basedir}/fhir_packages
 							</outputDirectory>
-							<includes>**/package/package.tgz</includes>
+							<includes>**/*.xml, **/*.tgz</includes>
+						</configuration>
+					</execution>	
+									
+					<execution>
+						<id>unpack-nhicm</id>
+						<phase>
+							validate
+						</phase>
+						<goals>
+							<goal>unpack-dependencies</goal>
+						</goals>
+						<configuration>
+							<includeGroupIds>nz.health.digital.nhi.fhir</includeGroupIds>
+							<includeArtifactIds>hip-nhi-conformance-module</includeArtifactIds>
+							<outputDirectory>
+								${project.basedir}/fhir_packages
+							</outputDirectory>
+							<includes>**/output/package.tgz</includes>
+						</configuration>
+					</execution>
+					
+					<execution>
+						<id>unpack-hpicm</id>
+						<phase>
+							validate
+						</phase>
+						<goals>
+							<goal>unpack-dependencies</goal>
+						</goals>
+						<configuration>
+								<includeGroupIds>nz.health.digital.hpi.fhir</includeGroupIds>
+							<includeArtifactIds>hip-hpi-conformance-module</includeArtifactIds>
+						
+							<outputDirectory>
+								${project.basedir}/fhir_packages
+							</outputDirectory>
+							<includes>**/output/package.tgz</includes>
+						</configuration>
+					</execution>
 
+					<execution>
+						<id>unpack-nzbase</id>
+						<phase>
+							validate
+						</phase>
+						<goals>
+							<goal>unpack-dependencies</goal>
+						</goals>
+						<configuration>
+							<includeGroupIds>nz.health.digital.com.fhir</includeGroupIds>
+							<includeArtifactIds>nzbase-conformance-module</includeArtifactIds>
+							<outputDirectory>
+								${project.basedir}/fhir_packages
+							</outputDirectory>
+							<includes>**/package.tgz</includes>
+						</configuration>
+					</execution>
+
+				</executions>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-release-plugin</artifactId>
+				<version>2.5.3</version>
+				<configuration>
+					<tagNameFormat>v_@{version}</tagNameFormat>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<version>2.5.2</version>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>single</goal>
+						</goals>
+						<configuration>
+							<appendAssemblyId>false</appendAssemblyId>
+							<descriptors>
+								<descriptor>assembly/spec-zip.xml</descriptor>
+							</descriptors>
 						</configuration>
 					</execution>
 				</executions>
 			</plugin>
-		
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>3.0.2</version>
+				<configuration>
+					<skipIfEmpty>true</skipIfEmpty>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-install-plugin</artifactId>
+				<version>2.5.2</version>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-deploy-plugin</artifactId>
+				<version>2.5</version>
+			</plugin>
+
+
 		</plugins>
 	</build>
 </project>

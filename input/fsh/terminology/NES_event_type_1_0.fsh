@@ -14,5 +14,6 @@ Description: "Identifies NES events."
 * ^caseSensitive = false
 * ^versionNeeded = false
 * ^content = #complete
-* ^count = 1
+* ^count = 2
 * #FLS_ENROLMENT_NOMINATION "GP Enrolment Nomination"
+* #FLS_ENROLMENT_NOMINATION_ACK "GP Enrolment Nomination Acknowledgement"

@@ -5,16 +5,32 @@ InstanceOf: Bundle
 Description: "Example enrolment nomination request message"
 Usage: #example
 
-* id = "12345"
-* type = #message
+* id = "11223344"
+* type = #example
 * timestamp = 2023-05-14T11:15:33+10:00
+* meta.tag[0].code = http://terminology.hl7.org/CodeSystem/v3-ProcessingID#P
 * entry[0].resource.resourceType = "MessageHeader"
 * entry[0].resource.eventCoding.system = "https://standards.digital.health.nz/ns/nes-event-type"
 * entry[0].resource.eventCoding.code = #FLS_ENROLMENT_NOMINATION
 * entry[0].resource.focus[0] = Reference(Patient/ZKC4633)
 * entry[0].resource.focus[1] = Reference(Location/FZZ958-K)
 * entry[0].resource.focus[2] = Reference(RelatedPerson/ZJM9397)
-* entry[0].resource.source.endpoint =  "https://api.hip.digital.health.nz/fhir/nes/v1"
+
+//NES or AIR HPI appid 
+* entry[0].resource.source.software =  "HSAP11111"
+ //EDI account of sending facility
+* entry[0].resource.source.endpoint =  "Mohedi"
+//Moh facility id
+* entry[0].resource.source.name =  "Mohfacid"
+
+
+//EDI account of receiving facility 
+* entry[0].resource.destination.endpoint = "edi123"
+//The receiving facility’s Health Facility Code 
+* entry[0].resource.destination.name = "pmsfacid"
+
+
+//generated guuid?
 * entry[0].fullUrl = "12345"
 
 
@@ -48,7 +64,7 @@ Usage: #example
 * entry[2].resource.extension[=].extension[0].url = "provider"
 * entry[2].resource.extension[=].extension[=].valueString = "healthlink"
 * entry[2].resource.extension[=].extension[+].url = "value"
-* entry[2].resource.extension[=].extension[=].valueString = "livefacedi"
+* entry[2].resource.extension[=].extension[=].valueString = "edi123"
 
 * entry[2].resource.name = "AAAA Medical Facilty"
 * entry[2].fullUrl = "Facilty/FZZ958-K"
