@@ -88,7 +88,7 @@ This is an example of an asynchronous response message returned from the PMS ind
 
 This an example of an error response returned by NES if it  receives an invalid Enrolment Nomination Response message
 
-[enrolment-nomination-response-response-error-message-1.](enrolment-nomination-response-response-error-message-1.json.html)
+[enrolment-nomination-response-response-error-message-1.](OperationOutcome-enrolment-nomination-response-error-response-1.json.html)
 
 
 
