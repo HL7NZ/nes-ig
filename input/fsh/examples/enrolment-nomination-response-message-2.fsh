@@ -1,11 +1,11 @@
 Alias: $ethnic-group-level-4-code = https://standards.digital.health.nz/ns/ethnic-group-level-4-code
 
-Instance: enrolment-nomination-response-message-1
+Instance: enrolment-nomination-response-message-2
 InstanceOf: Bundle
 Description: "Example enrolment nomination request message"
 Usage: #example
 
-* id = "34567"
+* id = "6789"
 * type = #example
 * meta.tag[0].code = http://terminology.hl7.org/CodeSystem/v3-ProcessingID#P
 * entry[0].resource.resourceType = "MessageHeader"
@@ -14,7 +14,7 @@ Usage: #example
 // * entry[0].resource.sender.identifier =  "HealthLink AIR Broker"
 * entry[0].resource.eventCoding.system = "https://standards.digital.health.nz/ns/nes-event-type"
 * entry[0].resource.eventCoding.code = #FLS_ENROLMENT_NOMINATION_ACK
-* entry[0].resource.focus[0] = Reference(OperationOutcome/success)
+* entry[0].resource.focus[0] = Reference(OperationOutcome/error)
 
 //the Bundle.id of the request message
 * entry[0].resource.response.identifier = "12345"
@@ -24,11 +24,11 @@ Usage: #example
 
 
 * entry[1].resource.resourceType = "OperationOutcome"
-* entry[1].resource.id = "success"
-* entry[1].resource.issue.severity =  #success
-* entry[1].resource.issue.code =  #success
-* entry[1].resource.issue.diagnostics = "accepted"
+* entry[1].resource.id = "error"
+* entry[1].resource.issue.severity =  #error
+* entry[1].resource.issue.code =  #processing
+* entry[1].resource.issue.diagnostics = "problem processing NK1 segment"
 
-* entry[1].resource.issue.details.coding.code = #AA
+* entry[1].resource.issue.details.coding.code = #AE
 * entry[1].resource.issue.details.coding.system = "http://terminology.hl7.org/CodeSystem/v2-0008"
 

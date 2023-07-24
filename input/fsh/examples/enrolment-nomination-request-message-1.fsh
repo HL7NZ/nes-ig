@@ -6,7 +6,7 @@ Description: "Example enrolment nomination request message"
 Usage: #example
 
 * id = "11223344"
-* type = #message
+* type = #example
 * timestamp = 2023-05-14T11:15:33+10:00
 * meta.tag[0].code = http://terminology.hl7.org/CodeSystem/v3-ProcessingID#P
 * entry[0].resource.resourceType = "MessageHeader"
