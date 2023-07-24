@@ -15,16 +15,20 @@ At a later time , after the health provider has processed the request, they send
 
 ####  Enrolment Nomination Request processing steps:
 
-1. NES  creates a bundle containing Patient, RelatedPerson, and Location resources and posts it to the  Messaging Hub's $process-message endpoint. (EventType=FLS_ENROLMENT_NOMINATION)
-2. The Messaging Hub transforms the message to an HL7v2.0  ADT^28 request and sends it to the PMS
-3. The Messaging Hub returns a synchronous 20x response to NES
+1. Whaihua creates a bundle containing Patient, RelatedPerson and MessageHeader resources and posts it to the NES  $process-message endpoint. 
+2. NES validates and enriches hte messgae with additional Patient details posts it to the  HealthLink AIR Broker's $process-message endpoint. (EventType=FLS_ENROLMENT_NOMINATION)
+3. The Messaging Hub transforms the message to an HL7v2.0  ADT^28 request and sends it to the PMS
+4. The Messaging Hub returns a synchronous 20x response to NES
 
 
 
-####  Enrolment Nomination Request Example
+####  Enrolment Nomination Request Example - Whaihua to NES
+Example of a "skinny" enrolment nomination request message sent by Whaihua to NES 
+[enrolment-nomination-request-message-2](enrolment-nomination-request-message-2.json.html)
+
+####  Enrolment Nomination Request Example - NES to HealthLink AIR Broker
+Example of an enriched enrolment nomination request message sent by  NES to the  HealthLink AIR broker
 [enrolment-nomination-request-message-1](Bundle-12345.json.html)
-
-
 
 #### Responses Codes
 

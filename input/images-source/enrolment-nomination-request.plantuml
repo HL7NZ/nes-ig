@@ -4,10 +4,14 @@ skinparam roundcorner 5
 skinparam maxmessagesize 180
 skinparam sequenceParticipant bold
 title  Enrolment Nomination Request
+participant "Whaihua" as AA #CornflowerBlue
 participant "NES " as A #CornflowerBlue
-participant "<FHIR API> Messaging Hub" as B #CornflowerBlue
+participant "Healthlink Air Broker" as B #CornflowerBlue
 participant "PMS" as C #CornflowerBlue
 |||
+
+AA -> A: POST [base]/$process-message
+A -> A:  validate and enrich
 
 A -> B: POST [base]/$process-message
 activate B
@@ -16,9 +20,9 @@ B -> B: Transform to HL7 v2[]
 |||
 B -> C: ADT^28 request
 B -[dashed]-> A: 200 Response 
+A -[dashed]-> AA: 200 Response 
 activate C
 |||
 deactivate C
 |||
 @enduml
-

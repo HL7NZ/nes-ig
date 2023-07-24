@@ -1,11 +1,11 @@
 Alias: $ethnic-group-level-4-code = https://standards.digital.health.nz/ns/ethnic-group-level-4-code
 
-Instance: enrolment-nomination-request-message-1
+Instance: enrolment-nomination-request-message-2
 InstanceOf: Bundle
-Description: "Example enrolment nomination request message"
+Description: "Example of a minimal enrolment nomination request message sent by Whaihua to NES which will be enriched by NES before being forwarded to the  HealthLink AIR broker"
 Usage: #example
 
-* id = "11223344"
+* id = "54321"
 * type = #example
 * timestamp = 2023-05-14T11:15:33+10:00
 * meta.tag[0].code = http://terminology.hl7.org/CodeSystem/v3-ProcessingID#P
@@ -38,20 +38,10 @@ Usage: #example
 * entry[1].resource.identifier.use = #official
 * entry[1].resource.identifier.system = "https://standards.digital.health.nz/ns/nhi-id"
 * entry[1].resource.identifier.value = "ZKC4633"
-* entry[1].resource.name[0].id = "10"
-* entry[1].resource.name[=].family = "Aufderhar"
+* entry[1].resource.name[0].family = "Aufderhar"
 * entry[1].resource.name[=].given = "Baby of Jane"
 * entry[1].resource.gender = #female
 * entry[1].resource.birthDate = "2023-05-25"
-* entry[1].resource.extension[0].url = "http://hl7.org.nz/fhir/StructureDefinition/nz-ethnicity"
-* entry[1].resource.extension[=].valueCodeableConcept.coding.version = "2.0"
-* entry[1].resource.extension[=].valueCodeableConcept.coding = $ethnic-group-level-4-code#21111 "Māori"
-* entry[1].resource.address.line = "23 Thule St"
-* entry[1].resource.address.city = "Waipu"
-* entry[1].resource.address.extension[0].url = "http://hl7.org.nz/fhir/StructureDefinition/suburb"
-* entry[1].resource.address.extension[0].valueString = "Waipu river"
-* entry[1].fullUrl = "Patient/ZKC4633"
-
 
 
 * entry[2].resource.resourceType = "RelatedPerson"
