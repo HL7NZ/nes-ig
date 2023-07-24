@@ -24,7 +24,7 @@ At a later time , after the health provider has processed the request, they send
 
 ####  Enrolment Nomination Request Example - Whaihua to NES
 Example of a "skinny" enrolment nomination request message sent by Whaihua to NES 
-[enrolment-nomination-request-message-2](enrolment-nomination-request-message-2.html)
+[enrolment-nomination-request-message-2](Bundle-54321.html)
 
 ####  Enrolment Nomination Request Example - NES to HealthLink AIR Broker
 Example of an enriched enrolment nomination request message sent by  NES to the  HealthLink AIR broker
@@ -45,7 +45,7 @@ One of the following a synchronous error response may be returned by the server
 
 #### Example Error Response
 
-[enrolment-nomination-response-message-1](Bundle-54321.html)
+[enrolment-nomination-response-message-1](OperationOutcome-enrolment-nomination-request-error-response-1.json.html)
 
 ### Enrolment Nomination Response
 This is an asynchronous response message indicating  how  the destination PMS has acted ion the nomination request message
@@ -88,7 +88,7 @@ This is an example of an asynchronous response message returned from the PMS ind
 
 This an example of an error response returned by NES if it  receives an invalid Enrolment Nomination Response message
 
-[enrolment-nomination-response-response-error-message-1.](OperationOutcome-enrolment-nomination-response-error-response-1.html)
+[enrolment-nomination-response-response-error-message-1.](OperationOutcome-enrolment-nomination-response-error-response-1.json.html)
 
 
 
