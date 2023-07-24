@@ -34,3 +34,6 @@ Usage: #definition
 
 * messaging.supportedMessage[1].mode = $EventCapabilityMode#receiver
 * messaging.supportedMessage[1].definition = "http://hl7.org.nz/fhir/MessageDefinition/EnrolmentNominationRequestMessageDefinition"
+
+* messaging.supportedMessage[2].mode = $EventCapabilityMode#receiver
+* messaging.supportedMessage[2].definition = "http://hl7.org.nz/fhir/MessageDefinition/EnrolmentNominationResponseMessageDefinition"

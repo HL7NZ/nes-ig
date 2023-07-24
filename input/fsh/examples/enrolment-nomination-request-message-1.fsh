@@ -10,6 +10,7 @@ Usage: #example
 * timestamp = 2023-05-14T11:15:33+10:00
 * meta.tag[0].code = http://terminology.hl7.org/CodeSystem/v3-ProcessingID#P
 * entry[0].resource.resourceType = "MessageHeader"
+* entry[0].resource.text = ""
 * entry[0].resource.eventCoding.system = "https://standards.digital.health.nz/ns/nes-event-type"
 * entry[0].resource.eventCoding.code = #FLS_ENROLMENT_NOMINATION
 * entry[0].resource.focus[0] = Reference(Patient/ZKC4633)
@@ -34,6 +35,7 @@ Usage: #example
 
 
 * entry[1].resource.resourceType = "Patient"
+* entry[1].resource.text = ""
 * entry[1].resource.id = "ZKC4633"
 * entry[1].resource.identifier.use = #official
 * entry[1].resource.identifier.system = "https://standards.digital.health.nz/ns/nhi-id"
@@ -55,6 +57,7 @@ Usage: #example
 
 
 * entry[2].resource.resourceType = "RelatedPerson"
+* entry[2].resource.text = ""
 * entry[2].resource.id = "ZJM9397"
 * entry[2].resource.identifier.use = #official
 * entry[2].resource.identifier.system = "https://standards.digital.health.nz/ns/nhi-id"

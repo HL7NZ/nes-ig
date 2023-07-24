@@ -3,9 +3,9 @@ skinparam sequenceArrowThickness 2
 skinparam roundcorner 5
 skinparam maxmessagesize 180
 skinparam sequenceParticipant bold
-title  Enrolment Nomination Request
+title  Enrolment Nomination Response
 participant "NES " as A #CornflowerBlue
-participant "<FHIR API> Messaging Hub" as B #CornflowerBlue
+participant "Healthlink Air Broker" as B #CornflowerBlue
 participant "PMS" as C #CornflowerBlue
 |||
 
@@ -17,7 +17,7 @@ B -> B: Transform HL7 v2 to FHIR
 B -> A:  POST [base]/$process-message
 activate A
 |||
-A -[dashed]-> B: 200 Response 
+A -[dashed]-> B: 202 Response 
 |||
 deactivate A
 |||
