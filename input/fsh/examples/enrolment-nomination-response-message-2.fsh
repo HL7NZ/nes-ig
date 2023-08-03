@@ -2,14 +2,14 @@ Alias: $ethnic-group-level-4-code = https://standards.digital.health.nz/ns/ethni
 
 Instance: enrolment-nomination-response-message-2
 InstanceOf: Bundle
-Description: "Example enrolment nomination request message"
+Description: "Example enrolment nomination error response  message"
 Usage: #example
 
 * id = "6789"
-* type = #example
+* type = #message
 * meta.tag[0].code = http://terminology.hl7.org/CodeSystem/v3-ProcessingID#P
 * entry[0].resource.resourceType = "MessageHeader"
-
+* entry[0].resource.response.code = #ok
 
 //Healthlink AIR Broker  HPI appid 
 * entry[0].resource.source.software =  "HSAP22222"
@@ -35,7 +35,7 @@ Usage: #example
 * entry[1].resource.issue.severity =  #error
 * entry[1].resource.issue.code =  #processing
 * entry[1].resource.issue.diagnostics = "problem processing NK1 segment"
-
+* entry[1].fullUrl = "OperationOutcome/error"
 * entry[1].resource.issue.details.coding.code = #AE
 * entry[1].resource.issue.details.coding.system = "http://terminology.hl7.org/CodeSystem/v2-0008"
 

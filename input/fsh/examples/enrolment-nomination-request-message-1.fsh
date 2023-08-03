@@ -6,14 +6,14 @@ Description: "Example enrolment nomination request message"
 Usage: #example
 
 * id = "11223344"
-* type = #example
+* type = #message
 * timestamp = 2023-05-14T11:15:33+10:00
 * meta.tag[0].code = http://terminology.hl7.org/CodeSystem/v3-ProcessingID#P
 * entry[0].resource.resourceType = "MessageHeader"
 
 * entry[0].resource.eventCoding.system = "https://standards.digital.health.nz/ns/nes-event-type"
 * entry[0].resource.eventCoding.code = #FLS_ENROLMENT_NOMINATION
-* entry[0].resource.focus[0] = Reference(Patient/ZKC4633)
+* entry[0].resource.focus[0] = Reference(https://api.hip-uat.digital.health.nz/fhir/nhi/v1/Patient/ZKC4633)
 * entry[0].resource.focus[1] = Reference(RelatedPerson/ZJM9397)
 
 //NES or AIR HPI appid 
@@ -52,7 +52,7 @@ Usage: #example
 * entry[1].resource.address.city = "Waipu"
 * entry[1].resource.address.extension[0].url = "http://hl7.org.nz/fhir/StructureDefinition/suburb"
 * entry[1].resource.address.extension[0].valueString = "Waipu river"
-* entry[1].fullUrl = "Patient/ZKC4633"
+* entry[1].fullUrl = "https://api.hip-uat.digital.health.nz/fhir/nhi/v1/Patient/ZKC4633"
 
 
 
@@ -63,8 +63,8 @@ Usage: #example
 * entry[2].resource.identifier.value = "ZJM9397"
 * entry[2].resource.name.given = "Mary"
 * entry[2].resource.name.family = "Jones"
-* entry[2].resource.patient = Reference(Patient/ZKC4633)
+* entry[2].resource.patient = Reference(https://api.hip-uat.digital.health.nz/fhir/nhi/v1/Patient/ZKC4633)
 * entry[2].resource.relationship.coding.system = "http://terminology.hl7.org/CodeSystem/v3-RoleCode"
 * entry[2].resource.relationship.coding.code = #MTH
 
-* entry[3].fullUrl = "RelatedPerson/ZJM9397"
+* entry[2].fullUrl = "RelatedPerson/ZJM9397"
