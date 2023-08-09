@@ -8,8 +8,6 @@ Usage: #example
 * id = "54321"
 * type = #message
 * timestamp = 2023-05-14T11:15:33+10:00
-* meta.tag[0].code = #P
-* meta.tag[0].system = "http://terminology.hl7.org/CodeSystem/v3-ProcessingID"
 
 * entry[0].resource.resourceType = "MessageHeader"
 * entry[0].resource.eventCoding.system = "https://standards.digital.health.nz/ns/nes-event-type"
