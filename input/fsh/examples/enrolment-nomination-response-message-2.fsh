@@ -7,7 +7,8 @@ Usage: #example
 
 * id = "6789"
 * type = #message
-* meta.tag[0].code = http://terminology.hl7.org/CodeSystem/v3-ProcessingID#P
+* meta.tag[0].code = #P
+* meta.tag[0].system = "http://terminology.hl7.org/CodeSystem/v3-ProcessingID"
 * entry[0].resource.resourceType = "MessageHeader"
 * entry[0].resource.response.code = #ok
 
