@@ -23,8 +23,8 @@ Usage: #example
 * entry[0].resource.eventCoding.code = #FLS_ENROLMENT_NOMINATION_ACK
 * entry[0].resource.focus[0] = Reference(OperationOutcome/error)
 
-//the Bundle.id of the request message
-* entry[0].resource.response.identifier = "12345"
+//the  MessageHeader.id of the request message
+* entry[0].resource.response.identifier = "66778899"
 
 // * entry[0].resource.source.endpoint =  "https://healhlink.co.nz/airBroker"
 * entry[0].fullUrl = "34567"
