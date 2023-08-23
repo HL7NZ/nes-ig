@@ -4,14 +4,19 @@
 <table class='table table-bordered table-hover table-sm'>
 <tr><th>Id</th><th>Url</th><th>Description</th></tr>
 <tr>
-<td><a href='StructureDefinition-EnrolmentNominationResponse.html'>Enrolment Nomination Response</a></td>
-<td>http://hl7.org.nz/fhir/StructureDefinition/EnrolmentNominationResponse"</td>
-<td><p>Defines response codes for the Enrolment Nomination Response message</p></td>
+<td><a href='StructureDefinition-EnrolmentNominationResponse.html'>EnrolmentNominationResponse</a></td>
+<td>http://hl7.org.nz/fhir/StructureDefinition/EnrolmentNominationResponse</td>
+<td><p>Adds additional, NES specific extensions</p></td>
 </tr>
 <tr>
-<td><a href='StructureDefinition-NesEntitlements.html'>NesEntitlements</a></td>
-<td>http://hl7.org.nz/fhir/StructureDefinition/NesEntitlements</td>
-<td><p>The Coverage  resource exposed by the NES to describe entitlements.</p></td>
+<td><a href='StructureDefinition-NesEnrolment.html'>NesEnrolment</a></td>
+<td>http://hl7.org.nz/fhir/StructureDefinition/NesEnrolment</td>
+<td><p>Adds additional, NES specific extensions for enrolments</p></td>
+</tr>
+<tr>
+<td><a href='StructureDefinition-NesEntitlement.html'>NesEntitlement</a></td>
+<td>http://hl7.org.nz/fhir/StructureDefinition/NesEntitlement</td>
+<td><p>Adds additional, NES specific extensions</p></td>
 </tr>
 </table>
 </div>

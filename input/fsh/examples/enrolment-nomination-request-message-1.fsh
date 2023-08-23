@@ -16,6 +16,7 @@ Usage: #example
 * entry[0].resource.eventCoding.code = #FLS_ENROLMENT_NOMINATION
 * entry[0].resource.focus[0] = Reference(https://api.hip-uat.digital.health.nz/fhir/nhi/v1/Patient/ZKC4633)
 * entry[0].resource.focus[1] = Reference(RelatedPerson/ZJM9397)
+* entry[0].resource.focus[2] = Reference(RelatedPerson/ZAA4828)
 
 //NES or AIR HPI appid 
 * entry[0].resource.source.software =  "HSAP11111"
@@ -67,5 +68,17 @@ Usage: #example
 * entry[2].resource.patient = Reference(https://api.hip-uat.digital.health.nz/fhir/nhi/v1/Patient/ZKC4633)
 * entry[2].resource.relationship.coding.system = "http://terminology.hl7.org/CodeSystem/v3-RoleCode"
 * entry[2].resource.relationship.coding.code = #MTH
-
 * entry[2].fullUrl = "RelatedPerson/ZJM9397"
+
+* entry[+].resource.resourceType = "RelatedPerson"
+* entry[=].resource.id = "ZAA4828"
+* entry[=].resource.identifier.use = #official
+* entry[=].resource.identifier.system = "https://standards.digital.health.nz/ns/nhi-id"
+* entry[=].resource.identifier.value = "ZAA4828"
+* entry[=].resource.name.given = "Albert"
+* entry[=].resource.name.family = "Brown"
+* entry[=].resource.patient = Reference(https://api.hip-uat.digital.health.nz/fhir/nhi/v1/Patient/ZKC4633)
+* entry[=].resource.relationship.coding.system = "http://terminology.hl7.org/CodeSystem/v3-RoleCode"
+* entry[=].resource.relationship.coding.code = #MTH
+* entry[=].fullUrl = "RelatedPerson/ZAA4828"
+
