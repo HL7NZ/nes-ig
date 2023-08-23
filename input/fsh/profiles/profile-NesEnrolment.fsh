@@ -1,10 +1,6 @@
 
 
-//defined in NZ Base
-Alias: $suburb = http://hl7.org.nz/fhir/StructureDefinition/suburb
-Alias: $NZGeocode = http://hl7.org.nz/fhir/StructureDefinition/nz-geocode
-Alias: $buildingName = http://hl7.org.nz/fhir/StructureDefinition/building-name
-Alias: $domicileCode = http://hl7.org.nz/fhir/StructureDefinition/domicile-code
+
 
 
 Profile:        NesEnrolment
@@ -25,3 +21,6 @@ Description:    "Adds additional, NES specific extensions for enrolments"
 * referralRequest 0..0
 * team 0..0
 * account 0..0
+
+// restricted
+* type from https://nzhts.digital.health.nz/fhir/ValueSet/nes-enrolment-type
