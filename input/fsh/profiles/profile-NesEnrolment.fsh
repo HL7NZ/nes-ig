@@ -31,7 +31,7 @@ Description:    "Adds additional, NES specific extensions for enrolments"
 * contained ^slicing.discriminator.type = #type
 * contained ^slicing.discriminator.path = "$this"
 * contained ^slicing.rules = #closed
-* contained ^slicing.description = "Slicing to specifiy a PractitionerRole resource may be returned as a contained resource for the Care Manager"
+* contained ^slicing.description = "Slicing to specify a PractitionerRole resource may be returned as a contained resource for the Care Manager"
 * contained contains careManager 0..1
 * contained[careManager] only http://hl7.org/fhir/StructureDefinition/PractitionerRole
 * contained[careManager] ^short = "Contained resource for the Care Manager of the Enrolment"

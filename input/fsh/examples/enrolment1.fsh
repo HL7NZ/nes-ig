@@ -10,6 +10,7 @@ Usage: #example
 
 
 * patient = Reference(Patient/ZAA0792)
+* careManager = Reference(EnrolmentServiceProvider1)
 
 * contained[0] = EnrolmentServiceProvider1
 * status = #active
