@@ -11,9 +11,9 @@
 <tr><th width='20%'>Code</th><th width='10%'>Verb</th><th width='20%'>URL</th><th width='50%'>Documentation</th></tr>
 <tr>
 <td>read</td>
-<td>GET;[base]/[Coverage]/[id]</td>
-<td>Used to retrieve a Patient's entitlements.</td>
-<td> </td>
+<td>GET</td>
+<td>[base]/[Coverage]/[id]</td>
+<td>Used to retrieve a Patient's entitlements</td>
 </tr>
 </table>
 <br/><h4>Server Level Interactions</h4>
@@ -42,6 +42,12 @@
 <td><p>receiver</p>
 </td>
 <td><p>http://hl7.org.nz/fhir/MessageDefinition/EnrolmentNominationRequestMessageDefinition</p>
+</td>
+</tr>
+<tr>
+<td><p>receiver</p>
+</td>
+<td><p>http://hl7.org.nz/fhir/MessageDefinition/EnrolmentNominationResponseMessageDefinition</p>
 </td>
 </tr>
 </table>
