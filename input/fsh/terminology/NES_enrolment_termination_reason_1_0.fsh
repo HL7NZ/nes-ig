@@ -26,7 +26,7 @@ Description: "A code to describe the reason the enrolment has ended"
 
 ValueSet: Nes_enrolment_termination_reason
 Id: nes-enrolment-termination-reason-1.0
-Title: "NES Enrolment Type"
+Title: "NES Enrolment Termination Reason "
 Description: "A code to describe the reason the enrolment has ended"
 * ^meta.profile = "http://hl7.org/fhir/StructureDefinition/shareablecodesystem"
 * ^url = "https://nzhts.digital.health.nz/fhir/ValueSet/nes-enrolment-termination-reason"

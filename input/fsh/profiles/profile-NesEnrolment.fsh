@@ -34,7 +34,7 @@ Description:    "Adds additional, NES specific extensions for enrolments"
 * extension[expiryDate] ^short = "The date on which the Enrolment will expire"
 * extension[owningOrganisation] ^short = "Organisation that creates the enrolment"
 * extension[nes-enrolment-termination-reason] ^short = " describe the reason the enrolment has ended"
-* extension[nes-enrolment-termination-reason].valueCodeableConcept from https://nzhts.digital.health.nz/fhir/ValueSet/nes-enrolment-termination-reason
+* extension[nes-enrolment-termination-reason].valueCodeableConcept from https://nzhts.digital.health.nz/fhir/ValueSet/nes-enrolment-termination-reason (required)
 
 //* extension[owningOrganisation] only Reference(HpiOrganization)
 
