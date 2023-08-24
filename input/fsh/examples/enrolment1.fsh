@@ -14,8 +14,10 @@ Usage: #example
 
 * contained[0] = EnrolmentServiceProvider1
 * status = #active
-* expiryDate = "2026-06-05"
-* owningOrganisation = Reference(Organization/GZZ998-G)
+
+* extension[enrolment-expiry-date].valueDate = "2026-06-05"
+* extension[enrolment-owner-org].valueReference = Reference(Organization/GZZ998-G)
+* extension[nes-enrolment-termination-reason].valueCodeableConcept = #Transfer
 
 Instance: EnrolmentServiceProvider1
 InstanceOf: PractitionerRole

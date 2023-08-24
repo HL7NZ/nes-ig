@@ -28,10 +28,14 @@ Description:    "Adds additional, NES specific extensions for enrolments"
 //extensions 
 * extension contains
     http://hl7.org.nz/fhir/StructureDefinition/enrolment-expiry-date  named expiryDate 0..1  and
-    http://hl7.org.nz/fhir/StructureDefinition/enrolment-owner-org named owningOrganisation 0..1
+    http://hl7.org.nz/fhir/StructureDefinition/enrolment-owner-org named owningOrganisation 0..1 and
+    http://hl7.org.nz/fhir/StructureDefinition/nes-enrolment-termination-reason named terminationReason 0..1
     
 * extension[expiryDate] ^short = "The date on which the Enrolment will expire"
 * extension[owningOrganisation] ^short = "Organisation that creates the enrolment"
+* extension[nes-enrolment-termination-reason] ^short = " describe the reason the enrolment has ended"
+* extension[nes-enrolment-termination-reason].valueCodeableConcept from https://nzhts.digital.health.nz/fhir/ValueSet/nes-enrolment-termination-reason
+
 //* extension[owningOrganisation] only Reference(HpiOrganization)
 
 // contained resources
