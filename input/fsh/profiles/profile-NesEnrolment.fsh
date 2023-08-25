@@ -22,21 +22,24 @@ Description:    "Adds additional, NES specific extensions for enrolments"
 * account 0..0
 * language 0..0 
 
-// restricted
+// constraints on base profile
 * type from https://nzhts.digital.health.nz/fhir/ValueSet/nes-enrolment-type
 
 //extensions 
 * extension contains
     http://hl7.org.nz/fhir/StructureDefinition/enrolment-expiry-date  named expiryDate 0..1  and
     http://hl7.org.nz/fhir/StructureDefinition/enrolment-owner-org named owningOrganisation 0..1 and
-    http://hl7.org.nz/fhir/StructureDefinition/nes-enrolment-termination-reason named terminationReason 0..1
+    http://hl7.org.nz/fhir/StructureDefinition/nes-enrolment-termination-reason named terminationReason 0..1 and
+    http://hl7.org.nz/fhir/StructureDefinition/enrolment-encounter named qualifiedEncounter 0..1
     
 * extension[expiryDate] ^short = "The date on which the Enrolment will expire"
 * extension[owningOrganisation] ^short = "Organisation that creates the enrolment"
-* extension[nes-enrolment-termination-reason] ^short = " describe the reason the enrolment has ended"
+* extension[terminationReason] ^short = " describe the reason the enrolment has ended"
+* extension[qualifiedEncounter] ^short = "the last qualified Encounter relating to this Enrolment"
+
+//extension constarints
 * extension[nes-enrolment-termination-reason].valueCodeableConcept from https://nzhts.digital.health.nz/fhir/ValueSet/nes-enrolment-termination-reason (required)
 
-//* extension[owningOrganisation] only Reference(HpiOrganization)
 
 // contained resources
 * contained ^slicing.discriminator.type = #type
@@ -46,4 +49,8 @@ Description:    "Adds additional, NES specific extensions for enrolments"
 * contained contains careManager 0..1
 * contained[careManager] only http://hl7.org/fhir/StructureDefinition/PractitionerRole
 * contained[careManager] ^short = "Contained resource for the Care Manager of the Enrolment"
-* contained[careManager] ^definition = "Contained resource for the Care Manager of the Enrolment"
+* contained ^slicing.description = "Slicing to specify an Encounter resource may be returned as a contained resource for the Care Manager"
+
+* contained contains qualifiedEncounter 0..1
+* contained[qualifiedEncounter] only Encounter
+* contained[careManager] ^short = "Contained resource for the last qualified Encounter relating to this Enrolment"

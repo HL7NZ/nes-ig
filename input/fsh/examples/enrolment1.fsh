@@ -13,6 +13,7 @@ Usage: #example
 * careManager = Reference(EnrolmentServiceProvider1)
 
 * contained[0] = EnrolmentServiceProvider1
+* contained[1] = QualifiedEncounter1
 * status = #active
 
 * extension[enrolment-expiry-date].valueDate = "2026-06-05"
@@ -26,3 +27,12 @@ Usage: #inline
 
 * practitioner = Reference(Practitioner/99ZZZS)
 * organization = Reference(Organization/GZZ998-G)
+
+
+Instance: QualifiedEncounter1
+InstanceOf: Encounter
+Usage: #inline
+
+* status = #finished 
+* class = #AMB
+* period.start =  "2023-08-27"
