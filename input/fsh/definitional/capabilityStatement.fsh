@@ -26,6 +26,12 @@ Usage: #definition
 //comma delimited fields in documentation string extracted by makeCapabilityStatement.js:   <verb,url,doc,scope>
 * rest.resource.interaction.documentation = "GET,[base]/[Coverage]/[id],Used to retrieve a Patient's entitlements, system/Coverage.r"
 
+* rest.resource.type = #EpisodeOfCare
+* rest.resource.profile = "http://hl7.org.nz/fhir/StructureDefinition/NesEnrolment"
+* rest.resource.interaction.code = #read
+//comma delimited fields in documentation string extracted by makeCapabilityStatement.js:   <verb,url,doc,scope>
+* rest.resource.interaction.documentation = "GET,[base]/[EpisodeOfCare]/[id],Used to retrieve a Patient's enrolments, system/EpisodeOfCare.r"
+
 * rest.operation[0].name = "process-message"
 * rest.operation[0].definition = "http://hl7.org/fhir/OperationDefinition/MessageHeader-process-message"
 * rest.operation[0].documentation = "POST, [base]/$process-message, http://hl7.org/fhir/OperationDefinition/MessageHeader-process-message, system/Bundle.c"

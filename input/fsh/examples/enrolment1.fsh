@@ -19,6 +19,7 @@ Usage: #example
 * extension[enrolment-expiry-date].valueDate = "2026-06-05"
 * extension[enrolment-owner-org].valueReference = Reference(Organization/GZZ998-G)
 * extension[nes-enrolment-termination-reason].valueCodeableConcept = #Transfer
+* extension[enrolment-encounter].valueReference = Reference(QualifiedEncounter1)
 
 Instance: EnrolmentServiceProvider1
 InstanceOf: PractitionerRole
