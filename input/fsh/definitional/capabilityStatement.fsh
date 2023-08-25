@@ -34,7 +34,7 @@ Usage: #definition
 
 * rest.operation[0].name = "process-message"
 * rest.operation[0].definition = "http://hl7.org/fhir/OperationDefinition/MessageHeader-process-message"
-* rest.operation[0].documentation = "POST, [base]/$process-message, http://hl7.org/fhir/OperationDefinition/MessageHeader-process-message, system/Bundle.c"
+* rest.operation[0].documentation = "POST, [base]/$process-message, http://hl7.org/fhir/OperationDefinition/MessageHeader-process-message, system/EpisodeOfCare.c"
 
 * messaging.supportedMessage[0].mode = $EventCapabilityMode#sender
 * messaging.supportedMessage[0].definition = "http://hl7.org.nz/fhir/MessageDefinition/EnrolmentNominationRequestMessageDefinition"
