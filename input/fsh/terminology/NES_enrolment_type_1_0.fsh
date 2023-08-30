@@ -14,8 +14,8 @@ Description: "Describes the type of health service which the enrolment is for"
 * ^versionNeeded = true
 * ^content = #complete
 * ^count = 4
-* #FLS  "Front Line Services" "Funded GP Enrolment"
-* #FLS-NF  "Front Line Services" "Funded GP Enrolment - unfunded"
+* #FLS  "First Level Services" "Funded GP Enrolment"
+* #FLS-NF  "First Level Services" "GP Enrolment - unfunded"
 * #LMC   "Lead Maternity Carer" 
 * #WCP "Well Child Provider"
 

@@ -17,7 +17,9 @@ Usage: #example
 * status = #active
 
 * extension[enrolment-expiry-date].valueDate = "2026-06-05"
+* extension[reenrolment-date].valueDate = "2022-06-05"
 * extension[enrolment-owner-org].valueReference = Reference(Organization/GZZ998-G)
+* extension[enrolment-owner-org].valueReference.display = "Live Org with Dormant"
 * extension[nes-enrolment-termination-reason].valueCodeableConcept = #Transfer
 * extension[enrolment-encounter].valueReference = Reference(QualifiedEncounter1)
 
@@ -27,7 +29,11 @@ Description: "Example EnrolmentServiceProvider1"
 Usage: #inline
 
 * practitioner = Reference(Practitioner/99ZZZS)
+* practitioner.display = "Mrs TestOne Prefix-Test"
 * organization = Reference(Organization/GZZ998-G)
+* organization.display = "Live Org with Dormant"
+* location = Reference(Location/FZZ968-B)
+* location.display = "Facility Has All Contact Types TEST"
 
 
 Instance: QualifiedEncounter1
