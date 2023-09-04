@@ -17,3 +17,22 @@ Description:    "Adds additional, NES specific extensions"
 
 * ^url = "http://hl7.org.nz/fhir/StructureDefinition/NesEntitlement"
 
+//excluded
+
+
+* policyHolder 0..0
+* subscriber 0..0
+* subscriberId 0..0
+* dependent 0..0
+* class 0..0
+* order 0..0
+* network 0..0
+* costToBeneficiary 0..0
+* subrogation 0..0
+* contract 0..0
+* implicitRules 0..0 
+* language 0..0
+
+
+// constraints on base profile
+* type from https://nzhts.digital.health.nz/fhir/ValueSet/coverage-type-code
