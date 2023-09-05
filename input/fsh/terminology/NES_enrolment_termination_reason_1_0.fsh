@@ -14,7 +14,7 @@ Description: "A code to describe the reason the enrolment has ended"
 * ^versionNeeded = true
 * ^content = #complete
 * ^count = 7
-// From NES Data Dictionary v3.08
+// From NES Data Dictionary v3.13
 * #Transfer  "The patient has enrolled with another organisation"
 * #OptOut  "An eligible patient has chosen to end their enrolment"
 * #Died   "The patient has died" 
@@ -22,7 +22,8 @@ Description: "A code to describe the reason the enrolment has ended"
 * #LinkNHI "Linked NHI"
 * #Expire "Enrolment has expired"
 * #OrgEnd "Enrolmnent terminated by Enrolling Organisation"
-
+* #Overseas "The patient is residing overseas"
+* #EnrolledInError "Enrolled in error" 
 
 ValueSet: Nes_enrolment_termination_reason
 Id: nes-enrolment-termination-reason-1.0
