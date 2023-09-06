@@ -13,7 +13,7 @@ Usage: #definition
 * focus[0].max = "1"
 
 * focus[1].code = #RelatedPerson
-* focus[1].min = 0
+* focus[1].min = 1
 * focus[1].max = "2"
 
 * focus[2].code = #Practitioner
