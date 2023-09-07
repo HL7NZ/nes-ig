@@ -2,10 +2,12 @@ Alias: $ethnic-group-level-4-code = https://standards.digital.health.nz/ns/ethni
 
 Instance: enrolment-nomination-request-error-response-1
 InstanceOf: OperationOutcome
-Description: "Example of a synchronous 40x error response to a enrolment nomination request message"
+Description: "Example of a synchronous 422 error response to a enrolment nomination request message"
 Usage: #example
 
 * issue.severity =  #error
 * issue.code =  #informational
-* issue.diagnostics = "Inavlid pracitioner id"
+* issue.details.coding.code = #EM02002
+* issue.details.coding.system = "https://standards.digital.health.nz/ns/hip-error-code"
+* issue.details.text = "The NHI cannot be found" 
 

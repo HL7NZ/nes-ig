@@ -22,6 +22,7 @@ Usage: #example
 * extension[enrolment-owner-org].valueReference.display = "Live Org with Dormant"
 * extension[nes-enrolment-termination-reason].valueCodeableConcept = #Transfer
 * extension[enrolment-encounter].valueReference = Reference(QualifiedEncounter1)
+* extension[nes-enrolment-termination-reason].valueCodeableConcept.coding.code = #LinkNHI
 
 Instance: EnrolmentServiceProvider1
 InstanceOf: PractitionerRole

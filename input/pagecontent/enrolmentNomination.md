@@ -45,8 +45,8 @@ Example of an enriched enrolment nomination request message sent by  NES to the 
 | ----------------------- | -------------------- | ---------------- | ---------------------------------------- |
 | Success                 | 202                  | empty            | The message has been accepted for  processing |
 | Server Error            | 50x                  | empty            | An unexpected error occurred on the part of the server. The client may resend the message at a later time once the server is issue is resolved |
-| Data  Error             | 400                  | OperationOutcome | If the server cannot process the message due to a data error, it should return a 400 error with an OperationOutcome in the body describing the error |
-| Other processing errors | 40x                  | empty            | Other 40x errors may be returned by intermediary gateways (e.g. 401 Unauthorized). These may not provide an OperationOutcome |
+| Data  Error             | 400,422                  | OperationOutcome | If the server cannot process the message due to a data error, it should return a 400 error with an OperationOutcome in the body describing the error |
+| Other processing errors | 4xx                  | empty            | Other 4xx errors may be returned by intermediary gateways (e.g. 401 Unauthorized). 429 Too many requests. These may not provide an OperationOutcome |
 
 #### Example Error Response
 

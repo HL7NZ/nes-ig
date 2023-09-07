@@ -39,7 +39,7 @@ Description:    "Adds additional, NES specific extensions for enrolments"
 * extension[terminationReason] ^short = " describe the reason the enrolment has ended"
 * extension[qualifiedEncounter] ^short = "the last qualified Encounter relating to this Enrolment"
 
-//extension constarints
+//extension constraints
 * extension[nes-enrolment-termination-reason].valueCodeableConcept from https://nzhts.digital.health.nz/fhir/ValueSet/nes-enrolment-termination-reason (required)
 
 
@@ -56,3 +56,26 @@ Description:    "Adds additional, NES specific extensions for enrolments"
 * contained contains qualifiedEncounter 0..1
 * contained[qualifiedEncounter] only Encounter
 * contained[careManager] ^short = "Contained resource for the last qualified Encounter relating to this Enrolment"
+
+//to do: allow unicocde
+Invariant: URL_LENGTH
+Expression: "EpisodeOfCare.descendants().url.all(length()<1024)"
+Description: "URLs must be less than 1024 characters"
+Severity: #error
+
+//Invariant: URL_ALLOWED_CHARS
+//Expression: "EpisodeOfCare.descendants().url.all(matches('^[-a-zA-Z0-9@:%._\+~#=?&\/]*$'))"
+//Expression: "EpisodeOfCare.descendants().url.all(matches('^[/]*$'))"
+//Description: "character restrictions for URLs"
+//Severity: #error
+
+//Invariant: SYSTEM_ALLOWED_CHARS
+//Expression: "EpisodeOfCare.descendants().system.all(matches('^[-a-zA-Z0-9@:%._\+~#=?&\/]*$'))"
+//Expression: "EpisodeOfCare.descendants().url.all(length()<1024)"
+//Description: "character restrictions for system url"
+//Severity: #error
+
+Invariant: SYSTEM_LENGTH
+Expression: "EpisodeOfCare.descendants().url.all(length()<1024)"
+Description: "System URLs must be less than 1024 characters"
+Severity: #error
