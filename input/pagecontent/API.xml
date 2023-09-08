@@ -8,24 +8,24 @@
 <h5>EpisodeOfCare</h5>
 <strong>Interactions</strong>
 <table class='table table-bordered table-condensed'>
-<tr><th width='20%'>Code</th><th width='10%'>Verb</th><th width='20%'>URL</th><th width='50%'>Documentation</th></tr>
+<tr><th width='10%'>Name</th><th width='10%'>Verb</th><th width='20%'>URL</th><th width='50%'>Documentation</th><th width='10%'>Scope</th></tr>
 <tr>
 <td>read</td>
 <td>GET</td>
 <td>[base]/[EpisodeOfCare]/[id]</td>
 <td>Used to retrieve a Patient's enrolments</td>
+<td> system/EpisodeOfCare.r</td>
 </tr>
 </table>
 <br/><h4>Server Level Interactions</h4>
 <strong>Operations</strong>
 <table class='table table-bordered table-condensed'>
-<tr><th width='30%'>Name</th><th width='70%'>Definitions</th></tr>
+<tr><th width='20%'>Code</th><th width='10%'>Verb</th><th width='20%'>URL</th><th width='50%'>Documentation</th></tr>
 <tr>
-<td><p>process-message</p>
-</td>
-<td><p>http://hl7.org/fhir/OperationDefinition/MessageHeader-process-message</p>
-</td>
-<br></br>
+<td>process-message</td>
+<td>POST</td>
+<td> [base]/$process-message</td>
+<td> http://hl7.org/fhir/OperationDefinition/MessageHeader-process-message</td>
 </tr>
 </table>
 <br/><h3>Messages</h3>
