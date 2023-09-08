@@ -174,7 +174,8 @@ if (fs.existsSync(rootPath)) {
 
             })
 
-			ar.push("<br/><h4>Server Level Interactions</h4>") 
+			
+			ar.push('<br/><h4>' + "Server Level Interactions" + "</h4>") 
 			ar.push("<strong>Operations</strong>")
 			ar.push("<table class='table table-bordered table-condensed'>")
 		    ar.push("<tr><th width='10%'>Name</th><th width='10%'>Verb</th><th width='20%'>URL</th><th width='40%'>Documentation</th><th width='10%'>Scope</th></tr>")
