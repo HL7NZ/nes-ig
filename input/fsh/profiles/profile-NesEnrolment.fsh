@@ -58,40 +58,40 @@ Description:    "Adds additional, NES specific extensions for enrolments"
 * contained[careManager] ^short = "Contained resource for the last qualified Encounter relating to this Enrolment"
 
 
-* obeys URL_LENGTH
-* obeys URL_ALLOWED_CHARS
-* obeys SYSTEM_LENGTH
-* obeys SYSTEM_ALLOWED_CHARS
-* obeys CODEABLE_CONCEPT_TEXT_LENGTH
-* obeys CODEABLE_CONCEPT_TEXT_ALLOWED_CHARS
+* obeys URL-LENGTH
+* obeys URL-ALLOWED-CHARS
+* obeys SYSTEM-LENGTH
+* obeys SYSTEM-ALLOWED-CHARS
+* obeys CODEABLE-CONCEPT-TEXT-LENGTH
+* obeys CODEABLE-CONCEPT-TEXT-ALLOWED-CHARS
 
 //to do: allow unicocde
-Invariant: URL_LENGTH
+Invariant: URL-LENGTH
 Expression: "EpisodeOfCare.descendants().url.all(length()<1024)"
 Description: "URLs must be less than 1024 characters"
 Severity: #error
 
-Invariant: URL_ALLOWED_CHARS
+Invariant: URL-ALLOWED-CHARS
 Expression: "EpisodeOfCare.descendants().url.all(matches('^[-a-zA-Z0-9@:%._\\+~#=?&\\/]*$'))"
 Description: "character restrictions for URLs"
 Severity: #error
 
-Invariant: SYSTEM_LENGTH
+Invariant: SYSTEM-LENGTH
 Expression: "EpisodeOfCare.descendants().system.all(length()<1024)"
 Description: "System URLs must be less than 1024 characters"
 Severity: #error
 
-Invariant: SYSTEM_ALLOWED_CHARS
+Invariant: SYSTEM-ALLOWED-CHARS
 Expression: "EpisodeOfCare.descendants().system.all(matches('^[-a-zA-Z0-9@:%._\\+~#=?&\\/]*$'))"
 Description: "character restrictions for system url"
 Severity: #error
 
-Invariant: CODEABLE_CONCEPT_TEXT_LENGTH
+Invariant: CODEABLE-CONCEPT-TEXT-LENGTH
 Expression: "EpisodeOfCare.descendants().valueCodeableConcept.text.all(length()<1024))"
 Description: "valueCodeableConcept.text must be less than 1024 characters"
 Severity: #error
 
-Invariant: CODEABLE_CONCEPT_TEXT_ALLOWED_CHARS
+Invariant: CODEABLE-CONCEPT-TEXT-ALLOWED-CHARS
 Expression: "EpisodeOfCare.descendants().valueCodeableConcept.text.all(matches('^([a-zA-Z0-9\\'\\s\\.\\-\\/,])*$'))"
 Description: "character restrictions for valueCodeableConcept.text"
 Severity: #error
