@@ -110,7 +110,7 @@ if (fs.existsSync(rootPath)) {
                           	ar.push(`<td>${verb}</td>`)
 							ar.push(`<td>${url}</td>`)
                             ar.push(`<td>${doc}</td>`)
-                             ar.push(`<td>${scope}</td>`)
+                            ar.push(`<td>${scope}</td>`)
                             ar.push("</tr>")
     
                         })
@@ -177,7 +177,7 @@ if (fs.existsSync(rootPath)) {
 			ar.push("<br/><h4>Server Level Interactions</h4>") 
 			ar.push("<strong>Operations</strong>")
 			ar.push("<table class='table table-bordered table-condensed'>")
-		    ar.push("<tr><th width='20%'>Code</th><th width='10%'>Verb</th><th width='20%'>URL</th><th width='50%'>Documentation</th></tr>")
+		    ar.push("<tr><th width='10%'>Name</th><th width='10%'>Verb</th><th width='20%'>URL</th><th width='40%'>Documentation</th><th width='10%'>Scope</th></tr>")
 			capStmt.rest.forEach(function(rest){				
 				rest.operation.forEach(function(ser){
 				 
@@ -188,9 +188,11 @@ if (fs.existsSync(rootPath)) {
 					let verb  = documentation[0] ?? " "
 					let url = documentation[1] ?? " "
 					let doc = documentation[2] ?? " "
+					let scope = documentation[3] ?? " "
 					ar.push(`<td>${verb}</td>`)
 					ar.push(`<td>${url}</td>`)
 					ar.push(`<td>${doc}</td>`)
+					ar.push(`<td>${scope}</td>`)
 					ar.push("</tr>")
 
 				
