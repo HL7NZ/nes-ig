@@ -4,6 +4,19 @@
 </div><br/>
 <br/><div><h3>REST APIs</h3></div><br/>
 <br/><h4>Resource Level Interactions</h4>
+<a name="Coverage"> </a>
+<h5>Coverage</h5>
+<strong>Interactions</strong>
+<table class='table table-bordered table-condensed'>
+<tr><th width='10%'>Name</th><th width='10%'>Verb</th><th width='20%'>URL</th><th width='50%'>Documentation</th><th width='10%'>Scope</th></tr>
+<tr>
+<td>read</td>
+<td>GET</td>
+<td>[base]/[Coverage]/[id]</td>
+<td>Used to retrieve a Patient's entitlements</td>
+<td> system/Coverage.r</td>
+</tr>
+</table>
 <a name="EpisodeOfCare"> </a>
 <h5>EpisodeOfCare</h5>
 <strong>Interactions</strong>
@@ -20,12 +33,13 @@
 <br/><h4>Server Level Interactions</h4>
 <strong>Operations</strong>
 <table class='table table-bordered table-condensed'>
-<tr><th width='20%'>Code</th><th width='10%'>Verb</th><th width='20%'>URL</th><th width='50%'>Documentation</th></tr>
+<tr><th width='10%'>Name</th><th width='10%'>Verb</th><th width='20%'>URL</th><th width='40%'>Documentation</th><th width='10%'>Scope</th></tr>
 <tr>
 <td>process-message</td>
 <td>POST</td>
 <td> [base]/$process-message</td>
 <td> http://hl7.org/fhir/OperationDefinition/MessageHeader-process-message</td>
+<td> system/MessageHeader.c</td>
 </tr>
 </table>
 <br/><h3>Messages</h3>
