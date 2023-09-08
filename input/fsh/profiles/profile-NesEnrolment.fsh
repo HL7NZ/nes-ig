@@ -63,19 +63,28 @@ Expression: "EpisodeOfCare.descendants().url.all(length()<1024)"
 Description: "URLs must be less than 1024 characters"
 Severity: #error
 
-//Invariant: URL_ALLOWED_CHARS
-//Expression: "EpisodeOfCare.descendants().url.all(matches('^[-a-zA-Z0-9@:%._\+~#=?&\/]*$'))"
-//Expression: "EpisodeOfCare.descendants().url.all(matches('^[/]*$'))"
-//Description: "character restrictions for URLs"
-//Severity: #error
-
-//Invariant: SYSTEM_ALLOWED_CHARS
-//Expression: "EpisodeOfCare.descendants().system.all(matches('^[-a-zA-Z0-9@:%._\+~#=?&\/]*$'))"
-//Expression: "EpisodeOfCare.descendants().url.all(length()<1024)"
-//Description: "character restrictions for system url"
-//Severity: #error
+Invariant: URL_ALLOWED_CHARS
+Expression: "EpisodeOfCare.descendants().url.all(matches('^[-a-zA-Z0-9@:%._\\+~#=?&\\/]*$'))"
+Description: "character restrictions for URLs"
+Severity: #error
 
 Invariant: SYSTEM_LENGTH
-Expression: "EpisodeOfCare.descendants().url.all(length()<1024)"
+Expression: "EpisodeOfCare.descendants().system.all(length()<1024)"
 Description: "System URLs must be less than 1024 characters"
 Severity: #error
+
+Invariant: SYSTEM_ALLOWED_CHARS
+Expression: "EpisodeOfCare.descendants().system.all(matches('^[-a-zA-Z0-9@:%._\\+~#=?&\\/]*$'))"
+Description: "character restrictions for system url"
+Severity: #error
+
+Invariant: CODEABLE_CONCEPT_TEXT_LENGTH
+Expression: "EpisodeOfCare.descendants().valueCodeableConcept.text.all(length()<1024))"
+Description: "valueCodeableConcept.text must be less than 1024 characters"
+Severity: #error
+
+Invariant: CODEABLE_CONCEPT_TEXT_ALLOWED_CHARS
+Expression: "EpisodeOfCare.descendants().valueCodeableConcept.text.all(matches('^([a-zA-Z0-9\\'\\s\\.\\-\\/,])*$'))"
+Description: "character restrictions for valueCodeableConcept.text"
+Severity: #error
+

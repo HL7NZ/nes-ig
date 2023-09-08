@@ -23,6 +23,7 @@ Usage: #example
 * extension[nes-enrolment-termination-reason].valueCodeableConcept = #Transfer
 * extension[enrolment-encounter].valueReference = Reference(QualifiedEncounter1)
 * extension[nes-enrolment-termination-reason].valueCodeableConcept.coding.code = #LinkNHI
+* extension[nes-enrolment-termination-reason].valueCodeableConcept.text = "NHI was Linked"
 
 Instance: EnrolmentServiceProvider1
 InstanceOf: PractitionerRole

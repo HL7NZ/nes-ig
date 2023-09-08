@@ -13,7 +13,7 @@ Description: "A code to describe the reason the enrolment has ended"
 * ^caseSensitive = false
 * ^versionNeeded = true
 * ^content = #complete
-* ^count = 7
+* ^count = 9
 // From NES Data Dictionary v3.13
 * #Transfer  "The patient has enrolled with another organisation"
 * #OptOut  "An eligible patient has chosen to end their enrolment"
