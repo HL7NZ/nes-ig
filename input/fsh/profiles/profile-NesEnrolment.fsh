@@ -57,6 +57,14 @@ Description:    "Adds additional, NES specific extensions for enrolments"
 * contained[qualifiedEncounter] only Encounter
 * contained[careManager] ^short = "Contained resource for the last qualified Encounter relating to this Enrolment"
 
+
+* obeys URL_LENGTH
+* obeys URL_ALLOWED_CHARS
+* obeys SYSTEM_LENGTH
+* obeys SYSTEM_ALLOWED_CHARS
+* obeys CODEABLE_CONCEPT_TEXT_LENGTH
+* obeys CODEABLE_CONCEPT_TEXT_ALLOWED_CHARS
+
 //to do: allow unicocde
 Invariant: URL_LENGTH
 Expression: "EpisodeOfCare.descendants().url.all(length()<1024)"
