@@ -1,7 +1,7 @@
 ## Enrolment Nomination  Overview
 
 An ‘Enrolment Nomination ’ interaction is initiated by a user who wishes to request that a health provider enrol a patient for a health service.
-The request includes details of the patient, the provider,  and in some cases the Patient's next-of-kin.
+The request includes details of the patient, the Patient’s guardian and in some cases the provider.
 At a later time, after the health provider has processed the request, they send a response back to the nominated endpoint indicating if the enrolment request has been accepted or declined.
 
 ### Enrolment Nomination Request
