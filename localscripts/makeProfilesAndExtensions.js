@@ -36,6 +36,7 @@ let profileOutFile1 =  "input/pagecontent/profiles.xml";  // for IG publisher
 let extOutFile1 =  "input/pagecontent/extensions.xml";  // for IG publisher
 let fullFolderPath = "fsh-generated/resources/" 
 
+console.log("Getting profiles and extensions");
 
 let ar = []
 ar.push("<div xmlns='http://www.w3.org/1999/xhtml'>")
@@ -54,7 +55,7 @@ if (fs.existsSync(fullFolderPath)) {
     arFiles.forEach(function(name){
         if (name.indexOf("StructureDefinition-") > -1 ) {
             let fullFileName = fullFolderPath + name;
-
+		    console.log("reading " + name);
 
             let contents = fs.readFileSync(fullFileName).toString();
            

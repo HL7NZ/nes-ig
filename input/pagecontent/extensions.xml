@@ -3,5 +3,50 @@
 <table width='100%' border='1' cellspacing='0' cellpadding='5px'>
 <tr><th>Id</th><th>Url</th><th>Context of Use</th><th>Description</th><th>Purpose</th>
 </tr>
+<tr>
+<td><a href='StructureDefinition-enrolment-encounter.html'>enrolment-encounter</a></td>
+<td>http://hl7.org.nz/fhir/StructureDefinition/enrolment-encounter</td>
+<td>
+<div>EpisodeOfCare</div>
+</td>
+<td><p>The last qualified encounter foe this enrolment</p></td>
+<td></td>
+</tr>
+<tr>
+<td><a href='StructureDefinition-enrolment-expiry-date.html'>enrolment-expiry-date</a></td>
+<td>http://hl7.org.nz/fhir/StructureDefinition/enrolment-expiry-date</td>
+<td>
+<div>EpisodeOfCare</div>
+</td>
+<td><p>The enrolment expiry date</p></td>
+<td></td>
+</tr>
+<tr>
+<td><a href='StructureDefinition-enrolment-owner-org.html'>enrolment-owner-org</a></td>
+<td>http://hl7.org.nz/fhir/StructureDefinition/enrolment-owner-org</td>
+<td>
+<div>EpisodeOfCare</div>
+</td>
+<td><p>Org that creates the enrolment</p></td>
+<td></td>
+</tr>
+<tr>
+<td><a href='StructureDefinition-nes-enrolment-termination-reason.html'>nes-enrolment-termination-reason</a></td>
+<td>http://hl7.org.nz/fhir/StructureDefinition/nes-enrolment-termination-reason</td>
+<td>
+<div>EpisodeOfCare</div>
+</td>
+<td><p>NES Enrolment Termination Reason Code</p></td>
+<td></td>
+</tr>
+<tr>
+<td><a href='StructureDefinition-reenrolment-date.html'>reenrolment-date</a></td>
+<td>http://hl7.org.nz/fhir/StructureDefinition/reenrolment-date</td>
+<td>
+<div>EpisodeOfCare</div>
+</td>
+<td><p>The re-enrolment date</p></td>
+<td></td>
+</tr>
 </table>
 </div>

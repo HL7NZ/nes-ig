@@ -9,6 +9,11 @@
 <td><p>Adds additional, NES specific extensions</p></td>
 </tr>
 <tr>
+<td><a href='StructureDefinition-NesEncounter.html'>NesEncounter</a></td>
+<td>http://hl7.org.nz/fhir/StructureDefinition/NesEncounter</td>
+<td><p>Restricts Encounter to the elemrnts need to describe an NES Enrolment qualified Encounter</p></td>
+</tr>
+<tr>
 <td><a href='StructureDefinition-NesEnrolment.html'>NesEnrolment</a></td>
 <td>http://hl7.org.nz/fhir/StructureDefinition/NesEnrolment</td>
 <td><p>Adds additional, NES specific extensions for enrolments</p></td>
