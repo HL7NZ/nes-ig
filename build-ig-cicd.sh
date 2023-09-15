@@ -87,6 +87,7 @@ sudo chmod +x ./localscripts/makeTerminologySummary.js
 echo "Making API summary"
 sudo chmod +x ./localscripts/makeCapabilityStatement.js
 ./localscripts/makeCapabilityStatement.js nes
+./localscripts/makeProfilesAndExtensions.js
 pwd
 
 cp ./template/* $HOME/.fhir/packages/fhir.base.template#current/package/content
