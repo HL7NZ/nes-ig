@@ -11,7 +11,7 @@ Usage: #example
 * meta.tag[0].system = "http://terminology.hl7.org/CodeSystem/v3-ProcessingID"
 * entry[0].resource.resourceType = "MessageHeader"
 * entry[0].resource.response.code = #ok
-
+* entry[0].resource.id = "321321321"
 //Healthlink AIR Broker  HPI appid 
 * entry[0].resource.source.software =  "HSAP22222"
  //EDI account of sending facility
