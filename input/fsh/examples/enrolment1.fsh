@@ -8,6 +8,8 @@ Usage: #example
 * identifier.system = "https://standards.digital.health.nz/ns/nes-enrolment-id"
 * identifier.value = "EN667788899"
 
+* type.coding.system = "https://standards.digital.health.nz/nes-enrolment-type"
+* type.coding.code = #FLS-NF
 
 * patient = Reference(Patient/ZAA0792)
 * careManager = Reference(EnrolmentServiceProvider1)
@@ -24,6 +26,7 @@ Usage: #example
 * extension[enrolment-encounter].valueReference = Reference(QualifiedEncounter1)
 * extension[nes-enrolment-termination-reason].valueCodeableConcept.coding.code = #LinkNHI
 * extension[nes-enrolment-termination-reason].valueCodeableConcept.text = "NHI was Linked"
+
 
 Instance: EnrolmentServiceProvider1
 InstanceOf: PractitionerRole

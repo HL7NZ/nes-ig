@@ -39,6 +39,7 @@ Usage: #example
 * entry[1].resource.resourceType = "Patient"
 
 * entry[1].resource.id = "ZKC4633"
+* entry[1].resource.meta.profile = "NHIPatient"
 * entry[1].resource.identifier.use = #official
 * entry[1].resource.identifier.system = "https://standards.digital.health.nz/ns/nhi-id"
 * entry[1].resource.identifier.value = "ZKC4633"
