@@ -46,6 +46,8 @@ Usage: #example
 * entry[1].resource.name[0].id = "10"
 * entry[1].resource.name[=].family = "Aufderhar"
 * entry[1].resource.name[=].given = "Baby of Jane"
+* entry[1].resource.name[=].extension[1].url = "http://hl7.org/fhir/StructureDefinition/iso21090-preferred"
+* entry[1].resource.name[=].extension[=].valueBoolean = true
 * entry[1].resource.gender = #female
 * entry[1].resource.birthDate = "2023-05-25"
 * entry[1].resource.extension[0].url = "http://hl7.org.nz/fhir/StructureDefinition/nz-ethnicity"
@@ -66,6 +68,8 @@ Usage: #example
 * entry[2].resource.identifier.value = "ZJM9397"
 * entry[2].resource.name.given = "Mary"
 * entry[2].resource.name.family = "Jones"
+* entry[2].resource.name[=].extension[1].url = "http://hl7.org/fhir/StructureDefinition/iso21090-preferred"
+* entry[2].resource.name[=].extension[=].valueBoolean = true
 * entry[2].resource.patient = Reference(https://api.hip-uat.digital.health.nz/fhir/nhi/v1/Patient/ZKC4633)
 * entry[2].resource.relationship.coding.system = "http://terminology.hl7.org/CodeSystem/v3-RoleCode"
 * entry[2].resource.relationship.coding.code = #MTH
