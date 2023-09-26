@@ -27,9 +27,6 @@ Usage: #example
 * entry[=].resource.extension[enrolment-owner-org].valueReference.display = "Live Org with Dormant"
 * entry[=].resource.extension[nes-enrolment-termination-reason].valueCodeableConcept = #Transfer
 * entry[=].resource.extension[enrolment-encounter].valueReference = Reference(QualifiedEncounter1)
-* entry[=].resource.extension[nes-enrolment-termination-reason].valueCodeableConcept.coding.code = #LinkNHI
-* entry[=].resource.extension[nes-enrolment-termination-reason].valueCodeableConcept.text = "NHI was Linked"
-
 
 * entry[1].resource.resourceType = "EpisodeOfCare"
 
