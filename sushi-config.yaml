@@ -52,6 +52,7 @@ menu:
   Business View: businessView.html
   Use cases:
     Enrolment Nomination: enrolmentNomination.html
+    Get Enrolments: getEnrolment.html
   Important information:
     Onboarding and Compliance testing: OnboardingAndComplianceTesting.html
     General Notes: general.html
