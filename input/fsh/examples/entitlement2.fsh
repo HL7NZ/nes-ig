@@ -18,6 +18,7 @@ Usage: #example
 * type.coding.system = "https://nzhts.digital.health.nz/fhir/ValueSet/coverage-type-code"
 * type.coding.code = #csc
 
+//* subscriber = Reference(Patient/ZAA0792)
 * beneficiary = Reference(Patient/ZJM9397) 
 * relationship.coding.system = "http://terminology.hl7.org/CodeSystem/subscriber-relationship"
 * relationship.coding.code = #child
