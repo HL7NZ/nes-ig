@@ -20,5 +20,6 @@ activate A
 A -[dashed]-> B: 202 Response 
 |||
 deactivate A
+deactivate B
 |||
 @enduml

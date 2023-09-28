@@ -11,6 +11,7 @@ participant "PMS" as C #CornflowerBlue
 |||
 
 AA -> A: POST [base]/$process-message
+activate A
 A -> A:  validate and enrich
 
 A -> B: POST [base]/$process-message
@@ -20,9 +21,9 @@ B -> B: Transform to HL7 v2[]
 |||
 B -> C: ADT^28 request
 B -[dashed]-> A: 202 Response 
+deactivate B
 A -[dashed]-> AA: 202 Response 
-activate C
-|||
-deactivate C
+
+deactivate A
 |||
 @enduml
