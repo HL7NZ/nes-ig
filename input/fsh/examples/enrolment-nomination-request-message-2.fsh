@@ -48,7 +48,7 @@ Usage: #example
 * entry[2].resource.identifier.value = "ZJM9397"
 * entry[2].resource.name.given = "Mary"
 * entry[2].resource.name.family = "Jones"
-* entry[2].resource.name[=].extension[1].url = "http://hl7.org/fhir/StructureDefinition/iso21090-preferred"
+* entry[2].resource.name[=].extension[0].url = "http://hl7.org/fhir/StructureDefinition/iso21090-preferred"
 * entry[2].resource.name[=].extension[=].valueBoolean = true
 * entry[2].resource.patient = Reference(https://api.hip-uat.digital.health.nz/fhir/nhi/v1/Patient/ZKC4633)
 * entry[2].resource.relationship.coding.system = "http://terminology.hl7.org/CodeSystem/v3-RoleCode"

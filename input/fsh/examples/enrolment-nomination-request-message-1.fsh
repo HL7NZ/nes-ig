@@ -46,7 +46,7 @@ Usage: #example
 * entry[1].resource.name[0].id = "10"
 * entry[1].resource.name[=].family = "Aufderhar"
 * entry[1].resource.name[=].given = "Baby of Jane"
-* entry[1].resource.name[=].extension[1].url = "http://hl7.org/fhir/StructureDefinition/iso21090-preferred"
+* entry[1].resource.name[=].extension[0].url = "http://hl7.org/fhir/StructureDefinition/iso21090-preferred"
 * entry[1].resource.name[=].extension[=].valueBoolean = true
 * entry[1].resource.gender = #female
 * entry[1].resource.birthDate = "2023-05-25"
