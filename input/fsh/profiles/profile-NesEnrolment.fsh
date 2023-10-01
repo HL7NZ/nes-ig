@@ -57,6 +57,9 @@ Description:    "Adds additional, NES specific extensions for enrolments"
 * contained[qualifiedEncounter] only Encounter
 * contained[careManager] ^short = "Contained resource for the last qualified Encounter relating to this Enrolment"
 
+* patient only Reference(NesPatient)
+* contained contains patient 1..1
+* contained[patient] only NesPatient
 
 * obeys URL-LENGTH
 * obeys URL-ALLOWED-CHARS
