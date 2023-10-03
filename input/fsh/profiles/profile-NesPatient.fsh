@@ -4,8 +4,8 @@ Profile:        NesPatient
 Parent:         NzPatient       
 
 Id:             NesPatient
-Title:          "NES Enrolment"
-Description:    "A minimal profile of NzPatient, containing just enough information too avldiate a aptient's NHI for the purposes of enrolment"
+Title:          "NES Patient"
+Description:    "A minimal profile of NzPatient, containing just enough information to validate a patient's NHI for the purposes of enrolment"
 
 * ^url = "http://hl7.org.nz/fhir/StructureDefinition/NesPatient"
 
