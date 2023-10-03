@@ -53,6 +53,7 @@ menu:
   Use cases:
     Enrolment Nomination: enrolmentNomination.html
     Get Enrolments: getEnrolment.html
+    Create Enrolments: createEnrolment.html
   Important information:
     Onboarding and Compliance testing: OnboardingAndComplianceTesting.html
     General Notes: general.html

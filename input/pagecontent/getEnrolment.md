@@ -20,7 +20,7 @@ This is typically used to get all enrolments for a patient. It may optionally be
 
 
 ####  Get Enrolment Response Example 
-[get-enrolment-request-message-1](Bundle-EN88776655.json.html)
+[get-enrolment-response-message-1](Bundle-EN88776655.json.html)
 
 #### Business  Rules
 1.  An Enrolment search request must include a valid nhi-id

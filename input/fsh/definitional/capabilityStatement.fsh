@@ -31,6 +31,11 @@ Usage: #definition
 * rest.resource[=].interaction.code = #read
 //comma delimited fields in documentation string extracted by makeCapabilityStatement.js:   <verb,url,doc,scope>
 * rest.resource[=].interaction.documentation = "GET,[base]/[EpisodeOfCare]/[id],Used to retrieve a Patient's enrolments, system/EpisodeOfCare.r"
+* rest.resource[=].interaction[1].code = #create
+* rest.resource[=].interaction[=].documentation = "POST,[base]/[EpisodeOfCare], create a new enrolment, system/EpisodeOfCare.c"
+
+* rest.resource[=].interaction[2].code = #update
+* rest.resource[=].interaction[=].documentation = "PUT,[base]/[EpisodeOfCare]/[id], update an existing enrolment, system/EpisodeOfCare.u"
 
 * rest.operation[0].name = "process-message"
 * rest.operation[0].definition = "http://hl7.org/fhir/OperationDefinition/MessageHeader-process-message"
