@@ -23,5 +23,10 @@
 <td>http://hl7.org.nz/fhir/StructureDefinition/NesEntitlement</td>
 <td><p>Adds additional, NES specific extensions</p></td>
 </tr>
+<tr>
+<td><a href='StructureDefinition-NesPatient.html'>NesPatient</a></td>
+<td>http://hl7.org.nz/fhir/StructureDefinition/NesPatient</td>
+<td><p>A minimal profile of NzPatient, containing just enough information too avldiate a aptient&#39;s NHI for the purposes of enrolment</p></td>
+</tr>
 </table>
 </div>
