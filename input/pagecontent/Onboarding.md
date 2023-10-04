@@ -88,14 +88,47 @@ If there are tests below that do not apply please discuss this with the integrat
 
 #### Security and Audit Assessment
 
-\*\* All test messages will be assessed against the security criteria in the table below \*\*
 
-| **Reference** | Purpose                                  | *Input values**           | Expected outcome                      | Mandatory   |
-| ------------- | ---------------------------------------- | ------------------------- | ------------------------------------- | ----------- |
-| Security 1    | Credentials match those issued to the testing organisation  and their orgID and appID are auditing correctly | Checked against all tests | Te Whatu Ora will check internal logs |             |
-| Security 2    | Sending user ID is an end user ID or an hpi-person-id | Checked against all tests | Te Whatu Ora will check internal logs | Mandatory   |
-| Security 3    | Sending user ID changes when different end users are initiating the request (Please make sure a separate user creates a request) | Checked against all tests | Te Whatu Ora will check internal logs | Mandatory   |
-| Security 4    | Each request has a unique request id in the X-Correlation-Id field  If present this will be returned in the response | Checked against all tests | Te Whatu Ora will check internal logs | Recommended |
+<h4>Security and Audit Assessment</h4>
+<table>
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+</style>
+<caption><b>All test messages will be assessed against the security criteria in the table below</b></caption>
+<tr><th>Reference</th>
+<th>Purpose</th>
+<th>Input values</th>
+<th>Expected outcome</th>
+<th>Mandatory</th></tr>
+
+<tr><td>Security 1</td>
+<td>Credentials match those issued to the testing organisation <br /> and their orgID and appID are auditing correctly</td>
+<td>Checked against all tests</td>
+<td>Te Whatu Ora will check internal logs</td>
+<td>Mandatory</td></tr>
+
+<tr><td>Security 2</td>
+<td>Sending user ID is an end user ID or an hpi-person-id (CPN)</td>
+<td>Checked against all tests</td>
+<td>Te Whatu Ora will check internal logs</td>
+<td>Mandatory</td></tr>
+
+<tr><td>Security 3</td>
+<td>Sending user ID changes when different end users are initiating the request (Please make sure a seperate user creates a request)</td>
+<td>Checked against all tests</td>
+<td>Te Whatu Ora will check internal logs</td>
+<td>Mandatory</td></tr>
+
+<tr><td> Security 4 </td>
+<td>Each request has a unique request id in the X-Correlation-Id field  If present this will be returned in the response | Checked against all tests |</td>
+<td>Checked against all tests</td>
+<td>Te Whatu Ora will check internal logs</td>
+<td>Mandatory</td></tr>
+
+</table>
 
 
 
@@ -335,111 +368,6 @@ If there are tests below that do not apply please discuss this with the integrat
 
 
 
-
-
-
-
-Reference**
-
-**Purpose – Demonstrate that the**
-
-**Input values**
-
-**Expected outcome**
-
-**Mandatory**
-
-EnrolmentNominationRequest-1
-
-Application can create an enrolment nomination request with the minimum set of nomination information
-
-Send a nomination request with a fictitious identity:
-
-·        Baby
-
-o   NHI Number
-
-o   Gender
-
-o   Date of Birth
-
-·        GP
-
-o   Facility ID
-
-·        PG1
-
-o   Relationship Code
-
-o   First and Family name
-
-1.     Input: Minimum set of nomination information can be provided
-
-2.     Output: Nomination request can be successfully posted to the NES _$process-message_ endpoint
-
-3.     Get a success response of 200()
-
-mandatory
-
-EnrolmentNominationRequest-2
-
-Application can create an enrolment nomination request with all possible nomination information
-
-Send a nomination request with a fictitious identity:
-
-·        Baby
-
-o   NHI Number
-
-o   Name
-
-o   Gender
-
-o   Date of Birth
-
-·        GP
-
-o   Name
-
-o   Facility ID
-
-·        PG1
-
-o   Relationship Code
-
-o   First and Family name
-
-o   NHI Number
-
-o   Contact Number
-
-o   Work number
-
-o   Email
-
-o   Address
-
-·        PG2
-
-o   Relationship Code
-
-o   First and Family name
-
-o   NHI Number
-
-o   Contact Number
-
-o   Work number
-
-o   Email
-
-o   Address
-
-1.     Input: All possible nomination information can be provided
-
-2.     Output: Nomination request can be successfully posted to the NES _$process-message_ endpoint
-
-mandatory
 
 ### Resource Profile:
 
