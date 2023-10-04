@@ -31,9 +31,7 @@ Example of an enriched enrolment nomination request message sent by  NES to the 
 [enrolment-nomination-request-message-1](Bundle-11223344.json.html)
 
 #### Business Rules
-1. A Patient resource should include an NHI identifier, a name, and a date of  birth
-2. Requests which specify a processing flag value of 'D' in the bundle *meta.tag[0].code* element should be treated as debug messages. The server must ensure that processing these messages results in no change to production data.
-
+see (Enrolment Nomination request rules)[Onboarding.html#enrolment-nomination-request-rules.html]
 
 #### Responses Codes
 

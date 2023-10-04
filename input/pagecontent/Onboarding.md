@@ -70,7 +70,7 @@ Provide the following details in a test report and email to [integration@health.
       * any error messages presented by the application
       * the confirmation or result of the request presented by the application
     * For update operations the state of the record pre-request should be included. 
-    * **Note**: If non-interactive, please provide JSON request (update / add) or response (get/search).
+    * **Note**: If non-interactive, please provide JSON request (add)
 
 3. For each test supply a timestamp when each request is sent.
 
@@ -142,7 +142,7 @@ table, th, td {
 
 <tr><td>General-1</td>
 <td>Application can handle an HTTP 429 error in a graceful way</td>
-<td>The application reaches its usage plan limit and is returned an HTTP 429 error. <a href="general.html#usage-plans">See Usage plans</a></td>
+<td>The application reaches its usage plan limit and is returned an HTTP 429 error.
 <td>The application will retry several times with an exponentially increasing delay</td>
 <td>Recommended</td></tr>
 
@@ -165,18 +165,28 @@ table, th, td {
 <tr><td>EnrolmentNominationRequest-1</td>
 <td>Application can create an enrolment nomination request with the minimum set of nomination information</td>
 <td>Send a nomination request with a fictitious identity:
-   <ul>Baby 
-      <li>NHI Number</li>
-      <li>Gender</li>
-      <li>Date of Birth</li>
-   </ul>
-   <ul>GP  
-      <li>Facility ID</li>
-   </ul>
-   <ul>PG1  
-      <li>Relationship Code</li>
-      <li>First and Family name</li>     
-   </ul>
+ <ul> 
+  <li>Baby  
+   	 <ul>
+      	<li>NHI Number</li>
+      	<li>Gender</li>
+      	<li>Date of Birth</li>
+    </ul>
+  </li>
+  <li>gp
+  	 <ul>
+     	<li>Facility</li>
+    </ul>
+   </li>
+   <li>PG1
+  	 <ul>
+     	<li>Relationship Code</li>
+        <li>First and Family name</li>
+    </ul>
+   </li>
+   
+</ul>
+
 </td>
 <td>
    <ol type="1">
@@ -190,36 +200,34 @@ table, th, td {
 <tr><td>EnrolmentNominationRequest-2</td>
 <td>Application can create an enrolment nomination request with all possible nomination information</td>
 <td>Send a nomination request with a fictitious identity:
-   <ul>Baby 
-      <li>NHI Number</li>
-      <li>Name</li>
-      <li>Gender</li>
-      <li>Date of Birth</li>
-   </ul>
-   <ul>GP  
-   	  <li>Name</li>
-      <li>Facility ID</li>
-   </ul>
-   <ul>PG1  
-      <li>Relationship Code</li>
-      <li>First and Family name</li>  
-      <li>First and Family name</li>
-      <li>NHI Number</li>
-      <li>Contact Number</li>
-      <li>Work number </li>
-      <li>Email</li> 
-      <li>Address</li>  
-   </ul>
-   <ul>PG12 
-      <li>Relationship Code</li>
-      <li>First and Family name</li>  
-      <li>First and Family name</li>
-      <li>NHI Number</li>
-      <li>Contact Number</li>
-      <li>Work number </li>
-      <li>Email</li> 
-      <li>Address</li>  
-   </ul>
+  <ul> 
+  <li>Baby  
+   	 <ul>
+      	<li>NHI Number</li>
+        <li>Name</li>
+      	<li>Gender</li>
+      	<li>Date of Birth</li>
+    </ul>
+  </li>
+  <li>gp
+  	 <ul>
+     	<li>Name</li>
+     	<li>Facility</li>
+    </ul>
+   </li>
+   <li>PG1
+  	 <ul>
+     	<li>Relationship Code</li>
+        <li>First and Family name</li>
+        <li>NHI Number</li>
+      	<li>Contact Number</li>
+      	<li>Work number </li>
+      	<li>Email</li> 
+      	<li>Address</li> 
+    </ul>
+   </li>
+   
+</ul>
 </td>
 <td>
   <ol type="1">
