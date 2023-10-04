@@ -312,11 +312,8 @@ table, th, td {
 <td>-</td>
 <td><em>422 Unprocessable entity</em></td></tr>
 
-<tr><td>
-	<ul>
-		<li>Baby’s birthdate is a required field</li>
-		<li>Date of birth cannot be a future date</li>
-	</u1></td>
+<tr><td>Baby’s birthdate is a required field<br />
+	Date of birth cannot be a future date</td>
 <td>EM13009</td>
 <td>The baby's date of birth is missing or invalid</td>
 <td>-</td>
