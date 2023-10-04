@@ -63,7 +63,7 @@ Provide the following details in a test report and email to [integration@health.
    f. Testing start date and time and end date and time <br />
    g. Tester name and contact details <br />
    h. Interactions included in your integration which will be the Enrolment Nomination Request
-   
+
 2. For each test supply screen shots of the user interface for:
     * the input data as entered in the integrating application (“the application”)
     * the output:
@@ -142,7 +142,7 @@ table, th, td {
 
 <tr><td>General-1</td>
 <td>Application can handle an HTTP 429 error in a graceful way</td>
-<td>The application reaches its usage plan limit and is returned an HTTP 429 error.
+<td>The application reaches its usage plan limit and is returned an HTTP 429 error.</a></td>
 <td>The application will retry several times with an exponentially increasing delay</td>
 <td>Recommended</td></tr>
 
@@ -184,7 +184,7 @@ table, th, td {
         <li>First and Family name</li>
     </ul>
    </li>
-   
+
 </ul>
 
 </td>
@@ -226,7 +226,7 @@ table, th, td {
       	<li>Address</li> 
     </ul>
    </li>
-   
+
 </ul>
 </td>
 <td>
@@ -252,53 +252,46 @@ The FHIR enrolment nomination message will be created as a FHIR [Bundle](https:/
 
 ### Enrolment Nomination request rules
 
-·        An enrolment nomination request must include a
+ An enrolment nomination request must include a
 
-o   Baby NHI number
+- Baby NHI number
+-  Baby date of birth
+- Baby gender
+-  Nominated GP facility ID
+-  At least 1 Next of kin family and last name
 
-o   Baby date of birth
+A request may also include a
 
-o   Baby gender
-
-o   Nominated GP facility ID
-
-o   At least 1 Next of kin family and last name
-
-·        A request may also include a
-
-o   Baby name
-
-o   Nominated GP name
-
-o   Next of kin1 NHI number, address and contact details (up to 3 contact details)
-
-o   Next of kin2 NHI number, family and last name, relationship code, address and contact details (up to 3 contact details)
+- Baby name
+- Nominated GP name
+- Next of kin1 NHI number, address and contact details (up to 3 contact details)
+- Next of kin2 NHI number, family and last name, relationship code, address and contact details (up to 3 contact details)
 
 #### Baby’s NHI rule:
 
-·        Baby needs to have valid NHI
-
-·        Baby cannot be deceased
-
-·        Baby must not have PRE-ENROL/ENROL (un-expired) status in NES
+-  Baby needs to have valid NHI
+- Baby cannot be deceased
+- Baby must not have PRE-ENROL/ENROL (un-expired) status in NES
 
 #### Baby’s birthdate rule:
 
-·        A birth date must be after 1 January 1900 and not a future date
+- A birth date must be after 1 January 1900 and not a future date
+
 
 #### Baby’s gender rules:
 
-·        Baby must have a current gender, supplied as a valid gender code as per [FHIR codeset](http://hl7.org/fhir/R4/valueset-administrative-gender.html)
+- Baby must have a current gender, supplied as a valid gender code as per [FHIR codeset](http://hl7.org/fhir/R4/valueset-administrative-gender.html)
+
 
 #### Next of Kin (NoK) rules:
 
-·        At least one NoK name (minimum of first and family name) needs to be provided
-
-·        The relationship code must be a valid code as per the [FHIR codeset](http://hl7.org/fhir/R4/valueset-relatedperson-relationshiptype.html)
+- At least one NoK name (minimum of first and family name) needs to be provided
+- The relationship code must be a valid code as per the [FHIR codeset](http://hl7.org/fhir/R4/valueset-relatedperson-relationshiptype.html)
 
 #### Nominated Provider rules:
 
-· 		Nominated provider must have a valid Legacy-ClinicID/Clinic ID in HPILocation
+- Nominated provider must have a valid Legacy-ClinicID/Clinic ID in HPILocation
+
 
 <h4>Enrolment Nomination request errors</h4>
 <table>
