@@ -307,7 +307,7 @@ table, th, td {
 <th>HTTP Status code</th></tr>
 
 
-<tr><td>Baby’s NHI is a required field/td>
+<tr><td>Baby’s NHI is a required field</td>
 <td>-</td>
 <td>-</td>
 <td><em>422 Unprocessable entity</em></td></tr>
