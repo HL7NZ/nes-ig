@@ -54,29 +54,25 @@ By using Te Whatu Ora APIs you are accessing personally identifiable information
 
 Provide the following details in a test report and email to [integration@health.govt.nz](mailto:integration@health.govt.nz).
 
-1.     Tester details  
-  a. Organisation Name  
-  b. Application name and version  
-  c. NES IG Version  
-  d. Test Script version  
-  e. FHIR release version  
-  f. Testing start date and time and end date and time  
-  g. Tester name and contact details  
-  h. Interactions included in your integration which will be the Enrolment Nomination Request
+1. Tester details <br />
+   a. Organisation Name <br />
+   b. Application name and version <br />
+   c. NES IG Version <br />
+   d. Test Script version <br />
+   e. FHIR release version<br />
+   f. Testing start date and time and end date and time <br />
+   g. Tester name and contact details <br />
+   h. Interactions included in your integration which will be the Enrolment Nomination Request
+   
+2. For each test supply screen shots of the user interface for:
+    * the input data as entered in the integrating application (“the application”)
+    * the output:
+      * any error messages presented by the application
+      * the confirmation or result of the request presented by the application
+    * For update operations the state of the record pre-request should be included. 
+    * **Note**: If non-interactive, please provide JSON request (update / add) or response (get/search).
 
-2.     For each test supply screen shots of the user interface for:
-
-o   the input data as entered in the integrating application (“the application”)
-
-o   the output:
-
-§  any error messages presented by the application
-
-§  the confirmation or result of the request presented by the application
-
-o   **Note**: If non-interactive, please provide JSON request (add)
-
-3.     For each test supply a timestamp when each request is sent.
+3. For each test supply a timestamp when each request is sent.
 
 ### Compliance Tests
 
@@ -85,8 +81,6 @@ o   **Note**: If non-interactive, please provide JSON request (add)
 Not all tests below will be appropriate for every application.
 
 If there are tests below that do not apply please discuss this with the integration team and where appropriate write a description in the compliance tests why the test does not apply.
-
-#### Security and Audit Assessment
 
 
 <h4>Security and Audit Assessment</h4>
