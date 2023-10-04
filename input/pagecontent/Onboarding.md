@@ -131,243 +131,110 @@ table, th, td {
 </table>
 
 
+<h4>General tests</h4>
+<table>
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+</style>
+<caption><b>These tests apply to all integrations</b></caption>
+<tr><th>Reference</th>
+<th>Purpose – Demonstrate that the</th>
+<th>Input values</th>
+<th>Expected outcome</th>
+<th>Mandatory / Optional / Recommended</th></tr>
 
-#### General tests
+<tr><td>General-1</td>
+<td>Application can handle an HTTP 429 error in a graceful way</td>
+<td>The application reaches its usage plan limit and is returned an HTTP 429 error. <a href="general.html#usage-plans">See Usage plans</a></td>
+<td>The application will retry several times with an exponentially increasing delay</td>
+<td>Recommended</td></tr>
 
-
-** These tests apply to all integrations **
-
-<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
- style='border-collapse:collapse;border:none' data-table-width=760
- data-layout=default data-local-id=2323943e-6418-441c-8d99-e61cee990668>
- <colgroup><col style="width: 94.0px;"><col style="width: 190.0px;"><col style="width: 173.0px;"><col style="width: 161.0px;"><col style="width: 142.0px;"></colgroup>
- <tr>
-  <td style='border:solid windowtext 1.0pt;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
-  <p align=center style='text-align:center'><strong>Reference</strong></p>
-  </td>
-  <td style='border:solid windowtext 1.0pt;border-left:none;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
-  <p align=center style='text-align:center'><strong>Purpose – Demonstrate that
-  the</strong></p>
-  </td>
-  <td style='border:solid windowtext 1.0pt;border-left:none;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
-  <p align=center style='text-align:center'><strong>Input values</strong></p>
-  </td>
-  <td style='border:solid windowtext 1.0pt;border-left:none;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
-  <p align=center style='text-align:center'><strong>Expected outcome</strong></p>
-  </td>
-  <td style='border:solid windowtext 1.0pt;border-left:none;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
-  <p align=center style='text-align:center'><strong>Mandatory / Optional /
-  Recommended</strong></p>
-  </td>
- </tr>
- <tr style='page-break-inside:avoid'>
-  <td style='border:solid windowtext 1.0pt;border-top:none;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
-  <p>General-1</p>
-  </td>
-  <td style='border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
-  border-right:solid windowtext 1.0pt;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
-  <p>Application can handle an HTTP<span style='color:#FF5630'> 429</span> <span
-  style='color:#FF5630'>(or any 40x error?)</span> error in a graceful way</p>
-  </td>
-  <td style='border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
-  border-right:solid windowtext 1.0pt;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
-  <p>The application reaches its usage plan limit and is returned an HTTP 429
-  error. </p>
-  </td>
-  <td style='border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
-  border-right:solid windowtext 1.0pt;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
-  <p>The application will retry several times with an exponentially increasing
-  delay</p>
-  </td>
-  <td style='border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
-  border-right:solid windowtext 1.0pt;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
-  <p>Recommended</p>
-  </td>
- </tr>
 </table>
 
+<h4>Enrolment Nomination Request</h4>
+<table>
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+</style>
+<tr><th>Reference</th>
+<th>Purpose</th>
+<th>Input values</th>
+<th>Expected outcome</th>
+<th>Mandatory</th></tr>
 
-#### Enrolment Nomination Request
+<tr><td>EnrolmentNominationRequest-1</td>
+<td>Application can create an enrolment nomination request with the minimum set of nomination information</td>
+<td>Send a nomination request with a fictitious identity:
+   <ul>Baby 
+      <li>NHI Number</li>
+      <li>Gender</li>
+      <li>Date of Birth</li>
+   </ul>
+   <ul>GP  
+      <li>Facility ID</li>
+   </ul>
+   <ul>PG1  
+      <li>Relationship Code</li>
+      <li>First and Family name</li>     
+   </ul>
+</td>
+<td>
+   <ol type="1">
+    <li>Input:Minimum set of nomination information can be provided</li>
+    <li>Output: Nomination request can be successfully posted to the NES $process-message endpoint</li>
+     <li>Get a success response of 200()</li>
+   </ol>
+</td>
+<td>mandatory</td></tr>
 
-<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
- style='border-collapse:collapse;border:none' data-table-width=960
- data-layout=wide data-local-id=9b3b6ba9-0801-440b-a1b8-35bee31e7917>
- <colgroup><col style="width: 156.0px;"><col style="width: 234.0px;"><col style="width: 207.0px;"><col style="width: 246.0px;"><col style="width: 117.0px;"></colgroup>
- <tr>
-  <td style='border:solid windowtext 1.0pt;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
-  <p align=center style='text-align:center'><strong>Reference</strong></p>
-  </td>
-  <td style='border:solid windowtext 1.0pt;border-left:none;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
-  <p align=center style='text-align:center'><strong>Purpose – Demonstrate that
-  the</strong></p>
-  </td>
-  <td style='border:solid windowtext 1.0pt;border-left:none;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
-  <p align=center style='text-align:center'><strong>Input values</strong></p>
-  </td>
-  <td style='border:solid windowtext 1.0pt;border-left:none;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
-  <p align=center style='text-align:center'><strong>Expected outcome</strong></p>
-  </td>
-  <td style='border:solid windowtext 1.0pt;border-left:none;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
-  <p align=center style='text-align:center'><strong>Mandatory</strong></p>
-  </td>
- </tr>
- <tr style='page-break-inside:avoid'>
-  <td style='border:solid windowtext 1.0pt;border-top:none;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
-  <p>EnrolmentNominationRequest-1</p>
-  </td>
-  <td style='border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
-  border-right:solid windowtext 1.0pt;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
-  <p>Application can create an enrolment nomination request with the minimum
-  set of nomination information</p>
-  </td>
-  <td style='border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
-  border-right:solid windowtext 1.0pt;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
-  <p>Send a nomination request with a fictitious identity:</p>
-  <p style='margin-left:36.0pt;text-indent:-18.0pt'><span style='font-size:
-  10.0pt;font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  </span></span>Baby </p>
-  <p style='margin-left:72.0pt;text-indent:-18.0pt'><span style='font-size:
-  10.0pt;font-family:"Courier New"'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
-  </span></span>NHI Number</p>
-  <p style='margin-left:72.0pt;text-indent:-18.0pt'><span style='font-size:
-  10.0pt;font-family:"Courier New"'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
-  </span></span>Gender</p>
-  <p style='margin-left:72.0pt;text-indent:-18.0pt'><span style='font-size:
-  10.0pt;font-family:"Courier New"'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
-  </span></span>Date of Birth</p>
-  <p style='margin-left:36.0pt;text-indent:-18.0pt'><span style='font-size:
-  10.0pt;font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  </span></span>GP </p>
-  <p style='margin-left:72.0pt;text-indent:-18.0pt'><span style='font-size:
-  10.0pt;font-family:"Courier New"'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
-  </span></span>Facility ID</p>
-  <p style='margin-left:36.0pt;text-indent:-18.0pt'><span style='font-size:
-  10.0pt;font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  </span></span>PG1 </p>
-  <p style='margin-left:72.0pt;text-indent:-18.0pt'><span style='font-size:
-  10.0pt;font-family:"Courier New"'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
-  </span></span>Relationship Code</p>
-  <p style='margin-left:72.0pt;text-indent:-18.0pt'><span style='font-size:
-  10.0pt;font-family:"Courier New"'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
-  </span></span>First and Family name</p>
-  </td>
-  <td style='border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
-  border-right:solid windowtext 1.0pt;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
-  <p style='margin-left:36.0pt;text-indent:-18.0pt'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-  </span>Input: Minimum set of nomination information can be provided</p>
-  <p style='margin-left:36.0pt;text-indent:-18.0pt'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-  </span>Output: Nomination request can be successfully posted to the NES <em>$process-message</em>
-  endpoint</p>
-  <p style='margin-left:36.0pt;text-indent:-18.0pt'>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-  </span>Get a success response of 200()</p>
-  </td>
-  <td style='border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
-  border-right:solid windowtext 1.0pt;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
-  <p>mandatory</p>
-  </td>
- </tr>
- <tr style='page-break-inside:avoid'>
-  <td style='border:solid windowtext 1.0pt;border-top:none;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
-  <p>EnrolmentNominationRequest-2</p>
-  </td>
-  <td style='border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
-  border-right:solid windowtext 1.0pt;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
-  <p>Application can create an enrolment nomination request with all possible
-  nomination information</p>
-  </td>
-  <td style='border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
-  border-right:solid windowtext 1.0pt;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
-  <p>Send a nomination request with a fictitious identity:</p>
-  <p style='margin-left:36.0pt;text-indent:-18.0pt'><span style='font-size:
-  10.0pt;font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  </span></span>Baby </p>
-  <p style='margin-left:72.0pt;text-indent:-18.0pt'><span style='font-size:
-  10.0pt;font-family:"Courier New"'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
-  </span></span>NHI Number</p>
-  <p style='margin-left:72.0pt;text-indent:-18.0pt'><span style='font-size:
-  10.0pt;font-family:"Courier New"'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
-  </span></span>Name</p>
-  <p style='margin-left:72.0pt;text-indent:-18.0pt'><span style='font-size:
-  10.0pt;font-family:"Courier New"'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
-  </span></span>Gender</p>
-  <p style='margin-left:72.0pt;text-indent:-18.0pt'><span style='font-size:
-  10.0pt;font-family:"Courier New"'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
-  </span></span>Date of Birth</p>
-  <p style='margin-left:36.0pt;text-indent:-18.0pt'><span style='font-size:
-  10.0pt;font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  </span></span>GP </p>
-  <p style='margin-left:72.0pt;text-indent:-18.0pt'><span style='font-size:
-  10.0pt;font-family:"Courier New"'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
-  </span></span>Name</p>
-  <p style='margin-left:72.0pt;text-indent:-18.0pt'><span style='font-size:
-  10.0pt;font-family:"Courier New"'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
-  </span></span>Facility ID</p>
-  <p style='margin-left:36.0pt;text-indent:-18.0pt'><span style='font-size:
-  10.0pt;font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  </span></span>PG1 </p>
-  <p style='margin-left:72.0pt;text-indent:-18.0pt'><span style='font-size:
-  10.0pt;font-family:"Courier New"'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
-  </span></span>Relationship Code</p>
-  <p style='margin-left:72.0pt;text-indent:-18.0pt'><span style='font-size:
-  10.0pt;font-family:"Courier New"'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
-  </span></span>First and Family name</p>
-  <p style='margin-left:72.0pt;text-indent:-18.0pt'><span style='font-size:
-  10.0pt;font-family:"Courier New"'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
-  </span></span>NHI Number</p>
-  <p style='margin-left:72.0pt;text-indent:-18.0pt'><span style='font-size:
-  10.0pt;font-family:"Courier New"'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
-  </span></span>Contact Number</p>
-  <p style='margin-left:72.0pt;text-indent:-18.0pt'><span style='font-size:
-  10.0pt;font-family:"Courier New"'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
-  </span></span>Work number </p>
-  <p style='margin-left:72.0pt;text-indent:-18.0pt'><span style='font-size:
-  10.0pt;font-family:"Courier New"'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
-  </span></span>Email</p>
-  <p style='margin-left:72.0pt;text-indent:-18.0pt'><span style='font-size:
-  10.0pt;font-family:"Courier New"'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
-  </span></span>Address</p>
-  <p style='margin-left:36.0pt;text-indent:-18.0pt'><span style='font-size:
-  10.0pt;font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  </span></span>PG2</p>
-  <p style='margin-left:72.0pt;text-indent:-18.0pt'><span style='font-size:
-  10.0pt;font-family:"Courier New"'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
-  </span></span>Relationship Code</p>
-  <p style='margin-left:72.0pt;text-indent:-18.0pt'><span style='font-size:
-  10.0pt;font-family:"Courier New"'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
-  </span></span>First and Family name</p>
-  <p style='margin-left:72.0pt;text-indent:-18.0pt'><span style='font-size:
-  10.0pt;font-family:"Courier New"'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
-  </span></span>NHI Number</p>
-  <p style='margin-left:72.0pt;text-indent:-18.0pt'><span style='font-size:
-  10.0pt;font-family:"Courier New"'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
-  </span></span>Contact Number</p>
-  <p style='margin-left:72.0pt;text-indent:-18.0pt'><span style='font-size:
-  10.0pt;font-family:"Courier New"'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
-  </span></span>Work number </p>
-  <p style='margin-left:72.0pt;text-indent:-18.0pt'><span style='font-size:
-  10.0pt;font-family:"Courier New"'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
-  </span></span>Email</p>
-  <p style='margin-left:72.0pt;text-indent:-18.0pt'><span style='font-size:
-  10.0pt;font-family:"Courier New"'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
-  </span></span>Address</p>
-  </td>
-  <td style='border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
-  border-right:solid windowtext 1.0pt;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
-  <p style='margin-left:36.0pt;text-indent:-18.0pt'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-  </span>Input: All possible nomination information can be provided</p>
-  <p style='margin-left:36.0pt;text-indent:-18.0pt'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-  </span>Output: Nomination request can be successfully posted to the NES <em>$process-message</em>
-  endpoint</p>
-  </td>
-  <td style='border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
-  border-right:solid windowtext 1.0pt;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
-  <p>mandatory</p>
-  </td>
- </tr>
+<tr><td>EnrolmentNominationRequest-2</td>
+<td>Application can create an enrolment nomination request with all possible nomination information</td>
+<td>Send a nomination request with a fictitious identity:
+   <ul>Baby 
+      <li>NHI Number</li>
+      <li>Name</li>
+      <li>Gender</li>
+      <li>Date of Birth</li>
+   </ul>
+   <ul>GP  
+   	  <li>Name</li>
+      <li>Facility ID</li>
+   </ul>
+   <ul>PG1  
+      <li>Relationship Code</li>
+      <li>First and Family name</li>  
+      <li>First and Family name</li>
+      <li>NHI Number</li>
+      <li>Contact Number</li>
+      <li>Work number </li>
+      <li>Email</li> 
+      <li>Address</li>  
+   </ul>
+   <ul>PG12 
+      <li>Relationship Code</li>
+      <li>First and Family name</li>  
+      <li>First and Family name</li>
+      <li>NHI Number</li>
+      <li>Contact Number</li>
+      <li>Work number </li>
+      <li>Email</li> 
+      <li>Address</li>  
+   </ul>
+</td>
+<td>
+  <ol type="1">
+     <li>Input: All possible nomination  information can be provided</li>
+     <li>Output: Nomination request can be successfully posted to the NES $process-message endpoint</li>
+   </ol>
+</td>
+<td>mandatory</td></tr>
 </table>
-
-
-
 
 ### Resource Profile:
 
@@ -405,7 +272,7 @@ o   Next of kin1 NHI number, address and contact details (up to 3 contact deta
 
 o   Next of kin2 NHI number, family and last name, relationship code, address and contact details (up to 3 contact details)
 
-#### 1.1.1 Baby’s NHI rule:
+#### Baby’s NHI rule:
 
 ·        Baby needs to have valid NHI
 
@@ -413,317 +280,112 @@ o   Next of kin2 NHI number, family and last name, relationship code, address 
 
 ·        Baby must not have PRE-ENROL/ENROL (un-expired) status in NES
 
-#### 1.2.1 Baby’s birthdate rule:
+#### Baby’s birthdate rule:
 
 ·        A birth date must be after 1 January 1900 and not a future date
 
-#### 1.3.1 Baby’s gender rules:
+#### Baby’s gender rules:
 
 ·        Baby must have a current gender, supplied as a valid gender code as per [FHIR codeset](http://hl7.org/fhir/R4/valueset-administrative-gender.html)
 
-#### 1.4.1 Next of Kin (NoK) rules:
+#### Next of Kin (NoK) rules:
 
 ·        At least one NoK name (minimum of first and family name) needs to be provided
 
 ·        The relationship code must be a valid code as per the [FHIR codeset](http://hl7.org/fhir/R4/valueset-relatedperson-relationshiptype.html)
 
-#### 1.5.1 Nominated Provider rules:
-
-·        Nominated provider must have a valid Legacy-ClinicID/Clinic ID in HPILocation
-
-Enrolment Nomination request errors
------------------------------------
-
-**Error Scenario**
-
-**Error Code**
-
-**Error Message**
-
-**FHIR Error response code**
-
-Baby’s NHI is a required field
-
-\-
-
-\-
-
-**422 Unprocessable entity**
-
-{ 
-
-    "resourceType": "OperationOutcome", 
-
-    "issue": \[ 
-
-        { 
-
-            "severity": "error", 
-
-            "code": "processing", 
-
-            "diagnostics": "Invalid Resource id", 
-
-            "location": \[ 
-
-                "Bundle.entry\[1\].resource.ofType(Patient).id", 
-
-                "Line 53, Col 26" 
-
-            \] 
-
-        }, 
-
-        { 
-
-            "severity": "error", 
-
-            "code": "processing", 
-
-            "diagnostics": "@value cannot be empty", 
-
-            "location": \[ 
-
-                "Bundle.entry\[1\].resource.ofType(Patient).id", 
-
-                "Line 53, Col 26" 
-
-            \] 
-
-        }, 
-
-        { 
-
-            "severity": "error", 
-
-            "code": "processing", 
-
-            "diagnostics": "ele-1: 'All FHIR elements must have a @value or children' Rule 'All FHIR elements must have a @value or children' Failed", 
-
-            "location": \[ 
-
-                "Bundle.entry\[1\].resource.ofType(Patient).id", 
-
-                "Line 53, Col 26" 
-
-            \] 
-
-        }, 
-
-        { 
-
-            "severity": "error", 
-
-            "code": "processing", 
-
-            "diagnostics": "ele-1: 'All FHIR elements must have a @value or children' Rule 'All FHIR elements must have a @value or children' Failed", 
-
-            "location": \[ 
-
-                "Bundle.entry\[1\].resource.ofType(Patient).identifier\[0\].value", 
-
-                "Line 64, Col 22" 
-
-            \] 
-
-        }
-
-Baby’s birthdate is a required field
-
-EM13009
-
-The baby's date of birth is missing or invalid.
-
-\-
-
-Date of birth cannot be a future date
-
-\-
-
-Baby’s gender is a required field
-
-EM13008
-
-The baby's gender is missing or invalid.
-
-\-
-
-Nominated GP facility ID is a required field
-
-EM13004
-
-No nominated clinic has been provided.
-
-\-
-
-At least 1 Next of kin name is a required field
-
-EM13010
-
-No next of kin details provided
-
-\-
-
-Invalid code for valueset for baby’s gender
-
-\-
-
-\-
-
-**422 Unprocessable entity**
-
-{
-
-    "resourceType": "OperationOutcome",
-
-    "issue": \[
-
-        {
-
-            "severity": "error",
-
-            "code": "processing",
-
-            "diagnostics": "The value provided ('mixed') is not in the value set http://hl7.org/fhir/ValueSet/administrative-gender|4.0.1 ([http://hl7.org/fhir/ValueSet/administrative-gender](http://hl7.org/fhir/ValueSet/administrative-gender)), and a code is required from this value set) (error message = Unknown code 'mixed' for in-memory expansion of ValueSet '[http://hl7.org/fhir/ValueSet/administrative-gender](http://hl7.org/fhir/ValueSet/administrative-gender)')",
-
-            "location": \[            "Bundle.entry\[1\].resource.ofType(Patient).gender",
-
-                "Line 81, Col 35"
-
-            \]
-
-        }
-
-    \]
-
+#### Nominated Provider rules:
+
+· 		Nominated provider must have a valid Legacy-ClinicID/Clinic ID in HPILocation
+
+<h4>Enrolment Nomination request errors</h4>
+<table>
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
 }
+</style>
+<tr><th>Error Scenario</th>
+<th>Error Code</th>
+<th>Error Message</th>
+<th>HTTP Status code</th></tr>
+
+
+<tr><td>Baby’s NHI is a required field/td>
+<td>-</td>
+<td>-</td>
+<td><em>422 Unprocessable entity</em></td></tr>
+
+<tr><td>
+	<ul>
+		<li>Baby’s birthdate is a required field</li>
+		<li>Date of birth cannot be a future date</li>
+	</u1></td>
+<td>EM13009</td>
+<td>The baby's date of birth is missing or invalid</td>
+<td>-</td>
+</tr>
+
+
+<tr><td>Baby’s gender is a required field</td>
+<td>EM13008</td>
+<td>The baby's gender is missing or invalid</td>
+<td>-</td></tr>
+
+<tr><td>Nominated GP facility ID is a required field</td>
+<td>EM13004</td>
+<td>No nominated clinic has been provided</td>
+<td>-</td></tr>
+
+<tr><td>At least 1 Next of kin name is a required field</td>
+<td>EM13010</td>
+<td>No next of kin details provided</td>
+<td>-</td></tr>
+
+<tr><td>Invalid code for valueset for baby’s gender</td>
+<td>-</td>
+<td>-</td>
+<td><em>422 Unprocessable entity</em></td></tr>
+
+<tr><td>Missing resource in FHIR input bundle</td>
+<td>-</td>
+<td>-</td>
+<td><em>422 Unprocessable entity</em></td></tr>
+
+<tr><td>Relationship code mismatch</td>
+<td>-</td>
+<td>-</td>
+<td><em>422 Unprocessable entity</em></td></tr>
+
+<tr><td>The NHI of the baby cannot be found in the NHI database</td>
+<td>EM13001</td>
+<td>Baby's NHI not found</td>
+<td>-</td></tr>
+
+<tr><td>The baby already has an active unexpired pre-enrolment/full-enrolment in the NES</td>
+<td>EM13002</td>
+<td>The baby is already enrolled or pre-enrolled in NES</td>
+<td>-</td></tr>
+
+<tr><td>The baby is deceased, and NHI has record of death</td>
+<td>EM13003</td>
+<td>The baby has been marked as deceased in NHI</td>
+<td>-</td></tr>
+
+<tr><td>The nomination request that came through contains a GP's facility ID that cannot be found in HPILocation</td>
+<td>EM13005</td>
+<td>The nominated clinic provided cannot be found in HPI</td>
+<td>-</td></tr>
+
+<tr><td>The gender of the baby supplied by Whaihua does not match against what is recorded in the NHI database</td>
+<td>EM13006</td>
+<td>The provided gender does not match the NHI record for the baby</td>
+<td>-</td></tr>
+
+<tr><td>The date of birth of the baby supplied by Whaihua does not match against what is recorded in the NHI database</td>
+<td>EM13007</td>
+<td>The provided date of birth does not match the NHI record for the baby</td>
+<td>-</td></tr>
+</table>
 
-Missing resource in FHIR input bundle
-
-\-
-
-\-
-
-**422 Unprocessable entity**
-
-{
-
-    "resourceType": "OperationOutcome",
-
-    "issue": \[
-
-        {
-
-            "severity": "error",
-
-            "code": "processing",
-
-            "diagnostics": "Missing RelatedPerson in input bundle"
-
-        }
-
-    \]
-
-}
-
-Relationship code mismatch
-
-\-
-
-\-
-
-**422 Unprocessable entity**
-
-{
-
-    "resourceType": "OperationOutcome",
-
-    "issue": \[
-
-        {
-
-            "severity": "information",
-
-            "code": "processing",
-
-            "diagnostics": "None of the codings provided are in the value set [http://hl7.org/fhir/ValueSet/relatedperson-relationshiptype](http://hl7.org/fhir/ValueSet/relatedperson-relationshiptype) ([http://hl7.org/fhir/ValueSet/relatedperson-relationshiptype](http://hl7.org/fhir/ValueSet/relatedperson-relationshiptype)), and a coding is recommended to come from this value set) (codes = [http://terminology.hl7.org/CodeSystem/v3-RoleCode#NTH](http://terminology.hl7.org/CodeSystem/v3-RoleCode#NTH))",
-
-            "location": \[
-
-                "Bundle.entry\[2\].resource.ofType(RelatedPerson).relationship\[0\]",
-
-                "Line 101, Col 22"
-
-            \]
-
-        },
-
-        {
-
-            "severity": "error",
-
-            "code": "processing",
-
-            "diagnostics": "Unknown code '[http://terminology.hl7.org/CodeSystem/v3-RoleCode#NTH](http://terminology.hl7.org/CodeSystem/v3-RoleCode#NTH)' for '[http://terminology.hl7.org/CodeSystem/v3-RoleCode#NTH](http://terminology.hl7.org/CodeSystem/v3-RoleCode#NTH)'",
-
-            "location": \[
-
-                "Bundle.entry\[2\].resource.ofType(RelatedPerson).relationship\[0\].coding\[0\]",
-
-                "Line 103, Col 30"
-
-            \]
-
-        }
-
-    \]
-
-}
-
-The NHI of the baby cannot be found in the NHI database
-
-EM13001
-
-Baby's NHI not found
-
-\-
-
-The baby already has an active unexpired pre-enrolment/full-enrolment in the NES
-
-EM13002
-
-The baby is already enrolled or pre-enrolled in NES.
-
-\-
-
-The baby is deceased, and NHI has record of death
-
-EM13003
-
-The baby has been marked as deceased in NHI.
-
-\-
-
-The nomination request that came through contains a GP's facility ID that cannot be found in HPILocation
-
-EM13005
-
-The nominated clinic provided cannot be found in HPI.
-
-\-
-
-The gender of the baby supplied by Whaihua does not match against what is recorded in the NHI database
-
-EM13006
-
-The provided gender does not match the NHI record for the baby.
-
-\-
-
-The date of birth of the baby supplied by Whaihua does not match against what is recorded in the NHI database
-
-EM13007
-
-The provided date of birth does not match the NHI record for the baby.
-
-\-
