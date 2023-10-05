@@ -6,11 +6,8 @@ Usage: #example
 * id = "EN667788899"
 * meta.profile = "http://hl7.org.nz/fhir/StructureDefinition/NesEntitlement"
 
-* identifier[0].use = #official
-* identifier[=].system = "https://standards.digital.health.nz/ns/nes-entitlement-id"
-* identifier[=].value = "EN667788899"
 
-* identifier[=].use = #secondary
+* identifier[0].use = #official
 * identifier[=].system = "https://standards.digital.health.nz/ns/nes-csc-id"
 * identifier[=].value = "CSC12345"
 

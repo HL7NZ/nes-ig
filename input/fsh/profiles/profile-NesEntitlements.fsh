@@ -36,3 +36,5 @@ Description:    "Adds additional, NES specific extensions"
 
 // constraints on base profile
 * type from https://nzhts.digital.health.nz/fhir/ValueSet/coverage-type-code
+* identifier.system from https://nzhts.digital.health.nz/fhir/ValueSet/es-entitlement-identifier-code
+* identifier.use = #official (exactly)
