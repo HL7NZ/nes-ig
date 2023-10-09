@@ -40,7 +40,7 @@ This is typically used to find all enrolments for a patient filtered by type or 
 
 1. A FHIR Client sends a GET request  to the NES  *$EpisodeOfCare* endpoint with  the 'patient' query parameter specifying the patient's NHI number, the type = "FLS" and the status = "active"
 2. The request is validated - ALT: Validation failure. Operation Outcome resource returned
-3. Active FLS Enrolments for  this NHI are retrieved from the NES database
+3. Active FLS Enrolments for  this NHI meeting the search criteria are retrieved from the NES database
 4. A bundle of NESEnrolments is returned to the client
 
 
