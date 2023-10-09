@@ -11,4 +11,7 @@ Description: "NES Enrolment Status"
 * ^publisher = "New Zealand Ministry of Health"
 * ^purpose = "A coded value for the status of an enrolment ."
 * ^compose.inactive = true
-* include codes from system http://hl7.org/fhir/episode-of-care-status  where code in "active,finished,waitlist,planned"
+* include codes from system http://hl7.org/fhir/episode-of-care-status 
+* exclude http://hl7.org/fhir/episode-of-care-status#onhold
+* exclude http://hl7.org/fhir/episode-of-care-status#cancelled
+* exclude http://hl7.org/fhir/episode-of-care-status#entered-in-error
