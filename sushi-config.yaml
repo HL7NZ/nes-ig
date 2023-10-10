@@ -55,6 +55,7 @@ menu:
     Search Enrolments: searchEnrolment.html
     Create Enrolment: createEnrolment.html
     Create Entitlement: createEntitlement.html
+    Get Entitlement: getEntitlement.html
   Important information:
     Onboarding and Compliance testing: OnboardingAndComplianceTesting.html
     General Notes: general.html

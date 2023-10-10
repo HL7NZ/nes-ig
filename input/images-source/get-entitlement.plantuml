@@ -1,0 +1,18 @@
+@startuml
+skinparam sequenceArrowThickness 2
+skinparam roundcorner 5
+skinparam maxmessagesize 180
+skinparam sequenceParticipant bold
+title  Search Enrolments for patient
+participant "FHIR Client" as A #CornflowerBlue
+participant "NES " as B #CornflowerBlue
+participant "EEE" as C #CornflowerBlue
+
+A -> B: GET [base]/Coverage/EN667788899
+B -> B: Validate
+B -> C: query
+C -[dashed]-> B:
+
+B -[dashed]-> A: NesEntitlement Response 
+
+@enduml
