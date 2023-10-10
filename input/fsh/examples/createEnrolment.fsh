@@ -1,4 +1,4 @@
-Instance: enrolment-2
+Instance: do-not-populate-id
 InstanceOf: EpisodeOfCare
 Description: "Example enrolment create request payload"
 Usage: #example
@@ -12,18 +12,14 @@ Usage: #example
 * careManager = Reference(EnrolmentServiceProvider5)
 
 * contained[0] = EnrolmentServiceProvider5
-* contained[1] = QualifiedEncounter4
-* contained[2] = PatientZJJ8114
+* contained[1] = PatientZJJ8114
 * status = #active
 
 * extension[enrolment-expiry-date].valueDate = "2026-06-05"
-* extension[reenrolment-date].valueDate = "2022-06-05"
+
 * extension[enrolment-owner-org].valueReference = Reference(Organization/GZZ998-G)
 * extension[enrolment-owner-org].valueReference.display = "Live Org with Dormant"
-* extension[nes-enrolment-termination-reason].valueCodeableConcept = #Transfer
-* extension[enrolment-encounter].valueReference = Reference(QualifiedEncounter1)
-* extension[nes-enrolment-termination-reason].valueCodeableConcept.coding.code = #LinkNHI
-* extension[nes-enrolment-termination-reason].valueCodeableConcept.text = "NHI was Linked"
+
 
 
 Instance: EnrolmentServiceProvider5
@@ -39,13 +35,7 @@ Usage: #inline
 * location.display = "Facility Has All Contact Types TEST"
 
 
-Instance: QualifiedEncounter4
-InstanceOf: Encounter
-Usage: #inline
 
-* status = #finished 
-* class = #AMB
-* period.start =  "2023-07-27"
 
 
 Instance: PatientZJJ8114

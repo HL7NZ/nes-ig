@@ -20,7 +20,7 @@ Enrols a patient with a health provider for the provision of a health service
 
 
 ####  Create Enrolment Request Example 
-[create Enrolment request](EpisodeOfCare-enrolment-2.json.html)
+[create Enrolment request](EpisodeOfCare-do-not-populate-id.json.html)
 
 #### Business  Rules
 
