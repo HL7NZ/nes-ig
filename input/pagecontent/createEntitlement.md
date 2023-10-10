@@ -20,7 +20,7 @@ Records a patient's entitlement to some form of subsidised healthcare
 
 
 ####  Create  Entitlement Request Example 
-to do
+[create CSC Entitlement request](Coverage-entitlement-3.json.html)
 #### Business  Rules
 
 
