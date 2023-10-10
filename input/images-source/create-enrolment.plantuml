@@ -13,5 +13,5 @@ B -> B: Validate
 B -> C: create
 C -[dashed]-> B:
 
-B -[dashed]-> A:Newly created NESEnrolment
+B -[dashed]-> A:201 - Newly created NESEnrolment
 @enduml

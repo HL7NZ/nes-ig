@@ -13,5 +13,5 @@ B -> B: Validate
 B -> C: create
 C -[dashed]-> B:
 
-B -[dashed]-> A:Newly created Entitlement
+B -[dashed]-> A:201 - Newly created Entitlement
 @enduml
