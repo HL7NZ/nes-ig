@@ -8,7 +8,7 @@ Usage: #example
 * type.coding.system = "https://standards.digital.health.nz/nes-enrolment-type"
 * type.coding.code = #FLS
 
-* patient = Reference(Patient/PatientZKF6683)
+* patient = Reference(PatientZJJ8114)
 * careManager = Reference(EnrolmentServiceProvider5)
 
 * contained[0] = EnrolmentServiceProvider5
