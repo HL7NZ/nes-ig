@@ -11,6 +11,7 @@ Description:    "A minimal profile of NzPatient, containing just enough informat
 
 
 //excluded
+* identifier 0..0
 * language 0..0
 * extension[ethnicity] 0..0
 * extension[nzCitizen] 0..0

@@ -58,7 +58,6 @@ Description:    "Adds additional, NES specific extensions for enrolments"
 * contained contains careManager 0..1
 * contained[careManager] only http://hl7.org/fhir/StructureDefinition/PractitionerRole
 * contained[careManager] ^short = "Contained resource for the Care Manager of the Enrolment"
-* contained ^slicing.description = "Slicing to specify an Encounter resource may be returned as a contained resource for the Care Manager"
 
 * contained contains qualifiedEncounter 0..1
 * contained[qualifiedEncounter] only Encounter

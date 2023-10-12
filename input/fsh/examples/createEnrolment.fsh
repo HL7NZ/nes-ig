@@ -8,11 +8,11 @@ Usage: #example
 * type.coding.system = "https://standards.digital.health.nz/nes-enrolment-type"
 * type.coding.code = #FLS
 
-* patient = Reference(PatientZJJ8114)
+* patient = Reference(ZJJ8114)
 * careManager = Reference(EnrolmentServiceProvider5)
 
 * contained[0] = EnrolmentServiceProvider5
-* contained[1] = PatientZJJ8114
+* contained[1] = ZJJ8114
 * status = #active
 
 * extension[enrolment-expiry-date].valueDate = "2026-06-05"
@@ -38,12 +38,9 @@ Usage: #inline
 
 
 
-Instance: PatientZJJ8114
+Instance: ZJJ8114
 InstanceOf: NesPatient
 Usage: #inline
-
-* identifier.value = "ZJJ8114"
-
 * name[0].family = "Mathieu"
 * name[=].given[0] = "Francesca"
 
