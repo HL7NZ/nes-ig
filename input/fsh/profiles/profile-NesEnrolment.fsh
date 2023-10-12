@@ -67,6 +67,7 @@ Description:    "Adds additional, NES specific extensions for enrolments"
 * patient only Reference(NesPatient)
 * contained contains patient 1..1
 * contained[patient] only NesPatient
+* contained[careManager] only NesPractitionerRole
 
 * obeys URL-LENGTH
 * obeys URL-ALLOWED-CHARS
