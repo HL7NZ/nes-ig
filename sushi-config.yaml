@@ -27,7 +27,7 @@ dependencies:
     #uri: https://tst.d1gti5r1pqczdn.amplifyapp.com/site
     #version: 1.2.0
     uri: https://common-ig.hip.digital.health.nz/site
-    version: 1.4.0-SNAPHOT
+    version: 1.4.0-SNAPSHOT
     
   hl7.org.nz.fhir.ig.nhi:
    uri: 'https://nhi-ig.hip.digital.health.nz/site'   
