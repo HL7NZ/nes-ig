@@ -12,7 +12,7 @@ This is typically used to get all enrolments for a patient. It may optionally be
 
 ####  Get Enrolment for Patient  processing steps:
 
-1. A FHIR Client sends a GET request  to the NES  *$EpisodeOfCare* endpoint with  the 'patient' query paramter specifying the aptient's NHI number
+1. A FHIR Client sends a GET request  to the NES  *EpisodeOfCare* endpoint with  the 'patient' query parameter specifying the aptient's NHI number
 2. The request is validated - ALT: Validation failure. Operation Outcome resource returned
 3. Enrolments for  this NHI are retrieved from the NES database
 4. A bundle of NESEnrolments is returned to the client
