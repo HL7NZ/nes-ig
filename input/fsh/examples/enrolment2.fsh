@@ -1,9 +1,9 @@
-Instance: enrolment-1
+Instance: enrolment-2-ended
 InstanceOf: EpisodeOfCare
-Description: "Example enrolment"
+Description: "Example enrolment update request with termination reason "
 Usage: #example
 
-* id = "EN667788899"
+* id = "EN12349876"
 
 * identifier.system = "https://standards.digital.health.nz/ns/nes-enrolment-id"
 * identifier.value = "EN667788899"
@@ -12,10 +12,12 @@ Usage: #example
 * type.coding.code = #FLS-NF
 
 * patient = Reference(Patient/PatientZJM9397)
-* careManager = Reference(EnrolmentServiceProvider1)
+* careManager = Reference(EnrolmentServiceProvider10)
+* extension[enrolment-encounter].valueReference = Reference(QualifiedEncounter10)
 
-* contained[0] = EnrolmentServiceProvider1
-* contained[1] = ZJM9397
+* contained[0] = EnrolmentServiceProvider10
+* contained[1] = QualifiedEncounter10
+* contained[2] = ZKC4633
 * status = #active
 
 * extension[enrolment-expiry-date].valueDate = "2026-06-05"
@@ -24,11 +26,14 @@ Usage: #example
 * extension[enrolment-owner-org].valueReference.display = "Live Org with Dormant"
 * extension[nes-enrolment-termination-reason].valueCodeableConcept = #Transfer
 * extension[enrolment-encounter].valueReference = Reference(QualifiedEncounter1)
+* extension[nes-enrolment-termination-reason].valueCodeableConcept.coding.code = #LinkNHI
+* extension[nes-enrolment-termination-reason].valueCodeableConcept.coding.system = "https://standards.digital.health.nz/nes-enrolment-termination-reason"
+* extension[nes-enrolment-termination-reason].valueCodeableConcept.text = "NHI was Linked"
 
 
-Instance: EnrolmentServiceProvider1
+Instance: EnrolmentServiceProvider10
 InstanceOf: PractitionerRole
-Description: "Example EnrolmentServiceProvider1"
+Description: "Example EnrolmentServiceProvider10"
 Usage: #inline
 
 * practitioner = Reference(Practitioner/99ZZZS)
@@ -39,12 +44,21 @@ Usage: #inline
 * location.display = "Facility Has All Contact Types TEST"
 
 
+Instance: QualifiedEncounter10
+InstanceOf: Encounter
+Usage: #inline
 
-Instance: ZJM9397
+* status = #finished 
+* class = #AMB
+* period.start =  "2023-09-27"
+
+
+Instance: ZKC4633
 InstanceOf: NesPatient
 Usage: #inline
-* name[0].family = "Ryan"
-* name[=].given[0] = "Jamie"
-* name[=].given[+] = "Joseph"
-* birthDate = "1972-06-05"
+* name[0].family = "Aufderhar"
+* name[=].given[0] = "Rickey"
+* name[=].given[1] = "Amalia"
+
+* birthDate = "2021-12-29"
 

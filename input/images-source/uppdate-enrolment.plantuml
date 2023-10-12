@@ -1,0 +1,17 @@
+@startuml
+skinparam sequenceArrowThickness 2
+skinparam roundcorner 5
+skinparam maxmessagesize 180
+skinparam sequenceParticipant bold
+title  Create Enrolment
+participant "FHIR Client" as A #CornflowerBlue
+participant "NES " as B #CornflowerBlue
+participant "EEE" as C #CornflowerBlue
+
+A -> B: PUT [base]/EpisodeOfCare/EN12349876
+B -> B: Validate
+B -> C: create
+C -[dashed]-> B:
+
+B -[dashed]-> A:200 - Updated  NESEnrolment
+@enduml
