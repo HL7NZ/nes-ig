@@ -3,7 +3,7 @@ skinparam sequenceArrowThickness 2
 skinparam roundcorner 5
 skinparam maxmessagesize 180
 skinparam sequenceParticipant bold
-title  Create Enrolment
+title  Update Enrolment
 participant "FHIR Client" as A #CornflowerBlue
 participant "NES " as B #CornflowerBlue
 participant "EEE" as C #CornflowerBlue
