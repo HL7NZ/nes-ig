@@ -3,16 +3,15 @@ skinparam sequenceArrowThickness 2
 skinparam roundcorner 5
 skinparam maxmessagesize 180
 skinparam sequenceParticipant bold
-title  Search Enrolments for patient
+title  Update Enrolment
 participant "FHIR Client" as A #CornflowerBlue
 participant "NES " as B #CornflowerBlue
 participant "EEE" as C #CornflowerBlue
 
-A -> B: GET [base]/EpisodeOfCare?patient=ZAA0792
+A -> B: PUT [base]/EpisodeOfCare/EN12349876
 B -> B: Validate
-B -> C: query
+B -> C: create
 C -[dashed]-> B:
 
-B -[dashed]-> A: NESEnrolment Response 
-
+B -[dashed]-> A:200 - Updated  NESEnrolment
 @enduml

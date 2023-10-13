@@ -25,11 +25,18 @@ Description:    "Adds additional, NES specific extensions for enrolments"
 
 // constraints on base profile
 * type from https://nzhts.digital.health.nz/fhir/ValueSet/nes-enrolment-type
+* meta.versionId 0..0
+* meta.source 0..0
+* meta.security 0..0
+* meta.tag 0..0
+
+* status from https://nzhts.digital.health.nz/fhir/ValueSet/nes-episode-of-care-status
+
 
 //extensions 
 * extension contains
     http://hl7.org.nz/fhir/StructureDefinition/enrolment-expiry-date  named expiryDate 0..1  and
-     http://hl7.org.nz/fhir/StructureDefinition/reenrolment-date  named re-enrolmentDate 0..1  and
+    http://hl7.org.nz/fhir/StructureDefinition/reenrolment-date  named re-enrolmentDate 0..1  and
     http://hl7.org.nz/fhir/StructureDefinition/enrolment-owner-org named owningOrganisation 0..1 and
     http://hl7.org.nz/fhir/StructureDefinition/nes-enrolment-termination-reason named terminationReason 0..1 and
     http://hl7.org.nz/fhir/StructureDefinition/enrolment-encounter named qualifiedEncounter 0..1
@@ -51,12 +58,15 @@ Description:    "Adds additional, NES specific extensions for enrolments"
 * contained contains careManager 0..1
 * contained[careManager] only http://hl7.org/fhir/StructureDefinition/PractitionerRole
 * contained[careManager] ^short = "Contained resource for the Care Manager of the Enrolment"
-* contained ^slicing.description = "Slicing to specify an Encounter resource may be returned as a contained resource for the Care Manager"
 
 * contained contains qualifiedEncounter 0..1
 * contained[qualifiedEncounter] only Encounter
 * contained[careManager] ^short = "Contained resource for the last qualified Encounter relating to this Enrolment"
 
+* patient only Reference(NesPatient)
+* contained contains patient 1..1
+* contained[patient] only NesPatient
+* contained[careManager] only NesPractitionerRole
 
 * obeys URL-LENGTH
 * obeys URL-ALLOWED-CHARS

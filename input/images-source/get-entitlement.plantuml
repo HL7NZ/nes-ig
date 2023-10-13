@@ -8,11 +8,11 @@ participant "FHIR Client" as A #CornflowerBlue
 participant "NES " as B #CornflowerBlue
 participant "EEE" as C #CornflowerBlue
 
-A -> B: GET [base]/EpisodeOfCare?patient=ZAA0792
+A -> B: GET [base]/Coverage/EN667788899
 B -> B: Validate
 B -> C: query
 C -[dashed]-> B:
 
-B -[dashed]-> A: NESEnrolment Response 
+B -[dashed]-> A: NesEntitlement Response 
 
 @enduml

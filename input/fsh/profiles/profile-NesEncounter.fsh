@@ -20,7 +20,7 @@ Description:    "Restricts Encounter to the elemrnts need to describe an NES Enr
 
 
 //excluded
-
+* language 0..0
 * statusHistory 0..0
 * classHistory 0..0
 * type 0..0 

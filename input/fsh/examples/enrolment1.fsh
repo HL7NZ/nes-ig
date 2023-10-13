@@ -11,11 +11,11 @@ Usage: #example
 * type.coding.system = "https://standards.digital.health.nz/nes-enrolment-type"
 * type.coding.code = #FLS-NF
 
-* patient = Reference(Patient/ZAA0792)
+* patient = Reference(Patient/PatientZJM9397)
 * careManager = Reference(EnrolmentServiceProvider1)
 
 * contained[0] = EnrolmentServiceProvider1
-* contained[1] = QualifiedEncounter1
+* contained[1] = ZJM9397
 * status = #active
 
 * extension[enrolment-expiry-date].valueDate = "2026-06-05"
@@ -24,8 +24,6 @@ Usage: #example
 * extension[enrolment-owner-org].valueReference.display = "Live Org with Dormant"
 * extension[nes-enrolment-termination-reason].valueCodeableConcept = #Transfer
 * extension[enrolment-encounter].valueReference = Reference(QualifiedEncounter1)
-* extension[nes-enrolment-termination-reason].valueCodeableConcept.coding.code = #LinkNHI
-* extension[nes-enrolment-termination-reason].valueCodeableConcept.text = "NHI was Linked"
 
 
 Instance: EnrolmentServiceProvider1
@@ -41,10 +39,12 @@ Usage: #inline
 * location.display = "Facility Has All Contact Types TEST"
 
 
-Instance: QualifiedEncounter1
-InstanceOf: Encounter
-Usage: #inline
 
-* status = #finished 
-* class = #AMB
-* period.start =  "2023-08-27"
+Instance: ZJM9397
+InstanceOf: NesPatient
+Usage: #inline
+* name[0].family = "Ryan"
+* name[=].given[0] = "Jamie"
+* name[=].given[+] = "Joseph"
+* birthDate = "1972-06-05"
+
