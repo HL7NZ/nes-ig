@@ -54,6 +54,7 @@ menu:
     Enrolment Nomination: enrolmentNomination.html
     Search Enrolments: searchEnrolment.html
     Create Enrolment: createEnrolment.html
+    Update Enrolment: updateEnrolment.html
     Create Entitlement: createEntitlement.html
     Get Entitlement: getEntitlement.html
   Important information:
