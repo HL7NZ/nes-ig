@@ -25,7 +25,7 @@ Usage: #example
 * extension[enrolment-owner-org].valueReference = Reference(Organization/GZZ998-G)
 * extension[enrolment-owner-org].valueReference.display = "Live Org with Dormant"
 * extension[nes-enrolment-termination-reason].valueCodeableConcept = #Transfer
-* extension[enrolment-encounter].valueReference = Reference(QualifiedEncounter1)
+* extension[enrolment-encounter].valueReference = Reference(QualifiedEncounter10)
 * extension[nes-enrolment-termination-reason].valueCodeableConcept.coding.code = #LinkNHI
 * extension[nes-enrolment-termination-reason].valueCodeableConcept.coding.system = "https://standards.digital.health.nz/nes-enrolment-termination-reason"
 * extension[nes-enrolment-termination-reason].valueCodeableConcept.text = "NHI was Linked"
