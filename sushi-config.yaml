@@ -51,7 +51,6 @@ menu:
   IG Home: index.html
   Business View: businessView.html
   Use cases:
-    Enrolment Nomination: enrolmentNomination.html
     Search Enrolments: searchEnrolment.html
     Create Enrolment: createEnrolment.html
     Update Enrolment: updateEnrolment.html
@@ -59,9 +58,10 @@ menu:
     Get Entitlement: getEntitlement.html
   Enrolment Nominations:
     Onboarding: NBESOnboarding.html
-    Compliance testing: NBESComplianceTesting.html
+    Enrolment Nomination: enrolmentNomination.html
     Enrolment Nomination Request Message Definition: MessageDefinition-EnrolmentNominationRequestMessageDefinition.html
     Enrolment Nomination Response Message Definition: MessageDefinition-EnrolmentNominationResponseMessageDefinition.html
+    Compliance testing: NBESComplianceTesting.html
   Important information:
     Onboarding: NESOnboarding.html
     General Notes: general.html
