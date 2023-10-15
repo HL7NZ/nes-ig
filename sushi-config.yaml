@@ -50,7 +50,13 @@ releaseLabel: Release
 menu:
   IG Home: index.html
   Business View: businessView.html
-  Use cases:
+  NES Important information:
+    Onboarding: NESOnboarding.html
+    General Notes: general.html
+    FAQ: FAQ.html
+    Glossary: glossary.html
+  NES Use Cases:
+    Compliance testing: NESComplianceTesting.html
     Search Enrolments: searchEnrolment.html
     Create Enrolment: createEnrolment.html
     Update Enrolment: updateEnrolment.html
@@ -62,12 +68,6 @@ menu:
     Enrolment Nomination Request Message Definition: MessageDefinition-EnrolmentNominationRequestMessageDefinition.html
     Enrolment Nomination Response Message Definition: MessageDefinition-EnrolmentNominationResponseMessageDefinition.html
     Compliance testing: NBESComplianceTesting.html
-  Important information:
-    Onboarding: NESOnboarding.html
-    General Notes: general.html
-    FAQ: FAQ.html
-    Glossary: glossary.html
-  Compliance testing: NESComplianceTesting.html
   API: API.html
   Profiles: profiles.html
   #Extensions: extensions.html
