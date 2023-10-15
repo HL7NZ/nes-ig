@@ -1,4 +1,6 @@
-## Enrolment Nomination  Overview
+
+
+### Enrolment Nomination  Overview
 
 An ‘Enrolment Nomination ’ interaction is initiated by a user who wishes to request that a health provider enrol a patient for a health service.
 The request includes details of the patient, the Patient’s guardian and in some cases the provider.
@@ -31,20 +33,17 @@ Example of an enriched enrolment nomination request message sent by  NES to the 
 [enrolment-nomination-request-message-1](Bundle-11223344.json.html)
 
 
-#### Resource Profile:
+#### Enrolment Nomination Message - Resources:
 
 The FHIR enrolment nomination message will be created as a FHIR [Bundle](https://www.hl7.org/fhir/R4/bundle-definitions.html#Bundle) containing the below resources:
 
-·        [NHI Patient](https://nhi-ig.hip.digital.health.nz/StructureDefinition-NhiPatient.html)
-
-·        [HPI Practitioner](https://hpi-ig.hip-uat.digital.health.nz/StructureDefinition-HPIPractitioner.html)
-
-·        [HL7 FHIR RelatedPerson](https://hl7.org/fhir/R4/valueset-relatedperson-relationshiptype.html)
-
-·        [MessageHeader](http://hl7.org/fhir/R4/messageheader.html)
+* [NHI Patient](https://nhi-ig.hip.digital.health.nz/StructureDefinition-NhiPatient.html)
+* [HPI Practitioner](https://hpi-ig.hip-uat.digital.health.nz/StructureDefinition-HPIPractitioner.html)
+* [HL7 FHIR RelatedPerson](https://hl7.org/fhir/R4/valueset-relatedperson-relationshiptype.html)
+* [MessageHeader](http://hl7.org/fhir/R4/messageheader.html)
 
 
-### Business Rules
+### Enrolment Nomination Request Business Rules
 
 #### Enrolment Nomination request rules
 
@@ -62,13 +61,13 @@ The FHIR enrolment nomination message will be created as a FHIR [Bundle](https:/
   * Next of kin2
     * NHI number, family and last name, relationship code, address and contact details (up to 3 contact details).
 
-#### Baby’s NHI rule:
+#### Baby’s NHI rules:
 
 * Baby needs to have valid NHI
 * Baby cannot be deceased
 * Baby must not have PRE-ENROL/ENROL (un-expired) status in NES
 
-#### Baby’s birthdate rule:
+#### Baby’s birthdate rules:
 
 * A birth date must be after 1 January 1900 and not a future date
 
@@ -86,7 +85,7 @@ The FHIR enrolment nomination message will be created as a FHIR [Bundle](https:/
 * Nominated provider must have a valid Legacy-ClinicID/Clinic ID in HPILocation
 
 
-<h3>Enrolment Nomination request errors</h3>
+<h3>Enrolment Nomination Request Errors</h3>
 <table>
 <style>
 table, th, td {
@@ -111,7 +110,6 @@ table, th, td {
 <td>The baby's date of birth is missing or invalid</td>
 <td>-</td>
 </tr>
-
 
 <tr><td>Baby’s gender is a required field</td>
 <td>EM13008</td>
@@ -178,8 +176,6 @@ table, th, td {
 
  One of the following asynchronous error response may be returned by the server 
 
-
-
 | **Scenarios**           | **http status code** | **body**         | **description**                          |
 | ----------------------- | -------------------- | ---------------- | ---------------------------------------- |
 | Success                 | 202                  | empty            | The message has been accepted for  processing |
@@ -187,7 +183,7 @@ table, th, td {
 | Data  Error             | 400,422                  | OperationOutcome | If the server cannot process the message due to a data error, it should return a 400 error with an OperationOutcome in the body describing the error |
 | Other processing errors | 4xx                  | empty            | Other 4xx errors may be returned by intermediary gateways (e.g. 401 Unauthorized). 429 Too many requests. These may not provide an OperationOutcome |
 
-#### Example Error Response
+#### Enrolment Nomination Request Response - Error Example
 
 [enrolment-nomination-response-message-1](OperationOutcome-enrolment-nomination-request-error-response-1.json.html)
 
