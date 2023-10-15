@@ -1,8 +1,9 @@
 This is the Implementation Guide for an [HL7&reg; FHIR&copy;](http://hl7.org/fhir/) interface for the National Enrolment Service (NES). It brings together all the artifacts that are necessary to understand and use the NES FHIR APIs.
 
 This IG describes :
+* [Patient Enrolments](StructureDefinition-NesEnrolment.html), derived from the [HL7 FHIR EpisodeOfCare resource](https://www.http://hl7.org/fhir/R4/episodeofcare.html).
 * [Patient Entitlements](StructureDefinition-NesEntitlements.html), derived from the [HL7 FHIR coverage resource](https://www.hl7.org/fhir/coverage.html).
-* The  messages required to send an enrolment nomination request to health providers
+* The messages required to send an enrolment nomination request to health providers.
 
 This guide uses artifacts from [New Zealand Base Implementation Guide.](https://fhir.org.nz/ig/base/index.html)
 
