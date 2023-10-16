@@ -47,7 +47,7 @@ table, th, td {
 
 <tr>
 <td>Get Enrolment FLS</td>
-<td>Get FLS and FLS-NF Enrolments using patient's NHI, with optional search parameters status and type</td>
+<td>Get First Level Service (FLS) and Firt Level Service Non-funded (FLS-NF) Enrolments using patient's NHI, with optional search parameters status and type</td>
 <td><a href="searchEnrolment.html">See Get Enrolment use case</a></td>
 </tr>
 
