@@ -75,3 +75,25 @@ If present this will be returned in the response</td>
 <td>Te Whatu Ora will check internal logs</td>
 <td>Recommended</td></tr>
 </table>
+
+<h4>General tests</h4>
+<table>
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+</style>
+<caption><b>These tests apply to all integrations</b></caption>
+<tr><th>Reference</th>
+<th>Purpose – Demonstrate that the</th>
+<th>Input values</th>
+<th>Expected outcome</th>
+<th>Mandatory / Optional / Recommended</th></tr>
+
+<tr><td>General-1</td>
+<td>Application can handle an HTTP 429 error in a graceful way</td>
+<td>The application reaches its usage plan limit and is returned an HTTP 429 error.</a></td>
+<td>The application will retry several times with an exponentially increasing delay</td>
+<td>Recommended</td></tr>
+</table>
