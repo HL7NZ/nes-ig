@@ -87,7 +87,7 @@ The Create Enrolment operation is initiated by a user who needs to create a new 
 * A Patient must be less than three months old at the date of enrolment to pre-enrol with a GP Practice / PHO.
 
 
-<h3>Enrolment Request Errors</h3>
+<h3>Create Enrolment Errors</h3>
 <table>
 <style>
 table, th, td {
