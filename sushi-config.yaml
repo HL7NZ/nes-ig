@@ -51,17 +51,24 @@ menu:
   IG Home: index.html
   Business View: businessView.html
   Use cases:
-    Enrolment Nomination: enrolmentNomination.html
+    Get Enrolment: getEnrolment.html
     Search Enrolments: searchEnrolment.html
     Create Enrolment: createEnrolment.html
     Update Enrolment: updateEnrolment.html
-    Create Entitlement: createEntitlement.html
     Get Entitlement: getEntitlement.html
+    Search Entitlement: searchEntitlement.html
+    Create Entitlement: createEntitlement.html
+    Enrolment Nomination: enrolmentNomination.html    
   Important information:
-    Onboarding and Compliance testing: OnboardingAndComplianceTesting.html
+    Onboarding: Onboarding.html
     General Notes: general.html
     FAQ: FAQ.html
     Glossary: glossary.html
+  Compliance testing:
+    Compliance testing important information: ComplianceTestingImportantInformation.html
+    Enrolment Compliance testing: EnrolmentComplianceTesting.html
+    Entitlment Compliance testing: EntitlmentComplianceTesting.html
+    Enrolment Nomination Compliance testing: EnrolmentNominationCompliancetesting.html
   API: API.html
   Profiles: profiles.html
   Message Definitions:
