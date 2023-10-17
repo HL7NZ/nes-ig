@@ -1,0 +1,32 @@
+@startuml
+skinparam sequenceArrowThickness 2
+skinparam roundcorner 5
+skinparam maxmessagesize 180
+skinparam sequenceParticipant bold
+title Get Enrolment by ID
+actor "Integrating application user" as User #CornflowerBlue
+participant "Integrating application" as A #CornflowerBlue
+participant "<FHIR API> NES" as B #CornflowerBlue
+participant "EEE" as C #CornflowerBlue
+|||
+User -> A: Enter Enrolment-id
+activate A
+|||
+A -> B: GET [base]/EpisodeOfCare/[enrolment-id]
+activate B
+|||
+B -> B: Validate[]
+|||
+B -> C: Request
+activate C
+|||
+C -[dashed]-> B:  
+deactivate C
+|||
+B -[dashed]-> A :Return NESEnrolment record 
+deactivate B
+|||
+A -> User: Display Enrolment details
+deactivate A
+|||
+@enduml
