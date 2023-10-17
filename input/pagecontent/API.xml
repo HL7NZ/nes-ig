@@ -16,6 +16,41 @@
 <td>Used to retrieve a Patient's entitlements</td>
 <td> system/Coverage.r</td>
 </tr>
+<tr>
+<td>search-type</td>
+<td>GET</td>
+<td>[base]/[EpisodeOfCare]</td>
+<td> Search for enrolments</td>
+<td> system/EpisodeOfCare.s</td>
+</tr>
+</table>
+<strong>Search Parameters</strong>
+<table class='table table-bordered table-condensed'>
+<tr><th width='30%'>Name</th><th>Type</th><th width='70%'>Documentation</th></tr>
+<tr>
+<td>identifier</td>
+<td><a target='_blank' href="http://hl7.org/fhir/search.html#token">token</a></td>
+<td><p>external entitlement id</p>
+</td>
+</tr>
+<tr>
+<td>beneficiary</td>
+<td><a target='_blank' href="http://hl7.org/fhir/search.html#string">string</a></td>
+<td><p>NHI-Id</p>
+</td>
+</tr>
+<tr>
+<td>type</td>
+<td><a target='_blank' href="http://hl7.org/fhir/search.html#token">token</a></td>
+<td><p>entitlement type code</p>
+</td>
+</tr>
+<tr>
+<td>status</td>
+<td><a target='_blank' href="http://hl7.org/fhir/search.html#token">token</a></td>
+<td><p>status code</p>
+</td>
+</tr>
 </table>
 <a name="EpisodeOfCare"> </a>
 <h5>EpisodeOfCare</h5>
@@ -28,6 +63,42 @@
 <td>[base]/[EpisodeOfCare]/[id]</td>
 <td>Used to retrieve a Patient's enrolments</td>
 <td> system/EpisodeOfCare.r</td>
+</tr>
+<tr>
+<td>create</td>
+<td>POST</td>
+<td>[base]/[EpisodeOfCare]</td>
+<td> create a new enrolment</td>
+<td> system/EpisodeOfCare.c</td>
+</tr>
+<tr>
+<td>update</td>
+<td>PUT</td>
+<td>[base]/[EpisodeOfCare]/[id]</td>
+<td> update an existing enrolment</td>
+<td> system/EpisodeOfCare.u</td>
+</tr>
+</table>
+<strong>Search Parameters</strong>
+<table class='table table-bordered table-condensed'>
+<tr><th width='30%'>Name</th><th>Type</th><th width='70%'>Documentation</th></tr>
+<tr>
+<td>patient</td>
+<td><a target='_blank' href="http://hl7.org/fhir/search.html#string">string</a></td>
+<td><p>NHI number</p>
+</td>
+</tr>
+<tr>
+<td>status</td>
+<td><a target='_blank' href="http://hl7.org/fhir/search.html#token">token</a></td>
+<td><p>status code</p>
+</td>
+</tr>
+<tr>
+<td>type</td>
+<td><a target='_blank' href="http://hl7.org/fhir/search.html#token">token</a></td>
+<td><p>type code</p>
+</td>
 </tr>
 </table>
 <br/><h4>Server Level Interactions</h4>
@@ -43,7 +114,7 @@
 <td> system/MessageHeader.c</td>
 </tr>
 </table>
-<br/><h3>Messages</h3></a>
+<br/><h3>Messages</h3>
 <strong>Definitions</strong>
 <table class='table table-bordered table-condensed'>
 <tr><th width='30%'>Name</th><th width='70%'>Definitions</th></tr>

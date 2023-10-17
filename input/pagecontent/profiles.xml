@@ -26,7 +26,12 @@
 <tr>
 <td><a href='StructureDefinition-NesPatient.html'>NesPatient</a></td>
 <td>http://hl7.org.nz/fhir/StructureDefinition/NesPatient</td>
-<td><p>A minimal profile of NzPatient, containing just enough information too avldiate a aptient&#39;s NHI for the purposes of enrolment</p></td>
+<td><p>A minimal profile of NzPatient, containing just enough information to validate a patient&#39;s NHI for the purposes of enrolment</p></td>
+</tr>
+<tr>
+<td><a href='StructureDefinition-NesPractitionerRole.html'>NesPractitionerRole</a></td>
+<td>http://hl7.org.nz/fhir/StructureDefinition/NesPractitionerRole</td>
+<td><p>A minimal profile of PractitionerRole, which just contains references to the enrolling facility, organisation and practitioner</p></td>
 </tr>
 </table>
 </div>
