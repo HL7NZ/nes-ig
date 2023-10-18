@@ -5,7 +5,7 @@ The Get Enrolmet operation allows an authorised user to retrieve an Enrolment re
 
 
 <div>
-{% includeget-enrolment-by-id.svg %}
+{% include get-enrolment-by-id.svg %}
 </div>
 
 
