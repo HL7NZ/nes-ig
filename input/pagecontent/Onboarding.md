@@ -34,7 +34,7 @@ If you require help or have any questions regarding the onboarding process, plea
 See below for available business functions.  
 By using Te Whatu Ora APIs you are accessing personally identifiable information from the NES which is not directly from the individual concerned. You need to consider your obligations under HIPC principle 2, and we may request to see your privacy impact assessment prior to access to production.
 
-<h3>Business Functions</h3>
+<h5>Business Functions</h5>
 <table>
 <style>
 table, th, td {
@@ -112,6 +112,7 @@ table, th, td {
 <td>Create a Patiet Entitlement</td>
 <td><a href="createEntitlement.html">See create Entitlement use case</a></td></tr>
 </tr>
+</table>
 
 
 
@@ -148,7 +149,7 @@ If you require help or have any questions regarding the onboarding process, plea
 See below for available business functions.  
 By using Te Whatu Ora APIs you are accessing personally identifiable information from the NES which is not directly from the individual concerned. You need to consider your obligations under HIPC principle 2, and we may request to see your privacy impact assessment prior to access to production.
 
-<h3>Business Functions</h3>
+<h5>Business Functions</h5>
 <table>
 <style>
 table, th, td {
@@ -171,3 +172,4 @@ table, th, td {
 </td>
 <td>See [TBC - Enrolment Nomination usecase]()</td>
 </tr>
+</table>
