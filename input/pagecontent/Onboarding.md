@@ -104,13 +104,14 @@ table, th, td {
 <tr>
 <td>Get Entitlement</td>
 <td>Get a Patients Entitlement using identifier, or <br /> Get a Patient's Entitlement using NHI, with optional search parameters status and type</td>
-<td><a href="getPatient.html">See get Entitlement use case</a></td></tr>
+<td><a href="getPatient.html">See get Entitlement use case</a></td>
 </tr>
+
 
 <tr>
 <td>Create Entitlement</td>
 <td>Create a Patiet Entitlement</td>
-<td><a href="createEntitlement.html">See create Entitlement use case</a></td></tr>
+<td><a href="createEntitlement.html">See create Entitlement use case</a></td>
 </tr>
 </table>
 
@@ -170,6 +171,6 @@ table, th, td {
     <li>The ability to respond to an enrolment nomination message (HealthLink only).</li>
   </ul>
 </td>
-<td>See [TBC - Enrolment Nomination usecase]()</td>
+<td><a href="enrolmentNomination.html">See Enrolment Nomination use case</a></td>
 </tr>
 </table>
