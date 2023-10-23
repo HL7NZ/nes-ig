@@ -10,19 +10,19 @@ participant "Healthlink Air Broker" as B #CornflowerBlue
 participant "PMS" as C #CornflowerBlue
 |||
 
-AA -> A: POST [base]/$process-message
+AA -> A: 1. POST [base]/$process-message
 activate A
-A -> A:  validate and enrich
+A -> A:  2. validate and enrich
 
-A -> B: POST [base]/$process-message
+A -> B: 3. POST [base]/$process-message
 activate B
 |||
-B -> B: Transform to HL7 v2[]
+B -> B: 4. Transform to HL7 v2[]
 |||
-B -> C: ADT^28 request
-B -[dashed]-> A: 202 Response 
+B -> C: 5. ADT^28 request
+B -[dashed]-> A: 6. 202 Response 
 deactivate B
-A -[dashed]-> AA: 202 Response 
+A -[dashed]-> AA: 7. 202 Response 
 
 deactivate A
 |||

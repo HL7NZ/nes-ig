@@ -9,15 +9,15 @@ participant "Healthlink Air Broker" as B #CornflowerBlue
 participant "PMS" as C #CornflowerBlue
 |||
 
-C-> B: ADT^28 ACK response
+C-> B: 1. ADT^28 ACK response
 activate B
 |||
-B -> B: Transform HL7 v2 to FHIR
+B -> B: 2. Transform HL7 v2 to FHIR
 |||
-B -> A:  POST [base]/$process-message
+B -> A:  3. POST [base]/$process-message
 activate A
 |||
-A -[dashed]-> B: 202 Response 
+A -[dashed]-> B: 4. 202 Response 
 |||
 deactivate A
 deactivate B

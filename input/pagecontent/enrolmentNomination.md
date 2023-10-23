@@ -24,14 +24,20 @@ At a later time, after the health provider has processed the request, they send 
 
 
 
-####  Enrolment Nomination Request Example - Whaihua to NES
+####  Enrolment Nomination Request Examples
+*1.  - Whaihua to NES*
+
 Example of a "skinny" enrolment nomination request message sent by Whaihua to NES 
 [enrolment-nomination-request-message-2](Bundle-54321.json.html)
 
-####  Enrolment Nomination Request Example - NES to HealthLink AIR Broker
+*3. - NES to HealthLink AIR Broker*
+
 Example of an enriched enrolment nomination request message sent by  NES to the  HealthLink AIR broker
 [enrolment-nomination-request-message-1](Bundle-11223344.json.html)
 
+*7. - NES to Whaihua - error response*
+
+[enrolment-nomination-response-message-1](OperationOutcome-enrolment-nomination-request-error-response-1.json.html)
 
 #### Enrolment Nomination Message - Resources:
 
@@ -183,9 +189,7 @@ table, th, td {
 | Data  Error             | 400,422                  | OperationOutcome | If the server cannot process the message due to a data error, it should return a 400 error with an OperationOutcome in the body describing the error |
 | Other processing errors | 4xx                  | empty            | Other 4xx errors may be returned by intermediary gateways (e.g. 401 Unauthorized). 429 Too many requests. These may not provide an OperationOutcome |
 
-#### Enrolment Nomination Request Response - Error Example
 
-[enrolment-nomination-response-message-1](OperationOutcome-enrolment-nomination-request-error-response-1.json.html)
 
 ### Enrolment Nomination Response
 This is an asynchronous response message indicating  how  the destination PMS has acted on the nomination request message
@@ -199,6 +203,25 @@ This is an asynchronous response message indicating  how  the destination PMS ha
 1. The PMS sends an HL7v2.0  ADT^28 ACK message to the HealthLink AIR Broker indicating if the enrolment nomination request has been accepted or not
 2. The Messaging Hub creates a bundle containing an OperationOutcome with an appropriate HL7 Result Code and sends it to the NES *$process-message* endpoint.
 3. NES returns a synchronous 202 response to the Messaging Hub.
+
+#### Enrolment Nomination Request Examples
+
+*3. PMS to NES - Success*
+
+This is an example of an asynchronous response message returned from the PMS indicating that the the enrolment nomination request has been processed succesfully and accepted
+[enrolment-nomination-response-message-1](Bundle-34567.json.html)
+
+*3. PMS to NES - Failure*
+
+This is an example of an asynchronous response message returned from the PMS indicating there was an error processing the enrolment nomination request
+[enrolment-nomination-response-message-2](Bundle-6789.json.html)
+
+*4. NES too healtlInk - response*
+
+This an example of an error response returned by NES if it  receives an invalid Enrolment Nomination Response message
+
+[enrolment-nomination-response-response-error-message-1.](OperationOutcome-enrolment-nomination-response-error-response-1.json.html)
+
 
 #### Responses Codes
 The response codes which may be sent in response to an Enrolment Nomination Response are the same as those describer for  Enrolment Nomination Request 
