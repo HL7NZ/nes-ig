@@ -48,65 +48,52 @@ table, th, td {
 <th>Comments</th></tr>
 
 <tr>
-<td>Get Enrolment FLS</td>
-<td>Get First Level Service (FLS) and Firt Level Service Non-funded (FLS-NF) Enrolments using patient's NHI, with optional search parameters status and type</td>
-<td><a href="searchEnrolment.html">See Get Enrolment use case</a></td>
+<td>FLS Read</td>
+<td>To allow access to get an FLS or FLS-NF enrolment by enrolment-id, or to get persons FLS or FLS-NF enrolment using NHI and other search parameters</td>
+<td><a href="getEnrolment.html">See Get Enrolment use case</a> <br />
+<a href="searchEnrolment.html">See Search Enrolment use case</a> </td>
 </tr>
 
 <tr>
-<td>Update Enrolment FLS</td>
-<td>Update an FLS or FLS-NF Enrolment</td>
+<td>FLS Maintain</td>
+<td>Create and Update for FLS and FLS-NF enrolments</td>
+<td><a href="createEnrolment.html">See create Enrolment use case</a> <br />
+<a href="updateEnrolment.html">See update Enrolment use case</a></td>
+</tr>
+
+<tr>
+<td>LMC Read</td>
+<td>To allow access to get an LMC enrolment by enrolment-id, or to get persons LMC enrolment using NHI and other search parameters</td>
+<td><a href="getEnrolment.html">See Get Enrolment use case</a> <br />
+<a href="searchEnrolment.html">See Search Enrolment use case</a> </td>
+</tr>
+
+<tr>
+<td>LMC Maintain</td>
+<td>Create and Update for LMC enrolments</td>
+<td><a href="createEnrolment.html">See create Enrolment use case</a> <br />
+<a href="updateEnrolment.html">See update Enrolment use case</a></td>
+</tr>
+
+<tr>
+<td>WCTO Read</td>
+<td>To allow access to get a WCTO enrolment by enrolment-id, or to get persons WCTO enrolments using NHI and other search parameters</td>
 <td><a href="updateEnrolment.html">See update Enrolment use case</a></td>
 </tr>
 
 <tr>
-<td>Create Enrolment FLS</td>
-<td>Create an FLS or FLS-NF Enrolment</td>
-<td><a href="createEnrolment.html">See create Enrolment use case</a></td>
-</tr>
-
-<tr>
-<td>Get Enrolment LMC</td>
-<td>Get an LMC Enrolment using patient's NHI, with optional search parameters status and type</td>
-<td><a href="searchEnrolment.html">See Get Enrolment use case</a></td>
-</tr>
-
-<tr>
-<td>Update Enrolment FLS</td>
-<td>Update an LMC Enrolment</td>
+<td>WCTO Maintain</td>
+<td>Create and Update for WCTO enrolments</td>
+<td>To allow access to get a WCTO enrolment by enrolment-id, or to get persons WCTO enrolments using NHI and other search parameters</td>
 <td><a href="updateEnrolment.html">See update Enrolment use case</a></td>
 </tr>
 
 <tr>
-<td>Create Enrolment LMC</td>
-<td>Create an LMC Enrolment</td>
-<td><a href="createEnrolment.html">See create Enrolment use case</a></td>
-</tr>
-
-<tr>
-<td>Get Enrolment WCTO</td>
-<td>Get a WCTO Enrolment using patient's NHI, with optional search parameters status and type</td>
-<td><a href="searchEnrolment.html">See Get Enrolment use case</a></td>
-</tr>
-
-<tr>
-<td>Update Enrolment WCTO</td>
-<td>Update a WCTO Enrolment</td>
-<td><a href="updateEnrolment.html">See update Enrolment use case</a></td>
-</tr>
-
-<tr>
-<td>Create Enrolment WCTO</td>
-<td>Create a WCTO Enrolment</td>
-<td><a href="createEnrolment.html">See create Enrolment use case</a></td>
-</tr>
-
-<tr>
-<td>Get Entitlement</td>
+<td>Entitlement Read</td>
 <td>Get a Patients Entitlement using identifier, or <br /> Get a Patient's Entitlement using NHI, with optional search parameters status and type</td>
-<td><a href="getPatient.html">See get Entitlement use case</a></td>
+<td><a href="getEntitlement.html">See get Entitlement use case</a> <br />
+<a href="searchEntitlement.html">See search Entitlement use case</a></td>
 </tr>
-
 
 <tr>
 <td>Create Entitlement</td>
