@@ -78,14 +78,15 @@ table, th, td {
 <tr>
 <td>WCTO Read</td>
 <td>To allow access to get a WCTO enrolment by enrolment-id, or to get persons WCTO enrolments using NHI and other search parameters</td>
-<td><a href="updateEnrolment.html">See update Enrolment use case</a></td>
+<td><a href="getEnrolment.html">See Get Enrolment use case</a> <br />
+<a href="searchEnrolment.html">See Search Enrolment use case</a> </td>
 </tr>
 
 <tr>
 <td>WCTO Maintain</td>
 <td>Create and Update for WCTO enrolments</td>
-<td>To allow access to get a WCTO enrolment by enrolment-id, or to get persons WCTO enrolments using NHI and other search parameters</td>
-<td><a href="updateEnrolment.html">See update Enrolment use case</a></td>
+<td><a href="createEnrolment.html">See create Enrolment use case</a> <br />
+<a href="updateEnrolment.html">See update Enrolment use case</a></td>
 </tr>
 
 <tr>
