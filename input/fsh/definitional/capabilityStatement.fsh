@@ -28,7 +28,7 @@ Usage: #definition
 
 * rest.resource[=].interaction[1].code = #create
 * rest.resource[=].interaction[=].documentation = "POST,[base]/[Coverage], create a new entitlement, system/Coverage.c"
-
+* rest.resource[=].interaction[+].code = #search-type
 
 * rest.resource[=].searchParam[0].name = "identifier"
 * rest.resource[=].searchParam[0].type = #token
@@ -59,8 +59,8 @@ Usage: #definition
 * rest.resource[=].interaction[=].documentation = "PUT,[base]/[EpisodeOfCare]/[id], update an existing enrolment, system/EpisodeOfCare.u"
 
 //search by various parameters
-* rest.resource.interaction[+].code = #search-type
-* rest.resource.interaction[=].documentation = "GET,[base]/[EpisodeOfCare], Search for enrolments, system/EpisodeOfCare.s"
+* rest.resource[=].interaction[+].code = #search-type
+* rest.resource[=].interaction[=].documentation = "GET,[base]/[EpisodeOfCare], Search for enrolments, system/EpisodeOfCare.s"
 
 
 
