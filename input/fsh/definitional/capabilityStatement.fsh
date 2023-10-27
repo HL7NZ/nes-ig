@@ -26,9 +26,10 @@ Usage: #definition
 //comma delimited fields in documentation string extracted by makeCapabilityStatement.js:   <verb,url,doc,scope>
 * rest.resource.interaction.documentation = "GET,[base]/[Coverage]/[id],Used to retrieve a Patient's entitlements, system/Coverage.r"
 
-* rest.resource[=].interaction[1].code = #create
+* rest.resource[=].interaction[+].code = #create
 * rest.resource[=].interaction[=].documentation = "POST,[base]/[Coverage], create a new entitlement, system/Coverage.c"
 * rest.resource[=].interaction[+].code = #search-type
+* rest.resource[=].interaction[=].documentation = "GET,[base]/[Coverage], search for entitlements, system/Coverage.s"
 
 * rest.resource[=].searchParam[0].name = "identifier"
 * rest.resource[=].searchParam[0].type = #token

@@ -10,18 +10,18 @@
 <table class='table table-bordered table-condensed'>
 <tr><th width='10%'>Name</th><th width='10%'>Verb</th><th width='20%'>URL</th><th width='50%'>Documentation</th><th width='10%'>Scope</th></tr>
 <tr>
-<td>read</td>
-<td>GET</td>
-<td>[base]/[Coverage]/[id]</td>
-<td>Used to retrieve a Patient's entitlements</td>
-<td> system/Coverage.r</td>
+<td>create</td>
+<td>POST</td>
+<td>[base]/[Coverage]</td>
+<td> create a new entitlement</td>
+<td> system/Coverage.c</td>
 </tr>
 <tr>
 <td>search-type</td>
 <td>GET</td>
-<td>[base]/[EpisodeOfCare]</td>
-<td> Search for enrolments</td>
-<td> system/EpisodeOfCare.s</td>
+<td>[base]/[Coverage]</td>
+<td> search for entitlements</td>
+<td> system/Coverage.s</td>
 </tr>
 </table>
 <strong>Search Parameters</strong>
@@ -77,6 +77,13 @@
 <td>[base]/[EpisodeOfCare]/[id]</td>
 <td> update an existing enrolment</td>
 <td> system/EpisodeOfCare.u</td>
+</tr>
+<tr>
+<td>search-type</td>
+<td>GET</td>
+<td>[base]/[EpisodeOfCare]</td>
+<td> Search for enrolments</td>
+<td> system/EpisodeOfCare.s</td>
 </tr>
 </table>
 <strong>Search Parameters</strong>
