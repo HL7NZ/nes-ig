@@ -21,11 +21,10 @@ Usage: #definition
 * rest.mode = #server
 
 * rest.resource.type = #Coverage
-* rest.resource.profile = "http://hl7.org.nz/fhir/StructureDefinition/NzCoverage"
-* rest.resource.interaction.code = #read
+* rest.resource[=].profile = "http://hl7.org.nz/fhir/StructureDefinition/NzCoverage"
+* rest.resource[=].interaction[0].code = #read
 //comma delimited fields in documentation string extracted by makeCapabilityStatement.js:   <verb,url,doc,scope>
-* rest.resource.interaction.documentation = "GET,[base]/[Coverage]/[id],Used to retrieve a Patient's entitlements, system/Coverage.r"
-
+* rest.resource[=].interaction[=].documentation = "GET,[base]/[Coverage]/[id],Used to retrieve a Patient's entitlements, system/Coverage.r"
 * rest.resource[=].interaction[+].code = #create
 * rest.resource[=].interaction[=].documentation = "POST,[base]/[Coverage], create a new entitlement, system/Coverage.c"
 * rest.resource[=].interaction[+].code = #search-type
