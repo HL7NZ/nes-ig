@@ -82,7 +82,7 @@ Description: "URLs must be less than 1024 characters"
 Severity: #error
 
 Invariant: URL-ALLOWED-CHARS
-Expression: "EpisodeOfCare.descendants().url.all(matches('^[-a-zA-Z0-9@:%._\\+~#=?&\\/]*$'))"
+Expression: "EpisodeOfCare.descendants().url.all(matches('^[-a-zA-Z0-9@:%._~#=?&\\/]*$'))"
 Description: "character restrictions for URLs"
 Severity: #error
 
@@ -92,7 +92,7 @@ Description: "System URLs must be less than 1024 characters"
 Severity: #error
 
 Invariant: SYSTEM-ALLOWED-CHARS
-Expression: "EpisodeOfCare.descendants().system.all(matches('^[-a-zA-Z0-9@:%._\\+~#=?&\\/]*$'))"
+Expression: "EpisodeOfCare.descendants().system.all(matches('^[-a-zA-Z0-9@:%._~#=?&\\/]*$'))"
 Description: "character restrictions for system url"
 Severity: #error
 

@@ -11,7 +11,7 @@ Usage: #example
 * type.coding.system = "https://standards.digital.health.nz/nes-enrolment-type"
 * type.coding.code = #FLS-NF
 
-* patient = Reference(Patient/PatientZJM9397)
+* patient = Reference(Patient/ZJM9397)
 * careManager = Reference(EnrolmentServiceProvider1)
 
 * contained[0] = EnrolmentServiceProvider1
@@ -22,7 +22,10 @@ Usage: #example
 * extension[reenrolment-date].valueDate = "2022-06-05"
 * extension[enrolment-owner-org].valueReference = Reference(Organization/GZZ998-G)
 * extension[enrolment-owner-org].valueReference.display = "Live Org with Dormant"
-* extension[nes-enrolment-termination-reason].valueCodeableConcept = #Transfer
+
+* extension[nes-enrolment-termination-reason].valueCodeableConcept.coding.code = #Transfer
+* extension[nes-enrolment-termination-reason].valueCodeableConcept.coding.system = "https://standards.digital.health.nz/nes-enrolment-termination-reason"
+
 * extension[enrolment-encounter].valueReference = Reference(QualifiedEncounter1)
 
 

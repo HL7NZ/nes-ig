@@ -11,7 +11,7 @@ Usage: #example
 * type.coding.system = "https://standards.digital.health.nz/nes-enrolment-type"
 * type.coding.code = #FLS-NF
 
-* patient = Reference(Patient/PatientZJM9397)
+* patient = Reference(Patient/ZKC4633)
 * careManager = Reference(EnrolmentServiceProvider10)
 * extension[enrolment-encounter].valueReference = Reference(QualifiedEncounter10)
 
@@ -49,7 +49,8 @@ InstanceOf: Encounter
 Usage: #inline
 
 * status = #finished 
-* class = #AMB
+* class.code = #AMB
+* class.system = "http://terminology.hl7.org/CodeSystem/v3-ActCode"
 * period.start =  "2023-09-27"
 
 
