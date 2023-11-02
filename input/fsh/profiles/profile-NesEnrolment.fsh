@@ -97,7 +97,7 @@ Description: "character restrictions for system url"
 Severity: #error
 
 Invariant: CODEABLE-CONCEPT-TEXT-LENGTH
-Expression: "EpisodeOfCare.descendants().valueCodeableConcept.text.all(length()<1024))"
+Expression: "EpisodeOfCare.descendants().valueCodeableConcept.text.all(length()<1024)"
 Description: "valueCodeableConcept.text must be less than 1024 characters"
 Severity: #error
 
