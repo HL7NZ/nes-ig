@@ -1,7 +1,7 @@
 
 
 ### Get Enrolment by ID
-The Get Enrolmet operation allows an authorised user to retrieve an Enrolment record for a Patient using a known Enrolment record id.
+The Get Enrolment operation allows an authorised user to retrieve an Enrolment record for a Patient using a known Enrolment record id.
 
 
 <div>
@@ -21,7 +21,7 @@ The Get Enrolmet operation allows an authorised user to retrieve an Enrolment re
 
 
 ####  Get Enrolment Response Example 
-TBC
+[get-enrolment-response](EpisodeOfCare-EN667788899.json.html)
 
 #### Business  Rules
 1.  A Get Enrolment request must include a valid Enrolment-id

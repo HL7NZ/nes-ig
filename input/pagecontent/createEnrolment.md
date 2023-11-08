@@ -2,7 +2,7 @@
 
 ### Create Enrolment for Patient
 
-The Create Enrolment operation is initiated by a user who needs to create a new Enrolment with a health provider for the provision of a health service.
+The Create Enrolment operation is initiated by a user who needs to create a new Enrolment with a health provider for the provision of a health service to a patient.
 
 
 <div>
