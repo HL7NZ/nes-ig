@@ -18,20 +18,25 @@ table, th, td {
  <ul> 
   <li>Baby  
    	 <ul>
-      	<li>NHI Number</li>
-      	<li>Gender</li>
-      	<li>Date of Birth</li>
+      	<li>NHI: ZKS3307</li>
+      	<li>Gender: Female</li>
+      	<li>DOB: 2023-10-11</li>
     </ul>
   </li>
   <li>gp
   	 <ul>
-     	<li>Facility</li>
+     	<li>Facility ID: FZZ932-C</li>
     </ul>
    </li>
    <li>PG1
   	 <ul>
-     	<li>Relationship Code</li>
-        <li>First and Family name</li>
+     	<li>Relationship Code: MTH</li>
+        <ul>
+          <li>First name: Priya</li>
+          <li>Family name: Testing NBES One</li>
+        </ul>
+     </ul>
+   </li>
     </ul>
    </li>
 
