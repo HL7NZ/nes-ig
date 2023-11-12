@@ -249,7 +249,334 @@ table, th, td {
 </td>
 <td>mandatory</td></tr>
 
+<tr><td>EnrolmentNomination-Error-5</td>
+<td>application will manage the error when attempting to send an enrolment nomination message that does not have the Baby’s gender</td>
+<td>Send a nomination request for:
+ <ul> 
+  <li>Baby  
+   	 <ul>
+      	<li>NHI: ZKS3307</li>
+      	<li>DOB: 2023-10-11</li>
+    </ul>
+  </li>
+  <li>GP
+  	 <ul>
+     	<li>Facility ID: FZZ932-C</li>
+    </ul>
+  </li>
+   <li>PG1
+  	 <ul>
+     	<li>Relationship Code: MTH</li>
+        <ul>
+          <li>Given name: Priya</li>
+          <li>Family name: Testing NBES One</li>
+        </ul>
+     </ul>
+   </li>
+  </ul>
+</td>
+<td>
+  <ol type="1">
+    <li>Input: Enrolment nomination information can be provided</li>
+    <li>Output: Error EM13008 The baby's gender is missing or invalid.</li>
+  </ol>
+</td>
+<td>mandatory</td></tr>
 
+<tr><td>EnrolmentNomination-Error-6</td>
+<td>application will manage the error when attempting to send an enrolment nomination message that has an incorrect baby gender</td>
+<td>Send a nomination request for:
+ <ul> 
+  <li>Baby  
+   	 <ul>
+      	<li>NHI: ZKS3307</li>
+        <li>Gender - 'Mixed'</li>
+      	<li>DOB: 2023-10-11</li>
+    </ul>
+  </li>
+  <li>GP
+  	 <ul>
+     	<li>Facility ID: FZZ932-C</li>
+    </ul>
+  </li>
+   <li>PG1
+  	 <ul>
+     	<li>Relationship Code: MTH</li>
+        <ul>
+          <li>Given name: Priya</li>
+          <li>Family name: Testing NBES One</li>
+        </ul>
+     </ul>
+   </li>
+  </ul>
+</td>
+<td>
+  <ol type="1">
+    <li>Input: Enrolment nomination information can be provided</li>
+    <li>Output: Error 422 Unprocessable entity.</li>
+  </ol>
+</td>
+<td>mandatory</td></tr>
 
+<tr><td>EnrolmentNomination-Error-7</td>
+<td>application will manage the error when attempting to send an enrolment nomination message with a gender that does not match the NHI</td>
+<td>Send a nomination request for:
+ <ul> 
+  <li>Baby  
+   	 <ul>
+      	<li>NHI: ZKS3307</li>
+        <li>Gender - male</li>
+      	<li>DOB: 2023-10-11</li>
+    </ul>
+  </li>
+  <li>GP
+  	 <ul>
+     	<li>Facility ID: FZZ932-C</li>
+    </ul>
+  </li>
+   <li>PG1
+  	 <ul>
+     	<li>Relationship Code: MTH</li>
+        <ul>
+          <li>Given name: Priya</li>
+          <li>Family name: Testing NBES One</li>
+        </ul>
+     </ul>
+   </li>
+  </ul>
+</td>
+<td>
+  <ol type="1">
+    <li>Input: Enrolment nomination information can be provided</li>
+    <li>Output: Error EM13006 The provided gender does not match the NHI record for the baby.</li>
+  </ol>
+</td>
+<td>mandatory</td></tr>
 
+<tr><td>EnrolmentNomination-Error-8</td>
+<td>application will manage the error when attempting to send an enrolment nomination message that does not have the Nominated GP facility ID</td>
+<td>Send a nomination request for:
+ <ul> 
+  <li>Baby  
+   	 <ul>
+      	<li>NHI: ZKS3307</li>
+        <li>Gender - female</li>
+      	<li>DOB: 2023-10-11</li>
+    </ul>
+  </li>
+  <li>GP
+  	 <ul>
+     	<li>Facility ID: 'leave empty'</li>
+    </ul>
+  </li>
+   <li>PG1
+  	 <ul>
+     	<li>Relationship Code: MTH</li>
+        <ul>
+          <li>Given name: Priya</li>
+          <li>Family name: Testing NBES One</li>
+        </ul>
+     </ul>
+   </li>
+  </ul>
+</td>
+<td>
+  <ol type="1">
+    <li>Input: Enrolment nomination information can be provided</li>
+    <li>Output: Error EM13004 No nominated clinic has been provided.</li>
+  </ol>
+</td>
+<td>mandatory</td></tr>
+
+<tr><td>EnrolmentNomination-Error-9</td>
+<td>application will manage the error when attempting to send an enrolment nomination message with an incorrect Nominated GP facility ID</td>
+<td>Send a nomination request for:
+ <ul> 
+  <li>Baby  
+   	 <ul>
+      	<li>NHI: ZKS3307</li>
+        <li>Gender - female</li>
+      	<li>DOB: 2023-10-11</li>
+    </ul>
+  </li>
+  <li>GP
+  	 <ul>
+     	<li>Facility ID: FZZ932-A</li>
+    </ul>
+  </li>
+   <li>PG1
+  	 <ul>
+     	<li>Relationship Code: MTH</li>
+        <ul>
+          <li>Given name: Priya</li>
+          <li>Family name: Testing NBES One</li>
+        </ul>
+     </ul>
+   </li>
+  </ul>
+</td>
+<td>
+  <ol type="1">
+    <li>Input: Enrolment nomination information can be provided</li>
+    <li>Output: Error EM13005 The nominated clinic provided cannot be found in HPI.</li>
+  </ol>
+</td>
+<td>mandatory</td></tr>
+
+<tr><td>EnrolmentNomination-Error-10</td>
+<td>application will manage the error when attempting to send an enrolment nomination message with a date of birth that does not match the NHI</td>
+<td>Send a nomination request for:
+ <ul> 
+  <li>Baby  
+   	 <ul>
+      	<li>NHI: ZKS3307</li>
+        <li>Gender - female</li>
+      	<li>DOB: 2023-11-11</li>
+    </ul>
+  </li>
+  <li>GP
+  	 <ul>
+     	<li>Facility ID: FZZ932-C</li>
+    </ul>
+  </li>
+   <li>PG1
+  	 <ul>
+     	<li>Relationship Code: MTH</li>
+        <ul>
+          <li>Given name: Priya</li>
+          <li>Family name: Testing NBES One</li>
+        </ul>
+     </ul>
+   </li>
+  </ul>
+</td>
+<td>
+  <ol type="1">
+    <li>Input: Enrolment nomination information can be provided</li>
+    <li>Output: EM13007 The provided date of birth does not match the NHI record for the baby.</li>
+  </ol>
+</td>
+<td>mandatory</td></tr>
+
+<tr><td>EnrolmentNomination-Error-11</td>
+<td>application will manage the error when attempting to send an enrolment nomination message without a mandatory resource</td>
+<td>Send a nomination request without a:
+ <ul> 
+  <li>Baby</li>
+  <li>GP</li>
+  <li>Next of kin</li>
+ </ul>
+</td>
+<td>
+  <ol type="1">
+    <li>Input: Enrolment nomination information can be provided</li>
+    <li>Output: Error 422 Unprocessable entity.</li>
+  </ol>
+</td>
+<td>mandatory</td></tr>
+
+<tr><td>EnrolmentNomination-Error-12</td>
+<td>application will manage the error when attempting to send an enrolment nomination with an incorrect next of kin relationship code</td>
+<td>Send a nomination request for:
+ <ul> 
+  <li>Baby  
+   	 <ul>
+      	<li>NHI: ZKS3307</li>
+        <li>Gender - female</li>
+      	<li>DOB: 2023-10-11</li>
+    </ul>
+  </li>
+  <li>GP
+  	 <ul>
+     	<li>Facility ID: FZZ932-C</li>
+    </ul>
+  </li>
+   <li>PG1
+  	 <ul>
+     	<li>Relationship Code: MOTH</li>
+        <ul>
+          <li>Given name: Priya</li>
+          <li>Family name: Testing NBES One</li>
+        </ul>
+     </ul>
+   </li>
+  </ul>
+</td>
+<td>
+  <ol type="1">
+    <li>Input: Enrolment nomination information can be provided</li>
+    <li>Output: Error 422 Unprocessable entity.</li>
+  </ol>
+</td>
+<td>mandatory</td></tr>
+
+<tr><td>EnrolmentNomination-Error-13</td>
+<td>application will manage the error when attempting to send an enrolment nomination for a baby that already has an active unexpired enrolment in the NES</td>
+<td>Send a nomination request for:
+ <ul> 
+  <li>Baby  
+   	 <ul>
+      	<li>NHI: ZDS3946 </li>
+        <li>Gender: other</li>
+      	<li>DOB: 1998-07-07</li>
+    </ul>
+  </li>
+  <li>GP
+  	 <ul>
+     	<li>Facility ID: FZZ932-C</li>
+    </ul>
+  </li>
+   <li>PG1
+  	 <ul>
+     	<li>Relationship Code: MOTH</li>
+        <ul>
+          <li>Given name: Priya</li>
+          <li>Family name: Testing NBES One</li>
+        </ul>
+     </ul>
+   </li>
+  </ul>
+</td>
+<td>
+  <ol type="1">
+    <li>Input: Enrolment nomination information can be provided</li>
+    <li>Output: EEM13002 The baby is already enrolled or pre-enrolled in NES.</li>
+  </ol>
+</td>
+<td>mandatory</td></tr>
+
+<tr><td>EnrolmentNomination-Error-14</td>
+<td>application will manage the error when attempting to send an enrolment nomination for a baby that has a deceased date</td>
+<td>Send a nomination request for:
+ <ul> 
+  <li>Baby  
+   	 <ul>
+      	<li>NHI: ZBQ2770 </li>
+        <li>Gender: female</li>
+      	<li>DOB: 1979-01-01</li>
+    </ul>
+  </li>
+  <li>GP
+  	 <ul>
+     	<li>Facility ID: FZZ932-C</li>
+    </ul>
+  </li>
+   <li>PG1
+  	 <ul>
+     	<li>Relationship Code: MOTH</li>
+        <ul>
+          <li>Given name: Priya</li>
+          <li>Family name: Testing NBES One</li>
+        </ul>
+     </ul>
+   </li>
+  </ul>
+</td>
+<td>
+  <ol type="1">
+    <li>Input: Enrolment nomination information can be provided</li>
+    <li>Output: EM13003 The baby has been marked as deceased in NHI.</li>
+  </ol>
+</td>
+<td>mandatory</td></tr>
 </table>
