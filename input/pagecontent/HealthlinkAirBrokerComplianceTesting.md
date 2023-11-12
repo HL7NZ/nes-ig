@@ -34,7 +34,7 @@ table, th, td {
 </tr>
 
 <tr>
-<td>EN-HealthLink-2-Error</td>
+<td>EN-HealthLink-3-Error</td>
 <td>application can send an error response for an invalid Enrolment nomination</td>
 <td>TBC</td>
 <td>Error response for an invalid Enrolment nomination returned to NBES.</td>
