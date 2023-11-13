@@ -117,6 +117,7 @@ table, th, td {
  <ul> 
   <li>Baby  
    	 <ul>
+      	<li>NHI: 'leave blank'</li>            
       	<li>Gender: Female</li>
       	<li>DOB: 2023-10-11</li>
     </ul>
@@ -151,7 +152,7 @@ table, th, td {
  <ul> 
   <li>Baby  
    	 <ul>
-      	<li>NHI: ZKS3305</li>       
+      	<li>NHI: ZKS330</li>       
       	<li>Gender: Female</li>
       	<li>DOB: 2023-10-11</li>
     </ul>
@@ -188,6 +189,7 @@ table, th, td {
    	 <ul>
       	<li>NHI: ZKS3307</li>       
       	<li>Gender: Female</li>
+      	<li>DOB: 'leave blank'</li>       
     </ul>
   </li>
   <li>GP
@@ -255,8 +257,9 @@ table, th, td {
  <ul> 
   <li>Baby  
    	 <ul>
-      	<li>NHI: ZKS3307</li>
-      	<li>DOB: 2023-10-11</li>
+       <li>NHI: ZKS3307</li>
+       <li>Gender: 'leave blank'</li>
+       <li>DOB: 2023-10-11</li>
     </ul>
   </li>
   <li>GP
@@ -290,7 +293,7 @@ table, th, td {
   <li>Baby  
    	 <ul>
       	<li>NHI: ZKS3307</li>
-        <li>Gender - 'Mixed'</li>
+        <li>Gender: 'Mixed'</li>
       	<li>DOB: 2023-10-11</li>
     </ul>
   </li>
@@ -325,7 +328,7 @@ table, th, td {
   <li>Baby  
    	 <ul>
       	<li>NHI: ZKS3307</li>
-        <li>Gender - male</li>
+        <li>Gender: male</li>
       	<li>DOB: 2023-10-11</li>
     </ul>
   </li>
@@ -360,7 +363,7 @@ table, th, td {
   <li>Baby  
    	 <ul>
       	<li>NHI: ZKS3307</li>
-        <li>Gender - female</li>
+        <li>Gender: female</li>
       	<li>DOB: 2023-10-11</li>
     </ul>
   </li>
@@ -395,7 +398,7 @@ table, th, td {
   <li>Baby  
    	 <ul>
       	<li>NHI: ZKS3307</li>
-        <li>Gender - female</li>
+        <li>Gender: female</li>
       	<li>DOB: 2023-10-11</li>
     </ul>
   </li>
@@ -430,7 +433,7 @@ table, th, td {
   <li>Baby  
    	 <ul>
       	<li>NHI: ZKS3307</li>
-        <li>Gender - female</li>
+        <li>Gender: female</li>
       	<li>DOB: 2023-11-11</li>
     </ul>
   </li>
@@ -482,7 +485,7 @@ table, th, td {
   <li>Baby  
    	 <ul>
       	<li>NHI: ZKS3307</li>
-        <li>Gender - female</li>
+        <li>Gender: female</li>
       	<li>DOB: 2023-10-11</li>
     </ul>
   </li>
@@ -511,7 +514,7 @@ table, th, td {
 <td>mandatory</td></tr>
 
 <tr><td>EnrolmentNomination-Error-13</td>
-<td>application will manage the error when attempting to send an enrolment nomination for a baby that already has an active unexpired enrolment in the NES</td>
+<td>application will manage the error when attempting to send an enrolment nomination for a baby that already has an active unexpired enrolment in the Natentiona Enrolment service</td>
 <td>Send a nomination request for:
  <ul> 
   <li>Baby  
@@ -528,7 +531,7 @@ table, th, td {
   </li>
    <li>PG1
   	 <ul>
-     	<li>Relationship Code: MOTH</li>
+     	<li>Relationship Code: MTH</li>
         <ul>
           <li>Given name: Priya</li>
           <li>Family name: Testing NBES One</li>
@@ -563,7 +566,7 @@ table, th, td {
   </li>
    <li>PG1
   	 <ul>
-     	<li>Relationship Code: MOTH</li>
+     	<li>Relationship Code: MTH</li>
         <ul>
           <li>Given name: Priya</li>
           <li>Family name: Testing NBES One</li>
