@@ -201,7 +201,7 @@ This is an asynchronous response message indicating  how  the destination PMS ha
 
 ####  Enrolment Nomination Response processing steps:
 1. The PMS sends an HL7v2.0  ADT^28 ACK message to the HealthLink AIR Broker indicating if the enrolment nomination request has been accepted or not
-2. The Messaging Hub creates a bundle containing an OperationOutcome with an appropriate HL7 Result Code and sends it to the NES *$process-message* endpoint.
+2. The Messaging Hub creates a bundle containing an OperationOutcome with an appropriate HL7 Result Code and sends it to the NES *$process-message* endpoint.  The *MessageHeader.response.identifier* shouldl hold the value of the *Messageheader.id* of the message being acknowledged 
 3. NES returns a synchronous 202 response to the Messaging Hub.
 
 #### Enrolment Nomination Request Examples
@@ -216,7 +216,7 @@ This is an example of an asynchronous response message returned from the PMS ind
 This is an example of an asynchronous response message returned from the PMS indicating there was an error processing the enrolment nomination request
 [enrolment-nomination-response-message-2](Bundle-6789.json.html)
 
-*4. NES too healtlInk - response*
+*4. NES to healtlInk - response*
 
 This an example of an error response returned by NES if it  receives an invalid Enrolment Nomination Response message
 
