@@ -1,7 +1,15 @@
 This is the Implementation Guide for an [HL7&reg; FHIR&copy;](http://hl7.org/fhir/) interface for the National Enrolment Service (NES). It brings together all the artifacts that are necessary to understand and use the NES FHIR APIs.
+It is based on  [FHIR R4](http://hl7.org/fhir/) and NZBase IG 2.0-rc1
 
-This IG describes :
-* [Patient Entitlements](StructureDefinition-NesEntitlements.html), derived from the [HL7 FHIR coverage resource](https://www.hl7.org/fhir/coverage.html).
+The NES is a registry service that holds information about
+* Enrolments - This includes an enrolment with a general practitioner, a lead maternity carer, or a nomination to a well child provider.
+* Entitlements - This includes community services cards (csc) and high user heath cards (huhc).
+* The New Born enrolment service - This includes new born nomination to a general practitioner.
+
+The key etities that are suppoted are:
+
+* [Patient Entitlements](/StructureDefinition-NesEntitlement.html), derived from the [HL7 FHIR coverage resource](https://www.hl7.org/fhir/coverage.html).
+* [Patient Enrolments](/StructureDefinition-NesEnrolment.html), derived from the [HL7 FHIR episodeofcare resource](https://hl7.org/fhir/R4/episodeofcare.html).
 * The  messages required to send an enrolment nomination request to health providers
 
 This guide uses artifacts from [New Zealand Base Implementation Guide.](https://fhir.org.nz/ig/base/index.html)
