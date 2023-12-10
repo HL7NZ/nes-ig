@@ -1,7 +1,8 @@
 
 
 ### Get Enrolments for Patient
-This is typically used to get all enrolments for a patient. It may optionally be further restricted to enrolments of a specific type  and/or enrolments having a particular status
+
+This is typically used to get all enrolments for a patient. It may optionally be further restricted to enrolments of a specific type and/or enrolments having a particular status
 
 
 <div>
