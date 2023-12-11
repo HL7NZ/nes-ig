@@ -8,7 +8,7 @@ The NES is a registry service that holds information about
 
 The key etities that are suppoted are:
 
-* [Patient Entitlements](/StructureDefinition-NesEntitlement.html), derived from the [HL7 FHIR coverage resource](https://www.hl7.org/fhir/coverage.html).
+* [Patient Entitlements](/StructureDefinition-NesEntitlement.html), derived from the [HL7 FHIR coverage resource](https://hl7.org/fhir/R4/coverage.html).
 * [Patient Enrolments](/StructureDefinition-NesEnrolment.html), derived from the [HL7 FHIR episodeofcare resource](https://hl7.org/fhir/R4/episodeofcare.html).
 * The  messages required to send an enrolment nomination request to health providers
 
