@@ -20,6 +20,13 @@ This is typically used to get all entitlements for a patient.
 
 For a search entitlement response example [click here](searchEntitlementResponse.html)
 
+#### Search Entitlement Rules and errors
 
-#### Business  Rules
-1.  An Entitlement search request must include a valid nhi-id
+[For Request rules and errors click here](/general.html#request-rules-and-errors)
+
+* **Search Entitlement rules**
+  * An Entitlement search request must include a valid nhi-id
+
+* _Get Entitlement errors_
+  * Note: An empty bundle will be returned if the NHI is incorrect
+
