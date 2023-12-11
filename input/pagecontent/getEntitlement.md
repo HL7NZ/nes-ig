@@ -30,6 +30,6 @@ The Get Entitlement operation allows an authorised user to retrieve an Entitleme
 * **Get Entitlement rules**
   * An Entitlement read request must include a valid Entitlement-id
 
-* _Get Patient errors_
+* _Get Entitlement errors_
   * _"Invalid entitlement-id" (HTTP 404 Not found, Error, Processing)_
   * _"ID provided must be numeric" (HTTP 400 bad request, Error, Processing)_
