@@ -3,12 +3,21 @@
 
 ### About
 
-The National Enrolment Service (NES) is designed to provide a single source of truth for patient enrolments with Primary Health Organisations (PHOs).  It does this my maintaining a relationship between the patient identifier (NHI number) and the enrolling organisation (HPI Organisation ID).  Each enrolling organisation is associated with a PHO.
+The National Enrolment Service (NES) is a registry designed to provide a single source of truth for patient enrolments, entitlements and the newborn enrolment service. 
+
+This includes a patients enrolment with a Primary Health Organisations (PHOs), a patient who is registered with a general practice (not-funded),  .  It does this my maintaining a relationship between the patient identifier (NHI number) and the enrolling organisation (HPI Organisation ID).  Each enrolling organisation is associated with a PHO.
 
 #### Enrolments
-Web service APIs integrated into GP Patient Management Systems (PMS) enable practice staff to maintain patient identity and enrolment information in the National Health Index (NHI) and National Enrolment databases in real-time.  The workflow within each PMS varies according to each vendor’s implementation of the APIs.  Other services are provided to notify PMS systems of significant changes (e.g. enrolment expiries, enrolment transfers, NHI links and unlinks) and to allow GPs to update details relating to the primary care experience survey (opt out flag, patient mobile number, patient email address). Currently only SOAP APIs exist for the purpose of maintaining enrolments, in the future we expect equivalent FHIR APIs to be available; they will be described in this IG
 
-The GP a patient  is enrolled with  is described in [Patients enrolled General Practice](https://nhi-ig.hip-uat.digital.health.nz/StructureDefinition-NhiPatient.html)
+Enrolments include a patients:
+* enrolment with a Primary Health Organisations (PHOs) - funded gp enrolment
+* registration with a general practitioner (non-funded)
+* enrolment with a lead maternity carer (LMC)
+* nomination to a well child provider
+ 
+Web service APIs integrated into GP Patient Management Systems (PMS) enable practice staff to maintain patient identity and enrolment information in the National Health Index (NHI) and National Enrolment databases in real-time.  The workflow within each PMS varies according to each vendor’s implementation of the APIs.  Other services are provided to notify PMS systems of significant changes (e.g. enrolment expiries, enrolment transfers, NHI links and unlinks) and to allow GPs to update details relating to the primary care experience survey (opt out flag, patient mobile number, patient email address). Currently only SOAP APIs exist for the purpose of maintaining enrolments, in the future we expect equivalent FHIR APIs to be available; they will be described in this IG.
+
+A patient's general practitioner (a read-only snapshot) is also available to be returned in the patient resource [See the NHI patient profile for more information ](https://nhi-ig.hip-uat.digital.health.nz/StructureDefinition-NhiPatient.html)
 
 #### Entitlements
 The NES system also has the capability to store and disseminate details relating to a patient’s health entitlements.  At the current time two such entitlements are recorded in NES – the High User Health Card (HUHC) and the Community Services Card (CSC).
