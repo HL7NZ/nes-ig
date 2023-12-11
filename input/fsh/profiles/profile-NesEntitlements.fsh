@@ -42,7 +42,7 @@ Description:    "The coverage resource contains information related to Patient e
 * status ^definition = "The status of entitlement, derived from the start and end dates. Cancelled = ended entitlements."
 * type ^short = "Entitlement type such as CSC or HUHC."
 * type ^definition = "The type of the Entitlement for example community services card (CSC) or high user health card (HUHC)."
-* beneficiary  ^short = "The Health service users NHI."
+* beneficiary  ^short = "The Health service user's NHI."
 * beneficiary   ^definition = "The NHI number of the person who benefits from the entitlement"
 * relationship ^short = "Used to identify a CSC dependent"
 * relationship  ^definition = "An attribute used to identify if this entitlement is dependent on another CSC entitlement. Child for  CSC-dep"
