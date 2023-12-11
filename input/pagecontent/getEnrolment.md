@@ -1,8 +1,10 @@
 
 
 ### Get Enrolment by ID
-The Get Enrolment operation allows an authorised user to retrieve an Enrolment record for a Patient using a known Enrolment record id.
 
+#### Overview
+
+The Get Enrolment operation allows an authorised user to retrieve an Enrolment record for a Patient using a known Enrolment record id.
 
 <div>
 {% include get-enrolment-by-id.svg %}

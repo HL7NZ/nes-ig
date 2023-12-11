@@ -93,7 +93,7 @@ table, th, td {
 
 <tr><td>General-1</td>
 <td>Application can handle an HTTP 429 error in a graceful way</td>
-<td>The application reaches its usage plan limit and is returned an HTTP 429 error.</a></td>
+<td>The application reaches its usage plan limit and is returned an HTTP 429 error.</td>
 <td>The application will retry several times with an exponentially increasing delay</td>
 <td>Recommended</td></tr>
 </table>

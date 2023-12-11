@@ -1,7 +1,10 @@
 
 
 ### Create Entitlement for Patient
-Records a patient's entitlement to some form of subsidised healthcare
+
+This is document here for future scope and is not currently available. If you are interested in this operation please contact our team by completing the [General Enquiry form](https://mohapis.atlassian.net/servicedesk/customer/portal/3/group/11/create/36).
+
+This operation records a patient's entitlement to some form of subsidised healthcare.
 
 
 <div>
@@ -21,6 +24,7 @@ Records a patient's entitlement to some form of subsidised healthcare
 
 ####  Create  Entitlement Request Example 
 [create CSC Entitlement request](Coverage-entitlement-3.json.html)
+
 #### Business  Rules
 
 
