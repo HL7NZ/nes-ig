@@ -4,7 +4,7 @@ It is based on  [FHIR R4](http://hl7.org/fhir/) and NZBase IG 2.0-rc1
 The NES is a registry service that holds information about
 * Enrolments - This includes an enrolment with a general practitioner, a lead maternity carer, or a nomination to a well child provider.
 * Entitlements - This includes community services cards (csc) and high user heath cards (huhc).
-* The New Born enrolment service (NBES) - This includes new born nomination to a general practitioner.
+* The New Born enrolment service (NBES) - This includes an enrolment nomination for a newborn to a general practitioner.
 
 The key etities that are suppoted are:
 
