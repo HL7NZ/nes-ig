@@ -59,7 +59,7 @@ table, th, td {
 </ul>
 </td>
 <td>20012377</td>
-<td>Output: HUHC entitlement information is displayed for the patient
+<td>Output: HUHC entitlement information is displayed for the patient</td>
 <td>Mandatory if applicable</td>
 </tr>
 </table>
