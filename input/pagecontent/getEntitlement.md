@@ -31,5 +31,5 @@ The Get Entitlement operation allows an authorised user to retrieve an Entitleme
   * An Entitlement read request must include a valid Entitlement-id
 
 * _Get Entitlement errors_
-  * _"Invalid entitlement-id" (HTTP 404 Not found, Error, Processing)_
+  * _"Entitlement-id cannot be found" (HTTP 404 Not found, Error, Processing)_
   * _"ID provided must be numeric" (HTTP 400 bad request, Error, Processing)_
