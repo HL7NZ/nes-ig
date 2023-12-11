@@ -17,7 +17,9 @@ This is typically used to get all entitlements for a patient.
 4. A bundle of NESEntitlements is returned to the client
 
 ####  Search Entitlement Response Example 
-TBC
+
+For a search entitlement response example [click here](searchEntitlementResponse.html)
+
 
 #### Business  Rules
 1.  An Entitlement search request must include a valid nhi-id
