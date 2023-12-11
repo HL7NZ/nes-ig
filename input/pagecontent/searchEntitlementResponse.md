@@ -64,7 +64,7 @@
 }
 ```
 
-#### Search respose containing HUHC
+#### Search response containing HUHC
 
 ```
 {
