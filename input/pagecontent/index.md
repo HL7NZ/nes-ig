@@ -6,7 +6,7 @@ The NES is a registry service that holds information about
 * Entitlements - This includes community services cards (csc) and high user heath cards (huhc).
 * The New Born enrolment service (NBES) - This includes an enrolment nomination for a newborn to a general practitioner.
 
-The key etities that are suppoted are:
+The key entities that are supported are:
 
 * [Patient Entitlements](/StructureDefinition-NesEntitlement.html), derived from the [HL7 FHIR coverage resource](https://hl7.org/fhir/R4/coverage.html).
 * [Patient Enrolments](/StructureDefinition-NesEnrolment.html), derived from the [HL7 FHIR episodeofcare resource](https://hl7.org/fhir/R4/episodeofcare.html).
