@@ -18,14 +18,9 @@ The Get Entitlement operation allows an authorised user to retrieve an Entitleme
 4. An  NESEntitlement is returned to the client
 
 
-
 ####  Get Entitlement Response Example 
 [get entitlement response message 1 ](Coverage-EN667788899.json.html)
 
-
-#### 
-
-[For Request rules and errors click here](/general.html#request-rules-and-errors)
 
 <h4>Get Entitlement Rules and errors</h4>
 <table>
@@ -35,7 +30,7 @@ table, th, td {
   border-collapse: collapse;
 }
 </style>
-<caption><b>All test messages will be assessed against the security criteria in the table below</b></caption>
+<caption><a href="general.html#request-rules-and-errors">For Request rules and errors click here</a></caption>
 <tr><th>Rule</th>
 <th>Error code</th>
 <th>Error description</th>
