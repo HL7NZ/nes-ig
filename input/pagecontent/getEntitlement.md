@@ -23,13 +23,48 @@ The Get Entitlement operation allows an authorised user to retrieve an Entitleme
 [get entitlement response message 1 ](Coverage-EN667788899.json.html)
 
 
-#### Get Entitlement Rules and errors
+#### 
 
 [For Request rules and errors click here](/general.html#request-rules-and-errors)
 
-* **Get Entitlement rules**
-  * An Entitlement read request must include a valid Entitlement-id
+<h4>Get Entitlement Rules and errors</h4>
+<table>
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+</style>
+<caption><b>All test messages will be assessed against the security criteria in the table below</b></caption>
+<tr><th>Rule</th>
+<th>Error code</th>
+<th>Error description</th>
+<th>Error text</th>
+<th>Http code</th></tr>
 
-* _Get Entitlement errors_
-  * _"Entitlement-id cannot be found" (HTTP 404 Not found, Error, Processing)_
-  * _"ID provided must be numeric" (HTTP 400 bad request, Error, Processing)_
+<tr>
+<td>An Entitlement read request must include a valid Entitlement-id</td>
+<td>
+ <ul>
+  <li>EM12020</li>
+  <li>EM12021</li>
+ </ul>
+</td>
+<td>
+ <ul>
+  <li>Entitlement cannot be found</li>
+  <li>Invalid entitlement-id</li>
+ </ul>
+</td>
+ <ul>
+  <li>Entitlement cannot be found</li>
+  <li>Invalid entitlement-id</li>
+ </ul>
+<td>
+ <ul>
+  <li>404 Not found</li>
+  <li>400 Bad request</li>
+ </ul>
+ </td>
+</tr>
+</table>
