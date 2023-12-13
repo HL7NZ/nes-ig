@@ -51,10 +51,12 @@ table, th, td {
   <li>Invalid entitlement-id</li>
  </ul>
 </td>
+<td>
  <ul>
   <li>Entitlement cannot be found</li>
   <li>Invalid entitlement-id</li>
  </ul>
+</td>
 <td>
  <ul>
   <li>404 Not found</li>
