@@ -5,6 +5,25 @@ The following notes apply to all resources in this implementation.
 Only Json is supported by this implementation.
 
 
+
+### Enrolment Type and Status
+
+The National Enrolment service captures four **types** of enrolments:
+
+* FLS - First level service (Enrolled with a general practitioner and eligible for publicly funded health care).
+* FLS-NF - First level service - Not funded (Registered with a general practitioner due to not being eligible for publicly funded health care).
+* LMC - Lead maternity carer (A babies enrolment with a Lead maternity carer).
+* WCTO - Well Child Tamariki Ora (A childs nomination to a Well Child Provider).
+
+The Enrolment **'status'** attribute provides information on possible states that an enrolment may be present in. Not all states are valid for all enrolment types.
+
+* FHIR status = waitlist     is used for a patient who has been nominated to enrol with a provider (valid on type WCTO)
+* FHIR status = planned   is a baby who has been pre-enrolment (B code enrolment)  (valid on type=FLS only)
+* FHIR status = active       is a for a fully enrolled person  (valid on type=FLS, FLS-NF, LMC)
+* FHIR status = finished    is for any enrolments with an end date  (valid on type=FLS, FLS-NF, LMC, WCTO)
+
+
+
 ### Errors
 
 #### HTTP Error response codes
