@@ -81,7 +81,7 @@
 							<outputDirectory>
 								${project.basedir}/fhir_packages
 							</outputDirectory>
-							<includes>**/package/package.tgz</includes>
+							<includes>**/package/package.tgz,**/openapi/*</includes>
 						</configuration>
 					</execution>	
 									
