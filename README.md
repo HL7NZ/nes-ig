@@ -1,5 +1,9 @@
 # Repository for NES IG
 
+Current Release
+1.1.2
+
+
 to do 
 - validate example request
 - modify example response to use the new response code

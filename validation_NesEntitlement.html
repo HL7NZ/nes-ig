@@ -1,0 +1,59 @@
+﻿<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Validation Results</title>
+  <link href="http://hl7.org/fhir/fhir.css" rel="stylesheet"/>
+  <style>
+    span.flip  { background-color: #4CAF50; color: white; border: solid 1px #a6d8a8; padding: 2px }
+  </style>
+  <script>
+    function flip(id) {
+      var span = document.getElementById('s'+id);
+      var div = document.getElementById(id);
+      if (document.getElementById('s'+id).innerHTML == 'Show Reasoning') {
+        div.style.display = 'block';
+        span.innerHTML = 'Hide Reasoning';
+      } else {
+        div.style.display = 'none';
+        span.innerHTML = 'Show Reasoning';
+      }
+    }
+  </script>
+</head>
+<body style="margin: 20px; background-color: #ffffff">
+ <h1>Validation Results</h1>
+ <p>3 errors, 1 warning, 2 hints. Generated Feb 5, 2024, 2:47:10 AM by Validator Version 6.2.1 (Git# 3c198658e133). Built 2023-10-31T16:24:38.531Z (96 days old) (9044ms)</p>
+ <table class="grid">
+   <tr>
+     <td><b>Filename</b></td><td><b>Errors</b></td><td><b>Warnings</b></td><td><b>Hints</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><a href="#;1"><b>.\temp\test1.json</b></a></td><td><b>3</b></td><td><b>1</b></td><td><b>2</b></td>
+   </tr>
+</table>
+<hr/>
+<a name="l1"> </a>
+<h2><a href="file:.\temp\test1.json">.\temp\test1.json</a></h2>
+ <table class="grid">
+   <tr>
+     <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Coverage.identifier[0].system (l12/c74)</b></td><td><b>information</b></td><td title="null"><b>Reference to draft item https://standards.digital.health.nz/ns/es-entitlement-identifier-code|1.0</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b>Coverage.type (l17/c6)</b></td><td><b>error</b></td><td title="Terminology_TX_NoValid_1_CC"><b>None of the codings provided are in the value set 'Coverage Type' (https://nzhts.digital.health.nz/fhir/ValueSet/coverage-type-code|1.0.0), and a coding from this value set is required) (codes = https://nzhts.digital.health.nz/fhir/ValueSet/coverage-type-code#csc)</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b>Coverage.type.coding[0] (l19/c14)</b></td><td><b>error</b></td><td title="Terminology_TX_System_ValueSet2"><b>The Coding references a value set, not a code system ('https://nzhts.digital.health.nz/fhir/ValueSet/coverage-type-code')</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b>Coverage.type.coding[0] (l19/c14)</b></td><td><b>error</b></td><td title="Terminology_TX_System_ValueSet"><b>Invalid System URI: https://nzhts.digital.health.nz/fhir/ValueSet/coverage-type-code - cannot use a value set URI as a system</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Coverage.type.coding[0] (l19/c14)</b></td><td><b>information</b></td><td title="Terminology_TX_System_NotKnown"><b>Code System URI 'https://nzhts.digital.health.nz/fhir/ValueSet/coverage-type-code' is unknown so the code cannot be validated</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>Coverage (l1/c2)</b></td><td><b>warning</b></td><td title="Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)"><b>Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)</b></td>
+   </tr>
+</table>
