@@ -5,25 +5,6 @@ The following notes apply to all resources in this implementation.
 Only Json is supported by this implementation.
 
 
-
-### Enrolment Type and Status
-
-The National Enrolment service captures four **types** of enrolments:
-
-* FLS - First level service (Enrolled with a general practitioner and eligible for publicly funded health care).
-* FLS-NF - First level service - Not funded (Registered with a general practitioner due to not being eligible for publicly funded health care).
-* LMC - Lead maternity carer (A babies enrolment with a Lead maternity carer).
-* WCTO - Well Child Tamariki Ora (A childs nomination to a Well Child Provider).
-
-The Enrolment **'status'** attribute provides information on possible states that an enrolment may be present in. Not all states are valid for all enrolment types.
-
-* FHIR status = waitlist     is used for a patient who has been nominated to enrol with a provider (valid on type WCTO)
-* FHIR status = planned   is a baby who has been pre-enrolment (B code enrolment)  (valid on type=FLS only)
-* FHIR status = active       is a for a fully enrolled person  (valid on type=FLS, FLS-NF, LMC)
-* FHIR status = finished    is for any enrolments with an end date  (valid on type=FLS, FLS-NF, LMC, WCTO)
-
-
-
 ### Errors
 
 #### HTTP Error response codes
@@ -201,6 +182,14 @@ All requests for all resources must include an http header userid that uniquely 
 Preferably the hpi-person-id of the user would be provided if known, otherwise a userid that allows the authenticated organisation to identify the individual </td>
 <td>Mandatory</td></tr>
 
+<tr><td> X-Correlation-Id </td>
+<td> {string} </td>
+<td> Client provided <br />
+All requests should contain a unique transaction id in the X-Correlation-Id field <br />
+If present in the request this will be returned in the response, and can be used to track API calls <br />
+Preferred less than 64 characters <br /> </td>
+<td> Recommended </td></tr>
+
 <tr><td> Content-Type </td>
 <td> Application/json </td>
 <td> Supported content type </td>
@@ -210,19 +199,6 @@ Preferably the hpi-person-id of the user would be provided if known, otherwise a
 <td> {string} </td>
 <td> Te Whatu Ora Provided – issued with client credentials </td>
 <td> Mandatory </td></tr>
-
-<tr><td> User-Agent </td>
-<td> {string} </td>
-<td> The user-agent header is a string field that lets Te Whatu Ora know the application and version of the application accessing the HIP APIs. </td>
-<td> Mandatory </td></tr>
-
-<tr><td> X-Correlation-Id </td>
-<td> {string} </td>
-<td> Client provided <br />
-All requests should contain a unique transaction id in the X-Correlation-Id field <br />
-If present in the request this will be returned in the response, and can be used to track API calls <br />
-Preferred less than 64 characters <br /> </td>
-<td> Recommended </td></tr>
 </table>
 
 <h3>Response Headers</h3>
