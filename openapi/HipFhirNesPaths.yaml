@@ -141,6 +141,7 @@
       security:
       - hip-fhir-cog:
         - "https://api.hip.digital.health.nz/fhir/system/Coverage.s"
+        - "patient:Coverage.s"
       - api_key: []
     post:
       parameters:
