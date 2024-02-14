@@ -93,15 +93,15 @@ table, th, td {
 </tr>
 
 <tr>
-<td>Entitlement Read</td>
+<td>Health Entitlements Read</td>
 <td>Get a Patients Entitlement using identifier, or <br /> Get a Patient's Entitlement using NHI, with optional search parameters status and type</td>
 <td><a href="getEntitlement.html">See get Entitlement use case</a> <br />
 <a href="searchEntitlement.html">See search Entitlement use case</a></td>
 </tr>
 
 <tr>
-<td>Create Entitlement</td>
-<td>Create a Patiet Entitlement</td>
+<td>Health Entitlements Maintain</td>
+<td>Create and Update Patient Health Entitlements</td>
 <td><a href="createEntitlement.html">See create Entitlement use case</a></td>
 </tr>
 </table>
