@@ -13,6 +13,7 @@
 			<directory>output</directory>
 			<includes>
 				<include>package.tgz</include>
+				<include>**/*.xml</include>
 			</includes>
 			<outputDirectory>package</outputDirectory>
 		</fileSet>
