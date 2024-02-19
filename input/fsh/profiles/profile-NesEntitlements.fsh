@@ -53,6 +53,6 @@ Description:    "The coverage resource contains information related to Patient e
 
 // constraints on base profile
 * type from https://nzhts.digital.health.nz/fhir/ValueSet/coverage-type-code
-* identifier.system from https://nzhts.digital.health.nz/fhir/ValueSet/es-entitlement-identifier-code
+* identifier.system from https://nzhts.digital.health.nz/fhir/ValueSet/nes-entitlement-identifier-code
 * identifier.use = #official (exactly)
 
