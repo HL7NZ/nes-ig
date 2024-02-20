@@ -28,7 +28,7 @@ Description:    "A minimal profile of NzPatient, containing just enough informat
 * multipleBirth[x] 0..0
 * photo 0..0
 * contact 0..0
-* communication
+* communication 0..*
 * generalPractitioner 0..0
 * managingOrganization 0..0
 * link 0..0
