@@ -32,4 +32,5 @@ Description:    "A minimal profile of NzPatient, containing just enough informat
 * generalPractitioner 0..0
 * managingOrganization 0..0
 * link 0..0
+* active 0..0
 
