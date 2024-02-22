@@ -38,6 +38,16 @@
       - hip-fhir-cog:
         - "https://api.hip.digital.health.nz/fhir/system/EpisodeOfCare.r"
       - api_key: []
+      
+      x-amazon-apigateway-request-validator: params-only
+      x-amazon-apigateway-integration:
+                type: "aws_proxy"
+                httpMethod: "POST"
+                uri: !Sub
+                  - 'arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/arn:aws:lambda:${AWS::Region}:${aLambdaAC}:function:${aLambdaName}:${aLambdaMajor}/invocations'
+                  - {aLambdaAC: !Ref pLambdaAccountId, aLambdaName: !Ref pLambdaNameNes, aLambdaMajor: !Ref pLambdaMajor}
+                passthroughBehavior: "when_no_match"
+                timeoutInMillis: 29000
     put:
       parameters:
       - name: "userid"
@@ -80,6 +90,17 @@
       - hip-fhir-cog:
         - "https://api.hip.digital.health.nz/fhir/system/EpisodeOfCare.u"
       - api_key: []
+      
+      x-amazon-apigateway-request-validator: params-and-body
+      x-amazon-apigateway-integration:
+                type: "aws_proxy"
+                httpMethod: "POST"
+                uri: !Sub
+                  - 'arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/arn:aws:lambda:${AWS::Region}:${aLambdaAC}:function:${aLambdaName}:${aLambdaMajor}/invocations'
+                  - {aLambdaAC: !Ref pLambdaAccountId, aLambdaName: !Ref pLambdaNameNes, aLambdaMajor: !Ref pLambdaMajor}
+                passthroughBehavior: "when_no_match"
+                timeoutInMillis: 29000
+                
 /fhir/nes/v1/$process-message:
     post:
       parameters:
@@ -116,6 +137,16 @@
         - "https://api.hip.digital.health.nz/fhir/system/MessageHeader.c"
       - api_key: []
       
+      x-amazon-apigateway-request-validator: params-and-body
+      x-amazon-apigateway-integration:
+                type: "aws_proxy"
+                httpMethod: "POST"
+                uri: !Sub
+                  - 'arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/arn:aws:lambda:${AWS::Region}:${aLambdaAC}:function:${aLambdaName}:${aLambdaMajor}/invocations'
+                  - {aLambdaAC: !Ref pLambdaAccountId, aLambdaName: !Ref pLambdaNameNes, aLambdaMajor: !Ref pLambdaMajor}
+                passthroughBehavior: "when_no_match"
+                timeoutInMillis: 29000
+      
 /fhir/nes/v1/Coverage:
     get:
       parameters:
@@ -143,6 +174,20 @@
         - "https://api.hip.digital.health.nz/fhir/system/Coverage.s"
         - "patient:Coverage.s"
       - api_key: []
+      
+      x-amazon-apigateway-request-validator: params-only
+      # API gateway Integration type and section
+      x-amazon-apigateway-integration:
+                # type of Lambda Integration - NOTE: when using aws_proxy the responses below are not in use - responses are passed from lambda through
+                type: "aws_proxy"
+                httpMethod: "POST"
+                uri: !Sub
+                  - 'arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/arn:aws:lambda:${AWS::Region}:${aLambdaAC}:function:${aLambdaName}:${aLambdaMajor}/invocations'
+                  - {aLambdaAC: !Ref pLambdaAccountId, aLambdaName: !Ref pLambdaNameNes, aLambdaMajor: !Ref pLambdaMajor}
+                passthroughBehavior: "when_no_match"
+                # standard 29 second timeout value
+                timeoutInMillis: 29000
+                
     post:
       parameters:
       - name: "userid"
@@ -185,7 +230,127 @@
         - "https://api.hip.digital.health.nz/fhir/system/Coverage.c"
       - api_key: []
       
+      x-amazon-apigateway-request-validator: params-and-body
+      # API gateway Integration type and section
+      x-amazon-apigateway-integration:
+                # type of Lambda Integration - NOTE: when using aws_proxy the responses below are not in use - responses are passed from lambda through
+                type: "aws_proxy"
+                httpMethod: "POST"
+                uri: !Sub
+                  - 'arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/arn:aws:lambda:${AWS::Region}:${aLambdaAC}:function:${aLambdaName}:${aLambdaMajor}/invocations'
+                  - {aLambdaAC: !Ref pLambdaAccountId, aLambdaName: !Ref pLambdaNameNes, aLambdaMajor: !Ref pLambdaMajor}
+                passthroughBehavior: "when_no_match"
+                # standard 29 second timeout value
+                timeoutInMillis: 29000
       
+      x-amazon-apigateway-request-validator: params-and-body
+      # API gateway Integration type and section
+      x-amazon-apigateway-integration:
+                # type of Lambda Integration - NOTE: when using aws_proxy the responses below are not in use - responses are passed from lambda through
+                type: "aws_proxy"
+                httpMethod: "POST"
+                uri: !Sub
+                  - 'arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/arn:aws:lambda:${AWS::Region}:${aLambdaAC}:function:${aLambdaName}:${aLambdaMajor}/invocations'
+                  - {aLambdaAC: !Ref pLambdaAccountId, aLambdaName: !Ref pLambdaNameNes, aLambdaMajor: !Ref pLambdaMajor}
+                passthroughBehavior: "when_no_match"
+                # standard 29 second timeout value
+                timeoutInMillis: 29000
+      
+/fhir/nes/v1/Coverage/{entitlementid}:
+             get:
+              description: "Get entitlement by ID"
+              security:
+              - hip-fhir-cog:              
+                - https://api.hip.digital.health.nz/fhir/system/Coverage.r             
+              - api-key: []
+              x-amazon-apigateway-request-validator: params-only
+              x-amazon-apigateway-integration:
+                type: "aws_proxy"
+                httpMethod: "POST"
+                uri: !Sub
+                  - 'arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/arn:aws:lambda:${AWS::Region}:${aLambdaAC}:function:${aLambdaName}:${aLambdaMajor}/invocations'
+                  - {aLambdaAC: !Ref pLambdaAccountId, aLambdaName: !Ref pLambdaNameNes, aLambdaMajor: !Ref pLambdaMajor}
+                passthroughBehavior: "when_no_match"
+                timeoutInMillis: 29000
+              parameters: 
+              - name: "entitlementid"
+                in: "path"
+                required: true
+                schema:
+                  type: "string"
+                example: "EN667788899"
+              - $ref: '#/components/parameters/X-correlation-ID' 
+              - $ref: '#/components/parameters/X-Request-Id'  
+              - $ref: '#/components/parameters/x-api-key'     
+              - $ref: '#/components/parameters/userid'     
+              responses:
+                '200':
+                  description: "Enrolment resource"
+                  content:
+                    application/json: {}
+                '400':
+                  description: "Invalid resource"
+                  content:
+                    application/json: {}
+                '422':
+                  description: Invalid resource
+                  content:
+                    application/json: {}
+                default:
+                  description: "Error"
+                  content:
+                    application/json: {}
+        
+             put:
+              description: "Update entitlement"
+              security:
+              - hip-fhir-cog:              
+                - https://api.hip.digital.health.nz/fhir/system/Coverage.u             
+              - api-key: []
+              x-amazon-apigateway-request-validator: params-and-body
+              x-amazon-apigateway-integration:
+                type: "aws_proxy"
+                httpMethod: "POST"
+                uri: !Sub
+                  - 'arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/arn:aws:lambda:${AWS::Region}:${aLambdaAC}:function:${aLambdaName}:${aLambdaMajor}/invocations'
+                  - {aLambdaAC: !Ref pLambdaAccountId, aLambdaName: !Ref pLambdaNameNes, aLambdaMajor: !Ref pLambdaMajor}
+                passthroughBehavior: "when_no_match"
+                timeoutInMillis: 29000
+              parameters: 
+              - name: "entitlementid"
+                in: "path"
+                required: true
+                schema:
+                  type: "string"
+                example: "EN667788899"
+              - $ref: '#/components/parameters/X-correlation-ID' 
+              - $ref: '#/components/parameters/X-Request-Id'  
+              - $ref: '#/components/parameters/x-api-key'     
+              - $ref: '#/components/parameters/userid'     
+              requestBody:
+                description: "NesEntitlement  resource"
+                content:
+                  application/json:                  
+                    schema:                       
+                       $ref: '#/components/schemas/Coverage'
+              responses:
+                '200':
+                  description: "NesEntitlement resource"
+                  content:
+                    application/json: {}
+                '400':
+                  description: "Invalid resource"
+                  content:
+                    application/json: {}
+                '422':
+                  description: Invalid resource
+                  content:
+                    application/json: {}
+                default:
+                  description: "Error"
+                  content:
+                    application/json: {}
+               
       
 /fhir/nes/v1/EpisodeOfCare:
     get:
@@ -214,6 +379,20 @@
       - hip-fhir-cog:
         - "https://api.hip.digital.health.nz/fhir/system/EpisodeOfCare.s"
       - api_key: []
+      
+      x-amazon-apigateway-request-validator: params-only
+      # API gateway Integration type and section
+      x-amazon-apigateway-integration:
+                # type of Lambda Integration - NOTE: when using aws_proxy the responses below are not in use - responses are passed from lambda through
+                type: "aws_proxy"
+                httpMethod: "POST"
+                uri: !Sub
+                  - 'arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/arn:aws:lambda:${AWS::Region}:${aLambdaAC}:function:${aLambdaName}:${aLambdaMajor}/invocations'
+                  - {aLambdaAC: !Ref pLambdaAccountId, aLambdaName: !Ref pLambdaNameNes, aLambdaMajor: !Ref pLambdaMajor}
+                passthroughBehavior: "when_no_match"
+                # standard 29 second timeout value
+                timeoutInMillis: 29000
+                
     post:
       parameters:
       - name: "userid"
@@ -255,3 +434,16 @@
       - hip-fhir-cog:
         - "https://api.hip.digital.health.nz/fhir/system/EpisodeOfCare.c"
       - api_key: []
+      
+      x-amazon-apigateway-request-validator: params-and-body
+      # API gateway Integration type and section
+      x-amazon-apigateway-integration:
+                # type of Lambda Integration - NOTE: when using aws_proxy the responses below are not in use - responses are passed from lambda through
+                type: "aws_proxy"
+                httpMethod: "POST"
+                uri: !Sub
+                  - 'arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/arn:aws:lambda:${AWS::Region}:${aLambdaAC}:function:${aLambdaName}:${aLambdaMajor}/invocations'
+                  - {aLambdaAC: !Ref pLambdaAccountId, aLambdaName: !Ref pLambdaNameNes, aLambdaMajor: !Ref pLambdaMajor}
+                passthroughBehavior: "when_no_match"
+                # standard 29 second timeout value
+                timeoutInMillis: 29000
