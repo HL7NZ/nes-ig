@@ -9,8 +9,8 @@
 		<revision>1.2.0-SNAPSHOT</revision>
 		<!--<fhir-common.version>1.2.0</fhir-common.version> -->
 		<fhir-common.version>1.6.0-SNAPSHOT</fhir-common.version>
-		<nhi-ig-version>1.4.2</nhi-ig-version>
-		<hpi-ig-version>1.2.0</hpi-ig-version>
+		<nhi-ig-version>1.5.0-SNAPSHOT</nhi-ig-version>
+		<hpi-ig-version>1.3.0-SNAPSHOT</hpi-ig-version>
 	</properties>
 
 	<dependencies>
