@@ -72,7 +72,7 @@ echo getting NHI dependencies...
 nhi_package_name="hl7.org.nz.fhir.ig.nhi"
 nhi_version=$(yq '.dependencies."hl7.org.nz.fhir.ig.nhi".version' ./sushi-config.yaml)
 nhi_pom_version=$(getPomProperty "nhi-ig-version")
-nhi_source=./fhir_packages/hip-nhi-conformance-module-$nhi_pom_version/output/package.tgz
+nhi_source=./fhir_packages/hip-nhi-conformance-module-$nhi_pom_version/package.tgz
 nhi_url=$(yq '.dependencies."hl7.org.nz.fhir.ig.nhi".uri' ./sushi-config.yaml)
 addPackage "$nhi_package_name" "$nhi_version" "$nhi_source" "$nhi_url"
 
@@ -81,8 +81,8 @@ echo getting HPI dependencies...
 hpi_package_name="hl7.org.nz.fhir.ig.hpi"
 hpi_url=$(yq '.dependencies."hl7.org.nz.fhir.ig.hpi".uri' ./sushi-config.yaml)
 hpi_version=$(yq '.dependencies."hl7.org.nz.fhir.ig.hpi".version' ./sushi-config.yaml)
-hpi_pom_version=$(getPomProperty "hip-ig-version")
-hpi_source=./fhir_packages/hip-hpi-conformance-module-$hpi_pom_version/output/package.tgz
+hpi_pom_version=$(getPomProperty "hpi-ig-version")
+hpi_source=./fhir_packages/hip-hpi-conformance-module-$hpi_pom_version/package.tgz
 hpi_url=$(yq '.dependencies."hl7.org.nz.fhir.ig.hpi".uri' ./sushi-config.yaml)
 addPackage "$hpi_package_name" "$hpi_version" "$hpi_source" "$hpi_url"
 
