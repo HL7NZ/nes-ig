@@ -194,6 +194,81 @@ paths:
         - hip-fhir-cog:
             - "https://api.hip.digital.health.nz/fhir/system/Coverage.c"
         - api_key: []
+  /fhir/nes/v1/Coverage/{entitlementid}:
+    get:
+      description: "Get entitlement by ID"
+      parameters:
+        - name: "entitlementid"
+          in: "path"
+          required: true
+          schema:
+            type: "string"
+          example: "EN667788899"
+        - $ref: '#/components/parameters/X-correlation-ID'
+        - $ref: '#/components/parameters/X-Request-Id'
+        - $ref: '#/components/parameters/x-api-key'
+        - $ref: '#/components/parameters/userid'
+      responses:
+        '200':
+          description: "Enrolment resource"
+          content:
+            application/json: {}
+        '400':
+          description: "Invalid resource"
+          content:
+            application/json: {}
+        '422':
+          description: Invalid resource
+          content:
+            application/json: {}
+        default:
+          description: "Error"
+          content:
+            application/json: {}
+      security:
+        - hip-fhir-cog:
+            - https://api.hip.digital.health.nz/fhir/system/Coverage.r
+        - api_key: []
+    put:
+      description: "Update entitlement"
+      parameters:
+        - name: "entitlementid"
+          in: "path"
+          required: true
+          schema:
+            type: "string"
+          example: "EN667788899"
+        - $ref: '#/components/parameters/X-correlation-ID'
+        - $ref: '#/components/parameters/X-Request-Id'
+        - $ref: '#/components/parameters/x-api-key'
+        - $ref: '#/components/parameters/userid'
+      requestBody:
+        description: "NesEntitlement  resource"
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Coverage'
+      responses:
+        '200':
+          description: "NesEntitlement resource"
+          content:
+            application/json: {}
+        '400':
+          description: "Invalid resource"
+          content:
+            application/json: {}
+        '422':
+          description: Invalid resource
+          content:
+            application/json: {}
+        default:
+          description: "Error"
+          content:
+            application/json: {}
+      security:
+        - hip-fhir-cog:
+            - https://api.hip.digital.health.nz/fhir/system/Coverage.u
+        - api_key: []
   /fhir/nes/v1/EpisodeOfCare:
     get:
       parameters:
@@ -263,6 +338,46 @@ paths:
             - "https://api.hip.digital.health.nz/fhir/system/EpisodeOfCare.c"
         - api_key: []
 components:
+  parameters:
+  
+            nhiId:
+              name: nhiId
+              in: path
+              description: id identifies the kind of post operation
+              required: true
+              allowEmptyValue: false
+              style: simple
+              schema:
+                $ref: '#/components/schemas/NhiNumber'
+                
+            X-correlation-ID:
+              name: "X-correlation-ID"
+              in: "header"
+              required: false
+              schema:
+                type: "string"
+                
+            X-Request-Id:
+                name: "X-Request-Id"
+                in: "header"
+                required: false
+                schema:
+                  type: "string"
+                    
+            x-api-key:  
+                name: "x-api-key"
+                in: "header"
+                required: true
+                schema:
+                  type: "string" 
+             
+            userid:    
+                name: "userid"
+                in: "header"
+                required: true
+                schema:
+                  type: "string"
+               
   schemas:
     positiveInt:
       pattern: "^[1-9][0-9]*$"
