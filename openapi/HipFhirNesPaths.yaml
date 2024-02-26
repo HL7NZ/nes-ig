@@ -43,9 +43,8 @@
       x-amazon-apigateway-integration:
                 type: "aws_proxy"
                 httpMethod: "POST"
-                uri: !Sub
-                  - 'arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/arn:aws:lambda:${AWS::Region}:${aLambdaAC}:function:${aLambdaName}:${aLambdaMajor}/invocations'
-                  - {aLambdaAC: !Ref pLambdaAccountId, aLambdaName: !Ref pLambdaNameNes, aLambdaMajor: !Ref pLambdaMajor}
+                uri: 
+                  Ref: pLambdaNameNes  
                 passthroughBehavior: "when_no_match"
                 timeoutInMillis: 29000
     put:
@@ -95,9 +94,8 @@
       x-amazon-apigateway-integration:
                 type: "aws_proxy"
                 httpMethod: "POST"
-                uri: !Sub
-                  - 'arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/arn:aws:lambda:${AWS::Region}:${aLambdaAC}:function:${aLambdaName}:${aLambdaMajor}/invocations'
-                  - {aLambdaAC: !Ref pLambdaAccountId, aLambdaName: !Ref pLambdaNameNes, aLambdaMajor: !Ref pLambdaMajor}
+                uri: 
+                  Ref: pLambdaNameNes  
                 passthroughBehavior: "when_no_match"
                 timeoutInMillis: 29000
                 
@@ -141,9 +139,8 @@
       x-amazon-apigateway-integration:
                 type: "aws_proxy"
                 httpMethod: "POST"
-                uri: !Sub
-                  - 'arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/arn:aws:lambda:${AWS::Region}:${aLambdaAC}:function:${aLambdaName}:${aLambdaMajor}/invocations'
-                  - {aLambdaAC: !Ref pLambdaAccountId, aLambdaName: !Ref pLambdaNameNes, aLambdaMajor: !Ref pLambdaMajor}
+                uri: 
+                  Ref: pLambdaNameNes  
                 passthroughBehavior: "when_no_match"
                 timeoutInMillis: 29000
       
@@ -181,9 +178,8 @@
                 # type of Lambda Integration - NOTE: when using aws_proxy the responses below are not in use - responses are passed from lambda through
                 type: "aws_proxy"
                 httpMethod: "POST"
-                uri: !Sub
-                  - 'arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/arn:aws:lambda:${AWS::Region}:${aLambdaAC}:function:${aLambdaName}:${aLambdaMajor}/invocations'
-                  - {aLambdaAC: !Ref pLambdaAccountId, aLambdaName: !Ref pLambdaNameNes, aLambdaMajor: !Ref pLambdaMajor}
+                uri: 
+                  Ref: pLambdaNameNes  
                 passthroughBehavior: "when_no_match"
                 # standard 29 second timeout value
                 timeoutInMillis: 29000
@@ -236,9 +232,8 @@
                 # type of Lambda Integration - NOTE: when using aws_proxy the responses below are not in use - responses are passed from lambda through
                 type: "aws_proxy"
                 httpMethod: "POST"
-                uri: !Sub
-                  - 'arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/arn:aws:lambda:${AWS::Region}:${aLambdaAC}:function:${aLambdaName}:${aLambdaMajor}/invocations'
-                  - {aLambdaAC: !Ref pLambdaAccountId, aLambdaName: !Ref pLambdaNameNes, aLambdaMajor: !Ref pLambdaMajor}
+                uri: 
+                  Ref: pLambdaNameNes  
                 passthroughBehavior: "when_no_match"
                 # standard 29 second timeout value
                 timeoutInMillis: 29000
@@ -285,9 +280,8 @@
               x-amazon-apigateway-integration:
                 type: "aws_proxy"
                 httpMethod: "POST"
-                uri: !Sub
-                  - 'arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/arn:aws:lambda:${AWS::Region}:${aLambdaAC}:function:${aLambdaName}:${aLambdaMajor}/invocations'
-                  - {aLambdaAC: !Ref pLambdaAccountId, aLambdaName: !Ref pLambdaNameNes, aLambdaMajor: !Ref pLambdaMajor}
+                uri: 
+                  Ref: pLambdaNameNes  
                 passthroughBehavior: "when_no_match"
                 timeoutInMillis: 29000
         
@@ -337,9 +331,8 @@
               x-amazon-apigateway-integration:
                 type: "aws_proxy"
                 httpMethod: "POST"
-                uri: !Sub
-                  - 'arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/arn:aws:lambda:${AWS::Region}:${aLambdaAC}:function:${aLambdaName}:${aLambdaMajor}/invocations'
-                  - {aLambdaAC: !Ref pLambdaAccountId, aLambdaName: !Ref pLambdaNameNes, aLambdaMajor: !Ref pLambdaMajor}
+                uri: 
+                  Ref: pLambdaNameNes  
                 passthroughBehavior: "when_no_match"
                 timeoutInMillis: 29000
       
@@ -377,9 +370,8 @@
                 # type of Lambda Integration - NOTE: when using aws_proxy the responses below are not in use - responses are passed from lambda through
                 type: "aws_proxy"
                 httpMethod: "POST"
-                uri: !Sub
-                  - 'arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/arn:aws:lambda:${AWS::Region}:${aLambdaAC}:function:${aLambdaName}:${aLambdaMajor}/invocations'
-                  - {aLambdaAC: !Ref pLambdaAccountId, aLambdaName: !Ref pLambdaNameNes, aLambdaMajor: !Ref pLambdaMajor}
+                uri: 
+                  Ref: pLambdaNameNes  
                 passthroughBehavior: "when_no_match"
                 # standard 29 second timeout value
                 timeoutInMillis: 29000
@@ -432,9 +424,8 @@
                 # type of Lambda Integration - NOTE: when using aws_proxy the responses below are not in use - responses are passed from lambda through
                 type: "aws_proxy"
                 httpMethod: "POST"
-                uri: !Sub
-                  - 'arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/arn:aws:lambda:${AWS::Region}:${aLambdaAC}:function:${aLambdaName}:${aLambdaMajor}/invocations'
-                  - {aLambdaAC: !Ref pLambdaAccountId, aLambdaName: !Ref pLambdaNameNes, aLambdaMajor: !Ref pLambdaMajor}
+                uri: 
+                  Ref: pLambdaNameNes  
                 passthroughBehavior: "when_no_match"
                 # standard 29 second timeout value
                 timeoutInMillis: 29000
