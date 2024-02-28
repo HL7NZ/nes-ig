@@ -339,45 +339,39 @@ paths:
         - api_key: []
 components:
   parameters:
-  
-            nhiId:
-              name: nhiId
-              in: path
-              description: id identifies the kind of post operation
-              required: true
-              allowEmptyValue: false
-              style: simple
-              schema:
-                $ref: '#/components/schemas/NhiNumber'
-                
-            X-correlation-ID:
-              name: "X-correlation-ID"
-              in: "header"
-              required: false
-              schema:
-                type: "string"
-                
-            X-Request-Id:
-                name: "X-Request-Id"
-                in: "header"
-                required: false
-                schema:
-                  type: "string"
-                    
-            x-api-key:  
-                name: "x-api-key"
-                in: "header"
-                required: true
-                schema:
-                  type: "string" 
-             
-            userid:    
-                name: "userid"
-                in: "header"
-                required: true
-                schema:
-                  type: "string"
-               
+    nhiId:
+      name: nhiId
+      in: path
+      description: id identifies the kind of post operation
+      required: true
+      allowEmptyValue: false
+      style: simple
+      schema:
+        $ref: '#/components/schemas/NhiNumber'
+    X-correlation-ID:
+      name: "X-correlation-ID"
+      in: "header"
+      required: false
+      schema:
+        type: "string"
+    X-Request-Id:
+      name: "X-Request-Id"
+      in: "header"
+      required: false
+      schema:
+        type: "string"
+    x-api-key:
+      name: "x-api-key"
+      in: "header"
+      required: true
+      schema:
+        type: "string"
+    userid:
+      name: "userid"
+      in: "header"
+      required: true
+      schema:
+        type: "string"
   schemas:
     positiveInt:
       pattern: "^[1-9][0-9]*$"
@@ -642,7 +636,9 @@ components:
                   valueDate:
                     $ref: "#/components/schemas/date"
                   url:
-                    type: "object"
+                    type: "string"
+                    enum:
+                      - "http://hl7.org.nz/fhir/StructureDefinition/enrolment-expiry-date"
                 additionalProperties: false
               - required:
                   - "url"
@@ -651,7 +647,9 @@ components:
                   valueDate:
                     $ref: "#/components/schemas/date"
                   url:
-                    type: "object"
+                    type: "string"
+                    enum:
+                      - "http://hl7.org.nz/fhir/StructureDefinition/reenrolment-date"
                 additionalProperties: false
               - required:
                   - "url"
@@ -660,7 +658,9 @@ components:
                   valueReference:
                     $ref: "#/components/schemas/Reference"
                   url:
-                    type: "object"
+                    type: "string"
+                    enum:
+                      - "http://hl7.org.nz/fhir/StructureDefinition/enrolment-owner-org"
                 additionalProperties: false
               - required:
                   - "url"
@@ -691,7 +691,9 @@ components:
                         $ref: "#/components/schemas/string"
                     additionalProperties: false
                   url:
-                    type: "object"
+                    type: "string"
+                    enum:
+                      - "http://hl7.org.nz/fhir/StructureDefinition/nes-enrolment-termination-reason"
                 additionalProperties: false
               - required:
                   - "url"
@@ -700,7 +702,9 @@ components:
                   valueReference:
                     $ref: "#/components/schemas/Reference"
                   url:
-                    type: "object"
+                    type: "string"
+                    enum:
+                      - "http://hl7.org.nz/fhir/StructureDefinition/enrolment-encounter"
                 additionalProperties: false
         period:
           $ref: "#/components/schemas/Period"
@@ -709,7 +713,26 @@ components:
         type:
           type: "array"
           items:
-            $ref: "#/components/schemas/Coding"
+            type: "object"
+            properties:
+              coding:
+                type: "array"
+                items:
+                  required:
+                    - "system"
+                  type: "object"
+                  properties:
+                    system:
+                      type: "string"
+                      enum:
+                        - "https://standards.digital.health.nz/nes-enrolment-type"
+                    code:
+                      $ref: "#/components/schemas/code"
+                    display:
+                      $ref: "#/components/schemas/string"
+                    version:
+                      $ref: "#/components/schemas/string"
+                  additionalProperties: false
         contained:
           type: "array"
           items:
