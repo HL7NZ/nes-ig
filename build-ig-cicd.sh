@@ -1,4 +1,17 @@
+getPomProperty() {
+ 
+ #echo "getting value of $1 from pom"
+ line=$(grep $1.*$1 pom.xml  | grep -v '!' | tr -d '\t ')
 
+ plength=${#1}
+ offset=2
+ plength=$(($plength+$offset))
+ sline=${line:plength:200}
+ #trim trailing chars
+ property=${sline%%</$1>}
+ #echo "property $1 = $property"
+ echo $property
+ }
 
 addPackage() {
 echo " adding package named $1 version $2 from source $3 using url $4"
@@ -49,8 +62,8 @@ ls -l ./fhir_packages/
 
 common_name="hl7.org.nz.fhir.ig.hip-core"
 common_version=$(yq '.dependencies."hl7.org.nz.fhir.ig.hip-core".version' ./sushi-config.yaml)
-# this will pickup snapshots as well
-comdir=$(ls -d ./fhir_packages/hip-fhir-common* | grep $common_version)
+
+comdir=$(ls -d ./fhir_packages/hip-fhir-common*)
 common_source="$comdir/package/package.tgz"
 common_url=$(yq '.dependencies."hl7.org.nz.fhir.ig.hip-core".uri' ./sushi-config.yaml)
 addPackage "$common_name" "$common_version" "$common_source" "$common_url" 
@@ -58,7 +71,8 @@ addPackage "$common_name" "$common_version" "$common_source" "$common_url"
 echo getting NHI dependencies...
 nhi_package_name="hl7.org.nz.fhir.ig.nhi"
 nhi_version=$(yq '.dependencies."hl7.org.nz.fhir.ig.nhi".version' ./sushi-config.yaml)
-nhi_source=./fhir_packages/hip-nhi-conformance-module-$nhi_version/output/package.tgz
+nhi_pom_version=$(getPomProperty "nhi-ig-version")
+nhi_source=./fhir_packages/hip-nhi-conformance-module-$nhi_pom_version/package/package.tgz
 nhi_url=$(yq '.dependencies."hl7.org.nz.fhir.ig.nhi".uri' ./sushi-config.yaml)
 addPackage "$nhi_package_name" "$nhi_version" "$nhi_source" "$nhi_url"
 
@@ -67,7 +81,8 @@ echo getting HPI dependencies...
 hpi_package_name="hl7.org.nz.fhir.ig.hpi"
 hpi_url=$(yq '.dependencies."hl7.org.nz.fhir.ig.hpi".uri' ./sushi-config.yaml)
 hpi_version=$(yq '.dependencies."hl7.org.nz.fhir.ig.hpi".version' ./sushi-config.yaml)
-hpi_source=./fhir_packages/hip-hpi-conformance-module-$hpi_version/output/package.tgz
+hpi_pom_version=$(getPomProperty "hpi-ig-version")
+hpi_source=./fhir_packages/hip-hpi-conformance-module-$hpi_pom_version/package/package.tgz
 hpi_url=$(yq '.dependencies."hl7.org.nz.fhir.ig.hpi".uri' ./sushi-config.yaml)
 addPackage "$hpi_package_name" "$hpi_version" "$hpi_source" "$hpi_url"
 

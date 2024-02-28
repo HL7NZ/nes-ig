@@ -1,0 +1,112 @@
+{
+  "resourceType": "EpisodeOfCare",
+  "id": "EN667788899",
+  "extension": [
+    {
+      "url": "http://hl7.org.nz/fhir/StructureDefinition/enrolment-expiry-date",
+      "valueDate": "2026-06-05"
+    },
+    {
+      "url": "http://hl7.org.nz/fhir/StructureDefinition/reenrolment-date",
+      "valueDate": "2022-06-05"
+    },
+    {
+      "url": "http://hl7.org.nz/fhir/StructureDefinition/enrolment-owner-org",
+      "valueReference": {
+        "reference": "Organization/GZZ998-G",
+        "display": "Live Org with Dormant"
+      }
+    },
+    {
+      "url": "http://hl7.org.nz/fhir/StructureDefinition/nes-enrolment-termination-reason",
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "LinkNHI",
+            "system": "https://standards.digital.health.nz/nes-enrolment-termination-reason"
+          }
+        ],
+        "text": "NHI was Linked"
+      }
+    },
+    {
+      "url": "http://hl7.org.nz/fhir/StructureDefinition/enrolment-encounter",
+      "valueReference": {
+        "reference": "#QualifiedEncounter1"
+      }
+    }
+  ],
+  "identifier": [
+    {
+      "system": "https://standards.digital.health.nz/ns/nes-enrolment-id",
+      "value": "EN667788899"
+    }
+  ],
+  "type": [
+    {
+      "coding": [
+        {
+          "system": "https://standards.digital.health.nz/nes-enrolment-type",
+          "code": "FLS-NF"
+        }
+      ]
+    }
+  ],
+  "patient": {
+    "reference": "Patient/PatientZJM9397"
+  },
+  "careManager": {
+    "reference": "#EnrolmentServiceProvider1"
+  },
+  "contained": [
+    {
+      "resourceType": "PractitionerRole",
+      "id": "EnrolmentServiceProvider1",
+      "practitioner": {
+        "reference": "Practitioner/99ZZZS",
+        "display": "Mrs TestOne Prefix-Test"
+      },
+      "organization": {
+        "reference": "Organization/GZZ998-G",
+        "display": "Live Org with Dormant"
+      },
+      "location": [
+        {
+          "reference": "Location/FZZ968-B",
+          "display": "Facility Has All Contact Types TEST"
+        }
+      ]
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "QualifiedEncounter1",
+      "status": "finished",
+      "class": {
+        "code": "AMB"
+      },
+      "period": {
+        "start": "2023-08-27"
+      }
+    },
+    {
+      "resourceType": "Patient",
+      "id": "ZJM9397",
+      "meta": {
+        "profile": [
+          "http://hl7.org.nz/fhir/StructureDefinition/NesPatient"
+        ]
+      },
+      "name": [
+        {
+          "family": "Ryan",
+          "given": [
+            "Jamie",
+            "Joseph"
+          ]
+        }
+      ],
+      "birthDate": "1972-06-05"
+    }
+  ],
+  "status": "active"
+}

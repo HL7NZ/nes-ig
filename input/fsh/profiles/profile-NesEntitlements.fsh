@@ -34,6 +34,14 @@ Description:    "The coverage resource contains information related to Patient e
 * implicitRules 0..0 
 * language 0..0
 
+// contained resources
+* contained ^slicing.discriminator.type = #type
+* contained ^slicing.discriminator.path = "$this"
+* contained ^slicing.rules = #closed
+
+* contained contains beneficiary 0..1
+* contained[beneficiary] only NesPatient
+
 // documentation
 * id ^short = "Logical id of this artifact (The Entitlement.id)"
 * identifier ^short = "Business Identifier for the Entitlement"
@@ -53,6 +61,7 @@ Description:    "The coverage resource contains information related to Patient e
 
 // constraints on base profile
 * type from https://nzhts.digital.health.nz/fhir/ValueSet/coverage-type-code
-* identifier.system from https://nzhts.digital.health.nz/fhir/ValueSet/es-entitlement-identifier-code
+* identifier.system from https://nzhts.digital.health.nz/fhir/ValueSet/nes-entitlement-identifier-code
 * identifier.use = #official (exactly)
+* beneficiary only Reference(NesPatient)
 

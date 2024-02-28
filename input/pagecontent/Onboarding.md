@@ -27,16 +27,14 @@ Each organisation and user that has access to the NES accepts their obligations 
 
 Please allow at least 5 working days for these applications to be processed and production credentials issued. If your product is to be used by many different organisations please get in touch to discuss your rollout plans and how we might assist.
 
-### Assistance
+If you require help or have any questions regarding the onboarding process, please contact our team by completing a [General enquiry form](https://mohapis.atlassian.net/servicedesk/customer/portal/3/group/11/create/36).
 
-Please fill in the [General Enquiry form] (https://mohapis.atlassian.net/servicedesk/customer/portal/3/group/11/create/36) if you:
-* have a general enquiry,
-* require help or have any questions regarding the onboarding process,
-* want to add new business functions to an existing application, or
-* want to add a new set of credentials to an existing application.
+#### Business Functions
 
+See below for available business functions.  
+By using Te Whatu Ora APIs you are accessing personally identifiable information from the NES which is not directly from the individual concerned. You need to consider your obligations under HIPC principle 2, and we may request to see your privacy impact assessment prior to access to production.
 
-<h3>Business Functions</h3>
+<h5>Business Functions</h5>
 <table>
 <style>
 table, th, td {
@@ -44,7 +42,6 @@ table, th, td {
   border-collapse: collapse;
 }
 </style>
-<caption>See below for available business functions - By using Te Whatu Ora APIs you are accessing personally identifiable information from the NES which is not directly from the individual concerned. You need to consider your obligations under HIPC principle 2, and we may request to see your privacy impact assessment prior to access to production.</caption>
 <tr>
 <th>Business Functions</th>
 <th>Description</th>
