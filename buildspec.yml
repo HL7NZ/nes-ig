@@ -56,12 +56,14 @@ phases:
        # deploy the nes conformance artifacts 
       - cat pom.xml    
       - cat /root/.m2/settings.xml
-      - mvn deploy 
+      
       - echo checking in full-ig.zip
       - git add -f ./output/full-ig.zip
       - git commit -m "new IG build"
       - git push
       
+      # deploy the nes conformance artifacts 
+      - mvn deploy 
 
      
       
