@@ -1,6 +1,6 @@
 Instance: enrolment-bundle1
 InstanceOf: Bundle
-Description: "Example enrolment search respnse (active enrolments fro NHI"
+Description: "Example enrolment search response (active enrolments for NHI)"
 Usage: #example
 
 * id = "EN88776655"
