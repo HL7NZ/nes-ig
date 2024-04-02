@@ -2,7 +2,7 @@ openapi: "3.0.1"
 info:
   title: "HIP NES FHIR"
   description: "Te Whatu Ora Enrolment and Entitlement FHIR services"
-  version: "1.2.0-SNAPSHOT"
+  version: "1.3.1"
 servers:
   - url: "https://gb2r96qpik.execute-api.ap-southeast-2.amazonaws.com/{basePath}"
     variables:
@@ -129,6 +129,20 @@ paths:
   /fhir/nes/v1/Coverage:
     get:
       parameters:
+        - name: "userid"
+          in: "header"
+          required: true
+          schema:
+            type: "string"
+        - name: "X-correlation-ID"
+          in: "header"
+          schema:
+            type: "string"
+        - name: "x-api-key"
+          in: "header"
+          required: true
+          schema:
+            type: "string"
         - name: "beneficiary"
           in: "query"
           schema:
@@ -198,6 +212,24 @@ paths:
     get:
       description: "Get entitlement by ID"
       parameters:
+        - name: "userid"
+          in: "header"
+          required: true
+          schema:
+            type: "string"
+        - name: "X-correlation-ID"
+          in: "header"
+          schema:
+            type: "string"
+        - name: "x-api-key"
+          in: "header"
+          required: true
+          schema:
+            type: "string"
+        - name: "X-Request-Id"
+          in: "header"
+          schema:
+            type: "string"
         - name: "entitlementid"
           in: "path"
           required: true
@@ -272,6 +304,24 @@ paths:
   /fhir/nes/v1/EpisodeOfCare:
     get:
       parameters:
+        - name: "userid"
+          in: "header"
+          required: true
+          schema:
+            type: "string"
+        - name: "X-correlation-ID"
+          in: "header"
+          schema:
+            type: "string"
+        - name: "x-api-key"
+          in: "header"
+          required: true
+          schema:
+            type: "string"
+        - name: "X-Request-Id"
+          in: "header"
+          schema:
+            type: "string"
         - name: "type"
           in: "query"
           schema:

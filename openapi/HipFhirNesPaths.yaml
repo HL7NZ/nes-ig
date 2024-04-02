@@ -147,6 +147,20 @@
 /fhir/nes/v1/Coverage:
     get:
       parameters:
+      - name: "userid"
+        in: "header"
+        required: true
+        schema:
+          type: "string"
+      - name: "X-correlation-ID"
+        in: "header"
+        schema:
+          type: "string"
+      - name: "x-api-key"
+        in: "header"
+        required: true
+        schema:
+          type: "string"
       - name: "beneficiary"
         in: "query"
         schema:
@@ -242,7 +256,26 @@
              get:
               description: "Get entitlement by ID"
             
-              parameters: 
+              parameters:               
+              
+              - name: "userid"
+                in: "header"
+                required: true
+                schema:
+                  type: "string"
+              - name: "X-correlation-ID"
+                in: "header"
+                schema:
+                  type: "string"
+              - name: "x-api-key"
+                in: "header"
+                required: true
+                schema:
+                  type: "string"
+              - name: "X-Request-Id"
+                in: "header"
+                schema:
+                  type: "string"
               - name: "entitlementid"
                 in: "path"
                 required: true
@@ -339,19 +372,38 @@
 /fhir/nes/v1/EpisodeOfCare:
     get:
       parameters:
-      - name: "type"
-        in: "query"
-        schema:
-          type: "string"
-      - name: "status"
-        in: "query"
-        schema:
-          type: "string"
-      - name: "patient"
-        in: "query"
-        required: true
-        schema:
-          type: "string"
+     
+        - name: "userid"
+          in: "header"
+          required: true
+          schema:
+            type: "string"
+        - name: "X-correlation-ID"
+          in: "header"
+          schema:
+            type: "string"
+        - name: "x-api-key"
+          in: "header"
+          required: true
+          schema:
+            type: "string"
+        - name: "X-Request-Id"
+          in: "header"
+          schema:
+            type: "string"
+        - name: "type"
+          in: "query"
+          schema:
+            type: "string"
+        - name: "status"
+          in: "query"
+          schema:
+            type: "string"
+        - name: "patient"
+          in: "query"
+          required: true
+          schema:
+            type: "string"
       responses:
         "400":
           description: "400 response"
