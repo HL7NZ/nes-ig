@@ -51,7 +51,7 @@ Usage: #definition
 * rest.resource[=].profile = "http://hl7.org.nz/fhir/StructureDefinition/NesEnrolment"
 * rest.resource[=].interaction.code = #read
 //comma delimited fields in documentation string extracted by makeCapabilityStatement.js:   <verb,url,doc,scope>
-* rest.resource[=].interaction.documentation = "GET,[base]/EpisodeOfCare/[id],Used to retrieve a Patient's enrolments, system/EpisodeOfCare.r"
+* rest.resource[=].interaction.documentation = "GET,[base]/EpisodeOfCare/[id],Used to retrieve a Patient's enrolments - Future scope, system/EpisodeOfCare.r"
 * rest.resource[=].interaction[+].code = #create
 * rest.resource[=].interaction[=].documentation = "POST,[base]/EpisodeOfCare, create a new enrolment, system/EpisodeOfCare.c"
 
