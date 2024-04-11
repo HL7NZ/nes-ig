@@ -4,6 +4,8 @@
 
 #### Overview
 
+Future scope - this is not currently implemented
+
 The Get Enrolment operation allows an authorised user to retrieve an Enrolment record for a Patient using a known Enrolment record id.
 
 <div>
