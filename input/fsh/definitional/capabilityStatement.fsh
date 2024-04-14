@@ -24,11 +24,11 @@ Usage: #definition
 * rest.resource[=].profile = "http://hl7.org.nz/fhir/StructureDefinition/NzCoverage"
 * rest.resource[=].interaction[0].code = #read
 //comma delimited fields in documentation string extracted by makeCapabilityStatement.js:   <verb,url,doc,scope>
-* rest.resource[=].interaction[=].documentation = "GET,[base]/Coverage/[id],Used to retrieve a Patient's entitlements, system/Coverage.r"
+* rest.resource[=].interaction[=].documentation = "GET,[base]/Coverage/[id],Used to retrieve a Patient entitlement by id, system/Coverage.r"
 * rest.resource[=].interaction[+].code = #create
-* rest.resource[=].interaction[=].documentation = "POST,[base]/Coverage, create a new entitlement - Future Scope, system/Coverage.c"
+* rest.resource[=].interaction[=].documentation = "POST,[base]/Coverage, Create a new entitlement - Future Scope, system/Coverage.c"
 * rest.resource[=].interaction[+].code = #search-type
-* rest.resource[=].interaction[=].documentation = "GET,[base]/Coverage, search for entitlements, system/Coverage.s"
+* rest.resource[=].interaction[=].documentation = "GET,[base]/Coverage, Search for a patient's entitlements, system/Coverage.s"
 
 * rest.resource[=].searchParam[0].name = "identifier"
 * rest.resource[=].searchParam[0].type = #token
@@ -51,16 +51,16 @@ Usage: #definition
 * rest.resource[=].profile = "http://hl7.org.nz/fhir/StructureDefinition/NesEnrolment"
 * rest.resource[=].interaction.code = #read
 //comma delimited fields in documentation string extracted by makeCapabilityStatement.js:   <verb,url,doc,scope>
-* rest.resource[=].interaction.documentation = "GET,[base]/EpisodeOfCare/[id],Used to retrieve a Patient's enrolments - Future scope, system/EpisodeOfCare.r"
+* rest.resource[=].interaction.documentation = "GET,[base]/EpisodeOfCare/[id],Used to retrieve a Patient enrolment by id - Future scope, system/EpisodeOfCare.r"
 * rest.resource[=].interaction[+].code = #create
-* rest.resource[=].interaction[=].documentation = "POST,[base]/EpisodeOfCare, create a new enrolment, system/EpisodeOfCare.c"
+* rest.resource[=].interaction[=].documentation = "POST,[base]/EpisodeOfCare, Create a new enrolment, system/EpisodeOfCare.c"
 
 * rest.resource[=].interaction[+].code = #update
-* rest.resource[=].interaction[=].documentation = "PUT,[base]/EpisodeOfCare/[id], update an existing enrolment, system/EpisodeOfCare.u"
+* rest.resource[=].interaction[=].documentation = "PUT,[base]/EpisodeOfCare/[id], Update an existing enrolment, system/EpisodeOfCare.u"
 
 //search by various parameters
 * rest.resource[=].interaction[+].code = #search-type
-* rest.resource[=].interaction[=].documentation = "GET,[base]/EpisodeOfCare, Search for enrolments, system/EpisodeOfCare.s"
+* rest.resource[=].interaction[=].documentation = "GET,[base]/EpisodeOfCare, Search for a Patient's enrolment's, system/EpisodeOfCare.s"
 
 
 
