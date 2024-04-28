@@ -5,7 +5,7 @@
   <h3>Name</h3>
 </header>
 
-National Health Index FHIR API
+NES Entitlements FHIR API
 
 <div>
 
@@ -13,12 +13,19 @@ National Health Index FHIR API
   <h3> Brief Description</h3>
 </header>
 
-The purpose of the National Health Index (NHI), including the National Health Index number (NHI number), is to help with the planning, coordination and provision of health and disability support services across New Zealand.
-The NHI number is the unique identifier for all patients who receive healthcare in NZ and is the cornerstone of clinical and administrative patient-related information. Very rarely do health providers rely on names alone for identifying patients. The NHI number identifies the patient for referrals, visits to the hospital, tests, medication prescriptions and patient-related correspondence. Correct identification of the patient is a critical aspect of clinical safety.
-The NHI number ties together all patient information and patient systems. The NHI number is on patient labels, which are used on most items of patient documentation, from pharmaceutical labels to discharge summaries.
-Where regional services exist, such as centralised diagnostic services, health providers may receive the diagnostic results electronically from an external source.
-The NHI number is used to ensure that the results are associated with the correct patient.
-For more information, [please go here:](https://nhi-ig.hip.digital.health.nz/businessView.html).
+The purpose of the NES Entitlements service is to store and disseminate details relating to a patient’s entitlements. At the current time two such entitlements are recorded – the High User Health Card (HUHC) and the Community Services Card (CSC).
+
+Community Services Card (CSC) applications are assessed by Work and Income on behalf of Health New Zealand.
+The Community Services Card can reduce the cost of healthcare, prescriptions, emergency dental care among other benefits.
+
+The card can also be used for dependent children aged under 18 years.
+
+<a href="https://www.tewhatuora.govt.nz/our-health-system/claims-provider-payments-and-entitlements/community-services-card/" target="_blank">please go here:</a>
+
+High User Health Card’s (HUHC) are provided to a person who has visited a health practitioner at the general practice they are enrolled in 12 or more times in one year, with the consultations being related to a particular condition or condition(s) which are ongoing. This card is not means tested.
+The general practice will have a record of visits, and the doctor will need to make the application on the patient’s behalf for a HUHC. The card lasts for one year, after which time a new application can be made (if appropriate).
+
+<a href="https://www.tewhatuora.govt.nz/our-health-system/claims-provider-payments-and-entitlements/high-use-health-card/" target="_blank">please go here:</a>
 
 </div>
 
@@ -30,27 +37,12 @@ For more information, [please go here:](https://nhi-ig.hip.digital.health.nz/bus
 
 This is a FHIR API made up of two resources:
 <ul>
-  <li> NHIPatient, derived from the HL7 FHIR Patient resource.</li>
-  <li> NHIAddress, derived from HL7 FHIR Address data type.</li>
+  <li> NESEntitlements, derived from the HL7 FHIR coverage resource.</li>
+  <li> NESPatient, derived from the HL7 FHIR patien resource.</li>
 </ul>.
 
 </div>
 
-<div>
-
-<header>
-  <h4> NHI Number format</h4>
-</header>
-
-NHI numbers have one of 2 formats:
-<ul>
-  <li>AAANNNC (3 alpha, 3 numeric and one numeric check digit) – in current circulation</li>
-  <li>AAANNAX (3 alpha, 2 numeric, 1 alpha and one alpha check digit). This format will be first issued circa 2025.</li>
-</ul>.
-
-For more information, [please go here:](https://www.tewhatuora.govt.nz/our-health-system/claims-provider-payments-and-entitlements/nhi-number-format-changes/)
-
-</div>
 
 <div>
 
@@ -58,39 +50,19 @@ For more information, [please go here:](https://www.tewhatuora.govt.nz/our-healt
   <h4> Accessible Data</h4>
 </header>
 
-The NHI holds the following information:
+The NES Entitlement service holds the following information:
 
 <ul>
-  <li>name (including alternative names such as maiden names)</li>
   <li>NHI number</li>
-  <li>address</li>
-  <li>date of birth</li>
-  <li>gender</li>
-  <li>New Zealand citizenship status</li>
-  <li>place of birth</li>
-  <li>ethnicity</li>
-  <li>date of death</li>
+  <li>Card number</li>
+  <li>Card status</li>
+  <li>Entitlement type</li>
+  <li>Period of Entitlement</li>
+  <li>Card relationship (CSC only used to depict dependent entitlements)</li>
 </ul>
-
 
 The patient’s general practice and their phone and email contact details are not held in the NHI but are retrieved from the National Enrolment Service 
 and NES Patient Preferences Service respectively, and returned along with the NHI details if the user has the correct permissions.
-
-The Enrolled General Practitioner details may include:
-<ul>
-  <li>Enrolment id</li>
-  <li>Period of enrolment</li>
-  <li>HPI Practitioner</li>
-  <li>HPI Organisation</li>
-  <li>HPI Facility</li>
-</ul>
-
-The Contact details that may be returned include:
-<ul>
-  <li>Email address</li>
-  <li>Home phone number</li>
-  <li>Mobile phone number</li>
-</ul>
 
 </div>
 
@@ -110,87 +82,18 @@ table, th, td {
 <th>Privacy Risk Score</th>
 <th>Security Risk Score</th>
 <th>Identity Risk Score</th></tr>
-
-<tr><td>Get Patient</td>
-<td>Get Patient by id (using an NHI number)</td>
-<td>Using a known NHI number, a GET Request is sent to the NHI, the request is validated and returns the patient data associated with the NHI number in the request.
-Returned results include a range of demographic data required to confirm identity — for example, name, gender, ethnicity, date and place of birth, address and New Zealand citizenship status.</td>
-<td>HIGH</td>
-<td>HIGH</td>
-<td>HIGH</td>
-<td>Level 3</td>
-</tr>
-
-<tr><td>Get Patient - Enrolled GP</td>
-<td>Get Patient by id and include the patient’s enrolled GP in the response</td>
-<td>To include the patient’s enrolled General Practitioner information in the patient resource alongside the demographics. This is retrieved from the National Enrolment Service (NES).</td>
-<td>HIGH</td>
-<td>HIGH</td>
-<td>HIGH</td>
-<td>Level 3</td>
-</tr>
-
-<tr><td>Get Patient - Contact details</td>
-<td>Get Patient using an NHI number and include the patient’s contact details in the response</td>
-<td>To include the patient’s contact details in the patient resource alongside the demographics. This is retrieved from the NES Patient To include the patient’s contact details in the patient resource alongside the demographics. This is retrieved from the NES Patient Preferences service.</td>
-<td>HIGH</td>
-<td>HIGH</td>
-<td>HIGH</td>
-<td>Level 3</td>
-</tr>
-
-<tr><td>Search Patient</td>
-<td>Search Patient using name, birthdate and other demographics</td>
-<td>A SEARCH Request is used when the NHI number is not known. The request is validated and data of patients matching the search criteria is returned in order of relevance. It returns only the core NHI fields (No enrolled GP or contact details even if the user has the correct permissions).
-Search parameters include, name, date of birth, gender, place of birth and address.</td>
-<td>HIGH</td>
-<td>HIGH</td>
-<td>HIGH</td>
-<td>Level 3</td>
-</tr>
-
-<tr><td>Maintain Patient</td>
-<td>Update Patient records</td>
-<td>Provided on a limited basis to primary and secondary healthcare providers, and health system data quality teams. <br /> Attribute dependent. <br /> 
-Allows access to the following operations:
-<ul>
-  <li> Update Name (add, replace, inactivate, and set-preferred name). </li>
-  <li> Update Address (Set validated address, set-unvalidated-address, remove postal address)</li>
-  <li> Update Identity (gender and ethnicity).</li>
-  <li> Update Birth (birthdate and birthplace).</li>
-  <li> Update Eligibility (NZ Citizenship status).</li>
-</ul>
-</td>
-<td>HIGH</td>
-<td>EXTREME</td>
-<td>HIGH</td>
-<td>Level 3</td>
-</tr>
-
-<tr><td>Create Patient</td>
-<td>Create Patient records</td>
-<td>Provided on a limited basis to primary and secondary healthcare providers. Used to add new patients to the NHI.</td>
-<td>EXTREME</td>
-<td>EXTREME</td>
-<td>HIGH</td>
-<td>Level 3</td>
-</tr>
-
-<tr><td>Validate Patient</td>
-<td>Validate Patient using an NHI number and patient demographics</td>
-<td>A VALIDATE request is used when the NHI number and demographic details are known, but the requestor is not authorised to retrieve NHI details or they only need a match / no-match response. <br />
-Validate parameters include NHI number, name, date of birth, gender, place of birth, and address.</td>
-<td>HIGH</td>
+<tr><td>Health Entitlements Read</td>
+<td>Get a Patient Entitlement using an Entitlement id <br /> Search for a Patient Entitlement’s using an NHI number</td>
+<td>Using a known Entitlement id, a GET Request is sent to the NES Entitlement service, the request is validated and returns the associated Entitlement record. <br /> Using a Patients NHI number, a GET request is sent to the NES Entitlement service, the request is validated and a Patient’s entitlements are returned.</td>
+<td>LOW</td>
 <td>HIGH</td>
 <td>HIGH</td>
 <td>Level 3</td>
 </tr>
 </table>
-
 </div>
 
 <div>
-
 <header>
   <h3>Who can use this API</h3>
 </header>
@@ -226,54 +129,22 @@ Te Whatu Ora — Health New Zealand assigns appropriate permissions and monitors
   <h3>Use Cases</h3>
 </header>
 
-The below lists a few example outcomes that can be achieved when using the NHI API.
+The below lists a few example outcomes that can be achieved when using the NES Entitlements API.
 
 <ul>
   <li>System to System</li>
     <ul>
-      <li>Check that you’re referring to the right person when communicating with another healthcare provider.</li>
-      <li>Search the NHI using known patient demographics to find the correct NHI number for a person.</li>
-      <li>Lookup the NHI record for a patient using their NHI number.</li>
-      <li>Update a person’s details so the NHI mains it’s value as the source of truth.</li>
-      <li>Create a new NHI number for a person if they don’t have one (this is their first interaction with ta New Zealand health service).</li>
+      <li>Lookup the NES Entitlement service for information on a specific Entitlement.</li>
+      <li>Lookup / Search the NES Entitlement service for a Patient’s entitlements.</li>
     </ul>
   <li>Patient (Consumer Facing Application Authentication)</li>
     <ul>
-      <li>View their NHI details.</li>
-      <li>Update their preferred name.</li>
-      <li>Update gender and ethnicity details.</li>
-      <li>Update address details</li>
+      <li>A person can access their NES Entitlement information.</li>
     </ul>
 </ul>
 
 </div>
 
-<div>
-
-<header>
-  <h3>Guidelines</h3>
-</header>
-
-Suggestions on how to implement the NHI FHIR API.
-<ul>
-  <li>[A new patient presents for healthcare](https://nhi-ig.hip-uat.digital.health.nz/guidance.html#a-new-patient-presents-for-healthcare)</li>
-  <li>[A returning patient presents for healthcare](https://nhi-ig.hip-uat.digital.health.nz/guidance.html#a-returning-patient-presents-for-healthcare)</li>
-  <li>[A notification is received that patient details have changed](https://nhi-ig.hip-uat.digital.health.nz/guidance.html#a-notification-is-received-that-patient-details-have-changed)</li>
-  <li>[A provider notices a discrepancy between local and NHI record, but does not have update access](https://nhi-ig.hip-uat.digital.health.nz/guidance.html#a-provider-notices-a-discrepancy-between-local-and-nhi-record-but-does-not-have-update-access)</li>
-  <li>[A user needs to validate an NHI number](https://nhi-ig.hip-uat.digital.health.nz/guidance.html#a-user-needs-to-validate-an-nhi-number)</li>
-  <li>[Look up the patient’s enrolled General Practice](https://nhi-ig.hip-uat.digital.health.nz/guidance.html#look-up-the-patients-enrolled-general-practice-gp)</li>
-  <li>[Look up patient’s contact details](https://nhi-ig.hip-uat.digital.health.nz/guidance.html#look-up-patients-contact-details)</li>
-</ul>
-
-Multi API use cases
-<ul>
-  <li>National Health Index and Health Provider Index</li>
-    <ul>
-      <li>Lookup the healthlink EDI for an enrolled patient’s General Practice](https://nhi-ig.hip-uat.digital.health.nz/guidance.html#lookup-edi-for-an-enrolled-patients-general-practice)</li>
-    </ul>
-</ul>
-
-</div>
 
 <div>
   
@@ -341,30 +212,27 @@ table, th, td {
 <th> Rate </th>
 <th> Burst </th>
 <th> Quota </th></tr>
-
 <tr><td> bronze </td>
 <td> 1 request per second </td>
 <td> 5 </td>
 <td> 10,000 requests per day </td></tr>
-
 <tr><td> silver </td>
 <td> 5 requests per second </td>
 <td> 25 </td>
 <td> 250,000 requests per day </td></tr>
-
 <tr><td> gold </td>
 <td> 10 requests per second </td>
 <td> 50 </td>
 <td> 500,000 requests per day </td></tr>
 </table>
-
 </div>
 
 <div>
 
-All test accounts will be assigned to the bronze usage plan. If a Vendor wishes to be assigned to a higher plan, they should contact the Integration team via the [General Enquiry form](https://mohapis.atlassian.net/servicedesk/customer/portal/3/group/11/create/36) Please request a change to the usage plan and make sure you include the ClientID at minimum (AppId and Orgid also recommended).
+All test accounts will be assigned to the bronze usage plan. If a Vendor wishes to be assigned to a higher plan, they should contact the Integration team via the <a href="https://mohapis.atlassian.net/servicedesk/customer/portal/3/group/11/create/36" target="_blank">General Enquiry form</a>. Please request a change to the usage plan and make sure you include the ClientID at minimum (AppId and Orgid also recommended).
 
-Production accounts will be assigned to the silver usage plan. If an Organisation wishes to be assigned to the gold usage plan, they should contact the Te Whatu Ora [NHI access team](mailto:NHI_Access@health.govt.nz)
+Production accounts will be assigned to the silver usage plan. If an Organisation wishes to be assigned to the gold usage plan, they should contact the Te Whatu Ora
+<a href="mailto:NHI_Access@health.govt.nz"_blank">NHI access team</a>
 
 If an application reaches its usage plan limit an HTTP 429 error will be returned. The expected behaviour is that the application will retry several times with an exponentially increasing delay
 
