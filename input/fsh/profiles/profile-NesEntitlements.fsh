@@ -33,6 +33,14 @@ Description:    "The coverage resource contains information related to Patient e
 * contract 0..0
 * implicitRules 0..0 
 * language 0..0
+* identifier.id 0..0
+* identifier.extension 0..0
+* identifier.type 0..0
+* identifier.period 0..0
+* identifier.assigner 0..0
+
+
+
 
 // contained resources
 * contained ^slicing.discriminator.type = #type
@@ -41,6 +49,7 @@ Description:    "The coverage resource contains information related to Patient e
 
 * contained contains beneficiary 0..1
 * contained[beneficiary] only NesPatient
+
 
 // documentation
 * id ^short = "Logical id of this artifact (The Entitlement.id)"
@@ -60,8 +69,25 @@ Description:    "The coverage resource contains information related to Patient e
 * payor ^definition = "The HPI Org Id for the organisation approving a Patient Entitlement."
 
 // constraints on base profile
-* type from https://nzhts.digital.health.nz/fhir/ValueSet/coverage-type-code
+* type from https://nzhts.digital.health.nz/fhir/ValueSet/coverage-type-code|1.1.0
 * identifier.system from https://nzhts.digital.health.nz/fhir/ValueSet/nes-entitlement-identifier-code
 * identifier.use = #official (exactly)
 * beneficiary only Reference(NesPatient)
+
+
+* obeys STATUS-ALLOWED-CODES
+* obeys URL-ALLOWED-CHARS
+* obeys SYSTEM-LENGTH
+* obeys SYSTEM-ALLOWED-CHARS
+* obeys CODEABLE-CONCEPT-TEXT-LENGTH
+* obeys CODEABLE-CONCEPT-TEXT-ALLOWED-CHARS
+
+
+
+Invariant: STATUS-ALLOWED-CODES
+Expression: "Coverage.status.all(matches('draft').not())"
+Description: "draft status is not allowed"
+Severity: #error
+
+
 
