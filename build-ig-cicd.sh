@@ -68,6 +68,9 @@ common_source="./fhir_packages/hip-fhir-common-$comdir/package/package.tgz"
 common_url=$(yq '.dependencies."hl7.org.nz.fhir.ig.hip-core".uri' ./sushi-config.yaml)
 addPackage "$common_name" "$common_version" "$common_source" "$common_url" 
 
+#satisfy transitive dependnecy
+addPackage "$common_name" "1.6.0" "$common_source" "$common_url" 
+
 echo getting NHI dependencies...
 nhi_package_name="hl7.org.nz.fhir.ig.nhi"
 nhi_version=$(yq '.dependencies."hl7.org.nz.fhir.ig.nhi".version' ./sushi-config.yaml)
