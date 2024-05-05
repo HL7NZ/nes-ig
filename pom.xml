@@ -27,6 +27,12 @@
 			<groupId>nz.health.digital.nhi.fhir</groupId>
 			<artifactId>hip-nhi-conformance-module</artifactId>
 			<version>${nhi-ig-version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>health.identity.fhir</groupId>
+					<artifactId>hip-fhir-common</artifactId>				
+				</exclusion>
+			</exclusions>
 			<classifier>zip</classifier>
 			<type>zip</type>
 		</dependency>
@@ -35,6 +41,12 @@
 			<groupId>nz.health.digital.hpi.fhir</groupId>
 			<artifactId>hip-hpi-conformance-module</artifactId>
 			<version>${hpi-ig-version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>health.identity.fhir</groupId>
+					<artifactId>hip-fhir-common</artifactId>				
+				</exclusion>
+			</exclusions>
 			<type>zip</type>
 		</dependency>
 
@@ -83,8 +95,8 @@
 							</outputDirectory>
 							<includes>**/package/package.tgz,**/openapi/*</includes>
 						</configuration>
-					</execution>	
-									
+					</execution>
+
 					<execution>
 						<id>unpack-nhicm</id>
 						<phase>
@@ -102,7 +114,7 @@
 							<includes>**/package/package.tgz,**/openapi/*</includes>
 						</configuration>
 					</execution>
-					
+
 					<execution>
 						<id>unpack-hpicm</id>
 						<phase>
@@ -112,9 +124,9 @@
 							<goal>unpack-dependencies</goal>
 						</goals>
 						<configuration>
-								<includeGroupIds>nz.health.digital.hpi.fhir</includeGroupIds>
+							<includeGroupIds>nz.health.digital.hpi.fhir</includeGroupIds>
 							<includeArtifactIds>hip-hpi-conformance-module</includeArtifactIds>
-						
+
 							<outputDirectory>
 								${project.basedir}/fhir_packages
 							</outputDirectory>
