@@ -3,7 +3,7 @@ InstanceOf: Coverage
 Description: "Example PSC  entitlement"
 Usage: #example
 
-* id = "EN_PSC1"
+* id = "ENPSC12345"
 * meta.profile = "http://hl7.org.nz/fhir/StructureDefinition/NesEntitlement"
 
 
