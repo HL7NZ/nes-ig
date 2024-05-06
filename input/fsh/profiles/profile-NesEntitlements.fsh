@@ -69,7 +69,8 @@ Description:    "The coverage resource contains information related to Patient e
 * payor ^definition = "The HPI Org Id for the organisation approving a Patient Entitlement."
 
 // constraints on base profile
-* type from https://nzhts.digital.health.nz/fhir/ValueSet/coverage-type-code|1.1.0
+//* type from https://nzhts.digital.health.nz/fhir/ValueSet/coverage-type-code|1.1.0
+* type from https://nzhts.digital.health.nz/fhir/ValueSet/coverage-type-code
 * identifier.system from https://nzhts.digital.health.nz/fhir/ValueSet/nes-entitlement-identifier-code
 * identifier.use = #official (exactly)
 * beneficiary only Reference(NesPatient)
