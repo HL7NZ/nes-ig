@@ -75,16 +75,45 @@ Description:    "The coverage resource contains information related to Patient e
 * beneficiary only Reference(NesPatient)
 
 
-* obeys STATUS-ALLOWED-CODES
-* obeys URL-ALLOWED-CHARS
-* obeys SYSTEM-LENGTH
-* obeys SYSTEM-ALLOWED-CHARS
-* obeys CODEABLE-CONCEPT-TEXT-LENGTH
-* obeys CODEABLE-CONCEPT-TEXT-ALLOWED-CHARS
+* obeys COVERAGE-STATUS-ALLOWED-CODES
+* obeys COVERAGE-URL-ALLOWED-CHARS
+* obeys COVERAGE-SYSTEM-LENGTH
+* obeys COVERAGE-SYSTEM-ALLOWED-CHARS
+* obeys COVERAGE-CODEABLE-CONCEPT-TEXT-LENGTH
+* obeys COVERAGE-CODEABLE-CONCEPT-TEXT-ALLOWED-CHARS
 
+//to do: allow unicocde
+Invariant: COVERAGE-URL-LENGTH
+Expression: "Coverage.descendants().url.all(length()<1024)"
+Description: "URLs must be less than 1024 characters"
+Severity: #error
 
+Invariant: COVERAGE-URL-ALLOWED-CHARS
+Expression: "Coverage.descendants().url.all(matches('^[-a-zA-Z0-9@:%._~#=?&\\/]*$'))"
+Description: "character restrictions for URLs"
+Severity: #error
 
-Invariant: STATUS-ALLOWED-CODES
+Invariant: COVERAGE-SYSTEM-LENGTH
+Expression: "Coverage.descendants().system.all(length()<1024)"
+Description: "System URLs must be less than 1024 characters"
+Severity: #error
+
+Invariant: COVERAGE-SYSTEM-ALLOWED-CHARS
+Expression: "Coverage.descendants().system.all(matches('^[-a-zA-Z0-9@:%._~#=?&\\/]*$'))"
+Description: "character restrictions for system url"
+Severity: #error
+
+Invariant: COVERAGE-CODEABLE-CONCEPT-TEXT-LENGTH
+Expression: "Coverage.descendants().valueCodeableConcept.text.all(length()<1024)"
+Description: "valueCodeableConcept.text must be less than 1024 characters"
+Severity: #error
+
+Invariant: COVERAGE-CODEABLE-CONCEPT-TEXT-ALLOWED-CHARS
+Expression: "Coverage.descendants().valueCodeableConcept.text.all(matches('^([-a-zA-Z0-9\\' \\t\\r\\n.\\/,])*$'))"
+Description: "character restrictions for valueCodeableConcept.text"
+Severity: #error
+
+Invariant: COVERAGE-STATUS-ALLOWED-CODES
 Expression: "Coverage.status.all(matches('draft').not())"
 Description: "draft status is not allowed"
 Severity: #error

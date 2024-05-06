@@ -12,7 +12,7 @@ Usage: #example
 * identifier[=].value = "CSC12345"
 
 * status = #active
-* type.coding.system = "https://nzhts.digital.health.nz/fhir/ValueSet/coverage-type-code"
+* type.coding.system = "https://standards.digital.health.nz/ns/coverage-type-code"
 * type.coding.code = #csc
 
 * beneficiary = Reference(Patient/ZAA0792) 

@@ -15,7 +15,7 @@ java -jar ~/validator_cli.jar ./temp  -ig ./site/package.tgz -profile http://hl7
 
 echo validating Entitlement examples
 cp ../fsh-generated/resources/Coverage*.json ./temp
-java -jar ~/validator_cli.jar ./temp  -ig ./site/package.tgz -profile http://hl7.org.nz/fhir/StructureDefinition/NesEntitlement -proxy WebProxy-80fef376c00ea74f.elb.ap-southeast-2.amazonaws.com:3128 -html-output ./validation_NesEntitlement.html
+java -jar ~/validator_cli.jar ./temp/Coverage*.json   -ig ./site/package.tgz -profile http://hl7.org.nz/fhir/StructureDefinition/NesEntitlement -proxy WebProxy-80fef376c00ea74f.elb.ap-southeast-2.amazonaws.com:3128 -html-output ./validation_NesEntitlement.html
 
 
 
