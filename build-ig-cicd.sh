@@ -1,3 +1,8 @@
+#if you have transitive dependencies on hip-fhir-commom they have  to be specified explicitily 
+## you can define multiple dependnecnt version like this
+#HFC_TRANS=("1.6.0", "1.5.1")
+HFC_TRANS=("1.6.0")
+
 getPomProperty() {
  
  #echo "getting value of $1 from pom"
@@ -70,6 +75,13 @@ addPackage "$common_name" "$common_version" "$common_source" "$common_url"
 
 #satisfy transitive dependnecy
 addPackage "$common_name" "1.6.0" "$common_source" "$common_url" 
+
+#this will copy the latest version of hfc into the fhir cache location for each dependant version
+## so this will only be correct when the current version is backwards compatiblt with the dependnant versions
+for version in  ${HFC_TRANS[@]}; do 
+    echo "getting transitive dependencies for hip-fhir-common"
+	addPackage "$common_name" $version  "$common_source" "$common_url"
+done
 
 echo getting NHI dependencies...
 nhi_package_name="hl7.org.nz.fhir.ig.nhi"
