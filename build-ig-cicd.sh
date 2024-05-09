@@ -74,8 +74,6 @@ common_url=$(yq '.dependencies."hl7.org.nz.fhir.ig.hip-core".uri' ./sushi-config
 addPackage "$common_name" "$common_version" "$common_source" "$common_url" 
 
 #satisfy transitive dependnecy
-addPackage "$common_name" "1.6.0" "$common_source" "$common_url" 
-
 #this will copy the latest version of hfc into the fhir cache location for each dependant version
 ## so this will only be correct when the current version is backwards compatiblt with the dependnant versions
 for version in  ${HFC_TRANS[@]}; do 
