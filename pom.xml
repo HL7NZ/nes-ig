@@ -6,11 +6,11 @@
 
 
 	<properties>
-		<revision>1.3.1</revision>
+		<revision>1.4.0-SNAPSHOT</revision>
 		<!--<fhir-common.version>1.2.0</fhir-common.version> -->
-		<fhir-common.version>1.6.0</fhir-common.version>
-		<nhi-ig-version>1.5.0</nhi-ig-version>
-		<hpi-ig-version>1.3.0</hpi-ig-version>
+		<fhir-common.version>1.8.1</fhir-common.version>
+		<nhi-ig-version>1.5.1</nhi-ig-version>
+		<hpi-ig-version>1.3.1</hpi-ig-version>
 	</properties>
 
 	<dependencies>
@@ -26,7 +26,7 @@
 		<dependency>
 			<groupId>nz.health.digital.nhi.fhir</groupId>
 			<artifactId>hip-nhi-conformance-module</artifactId>
-			<version>${nhi-ig-version}</version>
+			<version>${nhi-ig-version}</version>			
 			<classifier>zip</classifier>
 			<type>zip</type>
 		</dependency>
@@ -34,7 +34,7 @@
 		<dependency>
 			<groupId>nz.health.digital.hpi.fhir</groupId>
 			<artifactId>hip-hpi-conformance-module</artifactId>
-			<version>${hpi-ig-version}</version>
+			<version>${hpi-ig-version}</version>			
 			<type>zip</type>
 		</dependency>
 
@@ -83,8 +83,8 @@
 							</outputDirectory>
 							<includes>**/package/package.tgz,**/openapi/*</includes>
 						</configuration>
-					</execution>	
-									
+					</execution>
+
 					<execution>
 						<id>unpack-nhicm</id>
 						<phase>
@@ -102,7 +102,7 @@
 							<includes>**/package/package.tgz,**/openapi/*</includes>
 						</configuration>
 					</execution>
-					
+
 					<execution>
 						<id>unpack-hpicm</id>
 						<phase>
@@ -112,9 +112,9 @@
 							<goal>unpack-dependencies</goal>
 						</goals>
 						<configuration>
-								<includeGroupIds>nz.health.digital.hpi.fhir</includeGroupIds>
+							<includeGroupIds>nz.health.digital.hpi.fhir</includeGroupIds>
 							<includeArtifactIds>hip-hpi-conformance-module</includeArtifactIds>
-						
+
 							<outputDirectory>
 								${project.basedir}/fhir_packages
 							</outputDirectory>

@@ -27,8 +27,10 @@ Usage: #definition
 * rest.resource[=].interaction[=].documentation = "GET,[base]/Coverage/[id],Used to retrieve a Patient entitlement by id, system/Coverage.r"
 * rest.resource[=].interaction[+].code = #create
 * rest.resource[=].interaction[=].documentation = "POST,[base]/Coverage, Create a new entitlement - Future Scope, system/Coverage.c"
+* rest.resource[=].interaction[+].code = #update
+* rest.resource[=].interaction[=].documentation = "PUT,[base]/Coverage/[id], Update a patient's entitlement card details, system/Coverage.u"
 * rest.resource[=].interaction[+].code = #search-type
-* rest.resource[=].interaction[=].documentation = "GET,[base]/Coverage, Search for a patient's entitlements, system/Coverage.s"
+* rest.resource[=].interaction[=].documentation = "GET,[base]/Coverage, Search for a patient's entitlements,patient:Coverage.s system/Coverage.s"
 
 * rest.resource[=].searchParam[0].name = "identifier"
 * rest.resource[=].searchParam[0].type = #token

@@ -33,6 +33,14 @@ Description:    "The coverage resource contains information related to Patient e
 * contract 0..0
 * implicitRules 0..0 
 * language 0..0
+* identifier.id 0..0
+* identifier.extension 0..0
+* identifier.type 0..0
+* identifier.period 0..0
+* identifier.assigner 0..0
+
+
+
 
 // contained resources
 * contained ^slicing.discriminator.type = #type
@@ -41,6 +49,7 @@ Description:    "The coverage resource contains information related to Patient e
 
 * contained contains beneficiary 0..1
 * contained[beneficiary] only NesPatient
+
 
 // documentation
 * id ^short = "Logical id of this artifact (The Entitlement.id)"
@@ -60,8 +69,55 @@ Description:    "The coverage resource contains information related to Patient e
 * payor ^definition = "The HPI Org Id for the organisation approving a Patient Entitlement."
 
 // constraints on base profile
-* type from https://nzhts.digital.health.nz/fhir/ValueSet/coverage-type-code
+* type from https://nzhts.digital.health.nz/fhir/ValueSet/coverage-type-code|1.1.0
+//* type from https://nzhts.digital.health.nz/fhir/ValueSet/coverage-type-code
 * identifier.system from https://nzhts.digital.health.nz/fhir/ValueSet/nes-entitlement-identifier-code
 * identifier.use = #official (exactly)
 * beneficiary only Reference(NesPatient)
+
+
+* obeys COVERAGE-STATUS-ALLOWED-CODES
+* obeys COVERAGE-URL-ALLOWED-CHARS
+* obeys COVERAGE-SYSTEM-LENGTH
+* obeys COVERAGE-SYSTEM-ALLOWED-CHARS
+* obeys COVERAGE-CODEABLE-CONCEPT-TEXT-LENGTH
+* obeys COVERAGE-CODEABLE-CONCEPT-TEXT-ALLOWED-CHARS
+
+//to do: allow unicocde
+Invariant: COVERAGE-URL-LENGTH
+Expression: "Coverage.descendants().url.all(length()<1024)"
+Description: "URLs must be less than 1024 characters"
+Severity: #error
+
+Invariant: COVERAGE-URL-ALLOWED-CHARS
+Expression: "Coverage.descendants().url.all(matches('^[-a-zA-Z0-9@:%._~#=?&\\/]*$'))"
+Description: "character restrictions for URLs"
+Severity: #error
+
+Invariant: COVERAGE-SYSTEM-LENGTH
+Expression: "Coverage.descendants().system.all(length()<1024)"
+Description: "System URLs must be less than 1024 characters"
+Severity: #error
+
+Invariant: COVERAGE-SYSTEM-ALLOWED-CHARS
+Expression: "Coverage.descendants().system.all(matches('^[-a-zA-Z0-9@:%._~#=?&\\/]*$'))"
+Description: "character restrictions for system url"
+Severity: #error
+
+Invariant: COVERAGE-CODEABLE-CONCEPT-TEXT-LENGTH
+Expression: "Coverage.descendants().valueCodeableConcept.text.all(length()<1024)"
+Description: "valueCodeableConcept.text must be less than 1024 characters"
+Severity: #error
+
+Invariant: COVERAGE-CODEABLE-CONCEPT-TEXT-ALLOWED-CHARS
+Expression: "Coverage.descendants().valueCodeableConcept.text.all(matches('^([-a-zA-Z0-9\\' \\t\\r\\n.\\/,])*$'))"
+Description: "character restrictions for valueCodeableConcept.text"
+Severity: #error
+
+Invariant: COVERAGE-STATUS-ALLOWED-CODES
+Expression: "Coverage.status.all(matches('draft').not())"
+Description: "draft status is not allowed"
+Severity: #error
+
+
 

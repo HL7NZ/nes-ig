@@ -1,9 +1,9 @@
-Instance: entitlement-1
+Instance: entitlement-4
 InstanceOf: Coverage 
-Description: "Example CSC entitlement"
+Description: "Example PSC  entitlement"
 Usage: #example
 
-* id = "EN667788899"
+* id = "ENPSC12345"
 * meta.profile = "http://hl7.org.nz/fhir/StructureDefinition/NesEntitlement"
 
 
@@ -20,4 +20,4 @@ Usage: #example
 * period.start = 2023-08-27
 * period.end = 2024-08-27
 
-* payor =  Reference(Organization/GZZ998-G)
+* payor =  Reference(Organization/GZZ998-G)ation/GZZ998-G)
