@@ -138,7 +138,7 @@ table, th, td {
   <ul>
     <li>All entitlement information is displayed for the patient</li>
     <li>Patient should have an active HUHC entitlement</li>
-    <li>Expiry: 2024-03-20</li>    
+    <li>Expiry: 2024-12-30</li>    
   </ul>
 </td>
 <td>Mandatory if applicable</td>
