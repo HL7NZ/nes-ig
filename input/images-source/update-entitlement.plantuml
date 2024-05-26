@@ -1,0 +1,32 @@
+@startuml
+skinparam sequenceArrowThickness 2
+skinparam roundcorner 5
+skinparam maxmessagesize 180
+skinparam sequenceParticipant bold
+title Update Entitlement
+actor "Integrating application user" as User #CornflowerBlue
+participant "Integrating application" as A #CornflowerBlue
+participant "<FHIR API> NES Entitlement" as B #CornflowerBlue
+participant "DB" as C #CornflowerBlue
+|||
+User -> A: Update a persons Entitlement
+activate A
+|||
+A -> B: PUT[base]/Coverage/[entitlement-id]
+activate B
+|||
+B -> B: Validate[]
+|||
+B -> C: Update
+activate C
+|||
+C -[dashed]-> B:  
+deactivate C
+|||
+B -[dashed]-> A: HTTP 200 - Entitlement Updated
+deactivate B
+|||
+A -> User: Display updated entitlement details
+deactivate A
+|||
+@enduml
