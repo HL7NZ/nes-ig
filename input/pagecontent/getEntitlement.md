@@ -12,10 +12,11 @@ The Get Entitlement operation allows an authorised user to retrieve an Entitleme
 
 ####  Get Entitlement processing steps:
 
-1. A FHIR Client sends a GET request  to the NES  *Coverage* endpoint with the enrolment id in the path
-2. The request is validated - ALT: Validation failure. Operation Outcome resource returned
-3. The entitlement is retrieved from the NES database
-4. An  NESEntitlement is returned to the client
+1. The user requests a specific Entitlement to be looked up.
+2. The integrating application sends a GET request  to the NES  *Coverage* endpoint with the Entitlement id in the path
+3. The request is validated - ALT: Validation failure. Operation Outcome resource returned
+4. The entitlement is retrieved from the database
+5. An  NESEntitlement is returned to the client
 
 
 ####  Get Entitlement Response Example 
