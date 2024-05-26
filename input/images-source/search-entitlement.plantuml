@@ -3,13 +3,13 @@ skinparam sequenceArrowThickness 2
 skinparam roundcorner 5
 skinparam maxmessagesize 180
 skinparam sequenceParticipant bold
-title Get Entitlements for a Patient
+title Search Entitlements for patient
 actor "Integrating application user" as User #CornflowerBlue
 participant "Integrating application" as A #CornflowerBlue
-participant "<FHIR API> NES" as B #CornflowerBlue
-participant "EEE" as C #CornflowerBlue
+participant "<FHIR API> NES Entitlement" as B #CornflowerBlue
+participant "DB" as C #CornflowerBlue
 |||
-User -> A: Enter NHI number
+User -> A: Look up persons entitlements using their NHI number
 activate A
 |||
 A -> B: GET [base]/Coverage?beneficiary=[NHI number]
@@ -23,7 +23,7 @@ activate C
 C -[dashed]-> B:  
 deactivate C
 |||
-B -[dashed]-> A :Return all active NES Entitlement records for Patient 
+B -[dashed]-> A :Return Bundle containing persons Entitlement records
 deactivate B
 |||
 A -> User: Display Entitlement details
