@@ -13,7 +13,7 @@ table, th, td {
 <th>Mandatory</th></tr>
 
 <tr>
-<td>Entitlement-GET-1</td>
+<td>Entitlement-GET-1 <br /> CSC</td>
 <td>application displays csc entitlement information correctly:
 <ul>
   <li>Identifier (card number)</li>
@@ -22,13 +22,13 @@ table, th, td {
   <li>Period</li>
 </ul>
 </td>
-<td>20013649</td>
+<td>20018179</td>
 <td>Output: CSC entitlement information is displayed for the patient</td>
 <td>Mandatory if applicable</td>
 </tr>
 
 <tr>
-<td>Entitlement-GET-2</td>
+<td>Entitlement-GET-2 <br /> CSCDEP</td>
 <td>application displays csc-dep entitlement information correctly:
 <ul>
   <li>Identifier (card number)</li>
@@ -38,18 +38,18 @@ table, th, td {
   <li>Period</li>
 </ul>
 </td>
-<td>20014527</td>
+<td>20018181</td>
 <td>Output:
   <ul>
     <li>CSC entitlement information is displayed for the patient</li>
-    <li>Clerly shows card as CSC dependent </li>
+    <li>Clearly shows card as CSC dependent </li>
   </ul>
 </td>
 <td>Mandatory if applicable</td>
 </tr>
 
 <tr>
-<td>Entitlement-GET-3</td>
+<td>Entitlement-GET-3 <br /> HUHC</td>
 <td>application displays HUHC entitlement information correctly:
 <ul>
   <li>Identifier (card number)</li>
@@ -58,7 +58,7 @@ table, th, td {
   <li>Period</li>
 </ul>
 </td>
-<td>20012377</td>
+<td>305454455</td>
 <td>Output: HUHC entitlement information is displayed for the patient</td>
 <td>Mandatory if applicable</td>
 </tr>
