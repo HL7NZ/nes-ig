@@ -23,7 +23,7 @@ The Get Entitlement operation allows an authorised user to retrieve an Entitleme
 [get entitlement response message 1 ](Coverage-EN667788899.json.html)
 
 
-<h4>Get Entitlement Rules and errors</h4>
+<h4>Get Entitlement Rules and Errors</h4>
 <table>
 <style>
 table, th, td {
