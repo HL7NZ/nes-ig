@@ -58,6 +58,7 @@ menu:
     Get Entitlement: getEntitlement.html
     Search Entitlement: searchEntitlement.html
     Create Entitlement: createEntitlement.html
+    Update Entitlement: updateEntitlement.html
     Enrolment Nomination: enrolmentNomination.html
   Important information:
     Onboarding: Onboarding.html
