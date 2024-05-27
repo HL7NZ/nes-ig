@@ -3,10 +3,9 @@
 ### Create Entitlement for Patient
 
 This operation is used to create a patient's entitlement to some form of subsidised healthcare.
-
 Current functionality is limited to creating a Community Services Card entitlement.
 
-Scenarios
+**Scenarios**
 1. A person presents with a community services card, however the card is not returned when searching for the patients entitlements.
 2. A dependent child of a community services card holder presents, and a community services card is not returned when searching for the patients entitlements.
 
