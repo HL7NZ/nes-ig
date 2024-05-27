@@ -3,8 +3,7 @@
 
 #### Overview
 
-This is typically used to return all entitlements for a person. <br />
-The Entitlement service will return one Entitlement for each type. This will be the active entitlement if there is one, or the last end-dated entitlement.
+This operation is used to return all entitlements for a person. The Entitlement service will return one entitlement record of each type (if applicable). This will be the active entitlement, or the last end-dated entitlement where no active entitlement exits.
 
 <div>
 {% include search-entitlement.svg %}
