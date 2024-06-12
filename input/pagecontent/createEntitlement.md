@@ -108,7 +108,7 @@ table, th, td {
 </td>
 <td>
  <ul>
-  <li>400 Bad request</li>
+  <li>422 Unprocessable Entity</li>
  </ul>
  </td>
 </tr>
