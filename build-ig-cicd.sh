@@ -131,10 +131,10 @@ echo "building openapi spec"
 ./openapi/makeoas.sh
 
 echo "Making API summary"
-
+chmod +x ./localscripts/makeCapabilityStatement.js 
+chmod +x ./localscripts/makeProfilesAndExtensions.js
 ./localscripts/makeCapabilityStatement.js nes
 ./localscripts/makeProfilesAndExtensions.js
-pwd
 
 #cp ./template/* $HOME/.fhir/packages/fhir.base.template#current/package/content
 
