@@ -124,17 +124,20 @@ sushi -o .
 
 echo running local scripts
 #sudo chmod +x ./localscripts/makeTerminologySummary.js
+
+
+
+chmod +x ./localscripts/makeCapabilityStatement.js 
+chmod +x ./localscripts/makeProfilesAndExtensions.js
+chmod +x ./localscripts/makeTerminologySummary.js
+./localscripts/makeCapabilityStatement.js nes
+./localscripts/makeProfilesAndExtensions.js
 ./localscripts/makeTerminologySummary.js
 
 echo "building openapi spec"
 #sudo chmod +x ./openapi/makeoas.sh
 ./openapi/makeoas.sh
 
-echo "Making API summary"
-chmod +x ./localscripts/makeCapabilityStatement.js 
-chmod +x ./localscripts/makeProfilesAndExtensions.js
-./localscripts/makeCapabilityStatement.js nes
-./localscripts/makeProfilesAndExtensions.js
 
 #cp ./template/* $HOME/.fhir/packages/fhir.base.template#current/package/content
 
