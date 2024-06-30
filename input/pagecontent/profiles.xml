@@ -21,7 +21,7 @@
 <tr>
 <td><a href='StructureDefinition-NesEntitlement.html'>NesEntitlement</a></td>
 <td>http://hl7.org.nz/fhir/StructureDefinition/NesEntitlement</td>
-<td><p>Adds additional, NES specific extensions</p></td>
+<td><p>The coverage resource contains information related to Patient entitlements</p></td>
 </tr>
 <tr>
 <td><a href='StructureDefinition-NesPatient.html'>NesPatient</a></td>

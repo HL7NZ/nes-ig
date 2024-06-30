@@ -13,22 +13,29 @@
 <td>read</td>
 <td>GET</td>
 <td>[base]/Coverage/[id]</td>
-<td>Used to retrieve a Patient's entitlements</td>
+<td>Used to retrieve a Patient entitlement by id</td>
 <td> system/Coverage.r</td>
 </tr>
 <tr>
 <td>create</td>
 <td>POST</td>
 <td>[base]/Coverage</td>
-<td> create a new entitlement - Future Scope</td>
+<td> Create a new entitlement - Future Scope</td>
 <td> system/Coverage.c</td>
+</tr>
+<tr>
+<td>update</td>
+<td>PUT</td>
+<td>[base]/Coverage/[id]</td>
+<td> Update a patient's entitlement card details</td>
+<td> system/Coverage.u</td>
 </tr>
 <tr>
 <td>search-type</td>
 <td>GET</td>
 <td>[base]/Coverage</td>
-<td> search for entitlements</td>
-<td> system/Coverage.s</td>
+<td> Search for a patient's entitlements</td>
+<td>patient:Coverage.s system/Coverage.s</td>
 </tr>
 </table>
 <strong>Search Parameters</strong>
@@ -68,28 +75,28 @@
 <td>read</td>
 <td>GET</td>
 <td>[base]/EpisodeOfCare/[id]</td>
-<td>Used to retrieve a Patient's enrolments</td>
+<td>Used to retrieve a Patient enrolment by id - Future scope</td>
 <td> system/EpisodeOfCare.r</td>
 </tr>
 <tr>
 <td>create</td>
 <td>POST</td>
 <td>[base]/EpisodeOfCare</td>
-<td> create a new enrolment</td>
+<td> Create a new enrolment</td>
 <td> system/EpisodeOfCare.c</td>
 </tr>
 <tr>
 <td>update</td>
 <td>PUT</td>
 <td>[base]/EpisodeOfCare/[id]</td>
-<td> update an existing enrolment</td>
+<td> Update an existing enrolment</td>
 <td> system/EpisodeOfCare.u</td>
 </tr>
 <tr>
 <td>search-type</td>
 <td>GET</td>
 <td>[base]/EpisodeOfCare</td>
-<td> Search for enrolments</td>
+<td> Search for a Patient's enrolment's</td>
 <td> system/EpisodeOfCare.s</td>
 </tr>
 </table>
