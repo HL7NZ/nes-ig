@@ -6,7 +6,7 @@
 
 
 	<properties>
-		<revision>1.4.1-SNAPSHOT</revision>
+		<revision>1.4.2-SNAPSHOT</revision>
 		<!--<fhir-common.version>1.2.0</fhir-common.version> -->
 		<fhir-common.version>1.8.1</fhir-common.version>
 		<nhi-ig-version>1.5.1</nhi-ig-version>
