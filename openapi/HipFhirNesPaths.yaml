@@ -1,24 +1,10 @@
 /fhir/nes/v1/EpisodeOfCare/{enrolmentid}:
     get:
       parameters:
-      - name: "userid"
-        in: "header"
-        required: true
-        schema:
-          type: "string"
-      - name: "X-correlation-ID"
-        in: "header"
-        schema:
-          type: "string"
-      - name: "x-api-key"
-        in: "header"
-        required: true
-        schema:
-          type: "string"
-      - name: "X-Request-Id"
-        in: "header"
-        schema:
-          type: "string"
+      - $ref: '#/components/parameters/X-correlation-ID' 
+      - $ref: '#/components/parameters/X-Request-Id'  
+      - $ref: '#/components/parameters/x-api-key'     
+      - $ref: '#/components/parameters/userid'     
       - name: "enrolmentid"
         in: "path"
         required: true
@@ -49,29 +35,16 @@
                 timeoutInMillis: 29000
     put:
       parameters:
-      - name: "userid"
-        in: "header"
-        required: true
-        schema:
-          type: "string"
-      - name: "X-correlation-ID"
-        in: "header"
-        schema:
-          type: "string"
-      - name: "x-api-key"
-        in: "header"
-        required: true
-        schema:
-          type: "string"
-      - name: "X-Request-Id"
-        in: "header"
-        schema:
-          type: "string"
-      - name: "enrolmentid"
-        in: "path"
-        required: true
-        schema:
-          type: "string"
+        parameters:
+        - $ref: '#/components/parameters/X-correlation-ID' 
+        - $ref: '#/components/parameters/X-Request-Id'  
+        - $ref: '#/components/parameters/x-api-key'     
+        - $ref: '#/components/parameters/userid'  
+        - name: "enrolmentid"
+          in: "path"
+          required: true
+          schema:
+            type: "string"
       requestBody:
         content:
           application/json:
@@ -102,24 +75,10 @@
 /fhir/nes/v1/$process-message:
     post:
       parameters:
-      - name: "userid"
-        in: "header"
-        required: true
-        schema:
-          type: "string"
-      - name: "X-correlation-ID"
-        in: "header"
-        schema:
-          type: "string"
-      - name: "x-api-key"
-        in: "header"
-        required: true
-        schema:
-          type: "string"
-      - name: "X-Request-Id"
-        in: "header"
-        schema:
-          type: "string"
+      - $ref: '#/components/parameters/X-correlation-ID' 
+      - $ref: '#/components/parameters/X-Request-Id'  
+      - $ref: '#/components/parameters/x-api-key'     
+      - $ref: '#/components/parameters/userid'  
       responses:
         "202":
           description: "202 response"
@@ -147,20 +106,10 @@
 /fhir/nes/v1/Coverage:
     get:
       parameters:
-      - name: "userid"
-        in: "header"
-        required: true
-        schema:
-          type: "string"
-      - name: "X-correlation-ID"
-        in: "header"
-        schema:
-          type: "string"
-      - name: "x-api-key"
-        in: "header"
-        required: true
-        schema:
-          type: "string"
+      - $ref: '#/components/parameters/X-correlation-ID' 
+      - $ref: '#/components/parameters/X-Request-Id'  
+      - $ref: '#/components/parameters/x-api-key'     
+      - $ref: '#/components/parameters/userid'  
       - name: "beneficiary"
         in: "query"
         schema:
@@ -200,24 +149,10 @@
                 
     post:
       parameters:
-      - name: "userid"
-        in: "header"
-        required: true
-        schema:
-          type: "string"
-      - name: "X-correlation-ID"
-        in: "header"
-        schema:
-          type: "string"
-      - name: "x-api-key"
-        in: "header"
-        required: true
-        schema:
-          type: "string"
-      - name: "X-Request-Id"
-        in: "header"
-        schema:
-          type: "string"
+      - $ref: '#/components/parameters/X-correlation-ID' 
+      - $ref: '#/components/parameters/X-Request-Id'  
+      - $ref: '#/components/parameters/x-api-key'     
+      - $ref: '#/components/parameters/userid'  
       requestBody:
         content:
           application/json:
@@ -256,26 +191,7 @@
              get:
               description: "Get entitlement by ID"
             
-              parameters:               
-              
-              - name: "userid"
-                in: "header"
-                required: true
-                schema:
-                  type: "string"
-              - name: "X-correlation-ID"
-                in: "header"
-                schema:
-                  type: "string"
-              - name: "x-api-key"
-                in: "header"
-                required: true
-                schema:
-                  type: "string"
-              - name: "X-Request-Id"
-                in: "header"
-                schema:
-                  type: "string"
+              parameters:                                         
               - name: "entitlementid"
                 in: "path"
                 required: true
@@ -373,24 +289,10 @@
     get:
       parameters:
      
-        - name: "userid"
-          in: "header"
-          required: true
-          schema:
-            type: "string"
-        - name: "X-correlation-ID"
-          in: "header"
-          schema:
-            type: "string"
-        - name: "x-api-key"
-          in: "header"
-          required: true
-          schema:
-            type: "string"
-        - name: "X-Request-Id"
-          in: "header"
-          schema:
-            type: "string"
+        - $ref: '#/components/parameters/X-correlation-ID' 
+        - $ref: '#/components/parameters/X-Request-Id'  
+        - $ref: '#/components/parameters/x-api-key'     
+        - $ref: '#/components/parameters/userid'  
         - name: "type"
           in: "query"
           schema:
@@ -430,24 +332,10 @@
                 
     post:
       parameters:
-      - name: "userid"
-        in: "header"
-        required: true
-        schema:
-          type: "string"
-      - name: "X-correlation-ID"
-        in: "header"
-        schema:
-          type: "string"
-      - name: "x-api-key"
-        in: "header"
-        required: true
-        schema:
-          type: "string"
-      - name: "X-Request-Id"
-        in: "header"
-        schema:
-          type: "string"
+      - $ref: '#/components/parameters/X-correlation-ID' 
+      - $ref: '#/components/parameters/X-Request-Id'  
+      - $ref: '#/components/parameters/x-api-key'     
+      - $ref: '#/components/parameters/userid'  
       requestBody:
         content:
           application/json:
