@@ -34,17 +34,17 @@
                 passthroughBehavior: "when_no_match"
                 timeoutInMillis: 29000
     put:
+     
       parameters:
-        parameters:
-        - $ref: '#/components/parameters/X-correlation-ID' 
-        - $ref: '#/components/parameters/X-Request-Id'  
-        - $ref: '#/components/parameters/x-api-key'     
-        - $ref: '#/components/parameters/userid'  
-        - name: "enrolmentid"
-          in: "path"
-          required: true
-          schema:
-            type: "string"
+      - $ref: '#/components/parameters/X-correlation-ID' 
+      - $ref: '#/components/parameters/X-Request-Id'  
+      - $ref: '#/components/parameters/x-api-key'     
+      - $ref: '#/components/parameters/userid'  
+      - name: "enrolmentid"
+        in: "path"
+        required: true
+        schema:
+          type: "string"
       requestBody:
         content:
           application/json:
