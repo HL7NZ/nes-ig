@@ -1,7 +1,7 @@
 # Repository for NES IG
 
 Current Release
-1.4.3-SNAPSHOT
+1.4.3
 
 
 to do 
