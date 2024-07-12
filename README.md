@@ -1,7 +1,7 @@
 # Repository for NES IG
 
 Current Release
-1.4.2
+1.4.3-SNAPSHOT
 
 
 to do 
@@ -10,7 +10,7 @@ to do
 - profile focus resources to sue HIP profiles (prob need to modify buildl script)
 - mdofy ig text to include its a role as message deinition specifer for message hub
 -- and note entitlement profile not complete
-  
+    
   
   get id from HISO for 
   * identifier.system = "https://standards.digital.health.nz/ns/nes-enttilement-id"
@@ -21,3 +21,5 @@ to do
   rule to restrict identifier systems
   rule to require 0..1 official identifiers
  look  at create and update
+ 
+ 
