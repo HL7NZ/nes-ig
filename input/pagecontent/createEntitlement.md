@@ -1,6 +1,7 @@
 
 
 ### Create Entitlement Overview
+
 This operation is used to create a patient's entitlement to some form of subsidised healthcare.
 
 This operation is used to create an entitlement for:
