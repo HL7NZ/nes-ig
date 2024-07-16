@@ -3,11 +3,18 @@
 ### Create Entitlement for Patient
 
 This operation is used to create a patient's entitlement to some form of subsidised healthcare.
-Current functionality is limited to creating a Community Services Card entitlement.
 
-**Scenarios**
-1. A person presents with a community services card, however the card is not returned when searching for the patients entitlements.
-2. A dependent child of a community services card holder presents, and a community services card is not returned when searching for the patients entitlements.
+This operation is used to create an entitlement for:
+* Community services card (CSC)
+* Pharmaceutical subsidy cards (PSC)
+
+**Scenarios for use**
+* CSC
+  * A person presents with a community services card, however the card is not returned when searching for the patients entitlements (Note: Most CSC entitlements are automatically created when CSC details are recieved from work and income (Ministry of Social Development).
+  * A dependent child of a community services card holder presents and a community services card is not returned when searching for the persons entitlements.
+
+* PSC
+  * A family unit is eligible to recieve a pharmaceutical subsidy card.
 
 <div>
 {% include create-entitlement.svg %}
@@ -16,7 +23,7 @@ Current functionality is limited to creating a Community Services Card entitleme
 
 ####  Create Entitlement processing steps:
 
-1. The user inputs CSC details to create the Entitlement.
+1. The user inputs details required to create the entitlement.
 2. The integrating application sends a POST request to the NES *Coverage* endpoint with a payload containing the NesEntitlement resource to be created, excluding ids.
 3. The request is validated - ALT: Validation failure. Operation Outcome resource returned
 4. The Entitlement is created in the database and an ID is assigned.
