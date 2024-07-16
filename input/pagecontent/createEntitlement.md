@@ -2,7 +2,7 @@
 
 ### Create Entitlement Overview
 
-This operation is used to create a patient's entitlement to some form of subsidised healthcare.
+This operation is used to create a patient's entitlement for subsidised healthcare.
 
 This operation is used to create an entitlement for:
 * Community services card (CSC)
@@ -36,7 +36,7 @@ This operation is used to create an entitlement for:
 
 [create PSC Entitlement request]
 
-### Rules and Errors
+### Create entitlement rules and errors
 
 <h4>Create community services card entitlement rules and errors</h4>
 <table>
