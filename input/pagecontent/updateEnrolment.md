@@ -1,16 +1,18 @@
 
 
 ### Update Enrolment for Patient
-Update an existing enrolment record.
+
+The Operation is used to update an enrolment record - and is currnetly limited to ending an enrolment for:
+* FLS-NF (First Level Services not funded).
+* WCTO (Well child Tamariki Ora services).
+* LMC (Lead Maternity Carer).
 
 
 <div>
 {% include update-enrolment.svg %}
 </div>
 
-
-
-####  Update Enrolment processing steps:
+**Update Enrolment processing steps:**
 
 1. A FHIR Client sends a PUT request  to the NES  *EpisodeOfCare* endpoint with the enrolment id in the path, and a payload containing the NesEnrolment resource to be updated
 2. The request is validated - ALT: Validation failure. Operation Outcome resource returned
@@ -20,11 +22,78 @@ Update an existing enrolment record.
 
 
 ####  Update  Enrolment Request Example 
-[upodate Enrolment request](EpisodeOfCare-EN12349876.json.html)
+[update to end enrolment request](updateEnrolmentRequestExample.html)
 
-#### Business  Rules
 
-Currently update may only be used to
--  add or modify the qualified encounter date, or
--  add a termination reason to an enrolment . This will result in the enrolment being ended.
+<h3> Update enrolment rules and errors</h3>
+<table>
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+</style>
+<caption><a href="general.html#request-rules-and-errors">For Request rules and errors click here</a></caption>
+<tr><th>Rule</th>
+<th>Error code</th>
+<th>Error description</th>
+<th>Error text</th>
+<th>Http code</th></tr>
+
+<tr>
+<td>An update enrolment request must contain:
+<ul>
+  <li>An enrolment id (active)</li>
+  <li>Contained PractitonerRole resource (Facility, Organisation and Pracitioner if present)</li>
+  <li>Contained Patient resource</li>
+  <li>Health service code (type)</li>
+  <li>Enrolment status</li>
+  <li>Enrolment-owner-org</li>
+  <li>End Period and Termination reason code (if ending the enrolment) 
+</ul>
+</td>
+<td>
+ <ul>
+  <li>EM07201</li>
+ </ul>
+</td>
+<td>
+ <ul>
+  <li>Is a required field</li>
+ </ul>
+</td>
+<td>
+ <ul>
+ </ul>
+</td>
+<td>
+ <ul>
+  <li>400 Bad request</li>
+ </ul>
+ </td>
+</tr>
+
+<tr>
+<td> An enrolment can only be updated by creating Organisation</td>
+<td>
+ <ul>
+  <li>EM01203</li>
+ </ul>
+</td>
+<td>
+ <ul>
+  <li>An enrolment can only be updated by a user representing the authorised organisation for the enrolment</li>
+ </ul>
+</td>
+<td>
+ <ul>
+  <li>An enrolment can only be updated by a user representing the authorised organisation for the enrolment</li>
+ </ul>
+</td>
+<td>
+ <ul>
+  <li>400 Bad request</li>
+ </ul>
+ </td>
+</tr>
 
