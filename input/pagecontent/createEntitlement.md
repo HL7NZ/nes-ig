@@ -32,9 +32,9 @@ This operation is used to create an entitlement for:
 
 ###  Create  Entitlement Request Example 
 
-[create CSC Entitlement request](Coverage-entitlement-3.json.html)
+[create CSC Entitlement request](createCSCExample.html)
 
-[create PSC Entitlement request]
+[create PSC Entitlement request](createPSCExample.html)
 
 ### Create entitlement rules and errors
 
