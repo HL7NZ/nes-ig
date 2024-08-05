@@ -67,20 +67,10 @@ table, th, td {
 <td>
  <ul>
   <li>EM07201</li>
-  <li>EM07201</li>
-  <li>EM07201</li>
-  <li>EM07201</li>
-  <li>EM07201</li>
-  <li>EM07201</li>
  </ul>
 </td>
 <td>
  <ul>
-  <li>Is a required field</li>
-  <li>Is a required field</li>
-  <li>Is a required field</li>
-  <li>Is a required field</li>
-  <li>Is a required field</li>
   <li>Is a required field</li>
  </ul>
 </td>
@@ -97,11 +87,6 @@ table, th, td {
 <td>
  <ul>
   <li>400 Bad request</li>
-  <li>400 Bad request</li>
-  <li>400 Bad request</li>
-  <li>400 Bad request</li>
-  <li>400 Bad request</li>
-  <li>400 Bad request</li>
  </ul>
  </td>
 </tr>
@@ -117,7 +102,7 @@ table, th, td {
 </td>
 <td>
  <ul>
-  <li>The patient identity information supplied does not match the patient identity information in the NHI.</li>
+  <li>The patient identity information supplied does not match the patient identity information in the NHI</li>
   <li></li>
   <li></li>
  </ul>
@@ -152,7 +137,7 @@ table, th, td {
 </td>
 <td>
  <ul>
-  <li>NHI number supplied cannot be found.</li>
+  <li>NHI number supplied cannot be found</li>
  </ul>
 </td>
 <td>
@@ -163,7 +148,7 @@ table, th, td {
 </tr>
 
 <tr>
-<td>A Create Patient entitlement request must include a valid CSC Card Number.</td>
+<td>A Create Patient entitlement request must include a valid CSC Card Number</td>
 <td>
  <ul>
   <li>EM12006</li>
@@ -171,7 +156,7 @@ table, th, td {
 </td>
 <td>
  <ul>
-  <li>The CSC Card Number must be known to Te Whatu Ora.</li>
+  <li>The CSC Card Number must be known to Te Whatu Ora</li>
  </ul>
 </td>
 <td>
@@ -187,7 +172,7 @@ table, th, td {
 </tr>
 
 <tr>
-<td>A Patient can only be linked to 1 active Entitlement type i.e. CSC or CSCDependent.</td>
+<td>A Patient can only be linked to 1 active Entitlement type i.e. CSC or CSCDependent</td>
 <td>
  <ul>
   <li>EM12001</li>
@@ -195,7 +180,7 @@ table, th, td {
 </td>
 <td>
  <ul>
-  <li>The patient cannot have both CSC and CSCDependent Entitlements active at the same time.</li>
+  <li>The patient cannot have both CSC and CSCDependent Entitlements active at the same time</li>
  </ul>
 </td>
 <td>
@@ -235,7 +220,7 @@ table, th, td {
 </tr>
 
 <tr>
-<td>A CSC Entitlement can only be associated to one (non-dependent) Patient.</td>
+<td>A CSC Entitlement can only be associated to one (non-dependent) Patient</td>
 <td>
  <ul>
   <li>EM12003</li>
@@ -243,12 +228,12 @@ table, th, td {
 </td>
 <td>
  <ul>
-  <li>The CSC Entitlement is already assigned to another patient.</li>
+  <li>The CSC Entitlement is already assigned to another patient</li>
  </ul>
 </td>
 <td>
  <ul>
-  <li>The CSC Entitlement is already assigned to another patient.</li>
+  <li>The CSC Entitlement is already assigned to another patient</li>
  </ul>
 </td>
 <td>
@@ -259,7 +244,7 @@ table, th, td {
 </tr>
 
 <tr>
-<td>A patient can have multiple CSC dependent entitlements.</td>
+<td>A patient can have multiple CSC dependent entitlements</td>
 <td>
 </td>
 <td>
@@ -271,7 +256,7 @@ table, th, td {
 </tr>
 
 <tr>
-<td>A CSC Dependent entitlement can only be created for a person 18 or younger.</td>
+<td>A CSC Dependent entitlement can only be created for a person 18 or younger</td>
 <td>
  <ul>
   <li>EM12016</li>
@@ -325,22 +310,10 @@ table, th, td {
 <td>
  <ul>
   <li>EM07201</li>
-  <li>EM07201</li>
-  <li>EM07201</li>
-  <li>EM07201</li>
-  <li>EM07201</li>
-  <li>EM07201</li>
-  <li>EM07201</li>
  </ul>
 </td>
 <td>
  <ul>
-  <li>Is a required field</li>
-  <li>Is a required field</li>
-  <li>Is a required field</li>
-  <li>Is a required field</li>
-  <li>Is a required field</li>
-  <li>Is a required field</li>
   <li>Is a required field</li>
  </ul>
 </td>
@@ -357,12 +330,6 @@ table, th, td {
 </td>
 <td>
  <ul>
-  <li>400 Bad request</li>
-  <li>400 Bad request</li>
-  <li>400 Bad request</li>
-  <li>400 Bad request</li>
-  <li>400 Bad request</li>
-  <li>400 Bad request</li>
   <li>400 Bad request</li>
  </ul>
  </td>
@@ -402,7 +369,7 @@ table, th, td {
 </tr>
 
 <tr>
-<td>Cannot create and entitlement for a deceased person.</td>
+<td>Cannot create and entitlement for a deceased person</td>
 <td>
  <ul>
   <li>EM12022</li>
@@ -475,7 +442,7 @@ table, th, td {
 
 
 <tr>
-<td>A person can have multiple unique PSC entitlements (duplicates are not allowed).</td>
+<td>A person can have multiple unique PSC entitlements (duplicates are not allowed)</td>
 <td>
  <ul>
   <li></li>
@@ -507,7 +474,7 @@ table, th, td {
 </tr>
 
 <tr>
-<td>PSC Payor must be set to MoH Org ID G00001-G</td>
+<td>PSC Payor must be set to Te Whatu Ora Org ID G0K357-H</td>
 <td>
  <ul>
   <li>EM12029</li>
