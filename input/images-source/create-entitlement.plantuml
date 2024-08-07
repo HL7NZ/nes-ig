@@ -9,7 +9,7 @@ participant "Integrating application" as A #CornflowerBlue
 participant "<FHIR API> NES Entitlement" as B #CornflowerBlue
 participant "DB" as C #CornflowerBlue
 |||
-User -> A: Look up persons entitlements using their NHI number
+User -> A: Provide details for the entitlement to be created
 activate A
 |||
 A -> B: POST[base]/Coverage
