@@ -10,11 +10,11 @@ This operation is used to create an entitlement for:
 
 **Scenarios for use**
 * CSC
-  * A person presents with a community services card, however the card is not returned when searching for the patients entitlements (Note: Most CSC entitlements are automatically created when CSC details are recieved from work and income (Ministry of Social Development).
-  * A dependent child of a community services card holder presents and a community services card is not returned when searching for the persons entitlements.
+  * A CSC entitlement is not returned with a search of the entitlements service, however the person presents a CSC (Note: Most CSC entitlements are automatically created when CSC details are recieved by Te Whatu Ora from work and income (Ministry of Social Development).
+  * A CSC-dep entitlement is not returned with a search of the entitlements service for a dependent child of a community services card holder.
 
 * PSC
-  * A family unit is eligible to recieve a pharmaceutical subsidy card.
+  * A family unit is eligible to recieve a pharmaceutical subsidy card, and no pharmaceutical subsidy card entitlement is returned with a search of the entitlements service.
 
 <div>
 {% include create-entitlement.svg %}
@@ -103,8 +103,8 @@ table, th, td {
 <td>
  <ul>
   <li>The patient identity information supplied does not match the patient identity information in the NHI</li>
-  <li></li>
-  <li></li>
+  <li>N/A</li>
+  <li>N/A</li>
  </ul>
 </td>
 <td>
@@ -278,6 +278,32 @@ table, th, td {
  </ul>
  </td>
 </tr>
+
+<tr>
+<td>PSC Payor must be set to Te Whatu Ora (Org ID - G0K357-H)</td>
+<td>
+ <ul>
+  <li>EM12029</li>
+ </ul>
+</td>
+<td>
+ <ul>
+  <li>Invalid Payor</li>
+ </ul>
+</td>
+<td>
+ <ul>
+  <li>Invalid Payor</li>
+ </ul>
+</td>
+<td>
+ <ul>
+  <li>400 Bad request</li>
+ </ul>
+ </td>
+</tr>
+</table>
+
 </table>
 
 <h4>Create pharmaceutical subsidy cards entitlement rules and errors</h4>
@@ -347,8 +373,8 @@ table, th, td {
 <td>
  <ul>
   <li>The patient identity information supplied does not match the patient identity information in the NHI.</li>
-  <li></li>
-  <li></li>
+  <li>N/A</li>
+  <li>N/A</li>
  </ul>
 </td>
 <td>
@@ -356,7 +382,6 @@ table, th, td {
   <li>The patient identity information supplied does not match the patient identity information in the NHI.</li>
   <li>'If the resource is contained in another resource, it SHALL be referred to from elsewhere in the resource or SHALL refer to the containing resource' 'If the resource is contained in another resource, it SHALL be referred to from elsewhere in the resource or SHALL refer to the containing resource'</li>
   <li>Patient NHI is required</li>
-  <li></li>
  </ul>
 </td>
 <td>
@@ -445,36 +470,47 @@ table, th, td {
 <td>A person can have multiple unique PSC entitlements (duplicates are not allowed)</td>
 <td>
  <ul>
-  <li></li>
+  <li>N/A</li>
  </ul>
 </td>
 <td>
  <ul>
-  <li></li>
+  <li>N/A silent ignore</li>
  </ul>
 </td>
 <td>
  <ul>
-  <li></li>
+  <li>N/A silent ignore</li>
  </ul>
 </td>
 <td>
  <ul>
-  <li></li>
+  <li>N/A</li>
  </ul>
  </td>
 </tr>
 
 <tr>
 <td>PSC start date must not be a future date</td>
-<td>EM07212</td>
-<td>Cannot be a future date</td>
-<td>Start date cannot be a future date</td>
-<td>400 Bad request</td>
+<td>
+   <ul>
+    <li>EM07212</li>
+   </ul>
+</td>
+<td>
+ <ul>
+  <li>Cannot be a future date</li>
+ </ul>
+</td>
+<td>
+ <ul>
+  <li>Start date cannot be a future date</li>
+ </ul>
+</td>
 </tr>
 
 <tr>
-<td>PSC Payor must be set to Te Whatu Ora Org ID G0K357-H</td>
+<td>PSC Payor must be set to Te Whatu Ora (Org ID - G0K357-H)</td>
 <td>
  <ul>
   <li>EM12029</li>
