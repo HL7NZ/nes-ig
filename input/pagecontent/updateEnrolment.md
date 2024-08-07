@@ -2,10 +2,10 @@
 
 ### Update Enrolment for Patient
 
-The Operation is used to update an enrolment record - and is currnetly limited to ending an enrolment for:
-* FLS-NF (First Level Services not funded).
-* WCTO (Well child Tamariki Ora services).
-* LMC (Lead Maternity Carer).
+The Operation is used to update an enrolment record - and is currently limited to _ending an enrolment_ for:
+* FLS-NF enrolment (First Level Services not funded).
+* WCTO enrolment nomination  (Well child Tamariki Ora services).
+* LMC enrolment (Lead Maternity Carer).
 
 
 <div>
@@ -21,7 +21,8 @@ The Operation is used to update an enrolment record - and is currnetly limited t
 
 
 
-####  Update  Enrolment Request Example 
+####  Update  Enrolment Request Example
+
 [update to end enrolment request](updateEnrolmentRequestExample.html)
 
 
@@ -33,7 +34,7 @@ table, th, td {
   border-collapse: collapse;
 }
 </style>
-<caption><a href="general.html#request-rules-and-errors">For Request rules and errors click here</a></caption>
+<caption><a href="general.html#request-rules-and-errors">For Request rules and errors click here</a> <br /> Updates to enrolments are currently limited to ending the enrolment only. Update enrolment details is future scope.</caption>
 <tr><th>Rule</th>
 <th>Error code</th>
 <th>Error description</th>
@@ -96,4 +97,5 @@ table, th, td {
  </ul>
  </td>
 </tr>
+</table>
 
