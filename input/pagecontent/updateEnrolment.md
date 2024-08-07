@@ -65,6 +65,7 @@ table, th, td {
 </td>
 <td>
  <ul>
+   <li>Is a required field</li>
  </ul>
 </td>
 <td>
