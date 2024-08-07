@@ -66,16 +66,11 @@ table, th, td {
 </td>
 <td>
  <ul>
-  <li>>EM07201</li>
+  <li>EM07201</li>
  </ul>
 </td>
 <td>
  <ul>
-  <li>
-    <ul>
-      <li>Is a required field</li>
-    </ul>
-  </li>
   <li>Is a required field</li>
  </ul>
 </td>
@@ -474,30 +469,6 @@ table, th, td {
 <td>
  <ul>
   <li>Cannot create or update entitlement for deceased person</li>
- </ul>
-</td>
-<td>
- <ul>
-  <li>400 Bad request</li>
- </ul>
- </td>
-</tr>
-
-<tr>
-<td>An update Patient entitlement request must include a valid CSC Card Number</td>
-<td>
- <ul>
-  <li>EM12006</li>
- </ul>
-</td>
-<td>
- <ul>
-  <li>The CSC Card Number must be known to Te Whatu Ora</li>
- </ul>
-</td>
-<td>
- <ul>
-  <li>The CSC Card Number must be known to Te Whatu Ora</li>
  </ul>
 </td>
 <td>
