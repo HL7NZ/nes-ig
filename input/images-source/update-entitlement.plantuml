@@ -9,7 +9,7 @@ participant "Integrating application" as A #CornflowerBlue
 participant "<FHIR API> NES Entitlement" as B #CornflowerBlue
 participant "DB" as C #CornflowerBlue
 |||
-User -> A: Update a persons Entitlement
+User -> A: Provide details to update a persons entitlement
 activate A
 |||
 A -> B: PUT[base]/Coverage/[entitlement-id]
