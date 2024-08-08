@@ -9,7 +9,7 @@ participant "Integrating application" as A #CornflowerBlue
 participant "<FHIR API> NES Entitlement" as B #CornflowerBlue
 participant "DB" as C #CornflowerBlue
 |||
-User -> A: Look up persons entitlements using their NHI number
+User -> A: Provide details for the entitlement to be created
 activate A
 |||
 A -> B: POST[base]/Coverage
@@ -23,10 +23,10 @@ activate C
 C -[dashed]-> B:  
 deactivate C
 |||
-B -[dashed]-> A: HTTP 201 - Newly created Entitlement
+B -[dashed]-> A: HTTP 201 - Return newly created Entitlement
 deactivate B
 |||
-A -> User: Display New entitlement details
+A -> User: Display entitlement details
 deactivate A
 |||
 @enduml

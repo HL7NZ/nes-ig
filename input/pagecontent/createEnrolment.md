@@ -20,7 +20,7 @@ The Create Enrolment operation is initiated by a user who needs to create a new 
 
 
 ####  Create Enrolment Request Example 
-[create Enrolment request](EpisodeOfCare-do-not-populate-id.json.html)
+[create Enrolment request](CreateEnrolmentRequestExample.html)
 
 
 

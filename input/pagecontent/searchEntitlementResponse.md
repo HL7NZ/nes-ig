@@ -226,3 +226,104 @@
     ]
 }
 ```
+
+#### Search response containing PSC and ended CSC
+
+```
+{
+    "resourceType": "Bundle",
+    "id": "7c6a5806-323b-4803-a332-116ae8037fb5",
+    "meta": {
+        "lastUpdated": "2024-08-06T00:50:23.878+12:00"
+    },
+    "type": "searchset",
+    "link": [
+        {
+            "relation": "self",
+            "url": "https://api.hip-uat.digital.health.nz:443/fhir/nes/v1/Coverage?beneficiary=ZLW8704"
+        }
+    ],
+    "entry": [
+        {
+            "fullUrl": "http://nes-fhir/Entitlements/20023638",
+            "resource": {
+                "resourceType": "Coverage",
+                "id": "20023638",
+                "meta": {
+                    "profile": [
+                        "http://hl7.org.nz/fhir/StructureDefinition/NesEntitlement"
+                    ]
+                },
+                "identifier": [
+                    {
+                        "use": "official",
+                        "system": "https://standards.digital.health.nz/ns/nes-psc-id",
+                        "value": "1000004549582007"
+                    }
+                ],
+                "status": "active",
+                "type": {
+                    "coding": [
+                        {
+                            "system": "https://standards.digital.health.nz/ns/coverage-type-code",
+                            "code": "psc"
+                        }
+                    ]
+                },
+                "beneficiary": {
+                    "reference": "Patient/ZLW8704"
+                },
+                "period": {
+                    "start": "2024-07-01T00:00:00+12:00",
+                    "end": "2025-02-01T00:00:00+13:00"
+                },
+                "payor": [
+                    {
+                        "reference": "Organization/G0K357-H"
+                    }
+                ]
+            }
+        },
+        {
+            "fullUrl": "http://nes-fhir/Entitlements/20021065",
+            "resource": {
+                "resourceType": "Coverage",
+                "id": "20021065",
+                "meta": {
+                    "profile": [
+                        "http://hl7.org.nz/fhir/StructureDefinition/NesEntitlement"
+                    ]
+                },
+                "identifier": [
+                    {
+                        "use": "official",
+                        "system": "https://standards.digital.health.nz/ns/nes-csc-id",
+                        "value": "0000004549582007"
+                    }
+                ],
+                "status": "cancelled",
+                "type": {
+                    "coding": [
+                        {
+                            "system": "https://standards.digital.health.nz/ns/coverage-type-code",
+                            "code": "csc"
+                        }
+                    ]
+                },
+                "beneficiary": {
+                    "reference": "Patient/ZLW8704"
+                },
+                "period": {
+                    "start": "2018-08-30T00:00:00+12:00",
+                    "end": "2023-11-11T00:00:00+13:00"
+                },
+                "payor": [
+                    {
+                        "reference": "Organization/G0M558-F"
+                    }
+                ]
+            }
+        }
+    ]
+}
+```
