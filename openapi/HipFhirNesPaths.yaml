@@ -133,7 +133,7 @@
                 
 /fhir/nes/v1/EpisodeOfCare:
     get:
-      summary: "Search for a Patient's enrolment's"
+      summary: "Search for a Patient's enrolments"
       operationId: "episodeOfCareSearch"
       parameters:
      
@@ -179,6 +179,8 @@
                 timeoutInMillis: 29000
                 
     post:
+      summary: "Create a new enrolment"
+      operationId: "episodeOfCarePost"
       parameters:
       - $ref: '#/components/parameters/X-correlation-ID' 
       - $ref: '#/components/parameters/X-Request-Id'  
@@ -389,6 +391,8 @@
                 timeoutInMillis: 29000
         
              put:
+              summary: " Update a patient's entitlement card details"
+              operationId: "coveragePut"
               description: "Update entitlement"
               
               parameters: 
