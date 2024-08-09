@@ -186,7 +186,6 @@
       - $ref: '#/components/parameters/X-Request-Id'  
       - $ref: '#/components/parameters/x-api-key'     
       - $ref: '#/components/parameters/userid'  
-      - $ref: 'dog'
       requestBody:
         content:
           application/json:
