@@ -14,20 +14,29 @@ Access to the NES is available to Health professionals and agencies governed by 
 
 Each organisation and user that has access to the NES accepts their obligations under the Privacy Act 1993 and the Health Information Privacy Code 1994 to only access information about patients they are treating and are authorised to do so.  NES information may also be accessed when assessing a patient’s eligibility for specific programmes, such as bowel and breast screening.
 
+
+
 #### On-boarding and Implementation
 
-1. To get started, complete the [online onboarding request form](https://mohapis.atlassian.net/servicedesk/customer/portal/3/group/11/create/67). You will need to provide information about your organisation and the API you want to integrate with.
-2. Once your onboarding request has been approved, you will be provided with the information to start your integration. The integration team will be in touch if further information is required.
-  * You will receive your credentials in an email and a sms message to the details provided in the onboarding form.
-  * You will also receive the access token url, provided scopes, and the UAT endpoint.
+1. To get started, head to ['Consumer onboarding', over at the digital services hub](https://www.tewhatuora.govt.nz/health-services-and-programmes/digital-health/digital-services-hub/consumer-onboarding/). You will need to provide information about your organisation, the product you are developing and the API's you want to integrate with.
+  * For more information [have a look at the other resources on the Digital Service Hub](https://www.tewhatuora.govt.nz/health-services-and-programmes/digital-health/digital-services-hub/).
+3. Once your onboarding request has been approved, you will be provided with the information to start integration. The integration team will be in touch if further information is required.
+  * You will receive your credentials, access token url, provided scopes, and the compliance environment endpoint.
 3. Complete your development and testing.
-4. Submit the results of the compliance tests by email to the [integration team](mailto:integration@health.govt.nz).
+4. Submit the results of the compliance tests by email to the [integration team](mailto:integration@tewhatuora.govt.nz).
 5. The integration team will issue a compliance test report. Your application will receive certification to be used in production or additional requirements will need to be met.
-6. Access will only be given to the Te Whatu Ora Whaihua platform users, the Te Whatu Ora Enrolment nomination subscriber and HealthLink in the initial implementation (Q4, 2023). If you are interested in this business function please contact [integration@health.govt.nz](mailto:integration@health.govt.nz).
+  * This can be an iterative process, so please get in touch as needed to discuss the compliance testing process.
+6. _Each organisation_ using your application with NHI integrated services must apply individually for access to the production environment (and recieve their own set of credentials) by completing the production form, please email [NHI Access](mailto:nhi_access@health.govt.nz).
 
-Please allow at least 5 working days for these applications to be processed and production credentials issued. If your product is to be used by many different organisations please get in touch to discuss your rollout plans and how we might assist.
+* Please allow at least 5 working days for _compliance environment applications_ to be processed.
 
-If you require help or have any questions regarding the onboarding process, please contact our team by completing a [General enquiry form](https://mohapis.atlassian.net/servicedesk/customer/portal/3/group/11/create/36).
+* Please allow at least 2 weeks for _compliance testing_ to be signed off and returned.
+
+* If _Production credentials_ are required by a large number of organisations accessing your product, please get in touch to discuss options around bulk credential requests and how we can streamline this process.
+
+#### Assistance
+
+Please fill in the [Digital Services Hub Support and Feedback form](https://mohapis.atlassian.net/servicedesk/customer/portal/3/group/35/create/112).
 
 #### Business Functions
 
