@@ -40,7 +40,8 @@ Please fill in the [Digital Services Hub Support and Feedback form](https://moha
 
 #### Business Functions
 
-See below for available business functions.  
+See below for available business functions.
+
 By using Te Whatu Ora APIs you are accessing personally identifiable information from the NES which is not directly from the individual concerned. You need to consider your obligations under HIPC principle 2, and we may request to see your privacy impact assessment prior to access to production.
 
 <h5>Business Functions</h5>
