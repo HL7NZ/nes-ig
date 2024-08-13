@@ -4,10 +4,13 @@
 
 This operation is used to update a patient's entitlement for subsidised healthcare. It is used when the entitlement reurned from the service is showing incorrect information, or if there is a need to end the entitlement.
 
+This operation is used to update an entitlement for:
+* Community services card holders (CSC)
+* Pharmaceutical subsidy card holders (PSC)
 
 Scenarios
 * CSC
-  * A person presents with a community services card, however the card returned from the Entitlements service is showing a different card number to the one presented.
+  * A person presents with a community services card, however the card returned from the entitlements service is showing a different card number to the one presented.
   * A community services card entitlement needs to be ended, as it has been entered in error.
 
 * PSC
