@@ -5,16 +5,16 @@
 This operation is used to create a patient's entitlement for subsidised healthcare.
 
 This operation is used to create an entitlement for:
-* Community services card (CSC)
-* Pharmaceutical subsidy cards (PSC)
+* Community services card holders (CSC)
+* Pharmaceutical subsidy card holders (PSC)
 
 **Scenarios for use**
 * CSC
-  * A CSC entitlement is not returned with a search of the entitlements service, however the person presents a CSC (Note: Most CSC entitlements are automatically created when CSC details are recieved by Te Whatu Ora from work and income (Ministry of Social Development).
-  * A CSC-dep entitlement is not returned with a search of the entitlements service for a dependent child of a community services card holder.
+  * A CSC entitlement is not returned with a search of the entitlements service, however a person presents with a CSC card. Note: Most CSC entitlements are automatically created when CSC details are recieved by Te Whatu Ora from work and income (Ministry of Social Development).
+  * A CSC-dependent entitlement is not returned with a search of the entitlements service for a [dependent child of a community services card holder](https://www.tewhatuora.govt.nz/for-health-providers/claims-provider-payments-and-entitlements/community-services-card/).
 
 * PSC
-  * A family unit is eligible to recieve a pharmaceutical subsidy card, and no pharmaceutical subsidy card entitlement is returned with a search of the entitlements service.
+  * A family unit is eligible to recieve a PSC, and no PSC entitlement is returned with a search of the entitlements service.
 
 <div>
 {% include create-entitlement.svg %}
@@ -38,7 +38,7 @@ This operation is used to create an entitlement for:
 
 ### Create entitlement rules and errors
 
-<h4>Create community services card entitlement rules and errors</h4>
+<h4>Create CSC (community services card) entitlement rules and errors</h4>
 <table>
 <style>
 table, th, td {
@@ -306,7 +306,7 @@ table, th, td {
 
 </table>
 
-<h4>Create pharmaceutical subsidy cards entitlement rules and errors</h4>
+<h4>Create PSC (pharmaceutical subsidy card) entitlement rules and errors</h4>
 <table>
 <style>
 table, th, td {
