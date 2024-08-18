@@ -41,7 +41,7 @@ fhirVersion: 4.0.1
 parameters:
   show-inherited-invariants: false
 copyrightYear: 2020+
-releaseLabel: Snapshot
+releaseLabel: Release
 # ╭────────────────────────────────────────────menu.xml────────────────────────────────────────────╮
 
 # │  To use a provided ig-data/input/includes/menu.xml file, delete the "menu" property below.     │
