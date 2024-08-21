@@ -1,5 +1,7 @@
 /fhir/nes/v1/metadata:
     get:
+      summary: "Returns the server's capability statement"
+      operationId: "nesMetadata"
       parameters:
       - name: "userid"
         in: "header"
@@ -51,113 +53,11 @@
                   Ref: pLambdaNameNhi
                 passthroughBehavior: "when_no_match"
                 timeoutInMillis: 29000            
-/fhir/nes/v1/EpisodeOfCare/{enrolmentid}:
-    get:
-      parameters:
-      - $ref: '#/components/parameters/X-correlation-ID' 
-      - $ref: '#/components/parameters/X-Request-Id'  
-      - $ref: '#/components/parameters/x-api-key'     
-      - $ref: '#/components/parameters/userid'     
-      - name: "enrolmentid"
-        in: "path"
-        required: true
-        schema:
-          type: "string"
-      responses:
-        "400":
-          description: "400 response"
-          content: {}
-        "422":
-          description: "422 response"
-          content: {}
-        "200":
-          description: "200 response"
-          content: {}
-      security:
-      - hip-fhir-cog:
-        - "https://api.hip.digital.health.nz/fhir/system/EpisodeOfCare.r"
-      - api_key: []
-      
-      x-amazon-apigateway-request-validator: params-only
-      x-amazon-apigateway-integration:
-                type: "aws_proxy"
-                httpMethod: "POST"
-                uri: 
-                  Ref: pLambdaNameNes  
-                passthroughBehavior: "when_no_match"
-                timeoutInMillis: 29000
-    put:
-     
-      parameters:
-      - $ref: '#/components/parameters/X-correlation-ID' 
-      - $ref: '#/components/parameters/X-Request-Id'  
-      - $ref: '#/components/parameters/x-api-key'     
-      - $ref: '#/components/parameters/userid'  
-      - name: "enrolmentid"
-        in: "path"
-        required: true
-        schema:
-          type: "string"
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: "#/components/schemas/EpisodeOfCare"
-        required: true
-      responses:
-        "422":
-          description: "422 response"
-          content: {}
-        "200":
-          description: "200 response"
-          content: {}
-      security:
-      - hip-fhir-cog:
-        - "https://api.hip.digital.health.nz/fhir/system/EpisodeOfCare.u"
-      - api_key: []
-      
-      x-amazon-apigateway-request-validator: params-and-body
-      x-amazon-apigateway-integration:
-                type: "aws_proxy"
-                httpMethod: "POST"
-                uri: 
-                  Ref: pLambdaNameNes  
-                passthroughBehavior: "when_no_match"
-                timeoutInMillis: 29000
-                
-/fhir/nes/v1/$process-message:
-    post:
-      parameters:
-      - $ref: '#/components/parameters/X-correlation-ID' 
-      - $ref: '#/components/parameters/X-Request-Id'  
-      - $ref: '#/components/parameters/x-api-key'     
-      - $ref: '#/components/parameters/userid'  
-      responses:
-        "202":
-          description: "202 response"
-          content: {}
-        "400":
-          description: "400 response"
-          content: {}
-        "422":
-          description: "422 response"
-          content: {}
-      security:
-      - hip-fhir-cog:
-        - "https://api.hip.digital.health.nz/fhir/system/MessageHeader.c"
-      - api_key: []
-      
-      x-amazon-apigateway-request-validator: params-and-body
-      x-amazon-apigateway-integration:
-                type: "aws_proxy"
-                httpMethod: "POST"
-                uri: 
-                  Ref: pLambdaNameNes  
-                passthroughBehavior: "when_no_match"
-                timeoutInMillis: 29000
       
 /fhir/nes/v1/Coverage:
     get:
+      summary: "Search for a patient's entitlements"
+      operationId: "entitlementGet"
       parameters:
       - $ref: '#/components/parameters/X-correlation-ID' 
       - $ref: '#/components/parameters/X-Request-Id'  
@@ -201,6 +101,8 @@
                 timeoutInMillis: 29000
                 
     post:
+      summary: "create a new entitlement - Future Scope"
+      operationId: "entitlementPost"
       parameters:
       - $ref: '#/components/parameters/X-correlation-ID' 
       - $ref: '#/components/parameters/X-Request-Id'  
@@ -242,6 +144,8 @@
       
 /fhir/nes/v1/Coverage/{entitlementid}:
              get:
+              summary: "retrieve a Patient entitlement by id"
+              operationId: "entitlementGetById"
               description: "Get entitlement by ID"
             
               parameters:                                         
@@ -288,6 +192,8 @@
                 timeoutInMillis: 29000
         
              put:
+              summary: "update a Patient entitlement"
+              operationId: "entitlementPut"
               description: "Update entitlement"
               
               parameters: 
@@ -340,6 +246,8 @@
       
 /fhir/nes/v1/EpisodeOfCare:
     get:
+      summary: "search for a Patient's enrolments"
+      operationId: "enrolmentGet"
       parameters:
      
         - $ref: '#/components/parameters/X-correlation-ID' 
@@ -384,6 +292,8 @@
                 timeoutInMillis: 29000
                 
     post:
+      summary: "Create a new enrolment"
+      operationId: "enrolmentPost"
       parameters:
       - $ref: '#/components/parameters/X-correlation-ID' 
       - $ref: '#/components/parameters/X-Request-Id'  
@@ -421,4 +331,113 @@
                   Ref: pLambdaNameNes  
                 passthroughBehavior: "when_no_match"
                 # standard 29 second timeout value
+                timeoutInMillis: 29000
+/fhir/nes/v1/EpisodeOfCare/{enrolmentid}:
+    get:
+      summary: "retrieve an Enrolment by ID - Future scope"
+      operationId: "enrolmentGetById"
+      parameters:
+      - $ref: '#/components/parameters/X-correlation-ID' 
+      - $ref: '#/components/parameters/X-Request-Id'  
+      - $ref: '#/components/parameters/x-api-key'     
+      - $ref: '#/components/parameters/userid'     
+      - name: "enrolmentid"
+        in: "path"
+        required: true
+        schema:
+          type: "string"
+      responses:
+        "400":
+          description: "400 response"
+          content: {}
+        "422":
+          description: "422 response"
+          content: {}
+        "200":
+          description: "200 response"
+          content: {}
+      security:
+      - hip-fhir-cog:
+        - "https://api.hip.digital.health.nz/fhir/system/EpisodeOfCare.r"
+      - api_key: []
+      
+      x-amazon-apigateway-request-validator: params-only
+      x-amazon-apigateway-integration:
+                type: "aws_proxy"
+                httpMethod: "POST"
+                uri: 
+                  Ref: pLambdaNameNes  
+                passthroughBehavior: "when_no_match"
+                timeoutInMillis: 29000
+    put:
+      summary: "Update an existing enrolment"
+      operationId: "enrolmentPut"
+      parameters:
+      - $ref: '#/components/parameters/X-correlation-ID' 
+      - $ref: '#/components/parameters/X-Request-Id'  
+      - $ref: '#/components/parameters/x-api-key'     
+      - $ref: '#/components/parameters/userid'  
+      - name: "enrolmentid"
+        in: "path"
+        required: true
+        schema:
+          type: "string"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/EpisodeOfCare"
+        required: true
+      responses:
+        "422":
+          description: "422 response"
+          content: {}
+        "200":
+          description: "200 response"
+          content: {}
+      security:
+      - hip-fhir-cog:
+        - "https://api.hip.digital.health.nz/fhir/system/EpisodeOfCare.u"
+      - api_key: []
+      
+      x-amazon-apigateway-request-validator: params-and-body
+      x-amazon-apigateway-integration:
+                type: "aws_proxy"
+                httpMethod: "POST"
+                uri: 
+                  Ref: pLambdaNameNes  
+                passthroughBehavior: "when_no_match"
+                timeoutInMillis: 29000
+                
+/fhir/nes/v1/$process-message:
+    post:
+      summary: "acccepts EnrolmentNominationRequestMessage"
+      operationId: "ProcessMessagePost"
+      parameters:
+      - $ref: '#/components/parameters/X-correlation-ID' 
+      - $ref: '#/components/parameters/X-Request-Id'  
+      - $ref: '#/components/parameters/x-api-key'     
+      - $ref: '#/components/parameters/userid'  
+      responses:
+        "202":
+          description: "202 response"
+          content: {}
+        "400":
+          description: "400 response"
+          content: {}
+        "422":
+          description: "422 response"
+          content: {}
+      security:
+      - hip-fhir-cog:
+        - "https://api.hip.digital.health.nz/fhir/system/MessageHeader.c"
+      - api_key: []
+      
+      x-amazon-apigateway-request-validator: params-and-body
+      x-amazon-apigateway-integration:
+                type: "aws_proxy"
+                httpMethod: "POST"
+                uri: 
+                  Ref: pLambdaNameNes  
+                passthroughBehavior: "when_no_match"
                 timeoutInMillis: 29000
