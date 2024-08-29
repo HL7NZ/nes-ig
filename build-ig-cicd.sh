@@ -1,7 +1,7 @@
 #if you have transitive dependencies on hip-fhir-commom they have  to be specified explicitily 
 ## you can define multiple dependnecnt version like this
 #HFC_TRANS=("1.6.0", "1.5.1")
-#HFC_TRANS=("1.6.0")
+HFC_TRANS=("1.8.5")
 
 islocal=$1
 
