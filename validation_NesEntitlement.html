@@ -22,38 +22,23 @@
 </head>
 <body style="margin: 20px; background-color: #ffffff">
  <h1>Validation Results</h1>
- <p>3 errors, 1 warning, 2 hints. Generated Feb 5, 2024, 2:47:10 AM by Validator Version 6.2.1 (Git# 3c198658e133). Built 2023-10-31T16:24:38.531Z (96 days old) (9044ms)</p>
+ <p>0 errors, 1 warning, 0 hints. Generated Aug 29, 2024, 3:42:04 AM by Validator Version 6.0.23 (Git# db5d2b07c3ba). Built 2023-07-27T14:23:49.680Z (398 days old) (3882ms)</p>
  <table class="grid">
    <tr>
      <td><b>Filename</b></td><td><b>Errors</b></td><td><b>Warnings</b></td><td><b>Hints</b></td>
    </tr>
-   <tr style="background-color: #ffcccc">
-     <td><a href="#;1"><b>.\temp\test1.json</b></a></td><td><b>3</b></td><td><b>1</b></td><td><b>2</b></td>
+   <tr style="background-color: #EFFFEF">
+     <td><a href="#;1"><b>.\temp\Coverage-entitlement-3.json</b></a></td><td><b>0</b></td><td><b>1</b></td><td><b>0</b></td>
    </tr>
 </table>
 <hr/>
 <a name="l1"> </a>
-<h2><a href="file:.\temp\test1.json">.\temp\test1.json</a></h2>
+<h2><a href="file:.\temp\Coverage-entitlement-3.json">.\temp\Coverage-entitlement-3.json</a></h2>
  <table class="grid">
    <tr>
      <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
    </tr>
-   <tr style="background-color: #ffffe6">
-     <td><b>Coverage.identifier[0].system (l12/c74)</b></td><td><b>information</b></td><td title="null"><b>Reference to draft item https://standards.digital.health.nz/ns/es-entitlement-identifier-code|1.0</b></td>
-   </tr>
-   <tr style="background-color: #ffcccc">
-     <td><b>Coverage.type (l17/c6)</b></td><td><b>error</b></td><td title="Terminology_TX_NoValid_1_CC"><b>None of the codings provided are in the value set 'Coverage Type' (https://nzhts.digital.health.nz/fhir/ValueSet/coverage-type-code|1.0.0), and a coding from this value set is required) (codes = https://nzhts.digital.health.nz/fhir/ValueSet/coverage-type-code#csc)</b></td>
-   </tr>
-   <tr style="background-color: #ffcccc">
-     <td><b>Coverage.type.coding[0] (l19/c14)</b></td><td><b>error</b></td><td title="Terminology_TX_System_ValueSet2"><b>The Coding references a value set, not a code system ('https://nzhts.digital.health.nz/fhir/ValueSet/coverage-type-code')</b></td>
-   </tr>
-   <tr style="background-color: #ffcccc">
-     <td><b>Coverage.type.coding[0] (l19/c14)</b></td><td><b>error</b></td><td title="Terminology_TX_System_ValueSet"><b>Invalid System URI: https://nzhts.digital.health.nz/fhir/ValueSet/coverage-type-code - cannot use a value set URI as a system</b></td>
-   </tr>
-   <tr style="background-color: #ffffe6">
-     <td><b>Coverage.type.coding[0] (l19/c14)</b></td><td><b>information</b></td><td title="Terminology_TX_System_NotKnown"><b>Code System URI 'https://nzhts.digital.health.nz/fhir/ValueSet/coverage-type-code' is unknown so the code cannot be validated</b></td>
-   </tr>
    <tr style="background-color: #ffebcc">
-     <td><b>Coverage (l1/c2)</b></td><td><b>warning</b></td><td title="Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)"><b>Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)</b></td>
+     <td><b>Coverage.type (l17/c4)</b></td><td><b>warning</b></td><td title="Terminology_TX_ValueSet_NotFound"><b>ValueSet https://nzhts.digital.health.nz/fhir/ValueSet/coverage-type-code|1.1.0 not found</b></td>
    </tr>
 </table>
