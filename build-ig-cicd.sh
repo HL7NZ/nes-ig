@@ -44,6 +44,8 @@ mv temp2.json  ~/.fhir/packages/$1#$2/package/package.json
 set -x -e #echo on, exit on error
 #set -e
 
+rm -rf /root/.m2/repository
+
 
 echo getting nzbase dependencies...
 nzbase_name="fhir.org.nz.ig.base"
