@@ -46,6 +46,8 @@ phases:
       - git checkout $BRANCH
       - ls
       - echo getting dependencies
+      - rm -rf /root/.m2/repository
+      
       #- mvn package -ntp
       # unpackage dependancy conformance artifact zips
       - mvn validate
@@ -76,4 +78,4 @@ artifacts:
  
 cache:
     paths:
-        - '/root/.m2/repository/**/*'  
+       # - '/root/.m2/repository/**/*'  
