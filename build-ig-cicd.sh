@@ -1,7 +1,7 @@
 #if you have transitive dependencies on hip-fhir-commom they have  to be specified explicitily 
 ## you can define multiple dependnecnt version like this
 #HFC_TRANS=("1.6.0", "1.5.1")
-HFC_TRANS=("1.6.0")
+#HFC_TRANS=("1.8.5")
 
 islocal=$1
 
@@ -43,8 +43,6 @@ mv temp2.json  ~/.fhir/packages/$1#$2/package/package.json
 #!/bin/bash
 set -x -e #echo on, exit on error
 #set -e
-
-rm -rf /root/.m2/repository
 
 
 echo getting nzbase dependencies...
