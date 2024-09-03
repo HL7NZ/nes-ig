@@ -53,7 +53,8 @@ phases:
       
       #- mvn package -ntp
       # unpackage dependancy conformance artifact zips
-      - mvn validate
+      #- mvn validate
+      - mvn clean dependency:purge-local-repository validate
       - echo building IG
       - ls -l
       - sudo chmod +x ./build-ig-cicd.sh     

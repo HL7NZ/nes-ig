@@ -35,7 +35,7 @@ dependencies:
    
   hl7.org.nz.fhir.ig.hpi:
    uri: 'https://hpi-ig.hip-uat.digital.health.nz'   
-   version: 1.4.7
+   version: 1.4.6
    
 fhirVersion: 4.0.1
 parameters:
