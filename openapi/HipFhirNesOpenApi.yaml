@@ -2,15 +2,17 @@ openapi: "3.0.1"
 info:
   title: "HIP NES FHIR"
   description: "Te Whatu Ora Enrolment and Entitlement FHIR services"
-  version: "1.4.0-SNAPSHOT"
+  version: "1.4.6"
 servers:
   - url: "https://gb2r96qpik.execute-api.ap-southeast-2.amazonaws.com/{basePath}"
     variables:
       basePath:
         default: "dev"
 paths:
-  /fhir/nes/v1/EpisodeOfCare/{enrolmentid}:
+  /fhir/nes/v1/metadata:
     get:
+      summary: "Returns the server's capability statement"
+      operationId: "nesMetadata"
       parameters:
         - name: "userid"
           in: "header"
@@ -23,98 +25,20 @@ paths:
             type: "string"
         - name: "x-api-key"
           in: "header"
-          required: true
+          required: false
           schema:
             type: "string"
         - name: "X-Request-Id"
           in: "header"
           schema:
             type: "string"
-        - name: "enrolmentid"
-          in: "path"
-          required: true
+        - name: "mode"
+          in: "query"
           schema:
             type: "string"
       responses:
-        "400":
-          description: "400 response"
-          content: {}
-        "422":
-          description: "422 response"
-          content: {}
         "200":
           description: "200 response"
-          content: {}
-      security:
-        - hip-fhir-cog:
-            - "https://api.hip.digital.health.nz/fhir/system/EpisodeOfCare.r"
-        - api_key: []
-    put:
-      parameters:
-        - name: "userid"
-          in: "header"
-          required: true
-          schema:
-            type: "string"
-        - name: "X-correlation-ID"
-          in: "header"
-          schema:
-            type: "string"
-        - name: "x-api-key"
-          in: "header"
-          required: true
-          schema:
-            type: "string"
-        - name: "X-Request-Id"
-          in: "header"
-          schema:
-            type: "string"
-        - name: "enrolmentid"
-          in: "path"
-          required: true
-          schema:
-            type: "string"
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: "#/components/schemas/EpisodeOfCare"
-        required: true
-      responses:
-        "422":
-          description: "422 response"
-          content: {}
-        "200":
-          description: "200 response"
-          content: {}
-      security:
-        - hip-fhir-cog:
-            - "https://api.hip.digital.health.nz/fhir/system/EpisodeOfCare.u"
-        - api_key: []
-  /fhir/nes/v1/$process-message:
-    post:
-      parameters:
-        - name: "userid"
-          in: "header"
-          required: true
-          schema:
-            type: "string"
-        - name: "X-correlation-ID"
-          in: "header"
-          schema:
-            type: "string"
-        - name: "x-api-key"
-          in: "header"
-          required: true
-          schema:
-            type: "string"
-        - name: "X-Request-Id"
-          in: "header"
-          schema:
-            type: "string"
-      responses:
-        "202":
-          description: "202 response"
           content: {}
         "400":
           description: "400 response"
@@ -122,27 +46,24 @@ paths:
         "422":
           description: "422 response"
           content: {}
+        "401":
+          description: "401 response"
+          headers:
+            WWW-Authenticate:
+              schema:
+                type: "string"
+          content: {}
       security:
-        - hip-fhir-cog:
-            - "https://api.hip.digital.health.nz/fhir/system/MessageHeader.c"
         - api_key: []
   /fhir/nes/v1/Coverage:
     get:
+      summary: "Search for a patient's entitlements"
+      operationId: "entitlementGet"
       parameters:
-        - name: "userid"
-          in: "header"
-          required: true
-          schema:
-            type: "string"
-        - name: "X-correlation-ID"
-          in: "header"
-          schema:
-            type: "string"
-        - name: "x-api-key"
-          in: "header"
-          required: true
-          schema:
-            type: "string"
+        - $ref: '#/components/parameters/X-correlation-ID'
+        - $ref: '#/components/parameters/X-Request-Id'
+        - $ref: '#/components/parameters/x-api-key'
+        - $ref: '#/components/parameters/userid'
         - name: "beneficiary"
           in: "query"
           schema:
@@ -168,25 +89,13 @@ paths:
             - "patient:Coverage.s"
         - api_key: []
     post:
+      summary: "create a new entitlement - Future Scope"
+      operationId: "entitlementPost"
       parameters:
-        - name: "userid"
-          in: "header"
-          required: true
-          schema:
-            type: "string"
-        - name: "X-correlation-ID"
-          in: "header"
-          schema:
-            type: "string"
-        - name: "x-api-key"
-          in: "header"
-          required: true
-          schema:
-            type: "string"
-        - name: "X-Request-Id"
-          in: "header"
-          schema:
-            type: "string"
+        - $ref: '#/components/parameters/X-correlation-ID'
+        - $ref: '#/components/parameters/X-Request-Id'
+        - $ref: '#/components/parameters/x-api-key'
+        - $ref: '#/components/parameters/userid'
       requestBody:
         content:
           application/json:
@@ -210,26 +119,10 @@ paths:
         - api_key: []
   /fhir/nes/v1/Coverage/{entitlementid}:
     get:
+      summary: "retrieve a Patient entitlement by id"
+      operationId: "entitlementGetById"
       description: "Get entitlement by ID"
       parameters:
-        - name: "userid"
-          in: "header"
-          required: true
-          schema:
-            type: "string"
-        - name: "X-correlation-ID"
-          in: "header"
-          schema:
-            type: "string"
-        - name: "x-api-key"
-          in: "header"
-          required: true
-          schema:
-            type: "string"
-        - name: "X-Request-Id"
-          in: "header"
-          schema:
-            type: "string"
         - name: "entitlementid"
           in: "path"
           required: true
@@ -262,6 +155,8 @@ paths:
             - https://api.hip.digital.health.nz/fhir/system/Coverage.r
         - api_key: []
     put:
+      summary: "update a Patient entitlement"
+      operationId: "entitlementPut"
       description: "Update entitlement"
       parameters:
         - name: "entitlementid"
@@ -303,25 +198,13 @@ paths:
         - api_key: []
   /fhir/nes/v1/EpisodeOfCare:
     get:
+      summary: "search for a Patient's enrolments"
+      operationId: "enrolmentGet"
       parameters:
-        - name: "userid"
-          in: "header"
-          required: true
-          schema:
-            type: "string"
-        - name: "X-correlation-ID"
-          in: "header"
-          schema:
-            type: "string"
-        - name: "x-api-key"
-          in: "header"
-          required: true
-          schema:
-            type: "string"
-        - name: "X-Request-Id"
-          in: "header"
-          schema:
-            type: "string"
+        - $ref: '#/components/parameters/X-correlation-ID'
+        - $ref: '#/components/parameters/X-Request-Id'
+        - $ref: '#/components/parameters/x-api-key'
+        - $ref: '#/components/parameters/userid'
         - name: "type"
           in: "query"
           schema:
@@ -347,25 +230,13 @@ paths:
             - "https://api.hip.digital.health.nz/fhir/system/EpisodeOfCare.s"
         - api_key: []
     post:
+      summary: "Create a new enrolment"
+      operationId: "enrolmentPost"
       parameters:
-        - name: "userid"
-          in: "header"
-          required: true
-          schema:
-            type: "string"
-        - name: "X-correlation-ID"
-          in: "header"
-          schema:
-            type: "string"
-        - name: "x-api-key"
-          in: "header"
-          required: true
-          schema:
-            type: "string"
-        - name: "X-Request-Id"
-          in: "header"
-          schema:
-            type: "string"
+        - $ref: '#/components/parameters/X-correlation-ID'
+        - $ref: '#/components/parameters/X-Request-Id'
+        - $ref: '#/components/parameters/x-api-key'
+        - $ref: '#/components/parameters/userid'
       requestBody:
         content:
           application/json:
@@ -386,6 +257,87 @@ paths:
       security:
         - hip-fhir-cog:
             - "https://api.hip.digital.health.nz/fhir/system/EpisodeOfCare.c"
+        - api_key: []
+  /fhir/nes/v1/EpisodeOfCare/{enrolmentid}:
+    get:
+      summary: "retrieve an Enrolment by ID - Future scope"
+      operationId: "enrolmentGetById"
+      parameters:
+        - $ref: '#/components/parameters/X-correlation-ID'
+        - $ref: '#/components/parameters/X-Request-Id'
+        - $ref: '#/components/parameters/x-api-key'
+        - $ref: '#/components/parameters/userid'
+        - name: "enrolmentid"
+          in: "path"
+          required: true
+          schema:
+            type: "string"
+      responses:
+        "400":
+          description: "400 response"
+          content: {}
+        "422":
+          description: "422 response"
+          content: {}
+        "200":
+          description: "200 response"
+          content: {}
+      security:
+        - hip-fhir-cog:
+            - "https://api.hip.digital.health.nz/fhir/system/EpisodeOfCare.r"
+        - api_key: []
+    put:
+      summary: "Update an existing enrolment"
+      operationId: "enrolmentPut"
+      parameters:
+        - $ref: '#/components/parameters/X-correlation-ID'
+        - $ref: '#/components/parameters/X-Request-Id'
+        - $ref: '#/components/parameters/x-api-key'
+        - $ref: '#/components/parameters/userid'
+        - name: "enrolmentid"
+          in: "path"
+          required: true
+          schema:
+            type: "string"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/EpisodeOfCare"
+        required: true
+      responses:
+        "422":
+          description: "422 response"
+          content: {}
+        "200":
+          description: "200 response"
+          content: {}
+      security:
+        - hip-fhir-cog:
+            - "https://api.hip.digital.health.nz/fhir/system/EpisodeOfCare.u"
+        - api_key: []
+  /fhir/nes/v1/$process-message:
+    post:
+      summary: "acccepts EnrolmentNominationRequestMessage"
+      operationId: "ProcessMessagePost"
+      parameters:
+        - $ref: '#/components/parameters/X-correlation-ID'
+        - $ref: '#/components/parameters/X-Request-Id'
+        - $ref: '#/components/parameters/x-api-key'
+        - $ref: '#/components/parameters/userid'
+      responses:
+        "202":
+          description: "202 response"
+          content: {}
+        "400":
+          description: "400 response"
+          content: {}
+        "422":
+          description: "422 response"
+          content: {}
+      security:
+        - hip-fhir-cog:
+            - "https://api.hip.digital.health.nz/fhir/system/MessageHeader.c"
         - api_key: []
 components:
   parameters:
@@ -763,26 +715,7 @@ components:
         type:
           type: "array"
           items:
-            type: "object"
-            properties:
-              coding:
-                type: "array"
-                items:
-                  required:
-                    - "system"
-                  type: "object"
-                  properties:
-                    system:
-                      type: "string"
-                      enum:
-                        - "https://standards.digital.health.nz/nes-enrolment-type"
-                    code:
-                      $ref: "#/components/schemas/code"
-                    display:
-                      $ref: "#/components/schemas/string"
-                    version:
-                      $ref: "#/components/schemas/string"
-                  additionalProperties: false
+            $ref: "#/components/schemas/Coding"
         contained:
           type: "array"
           items:
@@ -2118,7 +2051,7 @@ components:
           $ref: "#/components/schemas/Meta"
         text:
           description: A human-readable narrative that contains a summary of the resource and can be used to represent the content of the resource to a human. The narrative need not encode all the structured data, but is required to contain sufficient detail to make it "clinically safe" for a human to just read the narrative. Resource definitions may define what content should be represented in the narrative to ensure clinical safety.
-          $ref: "#/components/schemas/string"
+          type: "string"
         contained:
           type: "array"
           items:
@@ -2204,7 +2137,7 @@ components:
             type: object
             properties:
               text:
-                $ref: "#/components/schemas/RestrictedString2"
+                type: string
         reaction:
           description: Details about each adverse reaction event linked to exposure to the identified substance.
           items:
