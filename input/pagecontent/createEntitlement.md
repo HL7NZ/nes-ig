@@ -304,7 +304,6 @@ table, th, td {
 </tr>
 </table>
 
-</table>
 
 <h4>Create PSC (pharmaceutical subsidy card) entitlement rules and errors</h4>
 <table>
