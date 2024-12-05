@@ -8,13 +8,18 @@ This operation is used to create an entitlement for:
 * Community services card holders (CSC)
 * Pharmaceutical subsidy card holders (PSC)
 
-**Scenarios for use**
-* CSC
-  * A CSC entitlement is not returned with a search of the entitlements service, however a person presents with a CSC card. Note: Most CSC entitlements are automatically created when CSC details are recieved by Te Whatu Ora from work and income (Ministry of Social Development).
-  * A CSC-dependent entitlement is not returned with a search of the entitlements service for a [dependent child of a community services card holder](https://www.tewhatuora.govt.nz/for-health-providers/claims-provider-payments-and-entitlements/community-services-card/).
+#### Additional information
+
+##### CSC
+
+* The create CSC operation should be used when:
+  * a CSC entitlement is not returned with a search of the entitlements service however a person presents with a CSC. In this scenario the NHI match service hasn't been able to match an NHI to a CSC provided by MSD. The create matches the NHI with the CSC information provided by MSD and creates the entitlement. Most CSC entitlements are automatically created when CSC details are recieved.
+  * A CSC-dependent entitlement is not returned with a search of the entitlements service for a [dependent child of a community services card holder](https://www.tewhatuora.govt.nz/for-health-providers/claims-provider-payments-and-entitlements/community-services-card/). In this case the create operation is used to create and entitlement for the dependent child. The dependent childs CSC entitlement will have the same card number as the parent. The FHIR service uses the relationship attributre to denote a dependent card holder.
 
 * PSC
-  * A family unit is eligible to recieve a PSC, and no PSC entitlement is returned with a search of the entitlements service.
+  * The create PSC operation should be used when an individual or family unit is eligible to recieve a PSC and no PSC entitlement is returned with a search of the entitlements service.
+  * When creating a PSC the entitlements service will automatically generate a PSC number (identifier) for an individual or the first member of the family unit. For each subsequent member of the family unit, the PSC number (identifier) provided by the entitlement service should be included in the create operation. This will result in all members of the family have the same card number (Not they will all have their own entitlements and therefore have individual entitlement IDs (Coverage.id)).  
+
 
 <div>
 {% include create-entitlement.svg %}
@@ -24,13 +29,13 @@ This operation is used to create an entitlement for:
 **Create Entitlement processing steps:**
 
 1. The user inputs details required to create the entitlement.
-2. The integrating application sends a POST request to the NES *Coverage* endpoint with a payload containing the NesEntitlement resource to be created, excluding ids.
+2. The integrating application sends a POST request to the NES *Coverage* endpoint with a payload containing the NesEntitlement resource to be created.
 3. The request is validated - ALT: Validation failure. Operation Outcome resource returned
 4. The Entitlement is created in the database and an ID is assigned.
 5. A newly created NesEntitlement, including its ID, is returned to the client
 
 
-###  Create  Entitlement Request Example 
+###  Create  Entitlement Request Examples 
 
 [create CSC Entitlement request](createCSCExample.html)
 
@@ -324,7 +329,6 @@ table, th, td {
 <ul>
   <li>type of entitlement</li>
   <li>beneficiary (NHI number of the patient)</li>
-  <li>identifier (the entitlement card number)</li>
   <li>contained Patient resource</li>
   <li>organisation approving the entitlement (payor)</li>
   <li>status</li>
@@ -345,7 +349,6 @@ table, th, td {
  <ul>
   <li>type is a required field</li>
   <li>beneficiary is a required field</li>
-  <li>identifier is a required field</li>
   <li>contained patient is a required field</li>
   <li>payor is a required field</li>
   <li>status is a required field</li> 
@@ -359,6 +362,30 @@ table, th, td {
  </td>
 </tr>
 
+<tr>
+<td>A Create PSC Entitlement request may include the identifier (the entitlement card number).</td>
+<td>
+ <ul>
+  <li>EM12006</li>
+ </ul>
+</td>
+<td>
+ <ul>
+  <li>Card Number must be known to Te Whatu Ora</li>
+ </ul>
+</td>
+<td>
+ <ul>
+  <li>The PSC Card Number must be known to Te Whatu Ora</li>
+ </ul>
+</td>
+<td>
+ <ul>
+  <li>400 Bad request</li>
+ </ul>
+ </td>
+</tr>
+ 
 <tr>
 <td>The contained patient must match Entitlement beneficiary, and validate with the National Health Index</td>
 <td>
@@ -430,6 +457,30 @@ table, th, td {
 <td>
  <ul>
   <li>Invalid entitlement external id</li>
+ </ul>
+</td>
+<td>
+ <ul>
+  <li>400 Bad request</li>
+ </ul>
+ </td>
+</tr>
+
+<tr>
+<td>A Patient can have a maximum of twelve active PSC Entitlements</td>
+<td>
+ <ul>
+  <li>EM12002</li>
+ </ul>
+</td>
+<td>
+ <ul>
+  <li>Active entitlement limit</li>
+ </ul>
+</td>
+<td>
+ <ul>
+  <li>The patient cannot have more than twelve active PSC Entitlements</li>
  </ul>
 </td>
 <td>
@@ -530,5 +581,28 @@ table, th, td {
  </ul>
  </td>
 </tr>
+
+<tr>
+<td>Coverage period date must be a full date</td>
+<td>
+ <ul>
+  <li>EM12030</li>
+ </ul>
+</td>
+<td>
+ <ul>
+  <li>Coverage period date must be a full date</li>
+ </ul>
+</td>
+<td>
+ <ul>
+  <li>Coverage period date must be a full date</li>
+ </ul>
+</td>
+<td>
+ <ul>
+  <li>400 Bad request</li>
+ </ul>
+ </td>
 </table>
 
