@@ -16,9 +16,10 @@ This operation is used to create an entitlement for:
   * a CSC entitlement is not returned with a search of the entitlements service however a person presents with a CSC. In this scenario the NHI match service hasn't been able to match an NHI to a CSC provided by MSD. The create matches the NHI with the CSC information provided by MSD and creates the entitlement. Most CSC entitlements are automatically created when CSC details are recieved.
   * A CSC-dependent entitlement is not returned with a search of the entitlements service for a [dependent child of a community services card holder](https://www.tewhatuora.govt.nz/for-health-providers/claims-provider-payments-and-entitlements/community-services-card/). In this case the create operation is used to create and entitlement for the dependent child. The dependent childs CSC entitlement will have the same card number as the parent. The FHIR service uses the relationship attributre to denote a dependent card holder.
 
-* PSC
-  * The create PSC operation should be used when an individual or family unit is eligible to recieve a PSC and no PSC entitlement is returned with a search of the entitlements service.
-  * When creating a PSC the entitlements service will automatically generate a PSC number (identifier) for an individual or the first member of the family unit. For each subsequent member of the family unit, the PSC number (identifier) provided by the entitlement service should be included in the create operation. This will result in all members of the family have the same card number (Not they will all have their own entitlements and therefore have individual entitlement IDs (Coverage.id)).  
+ ##### PSC
+
+* The create PSC operation should be used when an individual or family unit is eligible to recieve a PSC and no PSC entitlement is returned with a search of the entitlements service.
+* When creating a PSC the entitlements service will automatically generate a PSC number (identifier) for an individual or the first member of the family unit. For each subsequent member of the family unit, the PSC number (identifier) provided by the entitlement service should be included in the create operation. This will result in all members of the family have the same card number (Not they will all have their own entitlements and therefore have individual entitlement IDs (Coverage.id)).  
 
 
 <div>
