@@ -8,21 +8,24 @@ This operation is used to update a:
 * Community services card emtitlement (CSC)
 * Pharmaceutical subsidy card entitlement (PSC)
 
-Scenarios
-* CSC
-  * The CSC details returned from the entitlement service are different from the information on the CSC card the person presents with.
-  * A CSC entitlement needs to be ended as it has been entered in error.
+#### Additional information
 
-* PSC
+##### CSC
+* The update CSC operation should be used when:
+  * The CSC details returned from the entitlement service are different from the information on the CSC the person presents with. In the update operation the new card number will be provided. The current entitlement.id (coverage.id) will be maintained, however the entitlement will be updated to present the new details as shown on the card provided by MSD.
+  * A CSC entitlement needs to be ended as it has been entered in error. The card should be end dated with status 'entered-in-error'.
+
+##### PSC
+* The update PSC operation should be used when:
   * The PSC details returned from the entitlement service are incorrect and need updating.
-  * The pharmaceutical subsidy card needs to be ended as it has been entered in error.
+  * The PSC entitlement needs to be ended as it has been entered in error. The card should be end dated with status 'entered-in-error'.
 
 <div>
 {% include update-entitlement.svg %}
 </div>
 
 
-####  Update Entitlement processing steps:
+**Update Entitlement processing steps:**
 
 1. The user inputs details required to update or end the entitlement.
 2. The integrating application sends a PUT request to the NES *Coverage* endpoint with a payload containing the NesEntitlement resource to be updated.
@@ -343,7 +346,7 @@ table, th, td {
 <th>Http code</th></tr>
 
 <tr>
-<td>An update Entitlement request must include::
+<td>An update PSC entitlement request must include::
 <ul>
   <li>EntitlementID</li>
   <li>type of entitlement </li>
@@ -359,16 +362,22 @@ table, th, td {
 <td>
  <ul>
   <li>EM07201</li>
+  <li>EM12020</li>
+  <li>EM12021</li>
  </ul>
 </td>
 <td>
  <ul>
   <li>Is a required field</li>
+  <li>entitlement-id supplied cannot be found</li>
+  <li>Supplied entitlement-id is invalid</li>
  </ul>
 </td>
 <td>
  <ul>
   <li>EntitlementID is a required field</li>
+  <li>entitlement-id supplied cannot be found</li>
+  <li>Supplied entitlement-id is invalid</li>
   <li>entitlement type is a required field</li>
   <li>contained Patient is required</li>
   <li>beneficiary is a required field</li>
@@ -376,6 +385,30 @@ table, th, td {
   <li>status is a required field</li>
   <li>payor is a required field</li>
   <li>period start is a required field</li>
+ </ul>
+</td>
+<td>
+ <ul>
+  <li>400 Bad request</li>
+ </ul>
+ </td>
+</tr>
+
+<tr>
+<td>The entitlement must be active to be updated</td>
+<td>
+ <ul>
+  <li>EM12028</li>
+ </ul>
+</td>
+<td>
+ <ul>
+  <li>The requested entitlement is not active</li>
+ </ul>
+</td>
+<td>
+ <ul>
+  <li>The requested entitlement is not active</li>
  </ul>
 </td>
 <td>
@@ -413,7 +446,7 @@ table, th, td {
 <td>The NHI provided must match the NHI associated with the Entitlement.</td>
 <td>
  <ul>
-  <li>TBC</li>
+  <li>EM12018</li>
  </ul>
 </td>
 <td>
@@ -506,6 +539,30 @@ table, th, td {
 </tr>
 
 <tr>
+<td>A person can have multiple unique PSC entitlements (duplicates are not allowed)</td>
+<td>
+ <ul>
+  <li>N/A</li>
+ </ul>
+</td>
+<td>
+ <ul>
+  <li>N/A silent ignore</li>
+ </ul>
+</td>
+<td>
+ <ul>
+  <li>N/A silent ignore</li>
+ </ul>
+</td>
+<td>
+ <ul>
+  <li>N/A</li>
+ </ul>
+ </td>
+</tr>
+
+<tr>
 <td>PSC start date must not be a future date</td>
 <td>
  <ul>
@@ -519,7 +576,7 @@ table, th, td {
 </td>
 <td>
  <ul>
-  <li>Cannot be a future date</li>
+  <li>Start date cannot be a future date</li>
  </ul>
 </td>
 <td>
@@ -555,6 +612,29 @@ table, th, td {
  </ul>
  </td>
 </tr>
+
+<tr>
+<td>Coverage period date must be a full date</td>
+<td>
+ <ul>
+  <li>EM12030</li>
+ </ul>
+</td>
+<td>
+ <ul>
+  <li>Coverage period date must be a full date</li>
+ </ul>
+</td>
+<td>
+ <ul>
+  <li>Coverage period date must be a full date</li>
+ </ul>
+</td>
+<td>
+ <ul>
+  <li>400 Bad request</li>
+ </ul>
+ </td>
 
 <tr>
 <td>An update to end entitlement must match current entitlement and include end period and status ‘entered in error’</td>
