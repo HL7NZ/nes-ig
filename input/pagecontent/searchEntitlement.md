@@ -3,7 +3,12 @@
 
 #### Overview
 
-This operation is used to return all entitlements for a person. The Entitlement service will return one entitlement record of each type (if applicable). This will be the active entitlement, or the last end-dated entitlement where no active entitlement exits.
+This operation is used to return all entitlements for a person. The Entitlement service will return all active entitlements, end-dated entitlements will not be returned.
+
+A person may have:
+- one CSC entitlement.
+- multiple CSC-dependent entitlements, if they are a dependent child and parents with a CSC each, or are part of multiple family units (Note: Cannot also have a CSC entitlement).
+- multiple PSC entitlements (one for each family unit they belong to (if that family unit is eligible).
 
 <div>
 {% include search-entitlement.svg %}
