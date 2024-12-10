@@ -415,6 +415,6 @@ table, th, td {
 <td>Output: CSC entitlement is ended with end reason 'entered in error'</td>
 <td>Mandatory if applicable</td>
 </tr>
-
+</table>
 
 ### PSC Create and Update Testing
