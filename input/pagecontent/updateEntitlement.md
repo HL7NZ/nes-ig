@@ -346,7 +346,7 @@ table, th, td {
 <th>Http code</th></tr>
 
 <tr>
-<td>An update PSC entitlement request must include::
+<td>An update PSC entitlement request must include:
 <ul>
   <li>EntitlementID</li>
   <li>type of entitlement </li>
@@ -635,6 +635,7 @@ table, th, td {
   <li>400 Bad request</li>
  </ul>
  </td>
+</tr>
 
 <tr>
 <td>An update to end entitlement must match current entitlement and include end period and status ‘entered in error’</td>
