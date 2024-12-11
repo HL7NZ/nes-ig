@@ -274,7 +274,7 @@ table, th, td {
 <tr>
 <td>Entitlement-Create-CSC-1</td>
 <td>application can create a CSC entitlement when no CSC entitlement is returned from the entitlement service, however a person presents with a CSC card</td>
-<td>Use NHI (>18) as provided Use a CSC card number provided</td>
+<td>Use NHI (greater than 18) as provided Use a CSC card number provided</td>
 <td>Output: CSC entitlement is created and returned via the Entitlement service</td>
 <td>Mandatory if applicable</td>
 </tr>
@@ -290,7 +290,7 @@ table, th, td {
 <tr>
 <td>Entitlement-Create-CSC-error-1 <br /> Duplicate</td>
 <td>application can display the correct error when attempting to create a CSC entitlement that already exists</td>
-<td>Use NHI (<18) as provided Use same CSC card number as Entitlement-Create-1/td>
+<td>Use NHI (less than 18) as provided Use same CSC card number as Entitlement-Create-1</td>
 <td>Output: EM12002 - The patient cannot have more than one CSC Entitlement active at the same time</td>
 <td>Mandatory if applicable</td>
 </tr>
@@ -418,3 +418,5 @@ table, th, td {
 </table>
 
 ### PSC Create and Update Testing
+
+TBC
