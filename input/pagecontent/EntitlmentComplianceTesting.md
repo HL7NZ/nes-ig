@@ -419,7 +419,7 @@ table, th, td {
 
 ### PSC Create and Update Testing
 
-Note: This testing comprises NES Entitlement [Create](/createEntitlement.html) and [Update](/updateEntitlement.html) use cases and is in conjunbction with the Medication Dispense (PSC Count) API testing. For more information see the Search copayment count use case in the [Medical Warnings FHIR implementation guide](https://mws-ig.hip-uat.digital.health.nz/searchCoPaymentCount.html).
+Note: This testing includes the NES Entitlement [Create](/createEntitlement.html) and [Update](/updateEntitlement.html) use cases and the Medication Dispense (PSC Count) API. For more information see the Search copayment count use case in the [Medical Warnings FHIR implementation guide](https://mws-ig.hip-uat.digital.health.nz/searchCoPaymentCount.html).
 
 <h4>NES PSC Create, Update and PSC Count</h4>
 <table>
