@@ -419,4 +419,316 @@ table, th, td {
 
 ### PSC Create and Update Testing
 
-TBC
+Note: This testing comprises NES Entitlement [Create](/createEntitlement.html) and [Update](/updateEntitlement.html) use cases and is in conjunbction with the Medication Dispense (PSC Count) API testing. For more information see the Search copayment count use case in the [Medical Warnings FHIR implementation guide](https://mws-ig.hip-uat.digital.health.nz/searchCoPaymentCount.html).
+
+<h4>NES PSC Create, Update and PSC Count</h4>
+<table>
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+</style>
+<tr><th>Scenario</th>
+<th>Reference</th>
+<th>Purpose – Demonstrate that the</th>
+<th>Input values</th>
+<th>Expected outcome</th>
+<th>Mandatory</th></tr>
+
+<tr>
+<td>Scenario-1</td>
+<td>Individual – No action required</td>
+<td>application can check the entitlements for an individual (not entitled) and, can then check the PSC count for the individual and display the count (less than 20).</td>
+<td>Use NHI TBC</td>
+<td>Output: 
+  <ul>
+    <li>No entitlements found</li>
+    <li>Has not reached count</li>
+    <li>No further action required</li>
+  </ul>
+</td>
+<td>Mandatory</td>
+</tr>
+
+<tr>
+<td>Scenario-2</td>
+<td>Individual – Needs PSC card</td>
+<td>application can check the entitlement’s for an individual (not entitled) and can then check the PSC count for the individual and display the count (20).
+Needs New PSC entitlement created</td>
+<td>Use NHI TBC</td>
+<td>Output: 
+  <ul>
+    <li>No entitlements found</li>
+    <li>Has reached the correct count</li>
+    <li>PSC entitlement created for the individual and entitlement information displayed in the PMS</li>
+  </ul>
+</td>
+<td>Mandatory</td>
+</tr>
+
+<tr>
+<td>Scenario-3</td>
+<td>Individual - Has a PSC entitlement</td>
+<td>application can check the entitlement for an individual and display the entitlement information</td>
+<td>Use NHI TBC</td>
+<td>Output: 
+  <ul>
+    <li>Entitlements displayed correctly</li>
+  </ul>
+</td>
+<td>Mandatory</td>
+</tr>
+
+<tr>
+<td>Scenario-4</td>
+<td>Family unit – No action required</td>
+<td>application can check the entitlement’s for a family unit (not entitled) and can then check the PSC count for the family unit and display the count (less than 20)</td>
+<td>Use NHI TBC</td>
+<td>Output: 
+  <ul>
+    <li>No entitlements found</li>
+    <li>Has not reached count</li>
+    <li>No further action required</li>
+  </ul>
+</td>
+<td>Mandatory</td>
+</tr>
+
+<tr>
+<td>Scenario-5</td>
+<td>Family unit – Check family unit member entitlement (not entitled), check family unit count (eligible) create and extent entitlement to family unit member/s</td>
+<td>application can check the entitlement’s for a family unit (not entitled), can then check the PSC count for the family unit and display the count (20), and
+the create a new PSC entitlement for all members of the family unit</td>
+<td>Use NHI TBC</td>
+<td>Output: 
+  <ul>
+    <li>No entitlements</li>
+    <li>Has reached count</li>
+    <li>PSC entitlement created for each member of the family with the same PSC card number, and entitlement information displayed.</li>
+  </ul>
+</td>
+<td>Mandatory</td>
+</tr>
+
+<tr>
+<td>Scenario-6</td>
+<td>Individual – End entitlement</td>
+<td>application can end an entitlement for an individual where it has been entered in error</td>
+<td>Use NHI TBC</td>
+<td>Output: 
+  <ul>
+    <li>Entitlement removed and not returned from the entitlement service</li>
+  </ul>
+</td>
+<td>Mandatory</td>
+</tr>
+
+<tr>
+<td>Scenario-7</td>
+<td>Family Unit – End entitlement</td>
+<td>application can end an entitlement for a family unit where it has been entered in error</td>
+<td>Use NHI TBC</td>
+<td>Output: 
+  <ul>
+    <li>Entitlements for family unit removed and not returned from the entitlement service</li>
+  </ul>
+</td>
+<td>Mandatory</td>
+</tr>
+
+<tr>
+<td>Scenario-8</td>
+<td>Individual - Exceeds 12  concurrent entitlements</td>
+<td>application can assign up to 12 PSC entitlements to a family unit member, where that person is part of multiple family units</td>
+<td>Use NHI TBC</td>
+<td>Output: 
+  <ul>
+    <li>Individual has multiple PSC entitlements associated with their NHI</li>
+  </ul>
+</td>
+<td>Mandatory</td>
+</tr>
+
+<tr>
+<td>Scenario-9</td>
+<td>Individual - Exceeds 12 concurrent entitlements</td>
+<td>application can display the correct error when attempting to add a PSC entitlement for a family unit member that has 12 entitlements</td>
+<td>Use NHI TBC</td>
+<td>Output: 
+  <ul>
+    <li>Error returned: EM12002 - The patient cannot have more than twelve active PSC Entitlements</li>
+  </ul>
+</td>
+<td>Mandatory</td>
+</tr>
+
+<tr>
+<td>Scenario-10</td>
+<td>Family Unit - Search exceeds maximum number of NHIs</td>
+<td>application can display the correct error when attempting to return a count for a family unit with greater that 20 members</td>
+<td>Use NHI TBC</td>
+<td>Output: 
+  <ul>
+    <li>Error returned: EM7243 - Max of 20 NHIs may be provided</li>
+  </ul>
+</td>
+<td>Mandatory</td>
+</tr>
+
+<tr>
+<td>Scenario-11</td>
+<td>Individual - Create entitlement for deceased person</td>
+<td>application can display the correct error when attempting to create a  a PSC entitlement for a deceased person</td>
+<td>Use NHI TBC</td>
+<td>Output: 
+  <ul>
+    <li>Error returned: EM12022 - Cannot create or update entitlement for deceased person</li>
+  </ul>
+</td>
+<td>Mandatory</td>
+</tr>
+
+<tr>
+<td>Scenario-12</td>
+<td>Individual - Update entitlement for deceased person</td>
+<td>application can display the correct error when attempting to create a  a PSC entitlement for a deceased person</td>
+<td>Use NHI TBC</td>
+<td>Output: 
+  <ul>
+    <li>Error returned: EM12022 - Cannot create or update entitlement for deceased person</li>
+  </ul>
+</td>
+<td>Mandatory</td>
+</tr>
+
+<tr>
+<td>Scenario-13</td>
+<td>Individual - Create entitlement for a future start date</td>
+<td>application can display the correct error when attempting to create a PSC entitlement for a future date (period start)</td>
+<td>Use NHI TBC</td>
+<td>Output: 
+  <ul>
+    <li>Error returned: EM07212 - Start date cannot be a future date</li>
+  </ul>
+</td>
+<td>Mandatory</td>
+</tr>
+
+<tr>
+<td>Scenario-14</td>
+<td>Individual - Update entitlement for a future start date</td>
+<td>application can display the correct error when attempting to update a PSC entitlement for a future date (period start)</td>
+<td>Use NHI TBC</td>
+<td>Output: 
+  <ul>
+    <li>Error returned: EM07212 - Start date cannot be a future date</li>
+  </ul>
+</td>
+<td>Mandatory</td>
+</tr>
+
+<tr>
+<td>Scenario-15</td>
+<td>Family Unit - Extend (create) expired PSC entitlement  to additional family unit members</td>
+<td>application can display the correct error when attempting to extend a PSC entitlement to family unit members with an expired entitlement number</td>
+<td>Use NHI TBC</td>
+<td>Output: 
+  <ul>
+    <li>Error returned: EM12006 - The PSC Card Number must be known to Te Whatu Ora</li>
+  </ul>
+</td>
+<td>Mandatory</td>
+</tr>
+
+<tr>
+<td>Scenario-16</td>
+<td>Family Unit - Extend (create) PSC entitlement to additional family unit members</td>
+<td>application can display the correct error when attempting to extend a PSC entitlement to family unit members with an unassigned entitlement number</td>
+<td>Use NHI TBC</td>
+<td>Output: 
+  <ul>
+    <li>Error returned: EM12006 - The PSC Card Number must be known to Te Whatu Ora</li>
+  </ul>
+</td>
+<td>Mandatory</td>
+</tr>
+
+<tr>
+<td>Scenario-17</td>
+<td>Individual - Update expired PSC entitlement</td>
+<td>application can display the correct error when attempting to update an expired PSC entitlement</td>
+<td>Use NHI TBC</td>
+<td>Output: 
+  <ul>
+    <li>Error Returned: EM12028 - The requested entitlement is not active</li>
+  </ul>
+</td>
+<td>Mandatory</td>
+</tr>
+
+<tr>
+<td>Scenario-18</td>
+<td>Individual - Update entitlement number for an NHI</td>
+<td>application can update and replace valid entitlement number registered to an NHI (assumes that the updated entitlement number is valid and active)</td>
+<td>Use NHI TBC</td>
+<td>Output: 
+  <ul>
+    <li>Entitlement record is changed with updated entitlement card number</li>
+  </ul>
+</td>
+<td>Mandatory</td>
+</tr>
+
+<tr>
+<td>Scenario-19</td>
+<td>Individual - Update invalid entitlement for an NHI</td>
+<td>application can display the correct error when attempting to update an entitlement number for an NHI with a value that is invalid (does not exist)</td>
+<td>Use NHI TBC</td>
+<td>Output: 
+  <ul>
+    <li>Error Returned: EM12020 - entitlement-id supplied cannot be found</li>
+  </ul>
+</td>
+<td>Mandatory</td>
+</tr>
+
+<tr>
+<td>Scenario-20</td>
+<td>Individual - create entitlement, invalid NHI</td>
+<td>application can display the correct error when attempting to create an entitlement number for an invalid NHI (does not exist)</td>
+<td>Use NHI TBC</td>
+<td>Output: 
+  <ul>
+    <li>Error returned: EM02002 - NHI number supplied cannot be found</li>
+  </ul>
+</td>
+<td>Mandatory</td>
+</tr>
+
+<tr>
+<td>Scenario-21</td>
+<td>Individual - Create entitlement with invalid patient details</td>
+<td>application can display the correct error when attempting to create an entitlement number for a valid NHI but with mismatched patient information e.g. DoB </td>
+<td>Use NHI TBC</td>
+<td>Output: 
+  <ul>
+    <li>EM02008 -The patient identity information supplied does not match the patient identity information in the NHI.</li>
+  </ul>
+</td>
+<td>Mandatory</td>
+</tr>
+
+<tr>
+<td>Scenario-22</td>
+<td>Individual - Update entitlement with invalid patient details</td>
+<td>application can display the correct error when attempting to update an entitlement number for a valid NHI but with mismatched patient information e.g. DoB </td>
+<td>Use NHI TBC</td>
+<td>Output: 
+  <ul>
+    <li>EM02008 -The patient identity information supplied does not match the patient identity information in the NHI.</li>
+  </ul>
+</td>
+<td>Mandatory</td>
+</tr>
+</table>
