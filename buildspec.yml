@@ -44,7 +44,7 @@ phases:
     commands:
       - ls 
       - rm -r -f ./nes-ig 
-      - git clone https://HL7NZ/nes-ig     
+      - git clone https://github.com/HL7NZ/nes-ig     
       - cd nes-ig
       - git checkout $BRANCH
       - ls
