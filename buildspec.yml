@@ -44,7 +44,7 @@ phases:
     commands:
       - ls 
       - rm -r -f ./nes-ig 
-      - git clone https://$GITUSERNAME:$GITTOKEN@github.com/HL7NZ/nes-ig     
+      - git clone https://HL7NZ/nes-ig     
       - cd nes-ig
       - git checkout $BRANCH
       - ls
@@ -66,7 +66,7 @@ phases:
       - echo checking in full-ig.zip
       - git add -f ./output/full-ig.zip
       - git commit -m "new IG build"
-      - git push
+      - git push https://$GITUSERNAME:$GITTOKEN@github.com/HL7NZ/nes-ig 
       
       # deploy the nes conformance artifacts 
       - mvn deploy 
