@@ -10,7 +10,7 @@
 
 id: hl7.org.nz.fhir.ig.nes
 canonical: http://hl7.org.nz/fhir/ig/nes
-version: 1.4.7
+version: 1.4.8
 name: NewZealandNESIG
 title: New Zealand NES IG
 status: active
@@ -26,7 +26,7 @@ dependencies:
   hl7.org.nz.fhir.ig.hip-core:
     #uri: https://tst.d1gti5r1pqczdn.amplifyapp.com/site
     uri: https://common-ig.hip.digital.health.nz/site
-    version: 1.8.9
+    version: 1.9.2
     #version: dev
     
   hl7.org.nz.fhir.ig.nhi:
