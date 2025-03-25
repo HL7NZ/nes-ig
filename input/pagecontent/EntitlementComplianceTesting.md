@@ -731,4 +731,138 @@ the create a new PSC entitlement for all members of the family unit</td>
 </td>
 <td>Mandatory</td>
 </tr>
+
+<td>Scenario-23</td>  
+<td>Blended Family - One family eligible</td>
+<td>application can correctly handle the scenario where a dependent belongs to two family units and only one of these family units is entitled to the PSC entitlement.</td>
+<td>
+<b>Family Unit A</b>
+<ul>
+  <li>Caregiver #1: 3</li>
+  <li>Caregiver #2: 4</li>
+  <li>5yo dependent: 0 - will always be zero due to age</li>
+  <li>15yo dependent: 2</li>
+  <li>17yo dependent (also part of Family Unit B): 4</li>
+  <li><b>Family Unit A total: 13</b></li>
+</ul>
+<b>Family Unit B:</b>
+<ul>
+  <li>Caregiver #1: 4</li>
+  <li>Caregiver #2: 16</li>
+  <li>17yo dependent: 4, as above</li>
+  <li>19yo dependent: any count - excluded from total due to age</li>
+  <li><b>Family Unit B total: 24</b></li>
+</ul>
+<td>Output:
+<ol>
+  <li>Verify Co-Payment Count Inclusion:</li>
+  <ul>
+    <li>Check that the 17-year-old dependent’s co-payment count is included in both Family Unit A and Family Unit B's totals.</li>
+    <li>Check that the co-payment count of the 5-year-old dependent (Family Unit A) is Zero, due to age (under 14's are already exempt from co-payments).</li>
+    <li>Check that the co-payment count of the 19-year-old dependent (Family Unit B) does not contribute to their Family Unit, due to age.</li>
+  </ul>
+  <li>Check Family Unit B PSC Entitlement:</li>
+  <ul>
+    <li>Ensure the system can assign a PSC entitlement number to all members of Family Unit B, including the 17-year-old dependent, after their co-payment count reaches the threshold of 20.</li>
+  </ul>
+  <li>Validate Entitlement Segregation:</li>
+  <ul>
+    <li>Confirm that the PSC entitlement assigned to Family Unit B is not applied to remaining members of Family Unit A members.</li>
+  </ul>
+</ol>
+</td>
+<td>Mandatory</td>
+</tr>
+
+<td>Scenario-24</td>  
+<td>Blended Family - Both family eligible (A)</td>
+<td>application can correctly handle the scenario where a dependent belongs to two family units and both of these family units are entitled to the PSC entitlement.
+  This scenario follows on from Scenario 23 (Blended Family - One family eligible). Family Unit A have now become eligible for a PSC entitlement.</td>
+<td>
+<b>Family Unit A</b>
+<ul>
+  <li>Caregiver #1: 4</li>
+  <li>Caregiver #2: 8</li>
+  <li>5yo dependent: 0 - will always be zero due to age</li>
+  <li>15yo dependent: 4</li>
+  <li>17yo dependent (also part of Family Unit B): 4</li>
+  <li><b>Family Unit A total: 20</b></li>
+</ul>
+<b>Family Unit B:</b>
+<ul>
+  <li>Caregiver #1: 4</li>
+  <li>Caregiver #2: 16</li>
+  <li>17yo dependent: 4, as above</li>
+  <li>19yo dependent: any count - excluded from total due to age</li>
+  <li><b>Family Unit B total: 24</b></li>
+</ul>
+<td>Output:
+<ol>
+  <li>Verify Co-Payment Count Inclusion:</li>
+  <ul>
+    <li>Check that the 17-year-old dependent’s co-payment count is included in both Family Unit A and Family Unit B's totals.</li>
+    <li>Check that the co-payment count of the 5-year-old dependent (Family Unit A) is Zero, due to age (under 14's are already exempt from co-payments).</li>
+    <li>Check that the co-payment count of the 19-year-old dependent (Family Unit B) does not contribute to their Family Unit, due to age.</li>
+  </ul>
+  <li>Check Family Unit A & B PSC Entitlement:</li>
+  <ul>
+    <li>Ensure the system can assign a PSC entitlement number to all members of Family Unit B, including the 17-year-old dependent, after their co-payment count reaches the threshold of 20.</li>
+    <li>Ensure the system can assign a second unique PSC entitlement number to all members of Family Unit A, including the 17-year-old dependent, after their co-payment count reaches the threshold of 20.</li>
+  </ul>
+  <li>Validate Entitlement Segregation:</li>
+  <ul>
+    <li>Confirm that the PSC entitlement assigned to Family Unit B is not applied to remaining members of Family Unit A members.</li>
+    <li>Confirm that the second PSC entitlement assigned to Family Unit A is not applied to remaining members of Family Unit B.</li>
+    <li>Confirm that the 17-year-old dependent has been assigned both PSC numbers.</li>
+  </ul>
+</ol>
+</td>
+<td>Mandatory</td>
+</tr>
+
+<td>Scenario-25</td>
+<td>Blended Family - Both family eligible (B)</td>
+<td>application can correctly handle the scenario where a dependent belongs to two family units and both of these family units are entitled to the PSC entitlement.
+In this scenario, the 17-year-old dependent has met the count of 20 by themselves​, and all other family members of Family Units A and B have counts of Zero.</td>
+<td>
+<b>Family Unit A</b>
+<ul>
+  <li>Caregiver #1: 0</li>
+  <li>Caregiver #2: 0</li>
+  <li>5yo dependent: 0 - will always be zero due to age</li>
+  <li>15yo dependent: 0</li>
+  <li>17yo dependent (also part of Family Unit B): 20</li>
+  <li><b>Family Unit A total: 20</b></li>
+</ul>
+<b>Family Unit B:</b>
+<ul>
+  <li>Caregiver #1: 0</li>
+  <li>Caregiver #2: 0</li>
+  <li>17yo dependent: 20, as above</li>
+  <li>19yo dependent: any count - excluded from total due to age</li>
+  <li><b>Family Unit B total: 20</b></li>
+</ul>
+<td>Output:
+<ol>
+  <li>Verify Co-Payment Count Inclusion:</li>
+  <ul>
+    <li>Check that the 17-year-old dependent’s co-payment count is included in both Family Unit A and Family Unit B's totals.</li>
+    <li>Check that the co-payment count of the 5-year-old dependent (Family Unit A) is Zero, due to age (under 14's are already exempt from co-payments).</li>
+    <li>Check that the co-payment count of the 19-year-old dependent (Family Unit B) does not contribute to their Family Unit, due to age.</li>
+  </ul>
+  <li>Check Family Unit A & B PSC Entitlement:</li>
+  <ul>
+    <li>Ensure the system can assign a PSC entitlement number to all members of Family Unit A, including the 17-year-old dependent, after their co-payment count reaches the threshold of 20.</li>
+    <li>Ensure the system can assign a second unique PSC entitlement number to all members of Family Unit B, including the 17-year-old dependent, after their co-payment count reaches the threshold of 20.</li>
+  </ul>
+  <li>Validate Entitlement Segregation:</li>
+  <ul>
+    <li>Confirm that the PSC entitlement assigned to Family Unit A is not applied to remaining members of Family Unit B members.</li>
+    <li>Confirm that the second PSC entitlement assigned to Family Unit B is not applied to remaining members of Family Unit A members.</li>
+    <li>Confirm that the 17-year-old dependent has been assigned both PSC numbers.</li>
+  </ul>
+</ol>
+</td>
+<td>Mandatory</td>
+</tr>
 </table>
