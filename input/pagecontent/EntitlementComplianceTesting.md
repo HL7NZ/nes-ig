@@ -732,6 +732,7 @@ the create a new PSC entitlement for all members of the family unit</td>
 <td>Mandatory</td>
 </tr>
 
+<tr>
 <td>Scenario-23</td>  
 <td>Blended Family - One family eligible</td>
 <td>application can correctly handle the scenario where a dependent belongs to two family units and only one of these family units is entitled to the PSC entitlement.</td>
@@ -774,6 +775,7 @@ the create a new PSC entitlement for all members of the family unit</td>
 <td>Mandatory</td>
 </tr>
 
+<tr>
 <td>Scenario-24</td>  
 <td>Blended Family - Both family eligible (A)</td>
 <td>application can correctly handle the scenario where a dependent belongs to two family units and both of these family units are entitled to the PSC entitlement.
@@ -820,6 +822,7 @@ the create a new PSC entitlement for all members of the family unit</td>
 <td>Mandatory</td>
 </tr>
 
+<tr>
 <td>Scenario-25</td>
 <td>Blended Family - Both family eligible (B)</td>
 <td>application can correctly handle the scenario where a dependent belongs to two family units and both of these family units are entitled to the PSC entitlement.
