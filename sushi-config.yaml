@@ -10,7 +10,7 @@
 
 id: hl7.org.nz.fhir.ig.nes
 canonical: http://hl7.org.nz/fhir/ig/nes
-version: 1.4.8
+version: 1.4.9
 name: NewZealandNESIG
 title: New Zealand NES IG
 status: active
