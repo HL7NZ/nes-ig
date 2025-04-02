@@ -50,7 +50,7 @@ table, th, td {
   <li>Health service code (type)</li>
   <li>Enrolment status</li>
   <li>Enrolment-owner-org</li>
-  <li>End Period and Termination reason code (if ending the enrolment) 
+  <li>End Period and Termination reason code (if ending the enrolment)</li>
 </ul>
 </td>
 <td>
