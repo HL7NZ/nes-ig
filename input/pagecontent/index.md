@@ -46,4 +46,4 @@ This guide uses artifacts from [New Zealand Base Implementation Guide.](https://
 
   ### Source
 
-  ​	This IG was built from [github](https://github.com/HL7NZ/nhi)  branch:   commit id: d80ae4648fe2dde207b2ae64cad5fa39a20dc7ff
+  ​	This IG was built from [github](https://github.com/HL7NZ/nes-ig) branch:   commit id: d80ae4648fe2dde207b2ae64cad5fa39a20dc7ff
