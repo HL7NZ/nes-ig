@@ -132,14 +132,16 @@ Access to the NBES is available to Maternity and related service providers who r
 
 #### On-boarding and Implementation
 
-1.    To get started, complete the [online onboarding request form](https://mohapis.atlassian.net/servicedesk/customer/portal/3/group/11/create/67). You will need to provide information about your organisation and the API you want to integrate with.
-2.    Once your onboarding request has been approved, you will be provided with the information to start your integration. The integration team will be in touch if further information is required.
-  * You will receive your credentials in an email and a sms message to the details provided in the onboarding form.
-  * You will also receive the access token url, provided scopes, and the UAT endpoint.
+1. To get started, head to ['Consumer onboarding', over at the digital services hub](https://www.tewhatuora.govt.nz/health-services-and-programmes/digital-health/digital-services-hub/consumer-onboarding/). You will need to provide information about your organisation, the product you are developing and the API's you want to integrate with.
+  * For more information [have a look at the other resources on the Digital Service Hub](https://www.tewhatuora.govt.nz/health-services-and-programmes/digital-health/digital-services-hub/).
+2. Once your onboarding request has been approved, you will be provided with the information to start integration. The integration team will be in touch if further information is required.
+  * You will receive your credentials, access token url, provided scopes, and the compliance environment endpoint.
 3. Complete your development and testing.
 4. When you are ready for compliance testing, email the [integration team](mailto:integration@tewhatuora.govt.nz) to get a compliance testing template.
-5. The integration team will issue a compliance test report. Your application will receive certification to be used in production or additional requirements will need to be met.
-6. Access will only be given to the Te Whatu Ora Whaihua platform users, the Te Whatu Ora Enrolment nomination subscriber and HealthLink in the initial implementation (Q4, 2023). If you are interested in this business function please contact [integration@health.govt.nz](mailto:integration@health.govt.nz).
+5. Submit the results of the compliance tests using this form [HIP Compliance Submission](https://mohapis.atlassian.net/servicedesk/customer/portal/3/group/11/create/129).
+6. The integration team will issue a compliance test report. Your application will receive certification to be used in production or additional requirements will need to be met.
+  * This can be an iterative process, so please get in touch as needed to discuss the compliance testing process.
+7. _Each organisation_ using your application with NHI integrated services must apply individually for access to the production environment (and recieve their own set of credentials) by completing the production form, please email [NHI Access](mailto:nhi_access@health.govt.nz).
 
 Please allow at least 5 working days for these applications to be processed and production credentials issued. If your product is to be used by many different organisations please get in touch to discuss your rollout plans and how we might assist.
 
