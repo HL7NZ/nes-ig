@@ -110,7 +110,7 @@ table, th, td {
 <tr>
 <td>Health Entitlements Maintain</td>
 <td>Create and Update Patient Health Entitlements</td>
-<td><a href="createEntitlement.html">See create Entitlement use case</a></td> <br />
+<td><a href="createEntitlement.html">See create Entitlement use case</a> <br />
 <a href="updateEntitlement.html">See update Entitlement use case</a></td>
 </tr>
 </table>
