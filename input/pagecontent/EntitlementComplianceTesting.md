@@ -126,7 +126,7 @@ table, th, td {
 </tr>
 
 <tr>
-<td>Entitlement-Search-2 <br /> PSC + CSC-Dep</td>
+<td>Entitlement-Search-2 <br /> PSC and CSC-Dep</td>
 <td>application displays entitlement information correctly:
 <ul>
   <li>Entitlement id</li>
@@ -151,7 +151,7 @@ table, th, td {
 </tr>
 
 <tr>
-<td>Entitlement-Search-3 <br /> PSC + HUHC</td>
+<td>Entitlement-Search-3 <br /> PSC and HUHC</td>
 <td>application displays entitlement information correctly:
 <ul>
   <li>Entitlement id</li>
@@ -165,7 +165,7 @@ table, th, td {
 <td>Output: 
   <ul>
     <li>All entitlement information is displayed for the patient</li>
-    <li>Patient should have an active PSC + HUHC entitlement</li>
+    <li>Patient should have an active PSC and HUHC entitlement</li>
   </ul>
 </td>
 <td>Mandatory if applicable</td>
@@ -176,7 +176,7 @@ table, th, td {
 </tr>
 
 <tr>
-<td>Entitlement-Search-4 <br /> PSC + HUHC + CSC</td>
+<td>Entitlement-Search-4 <br /> PSC and HUHC and CSC</td>
 <td>application displays entitlement information correctly:
 <ul>
   <li>Entitlement id</li>
