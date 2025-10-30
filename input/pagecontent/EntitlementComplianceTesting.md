@@ -13,7 +13,8 @@ table, th, td {
 <th>Purpose – Demonstrate that the</th>
 <th>Input values</th>
 <th>Expected outcome</th>
-<th>Mandatory</th></tr>
+<th>Mandatory</th>
+<th>Notes</th></tr>
 
 <tr>
 <td>Entitlement-GET-1 <br /> CSC</td>
@@ -28,6 +29,7 @@ table, th, td {
 <td>20018179</td>
 <td>Output: CSC entitlement information is displayed for the patient</td>
 <td>Mandatory if applicable</td>
+<td>CSC Expiry: 2025-11-02</td>
 </tr>
 
 <tr>
@@ -49,6 +51,7 @@ table, th, td {
   </ul>
 </td>
 <td>Mandatory if applicable</td>
+<td>CSC Dep Expiry: 2025-11-02</td>
 </tr>
 
 <tr>
@@ -64,6 +67,7 @@ table, th, td {
 <td>305454455</td>
 <td>Output: HUHC entitlement information is displayed for the patient</td>
 <td>Mandatory if applicable</td>
+<td>HUHC Expiry: 2025-12-30</td>
 </tr>
 
 <tr>
@@ -76,9 +80,10 @@ table, th, td {
   <li>Period</li>
 </ul>
 </td>
-<td>XXXXXX</td>
+<td>20029300</td>
 <td>Output: PSC entitlement information is displayed for the patient</td>
 <td>Mandatory if applicable</td>
+<td>PSC Expiry: 2026-02-01</td>
 </tr>
 </table>
 
@@ -94,7 +99,8 @@ table, th, td {
 <th>Purpose – Demonstrate that the</th>
 <th>Input values</th>
 <th>Expected outcome</th>
-<th>Mandatory</th></tr>
+<th>Mandatory</th>
+<th>Notes</th></tr>
 
 <tr>
 <td>Entitlement-Search-1 <br /> CSC</td>
@@ -116,10 +122,11 @@ table, th, td {
   </ul>
 </td>
 <td>Mandatory if applicable</td>
+<td>CSC Expiry: 2025-11-02</td>
 </tr>
 
 <tr>
-<td>Entitlement-Search-2 <br /> CSC-Dep</td>
+<td>Entitlement-Search-2 <br /> PSC + CSC-Dep</td>
 <td>application displays entitlement information correctly:
 <ul>
   <li>Entitlement id</li>
@@ -133,15 +140,18 @@ table, th, td {
 <td>Output: 
   <ul>
     <li>All entitlement information is displayed for the patient</li>
-    <li>Patient should have an active CSC dependent entitlement</li>
-    <li>Expiry: 2025-11-02</li>
+    <li>Patient should have an active PSC and CSC dependent entitlement</li>
   </ul>
 </td>
 <td>Mandatory if applicable</td>
+<td><ul>
+  <li>PSC Expiry: 2026-02-01</li>
+  <li>CSC Dep Expiry: 2025-11-02</li>
+</ul></td>
 </tr>
 
 <tr>
-<td>Entitlement-Search-3 <br /> HUHC</td>
+<td>Entitlement-Search-3 <br /> PSC + HUHC</td>
 <td>application displays entitlement information correctly:
 <ul>
   <li>Entitlement id</li>
@@ -155,15 +165,18 @@ table, th, td {
 <td>Output: 
   <ul>
     <li>All entitlement information is displayed for the patient</li>
-    <li>Patient should have an active HUHC entitlement</li>
-    <li>Expiry: 2024-12-30</li>    
+    <li>Patient should have an active PSC + HUHC entitlement</li>
   </ul>
 </td>
 <td>Mandatory if applicable</td>
+<td><ul>
+  <li>PSC Expiry: 2026-02-01</li>
+  <li>HUHC Expiry: 2025-12-30</li>
+</ul></td>
 </tr>
 
 <tr>
-<td>Entitlement-Search-4 <br /> HUHC + CSC</td>
+<td>Entitlement-Search-4 <br /> PSC + HUHC + CSC</td>
 <td>application displays entitlement information correctly:
 <ul>
   <li>Entitlement id</li>
@@ -177,40 +190,19 @@ table, th, td {
 <td>Output: 
   <ul>
     <li>All entitlement information is displayed for the patient</li>
-    <li>Patient should have active CSC and HUHC entitlements</li>
-    <li>Expiry: HUHC 2024-12-30</li>
-    <li>Expiry: CSC 2025-11-02</li>
+    <li>Patient should have active PSC and CSC and HUHC entitlements</li>
   </ul>
 </td>
 <td>Mandatory if applicable</td>
+<td><ul>
+  <li>PSC Expiry: 2026-02-01</li>
+  <li>HUHC Expiry: 2025-12-30</li>
+  <li>HUHC Expiry: 2025-11-02</li>
+</ul></td>
 </tr>
 
 <tr>
-<td>Entitlement-Search-5<br /> HUHC + CSC + PSC</td>
-<td>application displays entitlement information correctly:
-<ul>
-  <li>Entitlement id</li>
-  <li>Identifier (card number)</li>
-  <li>Type</li>
-  <li>NHI number</li>
-  <li>Period</li>
-</ul>
-</td>
-<td>ZJV2965</td>
-<td>Output: 
-  <ul>
-    <li>All entitlement information is displayed for the patient</li>
-    <li>Patient should have active CSC and HUHC and PSC entitlements</li>
-    <li>Expiry: HUHC 2024-12-30</li>
-    <li>Expiry: CSC 2025-11-02</li>
-    <li>Expiry: PSC 2025-02-01</li>
-  </ul>
-</td>
-<td>Mandatory if applicable</td>
-</tr>
-
-<tr>
-<td>Entitlement-Search-6<br /> PSC</td>
+<td>Entitlement-Search-5<br /> PSC</td>
 <td>application displays entitlement information correctly:
 <ul>
   <li>Entitlement id</li>
@@ -224,33 +216,11 @@ table, th, td {
 <td>Output: 
   <ul>
     <li>All entitlement information is displayed for the patient</li>
-    <li>Patient should have an active PSC entitlement</li>
-    <li>Expiry: PSC 2025-02-01</li>
-  </ul>
-</td>
-<td>Mandatory if applicable</td>
-</tr>
-
-<tr>
-<td>Entitlement-Search-7<br /> PSC</td>
-<td>application displays entitlement information correctly:
-<ul>
-  <li>Entitlement id</li>
-  <li>Identifier (card number)</li>
-  <li>Type</li>
-  <li>NHI number</li>
-  <li>Period</li>
-</ul>
-</td>
-<td>XXXXXXX</td>
-<td>Output: 
-  <ul>
-    <li>All entitlement information is displayed for the patient</li>
     <li>Patient should have multiple active PSC entitlements</li>
-    <li>All expire: PSC 2025-02-01</li>
   </ul>
 </td>
 <td>Mandatory if applicable</td>
+<td>Both PSC Expire: 2026-02-01</td>
 </tr>
 </table>
 
