@@ -13,7 +13,7 @@ Parent:         Encounter
 
 Id:             NesEncounter
 Title:          "NesEncounter"
-Description:    "Restricts Encounter to the elemrnts need to describe an NES Enrolment qualified Encounter"
+Description:    "Restricts Encounter to the elements need to describe an NES Enrolment qualified Encounter"
 
 * ^url = "http://hl7.org.nz/fhir/StructureDefinition/NesEncounter"
 
