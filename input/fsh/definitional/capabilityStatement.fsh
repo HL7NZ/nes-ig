@@ -74,7 +74,7 @@ Usage: #definition
 * rest.resource[=].interaction[+].code = #search-type
 * rest.resource[=].interaction[=].documentation = "GET,[base]/Flag, Search for a Patient's NES Flags, system/Flag.s"
 
-* rest.resource[=].searchParam[0].name = "patient"
+* rest.resource[=].searchParam[0].name = "subject"
 * rest.resource[=].searchParam[0].type = #string
 * rest.resource[=].searchParam[0].documentation = "NHI number"
  

@@ -24,7 +24,7 @@ This is  used to get all Nes Flags  for a patient
 [get-enrolment-response-message-1](Bundle-FL101.json.html)
 
 #### Business  Rules
-1.  An Flag search request must include a valid nhi-id
+1.  A Flag search request must include a valid nhi-id
 
 
 
