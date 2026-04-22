@@ -4,7 +4,7 @@ Profile:        NesFlag
 Parent:         Flag         
 
 Id:             NesFlag
-Title:          "NeFlag"
+Title:          "NesFlag"
 Description:    "Used to flag NES related information"
 
 * ^url = "http://hl7.org.nz/fhir/StructureDefinition/NesFlag"
