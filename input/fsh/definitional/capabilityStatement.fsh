@@ -65,19 +65,19 @@ Usage: #definition
 * rest.resource[=].interaction[=].documentation = "GET,[base]/EpisodeOfCare, Search for a Patient's enrolment's, system/EpisodeOfCare.s"
 
 
+* rest.resource[+].type = #Flag
+* rest.resource[=].profile = "http://hl7.org.nz/fhir/StructureDefinition/NesFlag"
+
+//comma delimited fields in documentation string extracted by makeCapabilityStatement.js:   <verb,url,doc,scope>
+
+//search by various parameters
+* rest.resource[=].interaction[+].code = #search-type
+* rest.resource[=].interaction[=].documentation = "GET,[base]/Flag, Search for a Patient's NES Flags, system/Flag.s"
 
 * rest.resource[=].searchParam[0].name = "patient"
 * rest.resource[=].searchParam[0].type = #string
 * rest.resource[=].searchParam[0].documentation = "NHI number"
  
-* rest.resource[=].searchParam[1].name = "status"
-* rest.resource[=].searchParam[1].type = #token
-* rest.resource[=].searchParam[1].documentation = "status code"
- 
-* rest.resource[=].searchParam[2].name = "type"
-* rest.resource[=].searchParam[2].type = #token
-* rest.resource[=].searchParam[2].documentation = "type code - Future scope"
-
 
 * rest.operation[0].name = "process-message"
 * rest.operation[0].definition = "http://hl7.org/fhir/OperationDefinition/MessageHeader-process-message"
