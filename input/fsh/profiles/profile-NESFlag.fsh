@@ -18,11 +18,11 @@ Description:    "Used to flag NES related information"
 * encounter 0..0
 * author 0..0
 
-* extension contains 
-	http://hl7.org.nz/fhir/StructureDefinition/nes-flag-object named object 0..1 
+* extension contains http://hl7.org/fhir/StructureDefinition/flag-detail   named flag-detail 0..1
+ 
 
-* extension[object] ^short = "What the flag is about"
-
+* extension[flag-detail] ^short = "What the flag is about"
+* extension[flag-detail].value[x] only Reference(RelatedPerson) 
 
 // documentation
 * subject ^short = "Who the flag is about"

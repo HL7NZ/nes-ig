@@ -412,7 +412,7 @@
 /fhir/nes/v1/Flag:
     get:
       summary: "get Flags for a patient"
-      operationId: "flagGet"
+      operationId: "flagSearch"
       parameters:
       - $ref: '#/components/parameters/X-correlation-ID' 
       - $ref: '#/components/parameters/X-Request-Id'  
@@ -422,7 +422,7 @@
         in: "query"
         required: true
         schema:
-            type: "string"
+            $ref: '#/components/schemas/RestrictedString'
       responses:
         "400":
           description: "400 response"
@@ -435,7 +435,7 @@
           content: {}
       security:
       - hip-fhir-cog:
-        - "https://api.hip.digital.health.nz/fhir/system/EpisodeOfCare.r"
+        - "https://api.hip.digital.health.nz/fhir/system/Flag.s"
       - api_key: []
       
       x-amazon-apigateway-request-validator: params-only
