@@ -122,6 +122,10 @@ sed -i "s/_GIT_COMMIT_ID_/$GIT_COMMIT_ID/g"  ./input/pagecontent/index.md
 echo running sushi ...
 sushi -o .
 
+
+echo "removing r5 tools or something"
+rm -rf ~/.fhir/packages/hl7.fhir.uv.tools*
+
 echo running local scripts
 #sudo chmod +x ./localscripts/makeTerminologySummary.js
 
