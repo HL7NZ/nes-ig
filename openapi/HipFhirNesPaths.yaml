@@ -447,26 +447,7 @@
                 passthroughBehavior: "when_no_match"
                 timeoutInMillis: 29000
    
-      responses:
-        "422":
-          description: "422 response"
-          content: {}
-        "200":
-          description: "200 response"
-          content: {}
-      security:
-      - hip-fhir-cog:
-        - "https://api.hip.digital.health.nz/fhir/system/EpisodeOfCare.u"
-      - api_key: []
-      
-      x-amazon-apigateway-request-validator: params-and-body
-      x-amazon-apigateway-integration:
-                type: "aws_proxy"
-                httpMethod: "POST"
-                uri: 
-                  Ref: pLambdaNameNes  
-                passthroughBehavior: "when_no_match"
-                timeoutInMillis: 29000                
+                
                 
 /fhir/nes/v1/$process-message:
     post:
