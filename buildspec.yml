@@ -65,6 +65,7 @@ phases:
       
       - echo checking in full-ig.zip
       - git add -f ./output/full-ig.zip
+      - git add -f ./openapi//HipFhirNesOpenApi.yaml
       - git commit -m "new IG build"
       - git push https://$GITUSERNAME:$GITTOKEN@github.com/HL7NZ/nes-ig 
       
