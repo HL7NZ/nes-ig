@@ -76,7 +76,7 @@ Usage: #definition
 
 * rest.resource[=].searchParam[0].name = "subject"
 * rest.resource[=].searchParam[0].type = #string
-* rest.resource[=].searchParam[0].documentation = "NHI number"
+* rest.resource[=].searchParam[0].documentation = "NHI-Id"
  
 
 * rest.operation[0].name = "process-message"

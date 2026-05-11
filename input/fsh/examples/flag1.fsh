@@ -10,8 +10,8 @@ Usage: #example
 
 * status = #active
 * code.coding.system = "https://standards.digital.health.nz/nes-flag-type"
-* code.coding.code = #CNC
-* code.text = "see this url for guidance https://something "
+* code.coding.code = #NCCI
+* code.text = "https://health.govt.nz/NCCIsomething"
 * subject = Reference(Patient/ZJM9397)
 * period.start = 2020-08-27
-* period.end = 2026-08-27
+
