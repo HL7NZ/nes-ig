@@ -1930,6 +1930,10 @@ components:
       description: "restricted character string allows macrons"
       pattern: "^([a-zA-Z0-9'\\s\\.\\-\\/,āēīōūĀĒĪŌŪ])+$"
       type: "string"
+    ContactString:
+      description: "String of characters used to identify a phone number or email"
+      pattern: "^([a-zA-Z0-9@:_/\\+\\.\\s-]){{0,255}$"
+      type: "string"
     SetAddressRequest:
       required:
         - "resourceType"
@@ -2226,7 +2230,7 @@ components:
       type: "object"
       properties:
         valueString:
-          $ref: "#/components/schemas/RestrictedString"
+          $ref: "#/components/schemas/ContactString"
         name:
           type: "string"
           enum:
