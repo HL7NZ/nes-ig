@@ -1461,6 +1461,92 @@ components:
             - "nz-address-id"
       additionalProperties: false
       description: "eSAM validated address id"
+    Telecom:
+      type: "object"
+      properties:
+        id:
+          $ref: "#/components/schemas/string"
+        system:
+          $ref: "#/components/schemas/code"
+        use:
+          $ref: "#/components/schemas/code"
+        value:
+          $ref: "#/components/schemas/ContactString"
+        extension:
+          type: "array"
+          items:
+            anyOf:
+              - $ref: "#/components/schemas/isPreferred"
+              - $ref: "#/components/schemas/isPrivate"
+              - $ref: "#/components/schemas/isShared"
+              - $ref: "#/components/schemas/context"
+              - $ref: "#/components/schemas/lastUpdatedDate"
+      additionalProperties: false
+    isPreferred:
+      type: "object"
+      properties:
+        url:
+          type: "string"
+          enum:
+            - "http://hl7.org.nz/fhir/StructureDefinition/isVerified"
+        valueBoolean:
+          type: boolean
+      reqired:
+        - url
+        - valueBoolean
+      additionalProperties: false
+    isPrivate:
+      type: "object"
+      properties:
+        url:
+          type: "string"
+          enum:
+            - "http://hl7.org.nz/fhir/StructureDefinition/isPrivate"
+        valueBoolean:
+          type: boolean
+      reqired:
+        - url
+        - valueBoolean
+      additionalProperties: false
+    isShared:
+      type: "object"
+      properties:
+        url:
+          type: "string"
+          enum:
+            - "http://hl7.org.nz/fhir/StructureDefinition/isShared"
+        valueBoolean:
+          type: boolean
+      reqired:
+        - url
+        - valueBoolean
+      additionalProperties: false
+    context:
+      type: "object"
+      properties:
+        url:
+          type: "string"
+          enum:
+            - "http://hl7.org.nz/fhir/StructureDefinition/context"
+        valueString:
+          $ref: "#/components/schemas/RestrictedString"
+      reqired:
+        - url
+        - valueString
+      additionalProperties: false
+    lastUpdatedDate:
+      type: "object"
+      properties:
+        url:
+          type: "string"
+          enum:
+            - "http://hl7.org.nz/fhir/StructureDefinition/lastUpdatedDate"
+        valueDate:
+          $ref: "#/components/schemas/date"
+      reqired:
+        - url
+        - valueBoolean
+      additionalProperties: false
     NhiHumanName:
       type: "object"
       properties:
@@ -1774,6 +1860,11 @@ components:
           items:
             "$ref": "#/components/schemas/Reference"
           type: array
+        telecom:
+          description: "Patient's contact details"
+          items:
+            $ref: "#/components/schemas/Telecom"
+          type: array
       additionalProperties: false
       description: "The Patient resource exposed by the NHI."
     NzCitizenshipExtension:
@@ -1932,7 +2023,7 @@ components:
       type: "string"
     ContactString:
       description: "String of characters used to identify a phone number or email"
-      pattern: "^([a-zA-Z0-9@:_/\\+\\.\\s-]){{0,255}$"
+      pattern: "^([a-zA-Z0-9@:_/\\+\\.\\s\\-])*$"
       type: "string"
     SetAddressRequest:
       required:
@@ -2248,6 +2339,19 @@ components:
           type: "string"
           enum:
             - "isVerified"
+      additionalProperties: false
+    ParameterContactId:
+      required:
+        - "name"
+        - "valueInteger"
+      type: "object"
+      properties:
+        valueInteger:
+          type: "integer"
+        name:
+          type: "string"
+          enum:
+            - "contact-id"
       additionalProperties: false
     ParameterIsShared:
       required:
