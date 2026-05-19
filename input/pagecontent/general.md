@@ -253,6 +253,7 @@ table, th, td {
 <tr><td>Entitlement</td><td> https://api.hip.digital.health.nz/fhir/system/Coverage.u </td><td> Update access to Entitlement records </td></tr>
 <tr><td>Entitlement</td><td> https://api.hip.digital.health.nz/fhir/system/Coverage.c </td><td> Create access to Entitlement records </td></tr>
 <tr><td>New born enrolments</td><td> https://api.hip.digital.health.nz/fhir/system/MessageHeader.c </td><td> Create and respond to enrolment nomination</td></tr>
+<tr><td>Flag</td><td> https://api.hip.digital.health.nz/fhir/system/Flag.s </td><td>Search Flags for a patient</td></tr>
 </table>
 
 

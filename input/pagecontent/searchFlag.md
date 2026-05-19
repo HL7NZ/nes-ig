@@ -21,13 +21,13 @@ This is  used to get all Nes Flags  for a patient
 
 
 ####  Search Flags Response Example 
-[get-enrolment-response-message-1](Bundle-FL101.json.html)
+[search-flag-response-message-1](Bundle-FL101.json.html)
 
 #### Business  Rules
 1.  A Flag search request must include a valid nhi-id
 
 
-<h3>Get and Search AllergyIntolerance for Patient Business Rules and Errors</h3>
+<h3>Get and Search Flag for Patient Business Rules and Errors</h3>
 <table>
 <style>
 table, th, td {
