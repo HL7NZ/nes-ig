@@ -49,4 +49,4 @@ The NES is being extended in 2026/2027 to capture flags. The first flag to be in
 
 
 #### Future
-NES has been designed as an extensible solution capable of supporting multiple types of enrolments and entitlements.  Potential future candidates for leveraging the investment in NES include enrolments in the Adolescent Dental service, and Well Child Tamariki Ora services, Prescription Subsidy Cards, and Veteran entitlements.
+NES has been designed as an extensible solution capable of supporting multiple types of enrolments, entitlements and flags.  Potential future candidates for leveraging the investment in NES include enrolments in the Adolescent Dental service and Veteran entitlements.
