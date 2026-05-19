@@ -671,11 +671,6 @@ components:
           $ref: "#/components/schemas/Reference"
         period:
           $ref: "#/components/schemas/Period"
-        resourceType:
-          type: "string"
-          enum:
-            - "Flag"
-      additionalProperties: false
     EpisodeOfCare:
       type: "object"
       properties:
