@@ -24,7 +24,7 @@ table, th, td {
 <td>NHI</td>
 <td>Output:NCCI Flag displayed on screen in an area apparent to the user of the system</td>
 <td>Mandatory </td>
-<td>2</td>
+<td></td>
 </tr>
 
 <tr>
@@ -35,7 +35,7 @@ table, th, td {
 <td>NHI</td>
 <td>Output: Link information is made easily available to the end user (E.g. User can click on the website url and the information is made available, or the application cache the information, makes it available and refreshes every 24 hours.</td>
 <td>Mandatory </td>
-<td>2</td>
+<td></td>
 </tr>
 
 <tr>
@@ -51,7 +51,7 @@ table, th, td {
 <td>NHI</td>
 <td>Output: Link information is made easily available to the end user (E.g. User can click on the website url and the information is made available, or the application cache the information, makes it available and refreshes every 24 hours.</td>
 <td>Mandatory </td>
-<td>2</td>
+<td></td>
 </tr>
 
 <tr>
@@ -61,7 +61,7 @@ table, th, td {
 <td>NHI</td>
 <td>Output: No Flag information returned.</td>
 <td>Mandatory </td>
-<td>2</td>
+<td></td>
 </tr>
 
 <tr>
@@ -71,7 +71,7 @@ table, th, td {
 <td>NHI</td>
 <td>Output: An error message is returned that clearly articulates that the service is unavailable.</td>
 <td>Mandatory </td>
-<td>2</td>
+<td></td>
 </tr>
 
 
@@ -82,7 +82,7 @@ table, th, td {
 <td>NHI</td>
 <td>Output: An error message is returned that clearly articulates that the NHI is invalid or is not found in the NHI. (EM02002 - Cannot be found) </td>
 <td>Mandatory </td>
-<td>2</td>
+<td></td>
 </tr>
 
 <tr>
@@ -94,7 +94,7 @@ table, th, td {
 <td>Mandatory – Future scope
 Show us how the system is being designed to be extensible.
  </td>
-<td>2</td>
+<td></td>
 </tr>
 
 
