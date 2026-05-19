@@ -113,11 +113,17 @@ table, th, td {
 <td><a href="createEntitlement.html">See create Entitlement use case</a> <br />
 <a href="updateEntitlement.html">See update Entitlement use case</a></td>
 </tr>
+
+<tr>
+<td>Flag Read</td>
+<td>Search a Patient's Flags using NHI	Link to Search Flag use case</td>
+<td><a href="serachFlag">See search Flag use case</a> </td>
+</tr>
 </table>
 
 
 
-
+Flag Read	Search a Patient's Flags using NHI	Link to Search Flag use case
 ### New Born Enrolment Service
 
 #### Who can apply for access?
