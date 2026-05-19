@@ -18,7 +18,7 @@ table, th, td {
 
 <tr>
 <td>Flag-Search 1 – NCCI flag<br /> CSC</td>
-<td>application can display a flag and make it apparent to the end user.
+<td>application can display an NCCI flag and make it apparent to the end user.
 
 </td>
 <td>NHI</td>
@@ -35,7 +35,7 @@ table, th, td {
 <td>NHI</td>
 <td>Output: Link information is made easily available to the end user (E.g. User can click on the website url and the information is made available, or the application cache the information, makes it available and refreshes every 24 hours.</td>
 <td>Mandatory </td>
-<td></td>
+<td>TBC – awaiting advice.</td>
 </tr>
 
 <tr>
@@ -86,7 +86,7 @@ table, th, td {
 </tr>
 
 <tr>
-<td>Flag Search-2 multiple flags<br /> CSC</td>
+<td>Flag Search-7 multiple flags<br /> CSC</td>
 <td>application can display all flags returned by the service and make them apparent to the end user.
 </td>
 <td>NHI</td>
@@ -95,6 +95,17 @@ table, th, td {
 Show us how the system is being designed to be extensible.
  </td>
 <td></td>
+</tr>
+
+<tr>
+<td>Flag Search-8 Access<br /> CSC</td>
+<td>application has sufficient role-based access so that flags are only available to a specific user group
+</td>
+<td>NHI</td>
+<td>Output: Flags are only visible to specific user group.</td>
+<td>Mandatory 
+ </td>
+<td>TBC – awaiting advice on specific user group.</td>
 </tr>
 
 

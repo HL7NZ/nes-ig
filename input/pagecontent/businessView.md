@@ -11,11 +11,12 @@ The NES service has been extended to also capture flags to warn or notify Health
 
 #### Enrolments
 
-Enrolments include a patients:
-* enrolment with a Primary Health Organisations (PHOs) - funded GP enrolment
-* registration with a general practitioner (non-funded)
-* enrolment with a lead maternity carer (LMC)
-* nomination to a Well Child Tamariki Ora provider
+Enrolments include a patient's:
+* enrolment General Practitioner - Funded GP enrolment (FLS)
+* registration with a general practitioner - Non-funded (FLS-NF) 
+* enrolment with a lead maternity carer (LMC) 
+* nomination to a Well Child Tamariki Ora provider (WCTO) 
+
  
 Web service APIs integrated into Patient Management Systems (PMS) enable practice staff to maintain patient identity and enrolment information in the National Health Index (NHI) and National Enrolment Service (NES) databases in real-time.  The workflow within each PMS varies according to each vendor’s implementation of the APIs.  Other services are provided to notify PMS systems of significant changes (e.g. enrolment expiries, enrolment transfers, NHI links and unlinks).
 

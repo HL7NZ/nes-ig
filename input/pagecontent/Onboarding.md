@@ -116,8 +116,8 @@ table, th, td {
 
 <tr>
 <td>Flag Read</td>
-<td>Search a Patient's Flags using NHI	Link to Search Flag use case</td>
-<td><a href="serachFlag">See search Flag use case</a> </td>
+<td>Search a Patient's Flags using NHI</td>
+<td><a href="searchFlag.html">See search Flag use case</a> </td>
 </tr>
 </table>
 
