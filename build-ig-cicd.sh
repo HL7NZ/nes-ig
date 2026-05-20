@@ -1,7 +1,7 @@
 #if you have transitive dependencies on hip-fhir-common they have  to be specified explicitly
 ## you can define multiple dependent version like this
 #HFC_TRANS=("1.6.0", "1.5.1")
-HFC_TRANS=("1.8.9")
+HFC_TRANS=("1.9.5")
 
 islocal=$1
 
@@ -121,6 +121,10 @@ sed -i "s/_GIT_COMMIT_ID_/$GIT_COMMIT_ID/g"  ./input/pagecontent/index.md
 
 echo running sushi ...
 sushi -o .
+
+
+echo "removing r5 tools or something"
+rm -rf ~/.fhir/packages/hl7.fhir.uv.tools*
 
 echo running local scripts
 #sudo chmod +x ./localscripts/makeTerminologySummary.js

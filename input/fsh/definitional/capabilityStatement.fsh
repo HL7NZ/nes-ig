@@ -26,7 +26,7 @@ Usage: #definition
 //comma delimited fields in documentation string extracted by makeCapabilityStatement.js:   <verb,url,doc,scope>
 * rest.resource[=].interaction[=].documentation = "GET,[base]/Coverage/[id],Used to retrieve a Patient entitlement by id, system/Coverage.r"
 * rest.resource[=].interaction[+].code = #create
-* rest.resource[=].interaction[=].documentation = "POST,[base]/Coverage, Create a new entitlement - Future Scope, system/Coverage.c"
+* rest.resource[=].interaction[=].documentation = "POST,[base]/Coverage, Create a new entitlement, system/Coverage.c"
 * rest.resource[=].interaction[+].code = #update
 * rest.resource[=].interaction[=].documentation = "PUT,[base]/Coverage/[id], Update a patient's entitlement card details, system/Coverage.u"
 * rest.resource[=].interaction[+].code = #search-type
@@ -65,19 +65,19 @@ Usage: #definition
 * rest.resource[=].interaction[=].documentation = "GET,[base]/EpisodeOfCare, Search for a Patient's enrolment's, system/EpisodeOfCare.s"
 
 
+* rest.resource[+].type = #Flag
+* rest.resource[=].profile = "http://hl7.org.nz/fhir/StructureDefinition/NesFlag"
 
-* rest.resource[=].searchParam[0].name = "patient"
+//comma delimited fields in documentation string extracted by makeCapabilityStatement.js:   <verb,url,doc,scope>
+
+//search by various parameters
+* rest.resource[=].interaction[+].code = #search-type
+* rest.resource[=].interaction[=].documentation = "GET,[base]/Flag, Search for a Patient's NES Flags, system/Flag.s"
+
+* rest.resource[=].searchParam[0].name = "subject"
 * rest.resource[=].searchParam[0].type = #string
-* rest.resource[=].searchParam[0].documentation = "NHI number"
+* rest.resource[=].searchParam[0].documentation = "NHI-Id"
  
-* rest.resource[=].searchParam[1].name = "status"
-* rest.resource[=].searchParam[1].type = #token
-* rest.resource[=].searchParam[1].documentation = "status code"
- 
-* rest.resource[=].searchParam[2].name = "type"
-* rest.resource[=].searchParam[2].type = #token
-* rest.resource[=].searchParam[2].documentation = "type code - Future scope"
-
 
 * rest.operation[0].name = "process-message"
 * rest.operation[0].definition = "http://hl7.org/fhir/OperationDefinition/MessageHeader-process-message"

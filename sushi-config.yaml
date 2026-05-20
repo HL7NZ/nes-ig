@@ -10,7 +10,7 @@
 
 id: hl7.org.nz.fhir.ig.nes
 canonical: http://hl7.org.nz/fhir/ig/nes
-version: 1.4.10
+version: 1.5.0
 name: NewZealandNESIG
 title: New Zealand NES IG
 status: active
@@ -60,6 +60,7 @@ menu:
     Create Entitlement: createEntitlement.html
     Update Entitlement: updateEntitlement.html
     Enrolment Nomination: enrolmentNomination.html
+    Search Flags: searchFlag.html
   Important information:
     Onboarding: Onboarding.html
     General Notes: general.html
@@ -69,6 +70,7 @@ menu:
     Compliance testing important information: ComplianceTestingImportantInformation.html
     Enrolment Compliance testing: EnrolmentComplianceTesting.html
     Entitlment Compliance testing: EntitlementComplianceTesting.html
+    Flag Compliance testing: FlagComplianceTesting.html
     Enrolment Nomination Compliance testing: EnrolmentNominationComplianceTesting.html
   API: API.html
   Profiles: profiles.html

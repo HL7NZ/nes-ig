@@ -63,8 +63,10 @@ phases:
       - cat pom.xml    
       - cat /root/.m2/settings.xml
       
-      - echo checking in full-ig.zip
+      - echo checking in build artifacts
       - git add -f ./output/full-ig.zip
+      - git add -f ./openapi/HipFhirNesOpenApi.yaml
+      - git add -f ./input/extra/HipFhirNesOpenApi.zip
       - git commit -m "new IG build"
       - git push https://$GITUSERNAME:$GITTOKEN@github.com/HL7NZ/nes-ig 
       
