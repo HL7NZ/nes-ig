@@ -17,7 +17,7 @@ table, th, td {
 <th>Notes</th></tr>
 
 <tr>
-<td>Flag-Search 1 – NCCI flag<br /> CSC</td>
+<td>Flag-Search 1 – NCCI flag<br /> </td>
 <td>application can display an NCCI flag and make it apparent to the end user.
 
 </td>
@@ -28,7 +28,7 @@ table, th, td {
 </tr>
 
 <tr>
-<td>Flag-Search 2 – NCCI details<br /> CSC</td>
+<td>Flag-Search 2 – NCCI details<br /> </td>
 <td>Application can make the information from the link easily available to the end user.
 
 </td>
@@ -39,7 +39,7 @@ table, th, td {
 </tr>
 
 <tr>
-<td>Flag-Search 3 – NCCI period<br /> CSC</td>
+<td>Flag-Search 3 – NCCI period<br /> </td>
 <td>Application can make all other flag information available to the end user.
 <ul>
   <li>Period start</li>
@@ -55,7 +55,7 @@ table, th, td {
 </tr>
 
 <tr>
-<td>Flag-Search 4 – no flag<br /> CSC</td>
+<td>Flag-Search 4 – no flag<br /> </td>
 <td>Application can gracefully handle scenarios where a patient has no flags
 </td>
 <td>NHI</td>
@@ -65,7 +65,7 @@ table, th, td {
 </tr>
 
 <tr>
-<td>Flag-Search 5 – Error1<br /> CSC</td>
+<td>Flag-Search 5 – Error1<br /> </td>
 <td>Application can alert the user that the Flag service cannot be reached.
 </td>
 <td>NHI</td>
@@ -76,7 +76,7 @@ table, th, td {
 
 
 <tr>
-<td>Flag-Search 6 – Error2<br /> CSC</td>
+<td>Flag-Search 6 – Error2<br /> </td>
 <td>Application can alert the user that the NHI was not found..
 </td>
 <td>NHI</td>
@@ -86,7 +86,7 @@ table, th, td {
 </tr>
 
 <tr>
-<td>Flag Search-7 multiple flags<br /> CSC</td>
+<td>Flag Search-7 multiple flags<br /> </td>
 <td>application can display all flags returned by the service and make them apparent to the end user.
 </td>
 <td>NHI</td>
@@ -98,7 +98,7 @@ Show us how the system is being designed to be extensible.
 </tr>
 
 <tr>
-<td>Flag Search-8 Access<br /> CSC</td>
+<td>Flag Search-8 Access<br /> </td>
 <td>application has sufficient role-based access so that flags are only available to a specific user group
 </td>
 <td>NHI</td>
