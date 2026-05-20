@@ -1,5 +1,5 @@
 
-### SearchFlag testing
+### Search Flag testing
 
 <h4>Search Flags tests</h4>
 <table>
