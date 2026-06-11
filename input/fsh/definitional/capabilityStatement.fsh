@@ -72,7 +72,7 @@ Usage: #definition
 
 //search by various parameters
 * rest.resource[=].interaction[+].code = #search-type
-* rest.resource[=].interaction[=].documentation = "GET,[base]/Flag, Search for a Patient's NES Flags, system/Flag.s"
+* rest.resource[=].interaction[=].documentation = "GET,[base]/Flag, Search for a Patient's NES Flags. Returns active flags only (end date null or in future), system/Flag.s"
 
 * rest.resource[=].searchParam[0].name = "subject"
 * rest.resource[=].searchParam[0].type = #string
